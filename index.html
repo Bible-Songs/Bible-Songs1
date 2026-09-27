@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Free Crash Analysis — market analysis report.">
+  <title>Free Crash Analysis</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Cpath d='M6 22l6-9 6 5 8-12' fill='none' stroke='%2334d399' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: #0f172a; color: #f8fafc; font: 16px/1.6 system-ui, sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: wait; opacity: .6; }
+    :focus-visible { outline: 3px solid #7dd3fc; outline-offset: 4px; }
+    .login { min-height: 100svh; display: grid; place-items: center; padding: 24px; }
+    .card { width: 100%; max-width: 440px; padding: 36px; background: #1e293b; border: 1px solid #334155; border-radius: 18px; box-shadow: 0 24px 70px #02061755; }
+    .mark { width: 48px; height: 48px; display: grid; place-items: center; background: #34d39919; border: 1px solid #34d39955; border-radius: 12px; color: #34d399; font-weight: 800; margin-bottom: 24px; }
+    h1 { font-size: 1.8rem; line-height: 1.2; letter-spacing: -.04em; margin: 0 0 12px; }
+    .muted { color: #a6b5ca; }
+    .intro { margin: 0 0 28px; }
+    label { display: block; margin: 18px 0 7px; font-weight: 600; font-size: .9rem; }
+    input { width: 100%; background: #0f172a; border: 1px solid #475569; border-radius: 8px; padding: 12px 14px; color: #f8fafc; }
+    .primary { width: 100%; margin-top: 26px; border: 0; border-radius: 8px; padding: 12px; background: #34d399; color: #06251d; font-weight: 750; }
+    .primary:hover { background: #6ee7b7; }
+    .status { min-height: 1.6em; margin: 16px 0 0; font-size: .9rem; color: #a6b5ca; }
+    .status.error { color: #fda4af; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px clamp(16px, 3vw, 48px); border-bottom: 1px solid #334155; }
+    .brand { font-weight: 750; letter-spacing: -.025em; }
+    .account { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    #email-display { font-size: .875rem; overflow-wrap: anywhere; }
+    .secondary { flex-shrink: 0; border: 1px solid #475569; padding: 8px 16px; color: #e2e8f0; background: #1e293b; border-radius: 8px; }
+    .report { max-width: 2400px; margin: auto; padding: 24px 12px 40px; }
+    figure { margin: 0 0 16px; }
+    figure img { display: block; width: 100%; height: auto; }
+    figure a { display: block; }
+    .report-note { margin: 0 12px 20px; font-size: .875rem; }
+    #report-status { margin: 0 12px 16px; color: #fda4af; }
+    @media (max-width: 600px) { .card { padding: 26px; } header { align-items: flex-start; } .account { flex-direction: column; align-items: flex-end; gap: 8px; } .report { padding-inline: 4px; } }
+  </style>
+</head>
+<body>
+  <main id="login" class="login">
+    <section class="card" aria-labelledby="login-title">
+      <div class="mark" aria-hidden="true">CA</div>
+      <h1 id="login-title">Free Crash Analysis</h1>
+      <p class="intro muted">Sign in to view the analysis.</p>
+      <form id="login-form">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="username" required placeholder="you@example.com">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button id="sign-in" class="primary" type="submit" disabled>Sign in</button>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite">Connecting to sign-in…</p>
+      <noscript>Enable JavaScript to sign in and view the report.</noscript>
+    </section>
+  </main>
+  <section id="dashboard" hidden aria-label="Analysis report">
+    <header>
+      <span class="brand">Free Crash Analysis</span>
+      <div class="account"><span id="email-display" class="muted"></span><button id="sign-out" class="secondary">Sign out</button></div>
+    </header>
+    <main class="report">
+      <p class="report-note muted">27 September 2026 · Select an image to view it at full size.</p>
+      <p id="report-status" role="status"></p>
+      <div id="images"></div>
+    </main>
+  </section>
+  <script type="module">
+    const SUPABASE_URL = 'https://hacotgliadlmtlokdjpf.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_e_bFKbZU11IwMtFAAU7twQ_nbf4fYxt';
+    const $ = (id) => document.getElementById(id);
+    const descriptions = [
+      'Overview: composite crash risk score and five category scores',
+      'Last analysis and systemic risk score bands',
+      'Category scores: baseline, trajectory, snapshot and net change',
+      'Cross-category synthesis and risk matrix: conflicting dynamics',
+      'Drivers and trend changes, and next observations to watch',
+      'Not financial advice: educational use, data limitations and heuristic score disclaimer',
+      'Copyright 2026 Advanced Systemic Crash Risk Dashboard'
+    ];
+    function message(text, error = false) {
+      $('status').textContent = text;
+      $('status').classList.toggle('error', error);
+    }
+    function render(session) {
+      $('login').hidden = !!session;
+      $('dashboard').hidden = !session;
+      $('email-display').textContent = session?.user?.email || '';
+      $('report-status').textContent = '';
+      if (!session) { $('images').replaceChildren(); return; }
+      if ($('images').children.length) return;
+      descriptions.forEach((description, index) => {
+        const path = `./images/${String(index + 1).padStart(2, '0')}.png`;
+        const figure = document.createElement('figure');
+        const link = document.createElement('a');
+        link.href = path;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.setAttribute('aria-label', `Image ${index + 1}: ${description}. Open full size.`);
+        const img = document.createElement('img');
+        img.src = path;
+        img.alt = `${index + 1}. ${description}`;
+        img.loading = index === 0 ? 'eager' : 'lazy';
+        img.addEventListener('error', () => { $('report-status').textContent = 'An image could not load. Please refresh the page.'; });
+        link.append(img);
+        figure.append(link);
+        $('images').append(figure);
+      });
+    }
+    try {
+      const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2.102.0');
+      const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+      client.auth.onAuthStateChange((_event, session) => render(session));
+      const { data, error } = await client.auth.getSession();
+      if (error) throw error;
+      render(data.session);
+      message('Use your existing account to sign in.');
+      $('sign-in').disabled = false;
+      $('login-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        $('sign-in').disabled = true;
+        $('sign-in').textContent = 'Signing in…';
+        message('');
+        try {
+          const { data, error } = await client.auth.signInWithPassword({ email: $('email').value.trim(), password: $('password').value });
+          if (error) throw error;
+          $('password').value = '';
+          render(data.session);
+          message('');
+        } catch (error) { message(error.message || 'Unable to sign in. Please try again.', true); }
+        finally { $('sign-in').disabled = false; $('sign-in').textContent = 'Sign in'; }
+      });
+      $('sign-out').addEventListener('click', async () => {
+        $('sign-out').disabled = true;
+        try {
+          const { error } = await client.auth.signOut({ scope: 'local' });
+          if (error) throw error;
+          render(null);
+          message('You have signed out.');
+          $('password').value = '';
+          $('email').focus();
+        } catch (error) { $('report-status').textContent = error.message || 'Unable to sign out. Please try again.'; }
+        finally { $('sign-out').disabled = false; }
+      });
+    } catch (error) {
+      message('Unable to connect to sign-in. Check your internet connection and refresh the page.', true);
+      console.error('Authentication initialization failed:', error.message);
+    }
+  </script>
+</body>
+</html>
