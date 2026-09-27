@@ -25,6 +25,9 @@
     input { width: 100%; background: #0f172a; border: 1px solid #475569; border-radius: 8px; padding: 12px 14px; color: #f8fafc; }
     .primary { width: 100%; margin-top: 26px; border: 0; border-radius: 8px; padding: 12px; background: #34d399; color: #06251d; font-weight: 750; }
     .primary:hover { background: #6ee7b7; }
+    .auth-switch { display: flex; gap: 8px; margin-bottom: 24px; }
+    .auth-switch button { flex: 1; }
+    .auth-switch button[aria-pressed="true"] { border-color: #34d399; color: #6ee7b7; background: #12352f; }
     .status { min-height: 1.6em; margin: 16px 0 0; font-size: .9rem; color: #a6b5ca; }
     .status.error { color: #fda4af; }
     header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px clamp(16px, 3vw, 48px); border-bottom: 1px solid #334155; }
@@ -46,7 +49,11 @@
     <section class="card" aria-labelledby="login-title">
       <div class="mark" aria-hidden="true">CA</div>
       <h1 id="login-title">Free Crash Analysis</h1>
-      <p class="intro muted">Sign in to view the analysis.</p>
+      <p id="auth-intro" class="intro muted">Sign in to view the analysis.</p>
+      <div class="auth-switch" role="group" aria-label="Account access">
+        <button id="mode-sign-in" class="secondary" type="button" aria-pressed="true">Sign in</button>
+        <button id="mode-sign-up" class="secondary" type="button" aria-pressed="false">Sign up</button>
+      </div>
       <form id="login-form">
         <label for="email">Email address</label>
         <input id="email" name="email" type="email" autocomplete="username" required placeholder="you@example.com">
@@ -73,6 +80,20 @@
     const SUPABASE_URL = 'https://hacotgliadlmtlokdjpf.supabase.co';
     const SUPABASE_KEY = 'sb_publishable_e_bFKbZU11IwMtFAAU7twQ_nbf4fYxt';
     const $ = (id) => document.getElementById(id);
+    let mode = 'signin';
+    function setMode(nextMode) {
+      mode = nextMode;
+      const signingUp = mode === 'signup';
+      $('mode-sign-in').setAttribute('aria-pressed', String(!signingUp));
+      $('mode-sign-up').setAttribute('aria-pressed', String(signingUp));
+      $('auth-intro').textContent = signingUp ? 'Create an account to view the analysis.' : 'Sign in to view the analysis.';
+      $('sign-in').textContent = signingUp ? 'Create account' : 'Sign in';
+      $('password').autocomplete = signingUp ? 'new-password' : 'current-password';
+      $('password').value = '';
+      message(signingUp ? 'No email confirmation required.' : 'Use your existing account to sign in.');
+    }
+    $('mode-sign-in').addEventListener('click', () => setMode('signin'));
+    $('mode-sign-up').addEventListener('click', () => setMode('signup'));
     const descriptions = [
       'Overview: composite crash risk score and five category scores',
       'Systemic risk score bands',
@@ -118,21 +139,33 @@
       const { data, error } = await client.auth.getSession();
       if (error) throw error;
       render(data.session);
-      message('Use your existing account to sign in.');
+      setMode(mode);
       $('sign-in').disabled = false;
       $('login-form').addEventListener('submit', async (event) => {
         event.preventDefault();
         $('sign-in').disabled = true;
-        $('sign-in').textContent = 'Signing in…';
+        const signingUp = mode === 'signup';
+        $('mode-sign-in').disabled = true;
+        $('mode-sign-up').disabled = true;
+        $('sign-in').textContent = signingUp ? 'Creating account…' : 'Signing in…';
         message('');
         try {
-          const { data, error } = await client.auth.signInWithPassword({ email: $('email').value.trim(), password: $('password').value });
+          const credentials = { email: $('email').value.trim(), password: $('password').value };
+          const { data, error } = signingUp
+            ? await client.auth.signUp(credentials)
+            : await client.auth.signInWithPassword(credentials);
           if (error) throw error;
           $('password').value = '';
           render(data.session);
-          message('');
-        } catch (error) { message(error.message || 'Unable to sign in. Please try again.', true); }
-        finally { $('sign-in').disabled = false; $('sign-in').textContent = 'Sign in'; }
+          if (data.session) message('');
+          else message('Account created, but automatic sign-in was not available. Try signing in. If this continues, contact the site owner.', true);
+        } catch (error) { message(error.message || 'Unable to complete your request. Please try again.', true); }
+        finally {
+          $('sign-in').disabled = false;
+          $('mode-sign-in').disabled = false;
+          $('mode-sign-up').disabled = false;
+          $('sign-in').textContent = signingUp ? 'Create account' : 'Sign in';
+        }
       });
       $('sign-out').addEventListener('click', async () => {
         $('sign-out').disabled = true;
@@ -140,6 +173,7 @@
           const { error } = await client.auth.signOut({ scope: 'local' });
           if (error) throw error;
           render(null);
+          setMode('signin');
           message('You have signed out.');
           $('password').value = '';
           $('email').focus();
