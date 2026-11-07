@@ -9,3 +9,5 @@
 @media(max-width:760px){.auth-page{grid-template-columns:1fr}.auth-story{display:none}.auth-form-side{min-height:100svh;padding:38px 25px 70px}.auth-mobile-brand{display:flex;margin-bottom:47px;font-size:32px}.auth-card h2{font-size:39px}.auth-intro{font-size:13px}.auth-bottom{bottom:15px}.auth-field input{font-size:16px}.header-actions{gap:10px}.search input{width:min(40vw,210px)}.account-menu{gap:7px}.account-menu .avatar{display:none}}
 
 .copyright-notice{font-size:10px;line-height:1.7;color:#8b9784;text-align:center}.auth-bottom.copyright-notice{position:static;max-width:410px;margin:40px 0 0}.app-copyright{margin:22px 0 0}@media(max-width:760px){.copyright-notice{font-size:9px}.auth-bottom.copyright-notice{margin-top:32px}}
+
+.app-version{display:block;margin-top:7px;font-size:10px;letter-spacing:.5px;color:#6e8164}
