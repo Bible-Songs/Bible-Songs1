@@ -3,7 +3,7 @@
   "title": "Let There Be Light",
   "book": "Genesis",
   "chapter": 1,
-  "status": "Synthetic vocal draft + instrumental demo",
+  "status": "Two original synthetic vocal choices + instrumental",
   "description": "An original song adaptation inspired by Genesis 1, with an intentionally robotic synthetic vocal draft and an instrumental version. The reference Scripture is the public-domain Berean Standard Bible.",
   "bpm": 84,
   "key": "C major",
@@ -162,8 +162,40 @@
     "license": "https://berean.bible/terms.htm",
     "composition": "New lyrics, melody and synthesized arrangement prepared for Bible Songs. No external recordings or samples used.",
     "vocal": "Rendered locally with the free eSpeak formant synthesizer and original note timing/DSP. Not a human voice recording or voice clone. No paid APIs used.",
-    "adaptation": "These song lyrics are an adaptation, not the verbatim Berean Standard Bible chapter."
+    "adaptation": "These song lyrics are an adaptation, not the verbatim Berean Standard Bible chapter.",
+    "warmVocal": "Kokoro-82M standard af_heart voice (Apache-2.0 model), run locally with kokoro-onnx (MIT), then processed with original singing DSP. No singer audio input, cloning or fine-tuning."
   },
   "vocalAudio": "originals/genesis-1/let-there-be-light-synthetic-vocal.wav",
-  "vocalPreview": "originals/genesis-1/vocal-preview.wav"
+  "vocalPreview": "originals/genesis-1/vocal-preview.wav",
+  "warmVocalAudio": "originals/genesis-1/let-there-be-light-warm-vocal.wav",
+  "warmVocalPreview": "originals/genesis-1/warm-vocal-preview.wav",
+  "recordings": [
+    {
+      "id": "classic",
+      "name": "Classic synthetic",
+      "badge": "Original voice",
+      "audio": "originals/genesis-1/let-there-be-light-synthetic-vocal.wav",
+      "preview": "originals/genesis-1/vocal-preview.wav",
+      "description": "A deliberately robotic, bright formant-synthesis voice. This is the unchanged original vocal.",
+      "creation": "Created locally with the free eSpeak synthesizer. Each word was fitted to the original melody using pitch and timing adjustments, then mixed with our instrumental track. It uses no singer recording, voice clone or paid service."
+    },
+    {
+      "id": "warm",
+      "name": "Warm expressive",
+      "badge": "New experimental voice",
+      "audio": "originals/genesis-1/let-there-be-light-warm-vocal.wav",
+      "preview": "originals/genesis-1/warm-vocal-preview.wav",
+      "description": "A warmer neural voice with shaped phrases, restrained vibrato and more dynamic contrast. Still an experimental synthetic singing draft.",
+      "creation": "Started with the freely licensed Kokoro speech model’s standard af_heart voice, rendered on this computer. Original processing sustains its vowels to the melody, preserves consonant edges and adds phrase dynamics and light vibrato. It was not trained on the top ten singers or made to copy an identifiable performer; no paid service was used."
+    },
+    {
+      "id": "instrumental",
+      "name": "Instrumental only",
+      "badge": "No vocals",
+      "audio": "originals/genesis-1/let-there-be-light-demo.wav",
+      "preview": "originals/genesis-1/let-there-be-light-demo.wav",
+      "description": "Hear the original melody and accompaniment without a vocal.",
+      "creation": "Created directly from our original note sequence using local waveform synthesis. The editable MIDI is included. No external recordings, samples or paid tools were used."
+    }
+  ]
 }

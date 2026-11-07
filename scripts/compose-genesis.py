@@ -77,6 +77,12 @@ if (OUT/'let-there-be-light-synthetic-vocal.wav').exists():
  song['status']='Synthetic vocal draft + instrumental demo'
  song['description']='An original Genesis 1 song adaptation with a synthetic vocal draft and instrumental demo; BSB reference text.'
  song['rights']['vocal']='Free local eSpeak formant synthesis and original pitch/timing processing. No human voice clone or paid API.'
+if (OUT/'song.json').exists():
+ prior=json.loads((OUT/'song.json').read_text())
+ for field in ['warmVocalAudio','warmVocalPreview','recordings']:
+  if field in prior:song[field]=prior[field]
+ if 'warmVocal' in prior.get('rights',{}):song['rights']['warmVocal']=prior['rights']['warmVocal']
+ if 'recordings' in song:song['status']='Two original synthetic vocal choices + instrumental'
 (OUT/'song.json').write_text(json.dumps(song,indent=2,ensure_ascii=False)+'\n')
 lyrics='LET THERE BE LIGHT\nOriginal song adaptation inspired by Genesis 1\nNot a verbatim Bible translation.\n\n'
 for section in sections:
