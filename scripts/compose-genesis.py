@@ -70,7 +70,13 @@ for kind in range(3):
    entries.extend([(round(at*TICKS),bytes([0x90+kind,note,round(volume*300)])),(round((at+beats)*TICKS),bytes([0x80+kind,note,0]))])
  tracks.append(track(entries))
 (OUT/'let-there-be-light.mid').write_bytes(b'MThd'+struct.pack('>IHHH',6,1,len(tracks),TICKS)+b''.join(tracks))
-song={'id':'genesis-1-light','title':'Let There Be Light','book':'Genesis','chapter':1,'status':'Instrumental demo · vocals pending','description':'An original song adaptation inspired by Genesis 1. This demo plays the original melody and accompaniment; it contains no sung vocals.','bpm':BPM,'key':'C major','meter':'4/4','duration':round(DURATION,3),'audio':'originals/genesis-1/let-there-be-light-demo.wav','midi':'originals/genesis-1/let-there-be-light.mid','lyrics':'originals/genesis-1/lyrics.txt','sections':sections,'rights':{'scripture':'World English Bible Classic — public domain','source':'https://ebible.org/eng-web/GEN01.htm','license':'https://ebible.org/eng-web/copyright.htm','composition':'New lyrics, melody and synthesized arrangement prepared for Bible Songs. No external recordings or samples used.','vocal':'No vocal recording has been produced or licensed yet.','adaptation':'These song lyrics are an adaptation, not the verbatim World English Bible chapter.'}}
+song={'id':'genesis-1-light','title':'Let There Be Light','book':'Genesis','chapter':1,'status':'Instrumental demo · vocals pending','description':'An original song adaptation inspired by Genesis 1. This demo plays the original melody and accompaniment; it contains no sung vocals.','bpm':BPM,'key':'C major','meter':'4/4','duration':round(DURATION,3),'audio':'originals/genesis-1/let-there-be-light-demo.wav','midi':'originals/genesis-1/let-there-be-light.mid','lyrics':'originals/genesis-1/lyrics.txt','sections':sections,'rights':{'scripture':'Berean Standard Bible (BSB) — public domain','source':'https://ebible.org/engbsb/GEN01.htm','license':'https://berean.bible/terms.htm','composition':'New lyrics, melody and synthesized arrangement prepared for Bible Songs. No external recordings or samples used.','vocal':'No vocal recording has been produced or licensed yet.','adaptation':'These song lyrics are an adaptation, not the verbatim Berean Standard Bible chapter.'}}
+if (OUT/'let-there-be-light-synthetic-vocal.wav').exists():
+ song['vocalAudio']='originals/genesis-1/let-there-be-light-synthetic-vocal.wav'
+ song['vocalPreview']='originals/genesis-1/vocal-preview.wav'
+ song['status']='Synthetic vocal draft + instrumental demo'
+ song['description']='An original Genesis 1 song adaptation with a synthetic vocal draft and instrumental demo; BSB reference text.'
+ song['rights']['vocal']='Free local eSpeak formant synthesis and original pitch/timing processing. No human voice clone or paid API.'
 (OUT/'song.json').write_text(json.dumps(song,indent=2,ensure_ascii=False)+'\n')
 lyrics='LET THERE BE LIGHT\nOriginal song adaptation inspired by Genesis 1\nNot a verbatim Bible translation.\n\n'
 for section in sections:
@@ -86,7 +92,7 @@ An original song adaptation inspired by Genesis 1. The lyrics summarize the six 
 - The MIDI contains the editable original melody, accompaniment, bass and tempo. It is the source for a future recording, not a commercial recording of a singer.
 - Suggested vocal: warm, clear, unhurried; prioritize intelligible words. Use the supplied melody rather than copying any artist or existing recording. Adjust syllable placement musically where needed.
 - Future recording: keep a written agreement with the vocalist/producer permitting web playback and distribution. For a generation service, record the exact model, applicable licence/terms, generation date, plan and receipt before publishing. Do not infer rights from a free trial or a credit line.
-- Scripture reference: Genesis 1, World English Bible Classic, https://ebible.org/eng-web/GEN01.htm (public domain; licence: https://ebible.org/eng-web/copyright.htm). The separate scripture.json contains the unmodified chapter text, excluding verse-number markup and footnotes.
+- Scripture reference: Genesis 1, Berean Standard Bible (BSB), https://ebible.org/engbsb/GEN01.htm (public domain; licence: https://berean.bible/terms.htm). The separate scripture.json contains the unmodified chapter text, excluding verse-number markup and footnotes.
 - Musical material was newly composed for this project; no similarity clearance search has been performed. No third-party copyrighted song or artist imitation was requested.
 
 To regenerate the instrumental demo and MIDI, run `python3 scripts/compose-genesis.py`.
