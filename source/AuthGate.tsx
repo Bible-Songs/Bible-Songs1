@@ -106,7 +106,7 @@ export default function AuthGate() {
       <div className="auth-card">
         <a href={base} className="auth-mobile-brand"><Music2 size={23}/>Bible Songs</a>
         <span className="auth-kicker">A MOMENT WITH THE WORD</span><h2>{titles[mode]}</h2>
-        <p className="auth-intro">{mode==='signin'?'Sign in to listen to Scripture and keep your favorite chapters close.':mode==='signup'?'Create your Bible Songs account with your email and password.':mode==='forgot'?'Enter your email and we’ll send you a password reset link.':'Use at least 8 characters to keep your account secure.'}</p>
+        <p className="auth-intro">{mode==='signin'?'Sign in to explore our original Genesis 1 composition and keep your favorites close.':mode==='signup'?'Create your Bible Songs account with your email and password.':mode==='forgot'?'Enter your email and we’ll send you a password reset link.':'Use at least 8 characters to keep your account secure.'}</p>
         <form onSubmit={submit} className="auth-form">
           <fieldset disabled={busy}>
             {mode!=='recovery' && <label htmlFor="auth-email">Email address<div className="auth-field"><Mail size={17}/><input id="auth-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)} required maxLength={254}/></div></label>}
@@ -121,7 +121,7 @@ export default function AuthGate() {
         {mode==='signin'?<p className="auth-switch">New to Bible Songs? <button disabled={busy} onClick={()=>changeMode('signup')}>Create an account</button></p>:mode==='signup'?<p className="auth-switch">Already have an account? <button disabled={busy} onClick={()=>changeMode('signin')}>Sign in</button></p>:mode==='forgot'?<p className="auth-switch"><button disabled={busy} onClick={()=>changeMode('signin')}>Back to sign in</button></p>:<p className="auth-switch"><button disabled={busy} onClick={signOut}><LogOut size={13}/> Cancel and sign out</button></p>}
         <div className="auth-footnote"><LockKeyhole size={13}/> Your account is secured by Supabase.</div>
       </div>
-      <p className="auth-bottom copyright-notice">© 2026 Bible Songs. All rights reserved. Third-party content belongs to its respective owners.<span className="app-version">Version {APP_VERSION}</span></p>
+      <p className="auth-bottom copyright-notice">© 2026 Bible Songs. Public-domain Scripture is excluded from this copyright notice. Third-party assets belong to their respective owners.<span className="app-version">Version {APP_VERSION}</span></p>
     </section>
   </main>;
 }
