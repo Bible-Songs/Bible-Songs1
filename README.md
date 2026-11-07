@@ -1,6 +1,6 @@
 # Bible Songs
 
-An original Bible-inspired music app, beginning with “Let There Be Light,” a Genesis 1 song adaptation. Includes a locally synthesized instrumental demo, original lyrics, MIDI, the full public-domain chapter reference, user favorites, and Supabase sign-in. Sung vocals are pending.
+An original Bible-inspired music app, beginning with “Let There Be Light,” a Genesis 1 song adaptation. Includes a locally synthesized instrumental demo, original lyrics, MIDI, the full public-domain chapter reference, user favorites, and Supabase sign-in. A robotic synthetic vocal draft is available alongside the instrumental version; it uses only free local tools.
 
 ## Development
 
@@ -41,3 +41,9 @@ The version in package.json is displayed on both sign-in and home page footers. 
 See `public/originals/genesis-1/production-notes.md`. Run `python3 scripts/compose-genesis.py` to rebuild the demo. No paid service is called by this script. `song.json` records section timings, lyrics, source text attribution and production status. A future sung recording must have its publishing rights documented before replacing the demo.
 
 Historical commits and local historical snapshots retain the old application as records; the current deployed application contains none of its previous third-party song catalog or stream links.
+
+- **1.0.3** — Switched the complete Genesis 1 reference text, source links and production credits to the public-domain Berean Standard Bible (BSB), selected as the best overall modern-English alternative for NIV readers among the translations reviewed. Original adapted lyrics and instrumental melody are unchanged; they are not labeled as verbatim BSB.
+
+Scripture text: Berean Standard Bible (BSB), dedicated to the public domain on April 30, 2023. All uses freely permitted: https://berean.bible/terms.htm. Text source: https://ebible.org/engbsb/GEN01.htm. See `docs/translation-choice.md` for the comparison and limitations.
+
+The **1.0.3** update also includes a free local synthetic vocal draft, with an instrumental/vocal selector and downloadable audio. This is a deliberately robotic proof of concept, not a natural human vocal. No paid tools or generation services were used. Production details and software licensing notes are in `public/originals/genesis-1/production-notes.md`.
