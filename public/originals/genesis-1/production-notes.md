@@ -20,3 +20,20 @@ The vocal version uses the free, open-source eSpeak formant synthesizer (`en-us+
 The program is installed locally; no eSpeak executable, voicebank or software source is distributed as part of the web app. The app distributes rendered original audio, original lyrics and original code. eSpeak software is GPLv3; program output is covered only when its contents constitute a covered work (GPLv3 section 2): https://www.gnu.org/licenses/gpl-3.0.html. The eCantorix project describes the same general speech-to-singing technique and states that its author believes output may be used for any purpose: https://github.com/divVerent/ecantorix. Its code/examples were not incorporated in this project.
 
 Rebuild the instrumental and metadata with `python3 scripts/compose-genesis.py`, then run `python3 scripts/render-vocals.py` in a Python environment with NumPy installed. Install free eSpeak/eSpeak NG through your package manager. Full vocal mix: `let-there-be-light-synthetic-vocal.wav`; 32-second preview: `vocal-preview.wav`.
+
+## Vocal choice 2 — Warm expressive (version 1.0.4)
+
+This option begins with the standard `af_heart` voice from Kokoro-82M, an openly released Apache-2.0 model. kokoro-onnx 0.6.1 (MIT) and ONNX Runtime 1.22.0 run on this computer; no paid inference provider is involved. Download locations are documented in `scripts/render-warm-vocal.py`'s companion README instructions. Model files, dependencies and intermediate speech caches remain in the sibling `voice-tools/` folder and are not uploaded to GitHub. Only the rendered song and preview are served to users.
+
+The model is a speech synthesizer, not a trained singing model. `scripts/render-warm-vocal.py` generates phoneme-timed phrases, maps words to our existing melody, uses pitch-synchronous overlap-add for note sustains, preserves brief consonant edges, adds mild delayed vibrato and changes phrase volume. This is an experimental speech-to-singing adaptation. It should not be described as natural human singing or equivalent to a leading singer.
+
+The original Classic synthetic WAV is retained byte-for-byte. Choosing another voice restarts playback; the user's choice is stored on that browser. Each vocal has a concise creation note visible in the app's “How each vocal was created” section.
+
+No recordings from the ten singers below were downloaded, used for training or used as voice references. No voice-cloning or fine-tuning was performed. “Warm expressive” is an original option, not a blend of celebrity identities.
+
+Sources and licences:
+- Official Kokoro model card, Apache-2.0: https://huggingface.co/hexgrad/Kokoro-82M
+- Official inference wrapper, MIT: https://github.com/thewh1teagle/kokoro-onnx
+- Model export: https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.1
+- General voice technique reference: https://online.berklee.edu/takenote/singing-lessons-to-develop-your-sound-and-style/
+- Phrasing and dynamic-control curriculum: https://online.berklee.edu/courses/jazz-singing-101

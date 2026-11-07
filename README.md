@@ -47,3 +47,9 @@ Historical commits and local historical snapshots retain the old application as 
 Scripture text: Berean Standard Bible (BSB), dedicated to the public domain on April 30, 2023. All uses freely permitted: https://berean.bible/terms.htm. Text source: https://ebible.org/engbsb/GEN01.htm. See `docs/translation-choice.md` for the comparison and limitations.
 
 The **1.0.3** update also includes a free local synthetic vocal draft, with an instrumental/vocal selector and downloadable audio. This is a deliberately robotic proof of concept, not a natural human vocal. No paid tools or generation services were used. Production details and software licensing notes are in `public/originals/genesis-1/production-notes.md`.
+
+- **1.0.4** — Added vocal choices with a remembered selection: the unchanged Classic synthetic voice, new Warm expressive experimental voice, and instrumental-only playback. Added short in-app notes explaining both vocal creation processes.
+
+### Rebuilding the warm voice (free, offline inference)
+
+Install `kokoro-onnx==0.6.1`, `onnxruntime==1.22.0` and NumPy in a local Python environment. Download the free model `kokoro-v1.0.onnx` and voice file `voices-v1.0.bin` from the official model-files-v1.1 release: https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.1. Default runtime location is the sibling `voice-tools/` directory, with Python packages under `deps/`. Run `python3 scripts/render-warm-vocal.py --runtime-dir ../voice-tools`. The model/runtime files are not part of the published app. See `docs/vocal-design.md` for the performance brief and `public/originals/genesis-1/production-notes.md` for licensing/provenance.
