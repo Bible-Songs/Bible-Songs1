@@ -1,0 +1,167 @@
+{
+  "id": "genesis-1-light",
+  "title": "Let There Be Light",
+  "book": "Genesis",
+  "chapter": 1,
+  "status": "Instrumental demo · vocals pending",
+  "description": "An original song adaptation inspired by Genesis 1. This demo plays the original melody and accompaniment; it contains no sung vocals.",
+  "bpm": 84,
+  "key": "C major",
+  "meter": "4/4",
+  "duration": 230.571,
+  "audio": "originals/genesis-1/let-there-be-light-demo.wav",
+  "midi": "originals/genesis-1/let-there-be-light.mid",
+  "lyrics": "originals/genesis-1/lyrics.txt",
+  "sections": [
+    {
+      "label": "Instrumental introduction",
+      "kind": "intro",
+      "lines": [],
+      "bars": 4,
+      "start": 0.0,
+      "end": 11.429
+    },
+    {
+      "label": "Day one · Light",
+      "reference": "Genesis 1:1–5",
+      "kind": "verse",
+      "lines": [
+        "Before the dawn, before the day,",
+        "The earth lay dark, without a form.",
+        "God’s Spirit moved above the deep;",
+        "God spoke, and light began to dawn."
+      ],
+      "bars": 8,
+      "start": 11.429,
+      "end": 34.286
+    },
+    {
+      "label": "Day two · Sky",
+      "reference": "Genesis 1:6–8",
+      "kind": "verse",
+      "lines": [
+        "God spoke, and stretched the sky above,",
+        "Between the waters, wide and high.",
+        "The evening passed, the morning came;",
+        "A second day beneath the sky."
+      ],
+      "bars": 8,
+      "start": 34.286,
+      "end": 57.143
+    },
+    {
+      "label": "Refrain",
+      "reference": "Inspired by Genesis 1:3, 31",
+      "kind": "chorus",
+      "lines": [
+        "Let there be light, let there be light;",
+        "The Maker speaks, the world awakes.",
+        "And all He made was very good;",
+        "We sing the wonder of His works."
+      ],
+      "bars": 8,
+      "start": 57.143,
+      "end": 80.0
+    },
+    {
+      "label": "Day three · Land and life",
+      "reference": "Genesis 1:9–13",
+      "kind": "verse",
+      "lines": [
+        "The waters drew to seas below;",
+        "The dry land rose where grass would grow.",
+        "Each tree bore fruit, each plant its seed;",
+        "God saw the good in all that grew."
+      ],
+      "bars": 8,
+      "start": 80.0,
+      "end": 102.857
+    },
+    {
+      "label": "Day four · Sun, moon and stars",
+      "reference": "Genesis 1:14–19",
+      "kind": "verse",
+      "lines": [
+        "The greater light would rule the day;",
+        "The lesser light would rule the night.",
+        "The stars would shine, the seasons turn;",
+        "God filled the heavens with their light."
+      ],
+      "bars": 8,
+      "start": 102.857,
+      "end": 125.714
+    },
+    {
+      "label": "Refrain",
+      "reference": "Inspired by Genesis 1:3, 31",
+      "kind": "chorus",
+      "lines": [
+        "Let there be light, let there be light;",
+        "The Maker speaks, the world awakes.",
+        "And all He made was very good;",
+        "We sing the wonder of His works."
+      ],
+      "bars": 8,
+      "start": 125.714,
+      "end": 148.571
+    },
+    {
+      "label": "Day five · Sea and sky",
+      "reference": "Genesis 1:20–23",
+      "kind": "verse",
+      "lines": [
+        "The waters teemed with living things;",
+        "The birds took flight across the sky.",
+        "God blessed their life to fill the seas,",
+        "To spread their wings and multiply."
+      ],
+      "bars": 8,
+      "start": 148.571,
+      "end": 171.429
+    },
+    {
+      "label": "Day six · Life on earth",
+      "reference": "Genesis 1:24–31",
+      "kind": "verse",
+      "lines": [
+        "God made the creatures of the earth,",
+        "And in His image, woman, man.",
+        "He blessed them, gave the earth to tend,",
+        "And plants for food across the land."
+      ],
+      "bars": 8,
+      "start": 171.429,
+      "end": 194.286
+    },
+    {
+      "label": "Refrain",
+      "reference": "Inspired by Genesis 1:3, 31",
+      "kind": "chorus",
+      "lines": [
+        "Let there be light, let there be light;",
+        "The Maker speaks, the world awakes.",
+        "And all He made was very good;",
+        "We sing the wonder of His works."
+      ],
+      "bars": 8,
+      "start": 194.286,
+      "end": 217.143
+    },
+    {
+      "label": "Instrumental ending",
+      "kind": "outro",
+      "lines": [],
+      "bars": 4,
+      "start": 217.143,
+      "end": 228.571
+    }
+  ],
+  "rights": {
+    "scripture": "World English Bible Classic — public domain",
+    "source": "https://ebible.org/eng-web/GEN01.htm",
+    "license": "https://ebible.org/eng-web/copyright.htm",
+    "composition": "New lyrics, melody and synthesized arrangement prepared for Bible Songs. No external recordings or samples used.",
+    "vocal": "No vocal recording has been produced or licensed yet.",
+    "adaptation": "These song lyrics are an adaptation, not the verbatim World English Bible chapter."
+  }
+}
