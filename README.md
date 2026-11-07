@@ -27,3 +27,9 @@ In Supabase **Authentication → URL Configuration**, set Site URL to `https://b
 Sessions persist in session storage for the current browser tab, matching the other project's sign-in pattern. Favorites are stored on this browser under a user-specific key; they do not sync to Supabase. The previous anonymous favorites key is retained locally without assigning it to an arbitrary account.
 
 GitHub Pages serves public static files and the source audio remains public. The sign-in screen manages application sessions, not server-enforced privacy for the audio or source files.
+
+## Version history
+
+The version in package.json is displayed on both sign-in and home page footers. Increase it for each published change and keep package-lock.json aligned. The local pre-push hook also checks that the new version is greater than the currently uploaded version.
+
+- **1.0.1** — Copyright footer and visible version on sign-in and home screens.

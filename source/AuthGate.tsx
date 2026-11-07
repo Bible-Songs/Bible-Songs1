@@ -1,3 +1,4 @@
+import { APP_VERSION } from './version';
 import { useEffect, useState, type FormEvent } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { Music2, Eye, EyeOff, ArrowRight, LockKeyhole, Mail, LogOut } from 'lucide-react';
@@ -120,7 +121,7 @@ export default function AuthGate() {
         {mode==='signin'?<p className="auth-switch">New to Bible Songs? <button disabled={busy} onClick={()=>changeMode('signup')}>Create an account</button></p>:mode==='signup'?<p className="auth-switch">Already have an account? <button disabled={busy} onClick={()=>changeMode('signin')}>Sign in</button></p>:mode==='forgot'?<p className="auth-switch"><button disabled={busy} onClick={()=>changeMode('signin')}>Back to sign in</button></p>:<p className="auth-switch"><button disabled={busy} onClick={signOut}><LogOut size={13}/> Cancel and sign out</button></p>}
         <div className="auth-footnote"><LockKeyhole size={13}/> Your account is secured by Supabase.</div>
       </div>
-      <p className="auth-bottom copyright-notice">© 2026 Bible Songs. All rights reserved. Third-party content belongs to its respective owners.</p>
+      <p className="auth-bottom copyright-notice">© 2026 Bible Songs. All rights reserved. Third-party content belongs to its respective owners.<span className="app-version">Version {APP_VERSION}</span></p>
     </section>
   </main>;
 }
