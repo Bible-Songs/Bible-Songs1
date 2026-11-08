@@ -16,3 +16,9 @@ The model generated the original lyric phrases; original pitch-synchronous proce
 Original adapted lyrics, melody, arrangement and singing processing were prepared for Bible Songs. Scripture reference: [Berean Standard Bible](https://berean.bible/terms.htm), public domain. Lyrics are an original adaptation of Genesis 1, not a verbatim translation.
 
 These credits describe the sources and changes; their creators do not endorse this app or this recording.
+
+## Revision in version 1.0.8
+
+The original speech model and eight-profile composite were retained. The final singing stage now uses local [Praat/Parselmouth](https://github.com/YannickJadoul/Parselmouth) 0.4.7 (GPLv3 software) pulse-synchronous overlap-add, with voicing-aware timing to avoid treating unvoiced consonants as repeated tones. More of the melody's syllable notes are followed, with brief smooth pitch transitions and phrase-level gain. The short echo and added vibrato were removed; accompaniment is lower and a gentle 60–6500 Hz band limit reduces rumble/hiss. These changes target reduced metallic artifacts, clearer lyrics and a livelier delivery. Listener assessment remains necessary.
+
+The libraries run offline and are not included in the web app, which distributes generated audio only. The earlier creation description documents the initial version; this revision supersedes its final singing-processing stage. No additional neural training, paid service or new source recordings were used.

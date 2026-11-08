@@ -164,7 +164,7 @@
     "vocal": "Rendered locally with the free eSpeak formant synthesizer and original note timing/DSP. Not a human voice recording or voice clone. No paid APIs used.",
     "adaptation": "These song lyrics are an adaptation, not the verbatim Berean Standard Bible chapter.",
     "warmVocal": "Kokoro-82M standard af_heart voice (Apache-2.0 model), run locally with kokoro-onnx (MIT), then processed with original singing DSP. No singer audio input, cloning or fine-tuning.",
-    "compositeVocal": "Pretrained Matcha-TTS/VCTK acoustic model and HiFi-GAN vocoder; speaker embeddings locally adapted on a selected LibriTTS-R subset, averaged across eight profiles, then original singing DSP. Machine-generated output. See voice4-credits.md for attribution and changes.",
+    "compositeVocal": "Pretrained Matcha-TTS/VCTK acoustic model and HiFi-GAN vocoder; speaker embeddings locally adapted on a selected LibriTTS-R subset, averaged across eight profiles, then original singing DSP. Machine-generated output. See voice4-credits.md for attribution and changes. Revised in 1.0.8 using local Praat/Parselmouth pulse-synchronous overlap-add, voicing-aware timing, syllable-note contours and echo-free mixing.",
     "voice3": "Local Matcha-TTS full speech-model fine-tuning on a LibriTTS-R training set; checkpoint 500; mean of 124 male-labelled speaker embeddings; original word timing/PSOLA processing. Machine-generated; not singing-trained. Attribution and changes: voice3-credits.md. Revised in 1.0.7 with local Praat/Parselmouth pulse-synchronous overlap-add, voicing-aware timing, syllable-level notes and echo-free mixing."
   },
   "vocalAudio": "originals/genesis-1/let-there-be-light-synthetic-vocal.wav",
@@ -203,11 +203,11 @@
     {
       "id": "composite",
       "name": "Voice 4 · Resonant composite",
-      "badge": "Adapted neural profile",
+      "badge": "Revised · lighter phrasing",
       "audio": "originals/genesis-1/let-there-be-light-composite-vocal.wav",
       "preview": "originals/genesis-1/composite-vocal-preview.wav",
-      "description": "A lower-register composite timbre, shaped to the original melody. An experimental, machine-generated singing draft.",
-      "creation": "Created locally from the free Matcha-TTS speech model. We trained eight small speaker profiles on a selected LibriTTS-R speech subset and averaged them into one composite voice, then fitted the generated words to our melody with original pitch and timing processing. The acoustic model stayed frozen; this is not a separately trained singing model or a voice learned from 1,000 speakers. No named singer was copied and no paid service was used. VCTK and LibriTTS-R speech data are credited below under CC BY 4.0.",
+      "description": "A resonant composite timbre with more melodic movement, clearer consonant timing and an echo-free mix. Experimental synthetic singing.",
+      "creation": "Retains the free Matcha-TTS speech model and eight adapted speaker profiles averaged into one composite voice. The revised vocal uses local Praat processing to follow the voice’s pulses and keep unvoiced consonants close to their original timing while voiced sounds sustain the notes. It follows each syllable’s melody for a livelier delivery, uses gentler phrase-level gain, and removes the short echo and added vibrato. This is synthetic speech processed into song, not a separately trained singer; no paid service was used.",
       "credits": "originals/genesis-1/voice4-credits.md"
     },
     {
