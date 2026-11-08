@@ -174,21 +174,23 @@
   "recordings": [
     {
       "id": "classic",
-      "name": "Classic synthetic",
-      "badge": "Original voice",
-      "audio": "originals/genesis-1/let-there-be-light-synthetic-vocal.wav",
-      "preview": "originals/genesis-1/vocal-preview.wav",
-      "description": "A deliberately robotic, bright formant-synthesis voice. This is the unchanged original vocal.",
-      "creation": "Created locally with the free eSpeak synthesizer. Each word was fitted to the original melody using pitch and timing adjustments, then mixed with our instrumental track. It uses no singer recording, voice clone or paid service."
+      "name": "Voice 1 · Clear male",
+      "badge": "New neural voice",
+      "audio": "originals/genesis-1/let-there-be-light-voice1-revised.m4a",
+      "preview": "originals/genesis-1/voice1-revised-preview.wav",
+      "description": "Synthetic male voice with smooth pitch processing and a register matched to its speech identity.",
+      "creation": "Rendered locally from the free Kokoro am_michael male neural profile. Singing uses the improved Praat pulse-based timing and pitch method, natural consonant timing, phrase-level gain and an echo-free mix. This is an existing licensed speech-model profile processed into singing, not a newly trained singer or celebrity copy. No paid service was used.",
+      "credits": "originals/genesis-1/voice-updates.md"
     },
     {
       "id": "warm",
-      "name": "Warm expressive",
-      "badge": "New experimental voice",
-      "audio": "originals/genesis-1/let-there-be-light-warm-vocal.wav",
-      "preview": "originals/genesis-1/warm-vocal-preview.wav",
-      "description": "A warmer neural voice with shaped phrases, restrained vibrato and more dynamic contrast. Still an experimental synthetic singing draft.",
-      "creation": "Started with the freely licensed Kokoro speech model’s standard af_heart voice, rendered on this computer. Original processing sustains its vowels to the melody, preserves consonant edges and adds phrase dynamics and light vibrato. It was not trained on the top ten singers or made to copy an identifiable performer; no paid service was used."
+      "name": "Voice 2 · Warm expressive",
+      "badge": "Revised singing",
+      "audio": "originals/genesis-1/let-there-be-light-voice2-revised.m4a",
+      "preview": "originals/genesis-1/voice2-revised-preview.wav",
+      "description": "Synthetic female voice with smooth pitch processing and a register matched to its speech identity.",
+      "creation": "Rendered locally from the free Kokoro af_heart female profile. Singing uses the improved Praat pulse-based timing and pitch method, natural consonant timing, phrase-level gain and an echo-free mix. This is an existing licensed speech-model profile processed into singing, not a newly trained singer or celebrity copy. No paid service was used.",
+      "credits": "originals/genesis-1/voice-updates.md"
     },
     {
       "id": "voice3",
@@ -209,6 +211,16 @@
       "description": "A resonant composite timbre with more melodic movement, clearer consonant timing and an echo-free mix. Experimental synthetic singing.",
       "creation": "Retains the free Matcha-TTS speech model and eight adapted speaker profiles averaged into one composite voice. The revised vocal uses local Praat processing to follow the voice’s pulses and keep unvoiced consonants close to their original timing while voiced sounds sustain the notes. It follows each syllable’s melody for a livelier delivery, uses gentler phrase-level gain, and removes the short echo and added vibrato. This is synthetic speech processed into song, not a separately trained singer; no paid service was used. The line “God’s Spirit moved above the deep” now uses phoneme-aware timing to protect consonants and gives “Spirit” a little extra emphasis.",
       "credits": "originals/genesis-1/voice4-credits.md"
+    },
+    {
+      "id": "voice5",
+      "name": "Voice 5 · Bright female",
+      "badge": "New neural voice",
+      "audio": "originals/genesis-1/let-there-be-light-voice5-revised.m4a",
+      "preview": "originals/genesis-1/voice5-revised-preview.wav",
+      "description": "Synthetic female voice with smooth pitch processing and a register matched to its speech identity.",
+      "creation": "Rendered locally from the free Kokoro af_bella female profile. Singing uses the improved Praat pulse-based timing and pitch method, natural consonant timing, phrase-level gain and an echo-free mix. This is an existing licensed speech-model profile processed into singing, not a newly trained singer or celebrity copy. No paid service was used.",
+      "credits": "originals/genesis-1/voice-updates.md"
     },
     {
       "id": "instrumental",
