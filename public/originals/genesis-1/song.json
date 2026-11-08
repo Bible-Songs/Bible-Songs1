@@ -164,7 +164,8 @@
     "vocal": "Rendered locally with the free eSpeak formant synthesizer and original note timing/DSP. Not a human voice recording or voice clone. No paid APIs used.",
     "adaptation": "These song lyrics are an adaptation, not the verbatim Berean Standard Bible chapter.",
     "warmVocal": "Kokoro-82M standard af_heart voice (Apache-2.0 model), run locally with kokoro-onnx (MIT), then processed with original singing DSP. No singer audio input, cloning or fine-tuning.",
-    "compositeVocal": "Pretrained Matcha-TTS/VCTK acoustic model and HiFi-GAN vocoder; speaker embeddings locally adapted on a selected LibriTTS-R subset, averaged across eight profiles, then original singing DSP. Machine-generated output. See voice4-credits.md for attribution and changes."
+    "compositeVocal": "Pretrained Matcha-TTS/VCTK acoustic model and HiFi-GAN vocoder; speaker embeddings locally adapted on a selected LibriTTS-R subset, averaged across eight profiles, then original singing DSP. Machine-generated output. See voice4-credits.md for attribution and changes.",
+    "voice3": "Local Matcha-TTS full speech-model fine-tuning on a LibriTTS-R training set; checkpoint 500; mean of 124 male-labelled speaker embeddings; original word timing/PSOLA processing. Machine-generated; not singing-trained. Attribution and changes: voice3-credits.md."
   },
   "vocalAudio": "originals/genesis-1/let-there-be-light-synthetic-vocal.wav",
   "vocalPreview": "originals/genesis-1/vocal-preview.wav",
@@ -190,13 +191,24 @@
       "creation": "Started with the freely licensed Kokoro speech model’s standard af_heart voice, rendered on this computer. Original processing sustains its vowels to the melody, preserves consonant edges and adds phrase dynamics and light vibrato. It was not trained on the top ten singers or made to copy an identifiable performer; no paid service was used."
     },
     {
+      "id": "voice3",
+      "name": "Voice 3 · Clear ensemble",
+      "badge": "Fine-tuned speech model",
+      "audio": "originals/genesis-1/let-there-be-light-voice3-vocal.wav",
+      "preview": "originals/genesis-1/voice3-vocal-preview.wav",
+      "description": "A smooth composite neural voice with more deliberate source phrasing, fitted to the original melody. Experimental, machine-generated singing.",
+      "creation": "Created from a Matcha-TTS speech model fine-tuned locally using LibriTTS-R. The voice averages 124 male-labelled training profiles, without targeting an individual reader or singer. We generate the words more slowly, then fit them to the song using the same pitch-synchronous processing as voice 4. This is a style of a speech model, not a separately trained singing model or a voice learned locally from 1,000 speakers. All processing is local and free; the speech sources are credited below.",
+      "credits": "originals/genesis-1/voice3-credits.md"
+    },
+    {
       "id": "composite",
       "name": "Voice 4 · Resonant composite",
       "badge": "Adapted neural profile",
       "audio": "originals/genesis-1/let-there-be-light-composite-vocal.wav",
       "preview": "originals/genesis-1/composite-vocal-preview.wav",
       "description": "A lower-register composite timbre, shaped to the original melody. An experimental, machine-generated singing draft.",
-      "creation": "Created locally from the free Matcha-TTS speech model. We trained eight small speaker profiles on a selected LibriTTS-R speech subset and averaged them into one composite voice, then fitted the generated words to our melody with original pitch and timing processing. The acoustic model stayed frozen; this is not a separately trained singing model or a voice learned from 1,000 speakers. No named singer was copied and no paid service was used. VCTK and LibriTTS-R speech data are credited below under CC BY 4.0."
+      "creation": "Created locally from the free Matcha-TTS speech model. We trained eight small speaker profiles on a selected LibriTTS-R speech subset and averaged them into one composite voice, then fitted the generated words to our melody with original pitch and timing processing. The acoustic model stayed frozen; this is not a separately trained singing model or a voice learned from 1,000 speakers. No named singer was copied and no paid service was used. VCTK and LibriTTS-R speech data are credited below under CC BY 4.0.",
+      "credits": "originals/genesis-1/voice4-credits.md"
     },
     {
       "id": "instrumental",
