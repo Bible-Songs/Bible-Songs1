@@ -14,3 +14,9 @@ For this recording, lyric phrases are synthesized more slowly than the initial e
 - **HiFi-GAN** — Jungil Kong, Jaehyeon Kim and Jaekyoung Bae (2020). [Official repository and MIT license](https://github.com/jik876/hifi-gan). Universal V1 checkpoint supplied through the Matcha-TTS releases. The upstream checkpoint does not specify its complete training-data provenance; it is not claimed to have been trained locally.
 
 Original adapted lyrics, melody, arrangement and singing processing were prepared for Bible Songs. Scripture reference: [Berean Standard Bible](https://berean.bible/terms.htm), public domain. The lyrics adapt Genesis 1; they are not the chapter sung verbatim. Source creators do not endorse this app or recording.
+
+## Revision in version 1.0.7
+
+Following listener reports of metallic artifacts, the old custom peak-based singing processing was replaced with local Praat pulse-synchronous overlap-add through [Parselmouth](https://github.com/YannickJadoul/Parselmouth), version 0.4.7 (GPLv3 software). Unvoiced consonants retain their timing where possible, while voiced material supplies most of the extra duration. Each syllable follows its melody note. The mix uses phrase-level gain, lower accompaniment, no added short echo and no synthetic vibrato. Light band limiting removes sub-bass rumble and upper-band hiss. These changes target a less metallic and livelier delivery; perceived quality still needs listener assessment.
+
+Praat and Parselmouth run offline and are not distributed in the web app. The app serves generated audio, not the processing libraries. The model, composite speaker design and speech-dataset attributions above are unchanged. The previous synthesis recipe above describes version 1.0.6; this revision supersedes its singing-processing stage.
