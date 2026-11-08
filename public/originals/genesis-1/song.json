@@ -165,7 +165,7 @@
     "adaptation": "These song lyrics are an adaptation, not the verbatim Berean Standard Bible chapter.",
     "warmVocal": "Kokoro-82M standard af_heart voice (Apache-2.0 model), run locally with kokoro-onnx (MIT), then processed with original singing DSP. No singer audio input, cloning or fine-tuning.",
     "compositeVocal": "Pretrained Matcha-TTS/VCTK acoustic model and HiFi-GAN vocoder; speaker embeddings locally adapted on a selected LibriTTS-R subset, averaged across eight profiles, then original singing DSP. Machine-generated output. See voice4-credits.md for attribution and changes.",
-    "voice3": "Local Matcha-TTS full speech-model fine-tuning on a LibriTTS-R training set; checkpoint 500; mean of 124 male-labelled speaker embeddings; original word timing/PSOLA processing. Machine-generated; not singing-trained. Attribution and changes: voice3-credits.md."
+    "voice3": "Local Matcha-TTS full speech-model fine-tuning on a LibriTTS-R training set; checkpoint 500; mean of 124 male-labelled speaker embeddings; original word timing/PSOLA processing. Machine-generated; not singing-trained. Attribution and changes: voice3-credits.md. Revised in 1.0.7 with local Praat/Parselmouth pulse-synchronous overlap-add, voicing-aware timing, syllable-level notes and echo-free mixing."
   },
   "vocalAudio": "originals/genesis-1/let-there-be-light-synthetic-vocal.wav",
   "vocalPreview": "originals/genesis-1/vocal-preview.wav",
@@ -193,11 +193,11 @@
     {
       "id": "voice3",
       "name": "Voice 3 · Clear ensemble",
-      "badge": "Fine-tuned speech model",
+      "badge": "Revised · lighter phrasing",
       "audio": "originals/genesis-1/let-there-be-light-voice3-vocal.wav",
       "preview": "originals/genesis-1/voice3-vocal-preview.wav",
-      "description": "A smooth composite neural voice with more deliberate source phrasing, fitted to the original melody. Experimental, machine-generated singing.",
-      "creation": "Created from a Matcha-TTS speech model fine-tuned locally using LibriTTS-R. The voice averages 124 male-labelled training profiles, without targeting an individual reader or singer. We generate the words more slowly, then fit them to the song using the same pitch-synchronous processing as voice 4. This is a style of a speech model, not a separately trained singing model or a voice learned locally from 1,000 speakers. All processing is local and free; the speech sources are credited below.",
+      "description": "A composite neural voice with more melodic movement, preserved consonant timing and an echo-free mix. Experimental synthetic singing.",
+      "creation": "Uses the same locally fine-tuned Matcha-TTS speech model and 124-profile composite as before. The revised recording uses free Praat processing to follow the voice’s pulses, retain unvoiced consonants and give voiced sounds more of the sustained duration. It follows each syllable’s melody note for a livelier delivery, avoids per-word volume pumping, and removes the short echo and added vibrato. This is processed synthetic speech, not a human singer or a singing-trained model; the speech sources and tools are credited below.",
       "credits": "originals/genesis-1/voice3-credits.md"
     },
     {

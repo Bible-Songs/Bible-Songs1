@@ -17,3 +17,9 @@ A local Whisper small.en recognizer compared identical song intervals. The selec
 The training watchdog and trainer were deliberately stopped after the last heartbeat at step 1139, with saved checkpoints retained. Later checkpoints had worse sung-word recognition in the matched direct-renderer test despite improving speech loss. No claim is made that more training can never help. Rendering quality and the user's listening judgment determine whether further work is useful.
 
 The full recording lasts 230.571375 seconds; its preview lasts 32 seconds. Technical checks cover audio integrity, existing recording preservation, selector assets, playback, saved selection, credits and mobile layout. This release is an experimental vocal for Mike to review before voice 5 is developed. Voices 5–10 remain queued for separate releases and must be labelled as styles of a shared model whenever that is how they are made.
+
+## Version 1.0.7 quality revision
+
+The user found the previous recording metallic and below the desired voice quality despite its high ASR scores. Those scores did not establish listening quality. The new offline renderer is kept locally at `voice-training/voice3/quality-revision/render_praat.py`; the older public renderer remains an earlier experiment and does not reproduce this revised audio.
+
+The new recipe uses Praat/Parselmouth 0.4.7 for pulse-synchronous overlap-add, voicing-aware timing, full syllable-note contours, and phrase-level gain. It omits the short echo and added vibrato, lowers accompaniment and applies gentle 60–6500 Hz band limiting. It reuses the existing licensed source synthesis without further training. Free local processing only. The goal is reduced metallic artifacts, clearer consonants and a more cheerful melodic delivery; subjective improvement is not established by technical checks.
