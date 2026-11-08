@@ -197,7 +197,7 @@
       "audio": "originals/genesis-1/let-there-be-light-voice3-vocal.wav",
       "preview": "originals/genesis-1/voice3-vocal-preview.wav",
       "description": "A composite neural voice with more melodic movement, preserved consonant timing and an echo-free mix. Experimental synthetic singing.",
-      "creation": "Uses the same locally fine-tuned Matcha-TTS speech model and 124-profile composite as before. The revised recording uses free Praat processing to follow the voice’s pulses, retain unvoiced consonants and give voiced sounds more of the sustained duration. It follows each syllable’s melody note for a livelier delivery, avoids per-word volume pumping, and removes the short echo and added vibrato. This is processed synthetic speech, not a human singer or a singing-trained model; the speech sources and tools are credited below.",
+      "creation": "Uses the same locally fine-tuned Matcha-TTS speech model and 124-profile composite as before. The revised recording uses free Praat processing to follow the voice’s pulses, retain unvoiced consonants and give voiced sounds more of the sustained duration. It follows each syllable’s melody note for a livelier delivery, avoids per-word volume pumping, and removes the short echo and added vibrato. This is processed synthetic speech, not a human singer or a singing-trained model; the speech sources and tools are credited below. The line “God’s Spirit moved above the deep” now uses phoneme-aware timing to protect consonants and gives “Spirit” a little extra emphasis.",
       "credits": "originals/genesis-1/voice3-credits.md"
     },
     {
@@ -207,7 +207,7 @@
       "audio": "originals/genesis-1/let-there-be-light-composite-vocal.wav",
       "preview": "originals/genesis-1/composite-vocal-preview.wav",
       "description": "A resonant composite timbre with more melodic movement, clearer consonant timing and an echo-free mix. Experimental synthetic singing.",
-      "creation": "Retains the free Matcha-TTS speech model and eight adapted speaker profiles averaged into one composite voice. The revised vocal uses local Praat processing to follow the voice’s pulses and keep unvoiced consonants close to their original timing while voiced sounds sustain the notes. It follows each syllable’s melody for a livelier delivery, uses gentler phrase-level gain, and removes the short echo and added vibrato. This is synthetic speech processed into song, not a separately trained singer; no paid service was used.",
+      "creation": "Retains the free Matcha-TTS speech model and eight adapted speaker profiles averaged into one composite voice. The revised vocal uses local Praat processing to follow the voice’s pulses and keep unvoiced consonants close to their original timing while voiced sounds sustain the notes. It follows each syllable’s melody for a livelier delivery, uses gentler phrase-level gain, and removes the short echo and added vibrato. This is synthetic speech processed into song, not a separately trained singer; no paid service was used. The line “God’s Spirit moved above the deep” now uses phoneme-aware timing to protect consonants and gives “Spirit” a little extra emphasis.",
       "credits": "originals/genesis-1/voice4-credits.md"
     },
     {
