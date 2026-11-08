@@ -1,0 +1,2514 @@
+{
+  "defaultContent": "bible",
+  "defaultMode": "reading",
+  "recordings": [
+    {
+      "voiceId": "classic",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "originals/genesis-1/bible-reading-classic.m4a",
+      "duration": 396.1081179138322,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.105759637188209
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.485759637188209,
+          "end": 20.149886621315193
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 20.529886621315192,
+          "end": 25.93455782312925
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 26.314557823129253,
+          "end": 34.26916099773243
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 34.64916099773242,
+          "end": 45.84095238095238
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 46.22095238095238,
+          "end": 55.75392290249433
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 56.133922902494334,
+          "end": 66.02049886621315
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 66.40049886621316,
+          "end": 75.12267573696145
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 75.50267573696145,
+          "end": 88.19655328798186
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 88.57655328798187,
+          "end": 98.63786848072563
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 99.01786848072562,
+          "end": 113.45655328798186
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 113.83655328798186,
+          "end": 128.92984126984126
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 129.30984126984126,
+          "end": 135.19918367346938
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 135.5791836734694,
+          "end": 153.18167800453514
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 153.56167800453514,
+          "end": 164.09419501133786
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 164.47419501133786,
+          "end": 177.80503401360545
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 178.18503401360545,
+          "end": 185.7635827664399
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 186.14358276643992,
+          "end": 197.38607709750568
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 197.76607709750567,
+          "end": 203.61437641723356
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 203.99437641723355,
+          "end": 216.2031746031746
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 216.5831746031746,
+          "end": 235.59256235827664
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 235.97256235827663,
+          "end": 248.5702947845805
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 248.9502947845805,
+          "end": 254.77814058956915
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 255.15814058956917,
+          "end": 271.0289342403628
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 271.40893424036284,
+          "end": 289.8198639455782
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 290.1998639455782,
+          "end": 312.01668934240365
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 312.39668934240365,
+          "end": 323.73138321995464
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 324.11138321995463,
+          "end": 344.01605442176873
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 344.3960544217687,
+          "end": 360.9872108843537
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 361.36721088435377,
+          "end": 382.16503401360546
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 382.54503401360546,
+          "end": 395.7281179138322
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The free local eSpeak en-us+f3 formant voice, retained as the classic synthetic identity. Spoken directly without singing pitch changes or musical accompaniment. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "classic",
+      "content": "bible",
+      "mode": "singing",
+      "audio": "originals/genesis-1/bible-singing-classic.m4a",
+      "duration": 357.8778684807256,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.0
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.449977324263038,
+          "end": 19.37854875283447
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 19.828526077097507,
+          "end": 23.757097505668934
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.207074829931972,
+          "end": 31.349931972789115
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 31.799909297052153,
+          "end": 41.79990929705215
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.24988662131519,
+          "end": 51.17845804988662
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 51.62843537414966,
+          "end": 61.271292517006806
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 61.721269841269844,
+          "end": 69.57841269841269
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 70.02839002267574,
+          "end": 81.0998185941043
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 81.54979591836735,
+          "end": 90.83551020408163
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 91.28548752834467,
+          "end": 103.78548752834467
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 104.2354648526077,
+          "end": 118.16403628117914
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 118.61401360544218,
+          "end": 123.61401360544218
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 124.06399092970521,
+          "end": 137.99256235827664
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 138.4425396825397,
+          "end": 146.65682539682538
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 147.10680272108843,
+          "end": 158.178231292517
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 158.62820861678006,
+          "end": 164.6996371882086
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 165.14961451247166,
+          "end": 175.14961451247166
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 175.5995918367347,
+          "end": 180.5995918367347
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 181.04956916099772,
+          "end": 192.1209977324263
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 192.57097505668935,
+          "end": 210.78526077097504
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 211.2352380952381,
+          "end": 222.30666666666667
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 222.75664399092972,
+          "end": 227.75664399092972
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 228.20662131519273,
+          "end": 242.49233560090704
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 242.94231292517006,
+          "end": 259.72802721088436
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 260.1780045351474,
+          "end": 280.89229024943313
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 281.3422675736961,
+          "end": 292.05655328798184
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 292.5065306122449,
+          "end": 310.0065306122449
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 310.45650793650793,
+          "end": 324.7422222222222
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 325.19219954648526,
+          "end": 345.19219954648526
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 345.6421768707483,
+          "end": 357.4278911564626
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Original melodic setting of the complete BSB text; Praat processing and original accompaniment",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The free local eSpeak en-us+f3 formant voice, retained as the classic synthetic identity. Speech is fitted to an original melody using free local Praat processing, with original accompaniment. This is synthetic singing, not a human performance. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "classic",
+      "content": "lyrics",
+      "mode": "reading",
+      "audio": "originals/genesis-1/lyrics-reading-classic.m4a",
+      "duration": 139.0203628117914,
+      "segments": [
+        {
+          "key": "1-0",
+          "section": "Day one · Light",
+          "start": 0.0,
+          "end": 3.2462131519274378
+        },
+        {
+          "key": "1-1",
+          "section": "Day one · Light",
+          "start": 3.6262131519274377,
+          "end": 7.1203628117913835
+        },
+        {
+          "key": "1-2",
+          "section": "Day one · Light",
+          "start": 7.500362811791383,
+          "end": 10.413061224489796
+        },
+        {
+          "key": "1-3",
+          "section": "Day one · Light",
+          "start": 10.793061224489795,
+          "end": 14.381179138321995
+        },
+        {
+          "key": "2-0",
+          "section": "Day two · Sky",
+          "start": 14.761179138321996,
+          "end": 18.460680272108842
+        },
+        {
+          "key": "2-1",
+          "section": "Day two · Sky",
+          "start": 18.840680272108845,
+          "end": 22.18907029478458
+        },
+        {
+          "key": "2-2",
+          "section": "Day two · Sky",
+          "start": 22.56907029478458,
+          "end": 25.687392290249434
+        },
+        {
+          "key": "2-3",
+          "section": "Day two · Sky",
+          "start": 26.067392290249433,
+          "end": 29.186984126984125
+        },
+        {
+          "key": "3-0",
+          "section": "Refrain",
+          "start": 29.566984126984128,
+          "end": 33.453968253968256
+        },
+        {
+          "key": "3-1",
+          "section": "Refrain",
+          "start": 33.83396825396825,
+          "end": 37.093378684807256
+        },
+        {
+          "key": "3-2",
+          "section": "Refrain",
+          "start": 37.47337868480726,
+          "end": 40.843492063492064
+        },
+        {
+          "key": "3-3",
+          "section": "Refrain",
+          "start": 41.22349206349207,
+          "end": 44.806984126984126
+        },
+        {
+          "key": "4-0",
+          "section": "Day three · Land and life",
+          "start": 45.18698412698413,
+          "end": 48.218639455782316
+        },
+        {
+          "key": "4-1",
+          "section": "Day three · Land and life",
+          "start": 48.59863945578231,
+          "end": 52.639319727891156
+        },
+        {
+          "key": "4-2",
+          "section": "Day three · Land and life",
+          "start": 53.01931972789116,
+          "end": 56.643537414965984
+        },
+        {
+          "key": "4-3",
+          "section": "Day three · Land and life",
+          "start": 57.023537414965986,
+          "end": 60.65859410430839
+        },
+        {
+          "key": "5-0",
+          "section": "Day four · Sun, moon and stars",
+          "start": 61.03859410430839,
+          "end": 64.46571428571428
+        },
+        {
+          "key": "5-1",
+          "section": "Day four · Sun, moon and stars",
+          "start": 64.84571428571428,
+          "end": 68.27981859410431
+        },
+        {
+          "key": "5-2",
+          "section": "Day four · Sun, moon and stars",
+          "start": 68.65981859410431,
+          "end": 72.47700680272109
+        },
+        {
+          "key": "5-3",
+          "section": "Day four · Sun, moon and stars",
+          "start": 72.85700680272109,
+          "end": 76.48698412698413
+        },
+        {
+          "key": "6-0",
+          "section": "Refrain",
+          "start": 76.86698412698412,
+          "end": 80.75396825396825
+        },
+        {
+          "key": "6-1",
+          "section": "Refrain",
+          "start": 81.13396825396825,
+          "end": 84.39337868480726
+        },
+        {
+          "key": "6-2",
+          "section": "Refrain",
+          "start": 84.77337868480726,
+          "end": 88.14349206349206
+        },
+        {
+          "key": "6-3",
+          "section": "Refrain",
+          "start": 88.52349206349206,
+          "end": 92.10698412698413
+        },
+        {
+          "key": "7-0",
+          "section": "Day five · Sea and sky",
+          "start": 92.48698412698413,
+          "end": 95.6754648526077
+        },
+        {
+          "key": "7-1",
+          "section": "Day five · Sea and sky",
+          "start": 96.05546485260771,
+          "end": 99.52893424036282
+        },
+        {
+          "key": "7-2",
+          "section": "Day five · Sea and sky",
+          "start": 99.90893424036281,
+          "end": 103.8082993197279
+        },
+        {
+          "key": "7-3",
+          "section": "Day five · Sea and sky",
+          "start": 104.18829931972789,
+          "end": 107.73469387755102
+        },
+        {
+          "key": "8-0",
+          "section": "Day six · Life on earth",
+          "start": 108.11469387755102,
+          "end": 111.38272108843537
+        },
+        {
+          "key": "8-1",
+          "section": "Day six · Life on earth",
+          "start": 111.76272108843537,
+          "end": 114.75419501133787
+        },
+        {
+          "key": "8-2",
+          "section": "Day six · Life on earth",
+          "start": 115.13419501133787,
+          "end": 118.9027664399093
+        },
+        {
+          "key": "8-3",
+          "section": "Day six · Life on earth",
+          "start": 119.2827664399093,
+          "end": 123.02036281179139
+        },
+        {
+          "key": "9-0",
+          "section": "Refrain",
+          "start": 123.40036281179138,
+          "end": 127.28734693877551
+        },
+        {
+          "key": "9-1",
+          "section": "Refrain",
+          "start": 127.66734693877551,
+          "end": 130.9267573696145
+        },
+        {
+          "key": "9-2",
+          "section": "Refrain",
+          "start": 131.3067573696145,
+          "end": 134.6768707482993
+        },
+        {
+          "key": "9-3",
+          "section": "Refrain",
+          "start": 135.05687074829933,
+          "end": 138.6403628117914
+        }
+      ],
+      "textSource": "Original adapted song lyrics",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "ec98eb16e05b64358fd323b436411272127366f83878e8ddc520232e8afe1e3b",
+      "creation": "The free local eSpeak en-us+f3 formant voice, retained as the classic synthetic identity. Spoken directly without singing pitch changes or musical accompaniment. This speaks our adapted song lyrics, not the complete Bible chapter."
+    },
+    {
+      "voiceId": "warm",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "originals/genesis-1/bible-reading-warm.m4a",
+      "duration": 234.86331065759637,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 2.88
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 3.26,
+          "end": 11.985351473922902
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 12.365351473922903,
+          "end": 15.053378684807257
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 15.433378684807256,
+          "end": 19.678730158730158
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 20.05873015873016,
+          "end": 26.160090702947844
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 26.540090702947847,
+          "end": 32.04412698412698
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 32.424126984126985,
+          "end": 38.3334693877551
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 38.713469387755104,
+          "end": 43.38548752834467
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 43.76548752834467,
+          "end": 50.84816326530612
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 51.22816326530612,
+          "end": 57.24417233560091
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 57.62417233560091,
+          "end": 67.13886621315193
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 67.51886621315192,
+          "end": 77.82290249433106
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 78.20290249433107,
+          "end": 81.14693877551021
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 81.5269387755102,
+          "end": 91.72430839002267
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 92.10430839002268,
+          "end": 97.28834467120181
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 97.66834467120181,
+          "end": 104.85768707482993
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 105.23768707482994,
+          "end": 109.37637188208616
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 109.75637188208617,
+          "end": 115.83637188208617
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 116.21637188208616,
+          "end": 119.01106575963719
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 119.39106575963719,
+          "end": 126.281768707483
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 126.66176870748299,
+          "end": 138.43777777777777
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 138.8177777777778,
+          "end": 146.6684807256236
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 147.0484807256236,
+          "end": 149.88585034013605
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 150.26585034013604,
+          "end": 160.46321995464854
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 160.84321995464853,
+          "end": 172.3632199546485
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 172.74321995464854,
+          "end": 185.32988662131518
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 185.7098866213152,
+          "end": 192.64321995464852
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 193.02321995464854,
+          "end": 204.45791383219955
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 204.83791383219955,
+          "end": 214.69392290249434
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 215.07392290249433,
+          "end": 226.99927437641725
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 227.37927437641724,
+          "end": 234.48331065759638
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The free local Kokoro af_heart speech voice, matching the warm singing option. Spoken directly without singing pitch changes or musical accompaniment. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "warm",
+      "content": "bible",
+      "mode": "singing",
+      "audio": "originals/genesis-1/bible-singing-warm.m4a",
+      "duration": 357.8778684807256,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.0
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.449977324263038,
+          "end": 19.37854875283447
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 19.828526077097507,
+          "end": 23.757097505668934
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.207074829931972,
+          "end": 31.349931972789115
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 31.799909297052153,
+          "end": 41.79990929705215
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.24988662131519,
+          "end": 51.17845804988662
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 51.62843537414966,
+          "end": 61.271292517006806
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 61.721269841269844,
+          "end": 69.57841269841269
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 70.02839002267574,
+          "end": 81.0998185941043
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 81.54979591836735,
+          "end": 90.83551020408163
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 91.28548752834467,
+          "end": 103.78548752834467
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 104.2354648526077,
+          "end": 118.16403628117914
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 118.61401360544218,
+          "end": 123.61401360544218
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 124.06399092970521,
+          "end": 137.99256235827664
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 138.4425396825397,
+          "end": 146.65682539682538
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 147.10680272108843,
+          "end": 158.178231292517
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 158.62820861678006,
+          "end": 164.6996371882086
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 165.14961451247166,
+          "end": 175.14961451247166
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 175.5995918367347,
+          "end": 180.5995918367347
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 181.04956916099772,
+          "end": 192.1209977324263
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 192.57097505668935,
+          "end": 210.78526077097504
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 211.2352380952381,
+          "end": 222.30666666666667
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 222.75664399092972,
+          "end": 227.75664399092972
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 228.20662131519273,
+          "end": 242.49233560090704
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 242.94231292517006,
+          "end": 259.72802721088436
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 260.1780045351474,
+          "end": 280.89229024943313
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 281.3422675736961,
+          "end": 292.05655328798184
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 292.5065306122449,
+          "end": 310.0065306122449
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 310.45650793650793,
+          "end": 324.7422222222222
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 325.19219954648526,
+          "end": 345.19219954648526
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 345.6421768707483,
+          "end": 357.4278911564626
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Original melodic setting of the complete BSB text; Praat processing and original accompaniment",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The free local Kokoro af_heart speech voice, matching the warm singing option. Speech is fitted to an original melody using free local Praat processing, with original accompaniment. This is synthetic singing, not a human performance. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "warm",
+      "content": "lyrics",
+      "mode": "reading",
+      "audio": "originals/genesis-1/lyrics-reading-warm.m4a",
+      "duration": 83.07791383219954,
+      "segments": [
+        {
+          "key": "1-0",
+          "section": "Day one · Light",
+          "start": 0.0,
+          "end": 1.7280272108843537
+        },
+        {
+          "key": "1-1",
+          "section": "Day one · Light",
+          "start": 2.108027210884354,
+          "end": 4.198730158730159
+        },
+        {
+          "key": "1-2",
+          "section": "Day one · Light",
+          "start": 4.578730158730159,
+          "end": 6.562766439909297
+        },
+        {
+          "key": "1-3",
+          "section": "Day one · Light",
+          "start": 6.942766439909297,
+          "end": 8.969433106575964
+        },
+        {
+          "key": "2-0",
+          "section": "Day two · Sky",
+          "start": 9.349433106575963,
+          "end": 11.141451247165532
+        },
+        {
+          "key": "2-1",
+          "section": "Day two · Sky",
+          "start": 11.521451247165533,
+          "end": 13.334784580498866
+        },
+        {
+          "key": "2-2",
+          "section": "Day two · Sky",
+          "start": 13.714784580498867,
+          "end": 15.5281179138322
+        },
+        {
+          "key": "2-3",
+          "section": "Day two · Sky",
+          "start": 15.9081179138322,
+          "end": 17.70013605442177
+        },
+        {
+          "key": "3-0",
+          "section": "Refrain",
+          "start": 18.080136054421768,
+          "end": 20.23482993197279
+        },
+        {
+          "key": "3-1",
+          "section": "Refrain",
+          "start": 20.61482993197279,
+          "end": 22.44952380952381
+        },
+        {
+          "key": "3-2",
+          "section": "Refrain",
+          "start": 22.82952380952381,
+          "end": 24.62154195011338
+        },
+        {
+          "key": "3-3",
+          "section": "Refrain",
+          "start": 25.001541950113378,
+          "end": 26.708208616780045
+        },
+        {
+          "key": "4-0",
+          "section": "Day three · Land and life",
+          "start": 27.088208616780044,
+          "end": 28.90154195011338
+        },
+        {
+          "key": "4-1",
+          "section": "Day three · Land and life",
+          "start": 29.28154195011338,
+          "end": 31.734875283446712
+        },
+        {
+          "key": "4-2",
+          "section": "Day three · Land and life",
+          "start": 32.114875283446715,
+          "end": 34.41891156462585
+        },
+        {
+          "key": "4-3",
+          "section": "Day three · Land and life",
+          "start": 34.79891156462585,
+          "end": 36.654920634920636
+        },
+        {
+          "key": "5-0",
+          "section": "Day four · Sun, moon and stars",
+          "start": 37.03492063492064,
+          "end": 38.84825396825397
+        },
+        {
+          "key": "5-1",
+          "section": "Day four · Sun, moon and stars",
+          "start": 39.228253968253966,
+          "end": 41.10562358276644
+        },
+        {
+          "key": "5-2",
+          "section": "Day four · Sun, moon and stars",
+          "start": 41.485623582766436,
+          "end": 43.618956916099776
+        },
+        {
+          "key": "5-3",
+          "section": "Day four · Sun, moon and stars",
+          "start": 43.99895691609977,
+          "end": 46.02562358276644
+        },
+        {
+          "key": "6-0",
+          "section": "Refrain",
+          "start": 46.40562358276644,
+          "end": 48.560317460317464
+        },
+        {
+          "key": "6-1",
+          "section": "Refrain",
+          "start": 48.94031746031746,
+          "end": 50.77501133786848
+        },
+        {
+          "key": "6-2",
+          "section": "Refrain",
+          "start": 51.15501133786848,
+          "end": 52.94702947845805
+        },
+        {
+          "key": "6-3",
+          "section": "Refrain",
+          "start": 53.32702947845805,
+          "end": 55.033696145124715
+        },
+        {
+          "key": "7-0",
+          "section": "Day five · Sea and sky",
+          "start": 55.41369614512472,
+          "end": 57.355056689342405
+        },
+        {
+          "key": "7-1",
+          "section": "Day five · Sea and sky",
+          "start": 57.7350566893424,
+          "end": 59.59106575963719
+        },
+        {
+          "key": "7-2",
+          "section": "Day five · Sea and sky",
+          "start": 59.97106575963719,
+          "end": 62.06176870748299
+        },
+        {
+          "key": "7-3",
+          "section": "Day five · Sea and sky",
+          "start": 62.44176870748299,
+          "end": 64.5111111111111
+        },
+        {
+          "key": "8-0",
+          "section": "Day six · Life on earth",
+          "start": 64.89111111111112,
+          "end": 66.74712018140589
+        },
+        {
+          "key": "8-1",
+          "section": "Day six · Life on earth",
+          "start": 67.1271201814059,
+          "end": 68.91913832199546
+        },
+        {
+          "key": "8-2",
+          "section": "Day six · Life on earth",
+          "start": 69.29913832199547,
+          "end": 71.32580498866213
+        },
+        {
+          "key": "8-3",
+          "section": "Day six · Life on earth",
+          "start": 71.70580498866214,
+          "end": 73.68984126984127
+        },
+        {
+          "key": "9-0",
+          "section": "Refrain",
+          "start": 74.06984126984128,
+          "end": 76.22453514739229
+        },
+        {
+          "key": "9-1",
+          "section": "Refrain",
+          "start": 76.60453514739228,
+          "end": 78.43922902494332
+        },
+        {
+          "key": "9-2",
+          "section": "Refrain",
+          "start": 78.81922902494331,
+          "end": 80.61124716553287
+        },
+        {
+          "key": "9-3",
+          "section": "Refrain",
+          "start": 80.99124716553288,
+          "end": 82.69791383219955
+        }
+      ],
+      "textSource": "Original adapted song lyrics",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "ec98eb16e05b64358fd323b436411272127366f83878e8ddc520232e8afe1e3b",
+      "creation": "The free local Kokoro af_heart speech voice, matching the warm singing option. Spoken directly without singing pitch changes or musical accompaniment. This speaks our adapted song lyrics, not the complete Bible chapter."
+    },
+    {
+      "voiceId": "voice3",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "originals/genesis-1/bible-reading-voice3.m4a",
+      "duration": 270.53156462585036,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 3.5874829931972787
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 3.967482993197279,
+          "end": 13.952063492063493
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 14.332063492063492,
+          "end": 17.98920634920635
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 18.369206349206348,
+          "end": 23.83750566893424
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 24.21750566893424,
+          "end": 31.613061224489797
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 31.993061224489797,
+          "end": 38.97065759637188
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 39.35065759637188,
+          "end": 46.467573696145124
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 46.847573696145126,
+          "end": 52.59451247165533
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 52.97451247165533,
+          "end": 61.182766439909294
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 61.562766439909296,
+          "end": 68.41265306122449
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 68.79265306122448,
+          "end": 79.41578231292517
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 79.79578231292517,
+          "end": 90.56984126984128
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 90.94984126984127,
+          "end": 94.65342403628118
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 95.03342403628118,
+          "end": 106.78272108843538
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 107.16272108843538,
+          "end": 113.58303854875284
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 113.96303854875283,
+          "end": 122.72857142857143
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 123.10857142857142,
+          "end": 128.12408163265306
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 128.50408163265305,
+          "end": 135.8067573696145
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 136.18675736961453,
+          "end": 139.98321995464852
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 140.3632199546485,
+          "end": 148.72240362811792
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 149.1024036281179,
+          "end": 162.29133786848072
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 162.67133786848072,
+          "end": 171.10018140589568
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 171.48018140589568,
+          "end": 175.21859410430838
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 175.5985941043084,
+          "end": 186.82544217687075
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 187.20544217687075,
+          "end": 199.7558276643991
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 200.1358276643991,
+          "end": 214.25356009070296
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 214.63356009070296,
+          "end": 222.6908843537415
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 223.0708843537415,
+          "end": 235.6328798185941
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 236.01287981859412,
+          "end": 247.23972789115646
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 247.61972789115646,
+          "end": 261.2150113378685
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 261.59501133786847,
+          "end": 270.1515646258503
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The locally fine-tuned Matcha-TTS speech model with its 124-profile composite, matching voice 3. Spoken directly without singing pitch changes or musical accompaniment. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "voice3",
+      "content": "bible",
+      "mode": "singing",
+      "audio": "originals/genesis-1/bible-singing-voice3.m4a",
+      "duration": 357.8778684807256,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.0
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.449977324263038,
+          "end": 19.37854875283447
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 19.828526077097507,
+          "end": 23.757097505668934
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.207074829931972,
+          "end": 31.349931972789115
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 31.799909297052153,
+          "end": 41.79990929705215
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.24988662131519,
+          "end": 51.17845804988662
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 51.62843537414966,
+          "end": 61.271292517006806
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 61.721269841269844,
+          "end": 69.57841269841269
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 70.02839002267574,
+          "end": 81.0998185941043
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 81.54979591836735,
+          "end": 90.83551020408163
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 91.28548752834467,
+          "end": 103.78548752834467
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 104.2354648526077,
+          "end": 118.16403628117914
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 118.61401360544218,
+          "end": 123.61401360544218
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 124.06399092970521,
+          "end": 137.99256235827664
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 138.4425396825397,
+          "end": 146.65682539682538
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 147.10680272108843,
+          "end": 158.178231292517
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 158.62820861678006,
+          "end": 164.6996371882086
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 165.14961451247166,
+          "end": 175.14961451247166
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 175.5995918367347,
+          "end": 180.5995918367347
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 181.04956916099772,
+          "end": 192.1209977324263
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 192.57097505668935,
+          "end": 210.78526077097504
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 211.2352380952381,
+          "end": 222.30666666666667
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 222.75664399092972,
+          "end": 227.75664399092972
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 228.20662131519273,
+          "end": 242.49233560090704
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 242.94231292517006,
+          "end": 259.72802721088436
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 260.1780045351474,
+          "end": 280.89229024943313
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 281.3422675736961,
+          "end": 292.05655328798184
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 292.5065306122449,
+          "end": 310.0065306122449
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 310.45650793650793,
+          "end": 324.7422222222222
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 325.19219954648526,
+          "end": 345.19219954648526
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 345.6421768707483,
+          "end": 357.4278911564626
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Original melodic setting of the complete BSB text; Praat processing and original accompaniment",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The locally fine-tuned Matcha-TTS speech model with its 124-profile composite, matching voice 3. Speech is fitted to an original melody using free local Praat processing, with original accompaniment. This is synthetic singing, not a human performance. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "voice3",
+      "content": "lyrics",
+      "mode": "reading",
+      "audio": "originals/genesis-1/lyrics-reading-voice3.m4a",
+      "duration": 106.22312925170068,
+      "segments": [
+        {
+          "key": "1-0",
+          "section": "Day one · Light",
+          "start": 0.0,
+          "end": 2.2755555555555556
+        },
+        {
+          "key": "1-1",
+          "section": "Day one · Light",
+          "start": 2.6555555555555554,
+          "end": 5.1749206349206345
+        },
+        {
+          "key": "1-2",
+          "section": "Day one · Light",
+          "start": 5.554920634920635,
+          "end": 8.143945578231293
+        },
+        {
+          "key": "1-3",
+          "section": "Day one · Light",
+          "start": 8.523945578231293,
+          "end": 11.298730158730159
+        },
+        {
+          "key": "2-0",
+          "section": "Day two · Sky",
+          "start": 11.67873015873016,
+          "end": 14.407074829931974
+        },
+        {
+          "key": "2-1",
+          "section": "Day two · Sky",
+          "start": 14.787074829931973,
+          "end": 17.201950113378686
+        },
+        {
+          "key": "2-2",
+          "section": "Day two · Sky",
+          "start": 17.581950113378685,
+          "end": 19.915555555555557
+        },
+        {
+          "key": "2-3",
+          "section": "Day two · Sky",
+          "start": 20.295555555555556,
+          "end": 22.629160997732427
+        },
+        {
+          "key": "3-0",
+          "section": "Refrain",
+          "start": 23.009160997732426,
+          "end": 25.807165532879818
+        },
+        {
+          "key": "3-1",
+          "section": "Refrain",
+          "start": 26.187165532879817,
+          "end": 28.811020408163266
+        },
+        {
+          "key": "3-2",
+          "section": "Refrain",
+          "start": 29.191020408163265,
+          "end": 31.43174603174603
+        },
+        {
+          "key": "3-3",
+          "section": "Refrain",
+          "start": 31.811746031746033,
+          "end": 34.24984126984127
+        },
+        {
+          "key": "4-0",
+          "section": "Day three · Land and life",
+          "start": 34.62984126984127,
+          "end": 37.11437641723356
+        },
+        {
+          "key": "4-1",
+          "section": "Day three · Land and life",
+          "start": 37.49437641723356,
+          "end": 40.362040816326534
+        },
+        {
+          "key": "4-2",
+          "section": "Day three · Land and life",
+          "start": 40.74204081632653,
+          "end": 43.9231746031746
+        },
+        {
+          "key": "4-3",
+          "section": "Day three · Land and life",
+          "start": 44.303174603174604,
+          "end": 46.99668934240363
+        },
+        {
+          "key": "5-0",
+          "section": "Day four · Sun, moon and stars",
+          "start": 47.37668934240363,
+          "end": 49.76834467120182
+        },
+        {
+          "key": "5-1",
+          "section": "Day four · Sun, moon and stars",
+          "start": 50.14834467120181,
+          "end": 52.59804988662132
+        },
+        {
+          "key": "5-2",
+          "section": "Day four · Sun, moon and stars",
+          "start": 52.978049886621314,
+          "end": 55.70639455782313
+        },
+        {
+          "key": "5-3",
+          "section": "Day four · Sun, moon and stars",
+          "start": 56.08639455782313,
+          "end": 58.67541950113379
+        },
+        {
+          "key": "6-0",
+          "section": "Refrain",
+          "start": 59.055419501133784,
+          "end": 61.853424036281176
+        },
+        {
+          "key": "6-1",
+          "section": "Refrain",
+          "start": 62.23342403628118,
+          "end": 64.85727891156462
+        },
+        {
+          "key": "6-2",
+          "section": "Refrain",
+          "start": 65.23727891156463,
+          "end": 67.47800453514739
+        },
+        {
+          "key": "6-3",
+          "section": "Refrain",
+          "start": 67.85800453514739,
+          "end": 70.29609977324263
+        },
+        {
+          "key": "7-0",
+          "section": "Day five · Sea and sky",
+          "start": 70.67609977324263,
+          "end": 73.35800453514739
+        },
+        {
+          "key": "7-1",
+          "section": "Day five · Sea and sky",
+          "start": 73.7380045351474,
+          "end": 76.31541950113379
+        },
+        {
+          "key": "7-2",
+          "section": "Day five · Sea and sky",
+          "start": 76.69541950113378,
+          "end": 79.53986394557823
+        },
+        {
+          "key": "7-3",
+          "section": "Day five · Sea and sky",
+          "start": 79.91986394557823,
+          "end": 82.52049886621315
+        },
+        {
+          "key": "8-0",
+          "section": "Day six · Life on earth",
+          "start": 82.90049886621316,
+          "end": 85.32698412698413
+        },
+        {
+          "key": "8-1",
+          "section": "Day six · Life on earth",
+          "start": 85.70698412698412,
+          "end": 87.98253968253968
+        },
+        {
+          "key": "8-2",
+          "section": "Day six · Life on earth",
+          "start": 88.36253968253968,
+          "end": 91.13732426303855
+        },
+        {
+          "key": "8-3",
+          "section": "Day six · Life on earth",
+          "start": 91.51732426303855,
+          "end": 94.22244897959183
+        },
+        {
+          "key": "9-0",
+          "section": "Refrain",
+          "start": 94.60244897959184,
+          "end": 97.40045351473923
+        },
+        {
+          "key": "9-1",
+          "section": "Refrain",
+          "start": 97.78045351473924,
+          "end": 100.40430839002268
+        },
+        {
+          "key": "9-2",
+          "section": "Refrain",
+          "start": 100.78430839002267,
+          "end": 103.02503401360545
+        },
+        {
+          "key": "9-3",
+          "section": "Refrain",
+          "start": 103.40503401360544,
+          "end": 105.84312925170067
+        }
+      ],
+      "textSource": "Original adapted song lyrics",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "ec98eb16e05b64358fd323b436411272127366f83878e8ddc520232e8afe1e3b",
+      "creation": "The locally fine-tuned Matcha-TTS speech model with its 124-profile composite, matching voice 3. Spoken directly without singing pitch changes or musical accompaniment. This speaks our adapted song lyrics, not the complete Bible chapter."
+    },
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "originals/genesis-1/bible-reading-composite.m4a",
+      "duration": 266.24748299319725,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 3.900952380952381
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 4.280952380952381,
+          "end": 14.033333333333333
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 14.413333333333334,
+          "end": 18.30267573696145
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 18.68267573696145,
+          "end": 24.116145124716553
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 24.496145124716552,
+          "end": 31.926530612244896
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 32.3065306122449,
+          "end": 39.179637188208616
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 39.55963718820862,
+          "end": 46.81587301587302
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 47.19587301587302,
+          "end": 53.116961451247164
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 53.49696145124717,
+          "end": 61.55428571428571
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 61.934285714285714,
+          "end": 68.83061224489796
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 69.21061224489796,
+          "end": 79.41578231292517
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 79.79578231292517,
+          "end": 90.30281179138322
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 90.68281179138322,
+          "end": 94.52571428571429
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 94.90571428571428,
+          "end": 106.57374149659864
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 106.95374149659864,
+          "end": 113.45532879818595
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 113.83532879818594,
+          "end": 122.33383219954649
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 122.71383219954649,
+          "end": 127.93832199546485
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 128.31832199546486,
+          "end": 135.36557823129252
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 135.7455782312925,
+          "end": 139.77424036281178
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 140.1542403628118,
+          "end": 148.37410430839003
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 148.75410430839003,
+          "end": 161.45541950113378
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 161.8354195011338,
+          "end": 170.3107029478458
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 170.6907029478458,
+          "end": 174.66131519274376
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 175.04131519274375,
+          "end": 185.90825396825397
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 186.28825396825397,
+          "end": 198.35102040816327
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 198.73102040816326,
+          "end": 211.95478458049885
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 212.33478458049888,
+          "end": 220.32244897959183
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 220.70244897959185,
+          "end": 232.73038548752834
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 233.11038548752833,
+          "end": 243.90766439909297
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 244.28766439909296,
+          "end": 257.23278911564626
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 257.61278911564625,
+          "end": 265.86748299319726
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The Matcha-TTS speech model with eight locally adapted speaker profiles averaged together, matching voice 4. Spoken directly without singing pitch changes or musical accompaniment. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "singing",
+      "audio": "originals/genesis-1/bible-singing-composite.m4a",
+      "duration": 357.8778684807256,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.0
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.449977324263038,
+          "end": 19.37854875283447
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 19.828526077097507,
+          "end": 23.757097505668934
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.207074829931972,
+          "end": 31.349931972789115
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 31.799909297052153,
+          "end": 41.79990929705215
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.24988662131519,
+          "end": 51.17845804988662
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 51.62843537414966,
+          "end": 61.271292517006806
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 61.721269841269844,
+          "end": 69.57841269841269
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 70.02839002267574,
+          "end": 81.0998185941043
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 81.54979591836735,
+          "end": 90.83551020408163
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 91.28548752834467,
+          "end": 103.78548752834467
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 104.2354648526077,
+          "end": 118.16403628117914
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 118.61401360544218,
+          "end": 123.61401360544218
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 124.06399092970521,
+          "end": 137.99256235827664
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 138.4425396825397,
+          "end": 146.65682539682538
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 147.10680272108843,
+          "end": 158.178231292517
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 158.62820861678006,
+          "end": 164.6996371882086
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 165.14961451247166,
+          "end": 175.14961451247166
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 175.5995918367347,
+          "end": 180.5995918367347
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 181.04956916099772,
+          "end": 192.1209977324263
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 192.57097505668935,
+          "end": 210.78526077097504
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 211.2352380952381,
+          "end": 222.30666666666667
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 222.75664399092972,
+          "end": 227.75664399092972
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 228.20662131519273,
+          "end": 242.49233560090704
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 242.94231292517006,
+          "end": 259.72802721088436
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 260.1780045351474,
+          "end": 280.89229024943313
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 281.3422675736961,
+          "end": 292.05655328798184
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 292.5065306122449,
+          "end": 310.0065306122449
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 310.45650793650793,
+          "end": 324.7422222222222
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 325.19219954648526,
+          "end": 345.19219954648526
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 345.6421768707483,
+          "end": 357.4278911564626
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Original melodic setting of the complete BSB text; Praat processing and original accompaniment",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "The Matcha-TTS speech model with eight locally adapted speaker profiles averaged together, matching voice 4. Speech is fitted to an original melody using free local Praat processing, with original accompaniment. This is synthetic singing, not a human performance. The complete Genesis 1 chapter uses the exact public-domain Berean Standard Bible words."
+    },
+    {
+      "voiceId": "composite",
+      "content": "lyrics",
+      "mode": "reading",
+      "audio": "originals/genesis-1/lyrics-reading-composite.m4a",
+      "duration": 118.73868480725623,
+      "segments": [
+        {
+          "key": "1-0",
+          "section": "Day one · Light",
+          "start": 0.0,
+          "end": 2.6354648526077096
+        },
+        {
+          "key": "1-1",
+          "section": "Day one · Light",
+          "start": 3.01546485260771,
+          "end": 5.894739229024943
+        },
+        {
+          "key": "1-2",
+          "section": "Day one · Light",
+          "start": 6.274739229024943,
+          "end": 9.16562358276644
+        },
+        {
+          "key": "1-3",
+          "section": "Day one · Light",
+          "start": 9.54562358276644,
+          "end": 12.726757369614512
+        },
+        {
+          "key": "2-0",
+          "section": "Day two · Sky",
+          "start": 13.106757369614513,
+          "end": 16.276281179138323
+        },
+        {
+          "key": "2-1",
+          "section": "Day two · Sky",
+          "start": 16.656281179138322,
+          "end": 19.52394557823129
+        },
+        {
+          "key": "2-2",
+          "section": "Day two · Sky",
+          "start": 19.903945578231294,
+          "end": 22.632290249433108
+        },
+        {
+          "key": "2-3",
+          "section": "Day two · Sky",
+          "start": 23.012290249433107,
+          "end": 25.62453514739229
+        },
+        {
+          "key": "3-0",
+          "section": "Refrain",
+          "start": 26.00453514739229,
+          "end": 29.150839002267574
+        },
+        {
+          "key": "3-1",
+          "section": "Refrain",
+          "start": 29.530839002267573,
+          "end": 32.39850340136054
+        },
+        {
+          "key": "3-2",
+          "section": "Refrain",
+          "start": 32.778503401360545,
+          "end": 35.42557823129252
+        },
+        {
+          "key": "3-3",
+          "section": "Refrain",
+          "start": 35.805578231292515,
+          "end": 38.56875283446712
+        },
+        {
+          "key": "4-0",
+          "section": "Day three · Land and life",
+          "start": 38.94875283446712,
+          "end": 41.746757369614514
+        },
+        {
+          "key": "4-1",
+          "section": "Day three · Land and life",
+          "start": 42.12675736961451,
+          "end": 45.57492063492064
+        },
+        {
+          "key": "4-2",
+          "section": "Day three · Land and life",
+          "start": 45.95492063492063,
+          "end": 49.635283446712016
+        },
+        {
+          "key": "4-3",
+          "section": "Day three · Land and life",
+          "start": 50.01528344671202,
+          "end": 53.09192743764172
+        },
+        {
+          "key": "5-0",
+          "section": "Day four · Sun, moon and stars",
+          "start": 53.471927437641725,
+          "end": 56.1190022675737
+        },
+        {
+          "key": "5-1",
+          "section": "Day four · Sun, moon and stars",
+          "start": 56.499002267573694,
+          "end": 59.22734693877551
+        },
+        {
+          "key": "5-2",
+          "section": "Day four · Sun, moon and stars",
+          "start": 59.60734693877551,
+          "end": 62.60272108843537
+        },
+        {
+          "key": "5-3",
+          "section": "Day four · Sun, moon and stars",
+          "start": 62.982721088435376,
+          "end": 65.94326530612246
+        },
+        {
+          "key": "6-0",
+          "section": "Refrain",
+          "start": 66.32326530612245,
+          "end": 69.46956916099774
+        },
+        {
+          "key": "6-1",
+          "section": "Refrain",
+          "start": 69.84956916099773,
+          "end": 72.7172335600907
+        },
+        {
+          "key": "6-2",
+          "section": "Refrain",
+          "start": 73.0972335600907,
+          "end": 75.74430839002268
+        },
+        {
+          "key": "6-3",
+          "section": "Refrain",
+          "start": 76.12430839002268,
+          "end": 78.88748299319728
+        },
+        {
+          "key": "7-0",
+          "section": "Day five · Sea and sky",
+          "start": 79.26748299319728,
+          "end": 82.12353741496598
+        },
+        {
+          "key": "7-1",
+          "section": "Day five · Sea and sky",
+          "start": 82.50353741496599,
+          "end": 85.40603174603174
+        },
+        {
+          "key": "7-2",
+          "section": "Day five · Sea and sky",
+          "start": 85.78603174603174,
+          "end": 89.02521541950114
+        },
+        {
+          "key": "7-3",
+          "section": "Day five · Sea and sky",
+          "start": 89.40521541950113,
+          "end": 92.3077097505669
+        },
+        {
+          "key": "8-0",
+          "section": "Day six · Life on earth",
+          "start": 92.6877097505669,
+          "end": 95.47410430839003
+        },
+        {
+          "key": "8-1",
+          "section": "Day six · Life on earth",
+          "start": 95.85410430839002,
+          "end": 98.53600907029478
+        },
+        {
+          "key": "8-2",
+          "section": "Day six · Life on earth",
+          "start": 98.91600907029479,
+          "end": 102.00426303854876
+        },
+        {
+          "key": "8-3",
+          "section": "Day six · Life on earth",
+          "start": 102.38426303854875,
+          "end": 105.4144671201814
+        },
+        {
+          "key": "9-0",
+          "section": "Refrain",
+          "start": 105.79446712018141,
+          "end": 108.9407709750567
+        },
+        {
+          "key": "9-1",
+          "section": "Refrain",
+          "start": 109.32077097505669,
+          "end": 112.18843537414966
+        },
+        {
+          "key": "9-2",
+          "section": "Refrain",
+          "start": 112.56843537414966,
+          "end": 115.21551020408164
+        },
+        {
+          "key": "9-3",
+          "section": "Refrain",
+          "start": 115.59551020408163,
+          "end": 118.35868480725624
+        }
+      ],
+      "textSource": "Original adapted song lyrics",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "ec98eb16e05b64358fd323b436411272127366f83878e8ddc520232e8afe1e3b",
+      "creation": "The Matcha-TTS speech model with eight locally adapted speaker profiles averaged together, matching voice 4. Spoken directly without singing pitch changes or musical accompaniment. This speaks our adapted song lyrics, not the complete Bible chapter."
+    }
+  ]
+}
