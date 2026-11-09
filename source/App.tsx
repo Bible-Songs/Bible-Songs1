@@ -4,7 +4,8 @@ import {Music2,Compass,Heart,BookOpen,Search,Play,Pause,Volume2,Repeat,ArrowUpRi
 import song from '../public/originals/genesis-1/song.json';
 import scripture from '../public/originals/genesis-1/scripture.json';
 import listening from '../public/originals/genesis-1/listening.json';
-type Segment={key:string;verse?:number;section?:string;text?:string;start:number;end:number};
+type SentenceCue={offset:number;start:number};
+type Segment={key:string;verse?:number;section?:string;text?:string;start:number;end:number;sentenceCues?:SentenceCue[]};
 type ReadingTrack={voiceId:string;content:string;mode:string;audio:string;duration:number;segments:Segment[];creation:string};
 const listeningTracks=listening.recordings as ReadingTrack[];
 const base=import.meta.env.BASE_URL;
@@ -20,13 +21,26 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  const selectedAudio=content==='lyrics'&&mode==='singing'?selectedRecording.audio:selectedEntry?.audio||'';
  const isReading=mode==='reading',isBible=content==='bible';
  const trackTitle=isBible?'Genesis 1':'Let There Be Light';
- const currentSegment=selectedEntry?.segments.find(s=>time>=s.start&&time<s.end);
+ const cueTime=time+.001;
+ const currentSegment=selectedEntry?.segments.find(s=>cueTime>=s.start&&cueTime<s.end);
  const vocal=selectedRecording.id!=='instrumental';
  const audio=useRef<HTMLAudioElement>(null),reader=useRef<HTMLElement>(null);
  useEffect(()=>{try{setLiked(localStorage.getItem(key)==='true');const saved=localStorage.getItem(key+':voice');if(song.recordings.some(r=>r.id===saved))setRecording(saved!)}catch{}},[key]);
  useEffect(()=>{if(audio.current)audio.current.volume=volume},[volume]);
  useEffect(()=>{setTime(0);setPlaying(false);setDuration(selectedEntry?.duration||song.duration);audio.current?.pause();audio.current?.load();try{localStorage.setItem(key+':voice',selectedRecording.id)}catch{}},[selectedAudio,key]);
- async function toggle(){if(!audio.current)return;if(playing)audio.current.pause();else try{await audio.current.play();setMessage('')}catch{setMessage('The audio could not start. Please try again.')}}
+ async function play(track:HTMLAudioElement){
+  try{await track.play();setMessage('')}catch(error){
+   if(!(error instanceof DOMException&&error.name==='AbortError'))setMessage('The audio could not start. Please try again.');
+  }
+ }
+ function toggle(){const track=audio.current;if(track){if(playing)track.pause();else void play(track);}}
+ function playFrom(start:number){
+  const track=audio.current;
+  if(!track)return;
+  track.currentTime=start;
+  setTime(start);
+  void play(track);
+ }
  function favorite(){const next=!liked;setLiked(next);try{localStorage.setItem(key,String(next))}catch{setMessage('Favorites could not be saved on this browser.')}}
  function read(){setContent('bible');setMode('reading');setTab('Discover');requestAnimationFrame(()=>reader.current?.scrollIntoView({behavior:'smooth',block:'start'}))}
  const visible=(tab!=='My favorites'||liked)&&('genesis 1 let there be light'.includes(query.toLowerCase()));
@@ -37,7 +51,39 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  {visible?<><section className="hero" style={{backgroundImage:`linear-gradient(90deg,rgba(15,37,31,.79),rgba(15,37,31,.08)),url(${photo})`}}><div className="hero-content"><span className="hero-label"><span/> GENESIS 1 · {isBible?'BEREAN STANDARD BIBLE':'ORIGINAL SONG LYRICS'}</span><h2>{isBible?<>The story<br/>of creation.</>:<>Let There<br/>Be Light.</>}</h2><p>{vocal?selectedRecording.name:'Instrumental only'} <span>·</span> {isReading?'Spoken reading':'Musical setting · C major · 84 BPM'}</p><button className="cream-button" onClick={toggle}>{playing?<Pause size={17}/>:<Play size={17} fill="currentColor"/>}{playing?'Pause':isReading?'Play reading':vocal?'Play singing':'Play instrumental'}</button></div><div className="hero-caption">{isBible?'GENESIS 1 · COMPLETE CHAPTER':'OUR ORIGINAL ADAPTATION'}</div></section>
  <section className="original-status"><Music2 size={22}/><div><strong>Choose the voice for your listening moment</strong><p>{isBible?'Hear the complete Genesis 1 chapter in the Berean Standard Bible, read or set to an original melody. The words are the Bible text.':'These original song lyrics adapt Genesis 1; they are not the complete chapter word for word.'} All voices are synthetic and made with free local tools.</p></div><button className={liked?'liked':''} onClick={favorite} aria-label={liked?'Remove favorite':'Save favorite'}><Heart size={21} fill={liked?'currentColor':'none'}/></button></section>
  <section className="listen-panel vocal-choice-panel"><div className="section-heading"><div><h2>Your choice of vocal</h2><p>Select the words, choose reading or singing, then choose a voice.</p></div><div className="listening-controls"><div className="listening-toggle content-toggle" role="group" aria-label="Choose text"><button type="button" aria-pressed={isBible} onClick={()=>setContent('bible')}>Bible (Berean Standard Bible)</button><button type="button" aria-pressed={!isBible} onClick={()=>setContent('lyrics')}>Song lyrics</button></div><div className="listening-toggle" role="group" aria-label="Choose reading or singing"><button type="button" aria-pressed={isReading} onClick={()=>setMode('reading')}>Reading</button><button type="button" aria-pressed={!isReading} onClick={()=>setMode('singing')}>Singing</button></div></div></div><fieldset className="voice-choices"><legend className="visually-hidden">Choose a vocal or instrumental recording</legend>{availableRecordings.map(option=><label className={'voice-option '+(recording===option.id?'chosen':'')} key={option.id}><div className="voice-option-heading"><input type="radio" name="recording" value={option.id} checked={selectedRecording.id===option.id} onChange={()=>setRecording(option.id)}/><strong>{option.name}</strong><span>{option.badge}</span></div><p>{isReading?'Hear '+option.name.replace(/^Voice [0-9]+ · /,'')+' as a spoken reading, without music.':isBible?'Hear the complete Bible chapter set to an original melody in this synthetic voice.':option.description}</p></label>)}</fieldset><details className="voice-creation-notes"><summary>How each voice was created</summary>{song.recordings.filter(r=>r.id!=='instrumental').map(option=><article key={option.id}><h3>{option.name}</h3><p>{content==='lyrics'&&mode==='singing'?option.creation:listeningTracks.find(t=>t.voiceId===option.id&&t.content===content&&t.mode===mode)?.creation||option.creation}</p></article>)}<p className="voice-note">These are original synthetic options, not celebrity sound-alikes or artist-endorsed recordings. The neural voices are experimental and may still sound artificial.</p></details></section>
- <section className="listen-panel original-reader" ref={reader}><div className="section-heading"><div><h2>{isBible?'Genesis 1 — Berean Standard Bible':'The song lyrics'}</h2><p>{isBible?'Complete chapter · verses 1–31 · public-domain text':'An original adaptation of Genesis 1'}</p></div><Headphones size={23}/></div> {!isBible?<><p className="reader-note">Original adaptation · Follow these words in any synthetic vocal draft. Read Genesis 1 for the complete BSB chapter.</p><div className="lyric-sections">{song.sections.filter(s=>s.lines.length).map((s,i)=><article key={i} className={playing&&currentSection===s?'current-section':''}><span>{s.label}</span><small>{s.reference}</small><p>{s.lines.map((line,j)=><span key={j}>{line}<br/></span>)}</p></article>)}</div></>:<><p className="reader-note">Berean Standard Bible (BSB) · Public-domain text · Complete chapter, verses 1–31</p><div className="scripture-text">{scripture.verses.map(v=><p key={v.verse} className={currentSegment?.verse===v.verse?'current-verse':''}><sup>{v.verse}</sup>{v.text}</p>)}</div><a className="source-link" href={scripture.source} target="_blank" rel="noreferrer">View the Scripture source <ArrowUpRight size={14}/></a></>}
+ <section className="listen-panel original-reader" ref={reader}>
+  <div className="section-heading"><div>
+   <h2>{isBible?'Genesis 1 — Berean Standard Bible':'The song lyrics'}</h2>
+   <p>{isBible?'Complete chapter · verses 1–31 · public-domain text':'An original adaptation of Genesis 1'}</p>
+  </div><Headphones size={23}/></div>
+  {isBible?<><p className="reader-note">Tap or click a sentence to play from there.</p>
+   <div className="scripture-text">{scripture.verses.map(verse=>{
+    const segment=selectedEntry?.segments.find(item=>item.verse===verse.verse);
+    const cues=segment?[{offset:0,start:segment.start},...(segment.sentenceCues??[])]:[];
+    return <p key={verse.verse}><sup>{verse.verse}</sup>{cues.length?cues.map((cue,index)=>{
+     const next=cues[index+1];
+     const active=segment===currentSegment&&cueTime>=cue.start&&(!next||cueTime<next.start);
+     return <span key={cue.offset}><button type="button" className="text-cue" aria-current={active?'true':undefined}
+      onClick={()=>playFrom(cue.start)}>{verse.text.slice(cue.offset,next?.offset).trimEnd()}</button>{next?' ':null}</span>;
+    }):verse.text}</p>;
+   })}</div>
+   <a className="source-link" href={scripture.source} target="_blank" rel="noreferrer">View the Scripture source <ArrowUpRight size={14}/></a>
+  </>:<><p className="reader-note">Tap or click a lyric line to play from there. These lyrics are an original adaptation of Genesis 1.</p>
+   <div className="lyric-sections">{song.sections.map((section,index)=>section.lines.length>0&&
+    <article key={index} className={playing&&currentSection===section?'current-section':''}>
+     <span>{section.label}</span><small>{section.reference}</small>
+     <p>{section.lines.map((line,lineIndex)=>{
+      const segment=selectedEntry?.segments.find(item=>item.key===`${index}-${lineIndex}`);
+      const lineDuration=(section.end-section.start)/section.lines.length;
+      const start=isReading?segment?.start:section.start+lineIndex*lineDuration;
+      const end=isReading?segment?.end:section.start+(lineIndex+1)*lineDuration;
+      const active=start!==undefined&&end!==undefined&&cueTime>=start&&cueTime<end;
+      return <span key={lineIndex}>{start===undefined?line:<button type="button" className="text-cue"
+       aria-current={active?'true':undefined} onClick={()=>playFrom(start)}>{line}</button>}<br/></span>;
+     })}</p>
+    </article>
+   )}</div>
+  </>}
  </section><section className="listen-panel"><div className="section-heading"><div><h2>{isBible?'About this chapter':'From composition to song'}</h2><p>{isBible?'The complete Berean Standard Bible text, in your chosen voice.':'The starting point for our own recording.'}</p></div></div><div className="production-grid"><div><span className="step-number">01</span><h3>{isBible?'Public-domain Scripture':'Words & melody'}</h3><p>{isBible?'Genesis 1, verses 1–31, using the complete Berean Standard Bible text.':'Original adapted lyrics and melody prepared, with Genesis 1 as the source.'}</p></div><div><span className="step-number">02</span><h3>Instrumental demo</h3><p>A synthesized melody and accompaniment, created here without external recordings or samples.</p></div><div><span className="step-number">03</span><h3>Choose a vocal</h3><p>Try the different synthetic vocal styles, each fitted to the original melody with free local processing. Read how each was created above.</p></div></div><div className="original-downloads">{availableRecordings.filter(r=>r.id!=='instrumental').map(r=><a key={r.id} href={mediaUrl(content==='lyrics'&&mode==='singing'?r.audio:listeningTracks.find(t=>t.voiceId===r.id&&t.content===content&&t.mode===mode)?.audio||r.audio)} download><Download size={15}/>{r.name} · {isReading?'reading':'singing'}</a>)}<a href={mediaUrl(song.audio)} download><Download size={15}/>Instrumental WAV</a><a href={base+song.midi} download><Download size={15}/>Editable MIDI</a><a href={base+song.lyrics} download><Download size={15}/>Song lyrics</a></div></section><div className="original-rights"><strong>Source & credits</strong><p>Scripture reference: <a href="https://berean.bible/terms.htm" target="_blank" rel="noreferrer">Berean Standard Bible (BSB) (public domain)</a>. {isBible?'This recording uses the complete Berean Standard Bible chapter. Bible singing is an original musical setting of those same words.':'Song lyrics are an original adaptation, not a verbatim Bible translation.'} New melody, arrangement and free local synthetic vocal prepared for Bible Songs. No third-party song recordings or paid generation services are used. The current voices use pretrained Kokoro speech profiles.</p><p>Earlier Voice 3 and Voice 4 composite speech sources: <a href="https://www.openslr.org/141/" target="_blank" rel="noreferrer">LibriTTS-R (Koizumi et al., 2023)</a> and <a href="https://doi.org/10.7488/ds/2645" target="_blank" rel="noreferrer">VCTK (Yamagishi, Veaux &amp; MacDonald, 2019)</a>, both <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. Changes include subset selection, local speech-model or speaker-profile adaptation, and synthetic singing processing. <a href={base+'originals/genesis-1/listening-credits.md'} target="_blank" rel="noreferrer">Reading and singing credits</a>. {song.recordings.filter(r=>r.credits).map(r=><span key={r.id}><a href={base+r.credits} target="_blank" rel="noreferrer">{r.name} credits</a>. </span>)}</p></div></>:<section className="listen-panel"><h2>{tab==='My favorites'?'No original favorites yet.':'No matching original songs.'}</h2><p>{tab==='My favorites'?'Save “Let There Be Light” using the heart beside the demo.':'Try “Genesis” or “Light”.'}</p><button className="cream-button" onClick={()=>{setTab('Discover');setQuery('')}}>Explore Genesis 1</button></section>}
  <footer><span>Slow down. Listen deeply. Carry the Word with you.</span><span>Bible Songs <Music2 size={14}/></span></footer><p className="copyright-notice app-copyright">© 2026 Bible Songs. Public-domain Scripture is excluded from this copyright notice. Third-party assets belong to their respective owners.<span className="app-version">Version {APP_VERSION}</span></p></div></main>
  <audio ref={audio} src={selectedAudio?mediaUrl(selectedAudio):undefined} preload="metadata" loop={repeat} onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)} onEnded={()=>setPlaying(false)} onLoadedMetadata={()=>setDuration(audio.current?.duration||selectedEntry?.duration||song.duration)} onTimeUpdate={()=>setTime(audio.current?.currentTime||0)} onError={()=>setMessage('The original audio could not load. Please refresh and try again.')}/>
