@@ -90,3 +90,31 @@
   color: #53684a;
   font-size: 12px;
 }
+
+.reading-voice-options {
+  margin-bottom: 14px;
+}
+.reading-voice-options p {
+  color: #53684a;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.voice-order {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.reading-voice-options button {
+  border: 1px solid #cbd8bf;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #315332;
+  background: #f3f6ef;
+  font-size: 11px;
+}
+.reading-voice-options button[aria-pressed=true] {
+  color: white;
+  background: #315332;
+}

@@ -1,0 +1,911 @@
+{
+  "number": 7,
+  "chapter": "Genesis 7",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "Then the LORD said to Noah, “Go into the ark, you and all your family, because I have found you righteous in this generation."
+    },
+    {
+      "verse": 2,
+      "text": "You are to take with you seven pairs of every kind of clean animal, a male and its mate; a pair of every kind of unclean animal, a male and its mate;"
+    },
+    {
+      "verse": 3,
+      "text": "and seven pairs of every kind of bird of the air, male and female, to preserve their offspring on the face of all the earth."
+    },
+    {
+      "verse": 4,
+      "text": "For seven days from now I will send rain on the earth for forty days and forty nights, and I will wipe from the face of the earth every living thing I have made.”"
+    },
+    {
+      "verse": 5,
+      "text": "And Noah did all that the LORD had commanded him."
+    },
+    {
+      "verse": 6,
+      "text": "Now Noah was 600 years old when the floodwaters came upon the earth."
+    },
+    {
+      "verse": 7,
+      "text": "And Noah and his wife, with his sons and their wives, entered the ark to escape the waters of the flood."
+    },
+    {
+      "verse": 8,
+      "text": "The clean and unclean animals, the birds, and everything that crawls along the ground"
+    },
+    {
+      "verse": 9,
+      "text": "came to Noah to enter the ark, two by two, male and female, as God had commanded Noah."
+    },
+    {
+      "verse": 10,
+      "text": "And after seven days the floodwaters came upon the earth."
+    },
+    {
+      "verse": 11,
+      "text": "In the six hundredth year of Noah’s life, on the seventeenth day of the second month, all the fountains of the great deep burst forth, and the floodgates of the heavens were opened."
+    },
+    {
+      "verse": 12,
+      "text": "And the rain fell upon the earth for forty days and forty nights."
+    },
+    {
+      "verse": 13,
+      "text": "On that very day Noah entered the ark, along with his sons Shem, Ham, and Japheth, and his wife, and the three wives of his sons —"
+    },
+    {
+      "verse": 14,
+      "text": "they and every kind of wild animal, livestock, crawling creature, bird, and winged creature."
+    },
+    {
+      "verse": 15,
+      "text": "They came to Noah to enter the ark, two by two of every creature with the breath of life."
+    },
+    {
+      "verse": 16,
+      "text": "And they entered, the male and female of every living thing, as God had commanded Noah. Then the LORD shut him in."
+    },
+    {
+      "verse": 17,
+      "text": "For forty days the flood kept coming on the earth, and the waters rose and lifted the ark high above the earth."
+    },
+    {
+      "verse": 18,
+      "text": "So the waters continued to surge and rise greatly on the earth, and the ark floated on the surface of the waters."
+    },
+    {
+      "verse": 19,
+      "text": "Finally, the waters completely prevailed upon the earth, so that all the high mountains under all the heavens were covered."
+    },
+    {
+      "verse": 20,
+      "text": "The waters rose and covered the mountaintops to a depth of fifteen cubits."
+    },
+    {
+      "verse": 21,
+      "text": "And every living thing that moved upon the earth perished — birds, livestock, animals, every creature that swarms upon the earth, and all mankind."
+    },
+    {
+      "verse": 22,
+      "text": "Of all that was on dry land, everything that had the breath of life in its nostrils died."
+    },
+    {
+      "verse": 23,
+      "text": "And every living thing on the face of the earth was destroyed — man and livestock, crawling creatures and birds of the air; they were blotted out from the earth, and only Noah and those with him in the ark remained."
+    },
+    {
+      "verse": 24,
+      "text": "And the waters prevailed upon the earth for 150 days."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "classic",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-7/classic.m4a",
+      "duration": 175.2572789115646,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 7.926439909297052
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 8.166439909297052,
+          "end": 18.43777777777778
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 18.677777777777777,
+          "end": 26.969569160997732
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 27.20956916099773,
+          "end": 37.595782312925174
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 37.83578231292517,
+          "end": 40.693061224489796
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 40.9330612244898,
+          "end": 45.516281179138325
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 45.75628117913832,
+          "end": 52.55460317460317
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 52.794603174603175,
+          "end": 58.52548752834467
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 58.76548752834467,
+          "end": 64.98793650793651
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 65.2279365079365,
+          "end": 68.72530612244898
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 68.96530612244898,
+          "end": 79.91668934240363
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 80.15668934240362,
+          "end": 83.94775510204082
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 84.18775510204081,
+          "end": 93.03092970521541
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 93.27092970521542,
+          "end": 99.32598639455782
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 99.56598639455783,
+          "end": 105.12335600907029
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 105.3633560090703,
+          "end": 113.00757369614513,
+          "sentenceCues": [
+            {
+              "offset": 88,
+              "start": 111.40173469387756
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 113.24757369614512,
+          "end": 120.22598639455782
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 120.46598639455782,
+          "end": 127.69242630385487
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 127.93242630385488,
+          "end": 135.51011337868482
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 135.7501133786848,
+          "end": 140.57360544217687
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 140.81360544217688,
+          "end": 150.8651700680272
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 151.1051700680272,
+          "end": 156.9785941043084
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 157.21859410430838,
+          "end": 171.02104308390022
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 171.26104308390023,
+          "end": 175.2572789115646
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_michael profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "be05be416d3129284910f096fadd5acff6fd46c61717f049fef605b1e12f9dc4"
+    },
+    {
+      "voiceId": "warm",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-7/warm.m4a",
+      "duration": 156.57233560090702,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.744126984126984
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 6.984126984126984,
+          "end": 16.338049886621317
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 16.578049886621315,
+          "end": 23.73092970521542
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 23.97092970521542,
+          "end": 33.22154195011338
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 33.46154195011338,
+          "end": 36.0778231292517
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 36.3178231292517,
+          "end": 40.14458049886621
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 40.384580498866214,
+          "end": 46.25111111111111
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 46.49111111111111,
+          "end": 51.38485260770975
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 51.62485260770975,
+          "end": 57.25655328798186
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 57.49655328798186,
+          "end": 60.58630385487528
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 60.826303854875285,
+          "end": 70.7498866213152
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 70.9898866213152,
+          "end": 74.40748299319728
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 74.64748299319727,
+          "end": 82.49061224489796
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 82.73061224489796,
+          "end": 88.38331065759637
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 88.62331065759638,
+          "end": 93.5952380952381
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 93.8352380952381,
+          "end": 100.66263038548753,
+          "sentenceCues": [
+            {
+              "offset": 88,
+              "start": 99.17044217687075
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 100.90263038548753,
+          "end": 107.22190476190477
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 107.46190476190476,
+          "end": 113.87804988662131
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 114.11804988662132,
+          "end": 120.89510204081633
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 121.13510204081632,
+          "end": 125.50185941043084
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 125.74185941043083,
+          "end": 134.95995464852606
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 135.19995464852607,
+          "end": 140.3762358276644
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 140.6162358276644,
+          "end": 152.99891156462584
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 153.23891156462585,
+          "end": 156.57233560090702
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro af_heart profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "be05be416d3129284910f096fadd5acff6fd46c61717f049fef605b1e12f9dc4"
+    },
+    {
+      "voiceId": "voice3",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-7/voice3.m4a",
+      "duration": 157.2942403628118,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.880408163265306
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 7.1204081632653065,
+          "end": 16.285850340136054
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 16.525850340136053,
+          "end": 23.827301587301587
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.067301587301586,
+          "end": 33.3772335600907
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 33.6172335600907,
+          "end": 36.12344671201814
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 36.36344671201814,
+          "end": 40.57451247165533
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 40.81451247165533,
+          "end": 46.896689342403626
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 47.13668934240363,
+          "end": 51.86426303854875
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 52.10426303854875,
+          "end": 57.63954648526077
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 57.87954648526077,
+          "end": 60.86448979591837
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 61.10448979591837,
+          "end": 70.68639455782314
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 70.92639455782313,
+          "end": 74.34625850340136
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 74.58625850340137,
+          "end": 82.2950566893424
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 82.5350566893424,
+          "end": 87.87238095238095
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 88.11238095238095,
+          "end": 93.22195011337868
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 93.46195011337869,
+          "end": 100.33845804988663,
+          "sentenceCues": [
+            {
+              "offset": 88,
+              "start": 98.73892290249434
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 100.57845804988662,
+          "end": 106.9681179138322
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 107.2081179138322,
+          "end": 113.98625850340136
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 114.22625850340135,
+          "end": 121.27383219954649
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 121.51383219954648,
+          "end": 125.78263038548752
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 126.02263038548753,
+          "end": 134.98195011337867
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 135.22195011337868,
+          "end": 140.6004081632653
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 140.8404081632653,
+          "end": 153.41972789115647
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 153.65972789115645,
+          "end": 157.2942403628118
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_fenrir profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "be05be416d3129284910f096fadd5acff6fd46c61717f049fef605b1e12f9dc4"
+    },
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-7/composite.m4a",
+      "duration": 156.20689342403628,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.524489795918368
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 6.764489795918367,
+          "end": 15.281541950113379
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 15.52154195011338,
+          "end": 22.522630385487528
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 22.76263038548753,
+          "end": 31.617097505668934
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 31.857097505668936,
+          "end": 35.14290249433107
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 35.38290249433106,
+          "end": 39.855600907029476
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 40.09560090702948,
+          "end": 46.151972789115646
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 46.39197278911565,
+          "end": 51.36027210884354
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 51.60027210884354,
+          "end": 57.25959183673469
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 57.499591836734695,
+          "end": 61.14489795918367
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 61.384897959183675,
+          "end": 70.84979591836735
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 71.08979591836734,
+          "end": 75.05981859410431
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 75.29981859410431,
+          "end": 82.8281179138322
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 83.0681179138322,
+          "end": 88.72780045351475
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 88.96780045351474,
+          "end": 94.17718820861678
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 94.41718820861678,
+          "end": 101.04739229024943,
+          "sentenceCues": [
+            {
+              "offset": 88,
+              "start": 98.97143990929705
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 101.28739229024943,
+          "end": 107.62312925170068
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 107.86312925170068,
+          "end": 114.3324716553288
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 114.5724716553288,
+          "end": 121.32761904761905
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 121.56761904761905,
+          "end": 126.20081632653061
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 126.44081632653061,
+          "end": 134.81183673469388
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 135.05183673469386,
+          "end": 140.48371882086167
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 140.72371882086168,
+          "end": 151.96430839002267
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 152.20430839002267,
+          "end": 156.20689342403628
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "be05be416d3129284910f096fadd5acff6fd46c61717f049fef605b1e12f9dc4"
+    },
+    {
+      "voiceId": "voice5",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-7/voice5.m4a",
+      "duration": 161.73927437641723,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.931927437641724
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 7.171927437641723,
+          "end": 16.587664399092972
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 16.82766439909297,
+          "end": 24.096371882086167
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.33637188208617,
+          "end": 33.93201814058957
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 34.17201814058957,
+          "end": 36.8643537414966
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 37.104353741496595,
+          "end": 41.21922902494331
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 41.45922902494331,
+          "end": 47.690068027210884
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 47.930068027210886,
+          "end": 53.217732426303854
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 53.457732426303856,
+          "end": 59.25732426303855
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 59.49732426303855,
+          "end": 62.67578231292517
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 62.91578231292517,
+          "end": 72.958820861678
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 73.198820861678,
+          "end": 76.72625850340135
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 76.96625850340136,
+          "end": 85.15083900226757
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 85.39083900226757,
+          "end": 91.2968253968254
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 91.53682539682539,
+          "end": 96.42530612244897
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 96.66530612244898,
+          "end": 103.93319727891156,
+          "sentenceCues": [
+            {
+              "offset": 88,
+              "start": 102.48803854875284
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 104.17319727891156,
+          "end": 110.70367346938775
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 110.94367346938776,
+          "end": 117.69124716553289
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 117.93124716553288,
+          "end": 124.80458049886622
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 125.04458049886621,
+          "end": 129.5548752834467
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 129.79487528344671,
+          "end": 139.38390022675736
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 139.62390022675737,
+          "end": 144.85927437641723
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 145.09927437641724,
+          "end": 158.0007709750567
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 158.24077097505668,
+          "end": 161.73927437641723
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro af_bella profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "be05be416d3129284910f096fadd5acff6fd46c61717f049fef605b1e12f9dc4"
+    }
+  ]
+}

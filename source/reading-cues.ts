@@ -4,6 +4,16 @@ type Verse = {verse: number; text: string};
 type VerseSegment = {verse?: number; start: number; sentenceCues?: SentenceCue[]};
 
 export type ReadingBoundary = SentenceCue & {verse: number};
+export type VoiceOrder = 'rotating' | 'random';
+
+export function nextReadingVoice(voices: string[], current: string, order: VoiceOrder) {
+ if (order === 'random') {
+  const alternatives = voices.filter(voice => voice !== current);
+  return alternatives[Math.floor(Math.random() * alternatives.length)];
+ }
+ const next = voices[(voices.indexOf(current) + 1) % voices.length];
+ return next === current ? undefined : next;
+}
 
 export function readingBoundaries(verses: Verse[], segments: VerseSegment[]): ReadingBoundary[] {
  const boundaries: ReadingBoundary[] = [];
