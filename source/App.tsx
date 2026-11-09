@@ -4,7 +4,7 @@ import {Music2,Compass,Heart,BookOpen,Search,Play,Pause,Volume2,Repeat,ArrowUpRi
 import song from '../public/originals/genesis-1/song.json';
 import scripture from '../public/originals/genesis-1/scripture.json';
 import listening from '../public/originals/genesis-1/listening.json';
-import {readingBoundaries,type SentenceCue} from './reading-cues';
+import {nextReadingVoice,readingBoundaries,type SentenceCue,type VoiceOrder} from './reading-cues';
 type Segment={key:string;verse?:number;section?:string;text?:string;start:number;end:number;sentenceCues?:SentenceCue[]};
 type ReadingTrack={voiceId:string;content:string;mode:string;audio:string;duration:number;segments:Segment[];creation:string};
 type Chapter={number:number;chapter:string;source:string;verses:{verse:number;text:string}[];recordings:ReadingTrack[]};
@@ -23,6 +23,8 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  const [tab,setTab]=useState('Discover'),[query,setQuery]=useState(''),[liked,setLiked]=useState(false),[playing,setPlaying]=useState(false),[time,setTime]=useState(0),[duration,setDuration]=useState(song.duration),[volume,setVolume]=useState(.75),[repeat,setRepeat]=useState(false),[message,setMessage]=useState(''),[content,setContent]=useState<'bible'|'lyrics'>('bible'),[mode,setMode]=useState<'reading'|'singing'>('reading'),[recording,setRecording]=useState('classic');
  const [chapter,setChapter]=useState(chapters[0]);
  const [voiceChange,setVoiceChange]=useState<VoiceChange|null>(null);
+ const [readingVoices,setReadingVoices]=useState<string[]|null>(null);
+ const [voiceOrder,setVoiceOrder]=useState<VoiceOrder>('rotating');
  const [continuing,setContinuing]=useState(false);
  const isReading=mode==='reading',isBible=content==='bible';
  const bibleReading=isBible&&isReading;
@@ -31,6 +33,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  const getTrack=(voiceId:string)=>tracks.find(t=>t.voiceId===voiceId&&t.content===content&&t.mode===mode);
  const availableRecordings=song.recordings.filter(r=>!isBible&&!isReading||r.id!=='instrumental'&&getTrack(r.id));
  const selectedRecording=availableRecordings.find(r=>r.id===recording)||availableRecordings[0]||song.recordings[0];
+ const voicePool=readingVoices??[selectedRecording.id];
  const selectedEntry=getTrack(selectedRecording.id);
  const boundaries=useMemo(
   ()=>bibleReading&&selectedEntry?readingBoundaries(chapter.verses,selectedEntry.segments):[],
@@ -101,15 +104,39 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   if(next&&start===undefined)return;
   setVoiceChange({voiceId,audio:target.audio,at:next?.start??null,start:start??0});
  }
- function chooseVoice(voiceId:string){
+ function queueFromPool(voices:string[],position:number,order:VoiceOrder){
+  const next=nextReadingVoice(voices,selectedRecording.id,order);
+  if(next)queueVoice(next,position);
+  else setVoiceChange(null);
+ }
+ function updateVoicePool(voices:string[]){
+  const next=availableRecordings.map(option=>option.id).filter(id=>voices.includes(id));
+  if(!next.length)return;
+  setReadingVoices(next);
   const track=audio.current;
-  if(voiceId===selectedRecording.id){setVoiceChange(null);return;}
-  if(bibleReading&&track&&!track.paused&&!track.ended){
-   queueVoice(voiceId,track.currentTime);
+  if(track&&!track.paused&&!track.ended){
+   queueFromPool(next,track.currentTime,voiceOrder);
    return;
   }
   setVoiceChange(null);
-  setRecording(voiceId);
+  if(!next.includes(selectedRecording.id))setRecording(next[0]);
+ }
+ function toggleVoice(voiceId:string){
+  const track=audio.current;
+  if(voicePool.length===1&&!voicePool.includes(voiceId)&&track&&!track.paused&&!track.ended){
+   updateVoicePool([voiceId]);
+   return;
+  }
+  updateVoicePool(voicePool.includes(voiceId)?voicePool.filter(id=>id!==voiceId):[...voicePool,voiceId]);
+ }
+ function chooseVoiceOrder(order:VoiceOrder){
+  setVoiceOrder(order);
+  const track=audio.current;
+  if(track&&(!track.paused||voiceChange))queueFromPool(voicePool,track.currentTime,order);
+ }
+ function startTrack(track:HTMLAudioElement){
+  setPlaying(true);
+  if(bibleReading&&!voiceChange)queueFromPool(voicePool,track.currentTime,voiceOrder);
  }
  function seekTo(start:number){
   const track=audio.current;
@@ -177,6 +204,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  function leaveBibleReading(){
   resume.current=null;
   setVoiceChange(null);
+  setReadingVoices(null);
   setContinuing(false);
  }
  function search(value:string){
@@ -199,7 +227,32 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
    </select>
   </label>{bibleReading&&<button type="button" className="continuous-reading" aria-pressed={continuing}
    onClick={continueChapters}>Continuous reading</button>}</div>}
-  <div className="listening-toggle content-toggle" role="group" aria-label="Choose text"><button type="button" aria-pressed={isBible} onClick={chooseBible}>Bible (Berean Standard Bible)</button><button type="button" aria-pressed={!isBible} onClick={()=>{if(isBible)leaveBibleReading();setContent('lyrics');}}>Song lyrics</button></div><div className="listening-toggle" role="group" aria-label="Choose reading or singing"><button type="button" aria-pressed={isReading} onClick={()=>setMode('reading')}>Reading</button><button type="button" aria-pressed={!isReading} disabled={!hasMusic} onClick={()=>{if(isReading)leaveBibleReading();setMode('singing');}}>Singing</button></div>{!hasMusic&&<small className="chapter-mode-note">Singing is available for Genesis 1.</small>}</div></div><fieldset className="voice-choices"><legend className="visually-hidden">Choose a vocal or instrumental recording</legend>{availableRecordings.map(option=><label className={'voice-option '+((voiceChange?.voiceId??selectedRecording.id)===option.id?'chosen':'')} key={option.id}><div className="voice-option-heading"><input type="radio" name="recording" value={option.id} checked={(voiceChange?.voiceId??selectedRecording.id)===option.id} onChange={()=>chooseVoice(option.id)}/><strong>{option.name}</strong><span>{option.badge}</span></div><p>{isReading?'Hear '+option.name.replace(/^Voice [0-9]+ · /,'')+' as a spoken reading, without music.':isBible?'Hear the complete Bible chapter set to an original melody in this synthetic voice.':option.description}</p></label>)}</fieldset>{voiceChange&&<p className="queued-voice" role="status">
+  <div className="listening-toggle content-toggle" role="group" aria-label="Choose text"><button type="button" aria-pressed={isBible} onClick={chooseBible}>Bible (Berean Standard Bible)</button><button type="button" aria-pressed={!isBible} onClick={()=>{if(isBible)leaveBibleReading();setContent('lyrics');}}>Song lyrics</button></div><div className="listening-toggle" role="group" aria-label="Choose reading or singing"><button type="button" aria-pressed={isReading} onClick={()=>setMode('reading')}>Reading</button><button type="button" aria-pressed={!isReading} disabled={!hasMusic} onClick={()=>{if(isReading)leaveBibleReading();setMode('singing');}}>Singing</button></div>{!hasMusic&&<small className="chapter-mode-note">Singing is available for Genesis 1.</small>}</div></div>{bibleReading&&<div className="reading-voice-options">
+  <p>Choose several voices before playing to change voices after each sentence. With one selected, choosing another during playback switches to it.</p>
+  <div className="voice-order" role="group" aria-label="Reading voice order">
+   <button type="button" aria-pressed={voiceOrder==='rotating'} onClick={()=>chooseVoiceOrder('rotating')}>Rotating voices</button>
+   <button type="button" aria-pressed={voiceOrder==='random'} onClick={()=>chooseVoiceOrder('random')}>Random voices</button>
+  </div>
+  <button type="button" className="all-voices" aria-pressed={voicePool.length===availableRecordings.length}
+   onClick={()=>updateVoicePool(voicePool.length===availableRecordings.length?[selectedRecording.id]:availableRecordings.map(option=>option.id))}>
+   All voices
+  </button>
+ </div>}
+ <fieldset className="voice-choices">
+  <legend className="visually-hidden">{bibleReading?'Choose reading voices':'Choose a vocal or instrumental recording'}</legend>
+  {availableRecordings.map(option=>{
+   const chosen=bibleReading?voicePool.includes(option.id):selectedRecording.id===option.id;
+   return <label className={'voice-option '+(chosen?'chosen':'')} key={option.id}>
+    <div className="voice-option-heading">
+     <input type={bibleReading?'checkbox':'radio'} name="recording" value={option.id} checked={chosen}
+      onChange={()=>bibleReading?toggleVoice(option.id):setRecording(option.id)}/>
+     <strong>{option.name}</strong><span>{option.badge}</span>
+    </div>
+    <p>{isReading?'Hear '+option.name.replace(/^Voice [0-9]+ · /,'')+' as a spoken reading, without music.':isBible?'Hear the complete Bible chapter set to an original melody in this synthetic voice.':option.description}</p>
+   </label>;
+  })}
+ </fieldset>
+ {voiceChange&&voicePool.length===1&&<p className="queued-voice" role="status">
   {song.recordings.find(option=>option.id===voiceChange.voiceId)?.name} will start after the current sentence.
  </p>}<details className="voice-creation-notes"><summary>How each voice was created</summary>{song.recordings.filter(r=>r.id!=='instrumental').map(option=><article key={option.id}><h3>{option.name}</h3><p>{!isBible&&!isReading?option.creation:getTrack(option.id)?.creation||option.creation}</p></article>)}<p className="voice-note">These are original synthetic options, not celebrity sound-alikes or artist-endorsed recordings. The neural voices are experimental and may still sound artificial.</p></details></section>
  <section className="listen-panel original-reader">
@@ -237,7 +290,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   </>}
  </section><section className="listen-panel"><div className="section-heading"><div><h2>{isBible?'About this chapter':'From composition to song'}</h2><p>{isBible?'The complete Berean Standard Bible text, in your chosen voice.':'The starting point for our own recording.'}</p></div></div><div className="production-grid"><div><span className="step-number">01</span><h3>{isBible?'Public-domain Scripture':'Words & melody'}</h3><p>{isBible?`${chapter.chapter}, verses 1–${chapter.verses.length}, using the complete Berean Standard Bible text.`:'Original adapted lyrics and melody prepared, with Genesis 1 as the source.'}</p></div><div><span className="step-number">02</span><h3>{hasMusic?'Instrumental demo':'Sentence navigation'}</h3><p>{hasMusic?'A synthesized melody and accompaniment, created here without external recordings or samples.':'Select any sentence to play from that point and continue through the chapter.'}</p></div><div><span className="step-number">03</span><h3>Choose a vocal</h3><p>{hasMusic?'Try the different synthetic vocal styles, each fitted to the original melody with free local processing.':'Listen to the complete chapter in any of the five synthetic reading voices.'} Read how each was created above.</p></div></div><div className="original-downloads">{availableRecordings.filter(r=>r.id!=='instrumental').map(r=><a key={r.id} href={mediaUrl(trackAudio(r))} download><Download size={15}/>{r.name} · {isReading?'reading':'singing'}</a>)}{hasMusic&&<><a href={mediaUrl(song.audio)} download><Download size={15}/>Instrumental WAV</a><a href={base+song.midi} download><Download size={15}/>Editable MIDI</a><a href={base+song.lyrics} download><Download size={15}/>Song lyrics</a></>}</div></section><div className="original-rights"><strong>Source & credits</strong><p>Scripture reference: <a href="https://berean.bible/terms.htm" target="_blank" rel="noreferrer">Berean Standard Bible (BSB) (public domain)</a>. {isBible?'This recording uses the complete Berean Standard Bible chapter.':'Song lyrics are an original adaptation, not a verbatim Bible translation.'} New melody, arrangement and free local synthetic vocal prepared for Bible Songs. No third-party song recordings or paid generation services are used. The current voices use pretrained Kokoro speech profiles.</p><p>Earlier Voice 3 and Voice 4 composite speech sources: <a href="https://www.openslr.org/141/" target="_blank" rel="noreferrer">LibriTTS-R (Koizumi et al., 2023)</a> and <a href="https://doi.org/10.7488/ds/2645" target="_blank" rel="noreferrer">VCTK (Yamagishi, Veaux &amp; MacDonald, 2019)</a>, both <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>. Changes include subset selection, local speech-model or speaker-profile adaptation, and synthetic singing processing. <a href={base+'originals/genesis-1/listening-credits.md'} target="_blank" rel="noreferrer">Reading and singing credits</a>. {song.recordings.filter(r=>r.credits).map(r=><span key={r.id}><a href={base+r.credits} target="_blank" rel="noreferrer">{r.name} credits</a>. </span>)}</p></div></>:<section className="listen-panel"><h2>{tab==='My favorites'?'No original favorites yet.':'No matching original songs.'}</h2><p>{tab==='My favorites'?'Save “Let There Be Light” using the heart beside the demo.':'Try “Genesis” or “Light”.'}</p><button className="cream-button" onClick={()=>{setTab('Discover');setQuery('')}}>Explore Genesis 1</button></section>}
  <footer><span>Slow down. Listen deeply. Carry the Word with you.</span><span>Bible Songs <Music2 size={14}/></span></footer><p className="copyright-notice app-copyright">© 2026 Bible Songs. Public-domain Scripture is excluded from this copyright notice. Third-party assets belong to their respective owners.<span className="app-version">Version {APP_VERSION}</span></p></div></main>
- <audio ref={audio} src={selectedAudio?mediaUrl(selectedAudio):undefined} preload="metadata" loop={repeat&&!(bibleReading&&(continuing||voiceChange?.at===null))} onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)} onEnded={finishTrack} onLoadedMetadata={()=>setDuration(audio.current?.duration||selectedEntry?.duration||song.duration)} onTimeUpdate={()=>setTime(audio.current?.currentTime||0)} onError={()=>setMessage('The audio could not load. Please refresh and try again.')}/>
+ <audio ref={audio} src={selectedAudio?mediaUrl(selectedAudio):undefined} preload="metadata" loop={repeat&&!(bibleReading&&(continuing||voiceChange?.at===null))} onPlay={event=>startTrack(event.currentTarget)} onPause={()=>setPlaying(false)} onEnded={finishTrack} onLoadedMetadata={()=>setDuration(audio.current?.duration||selectedEntry?.duration||song.duration)} onTimeUpdate={()=>setTime(audio.current?.currentTime||0)} onError={()=>setMessage('The audio could not load. Please refresh and try again.')}/>
  <div className="player original-player"><div className="now-playing"><img src={photo} alt="Peaceful mountain lake"/><div><strong>{trackTitle}</strong><span>{isBible?'Berean Standard Bible':'Original lyrics'} · {isReading?'Reading':'Singing'} · {vocal?selectedRecording.name:'Instrumental'}</span></div><div className="favorite-version"><button className={liked?'liked':''} aria-label={liked?'Remove original favorite':'Save original favorite'} onClick={favorite}><Heart size={19} fill={liked?'currentColor':'none'}/></button><span className="player-version">Version {APP_VERSION}</span></div></div><div className="player-center"><div className="transport"><button className="original-repeat" aria-label="Repeat audio" aria-pressed={repeat} disabled={continuing} onClick={()=>setRepeat(!repeat)}><Repeat size={16} className={repeat?'selected':''}/></button><button className="main-play" aria-label={playing?'Pause audio':'Play audio'} onClick={toggle}>{playing?<Pause size={20} fill="currentColor"/>:<Play size={20} fill="currentColor"/>}</button><span className="original-format">{isReading?'READING':'SINGING'}</span></div><div className="progress"><span>{fmt(time)}</span><input aria-label="Seek original audio" type="range" min="0" max={duration} step=".1" value={time} onChange={e=>seekTo(+e.target.value)}/><span>{fmt(duration)}</span></div></div><div className="player-right"><Volume2 size={18}/><input aria-label="Volume" type="range" min="0" max="1" step=".01" value={volume} onChange={e=>setVolume(+e.target.value)}/><span className="quality">ORIGINAL</span></div></div>
  {message&&<div className="toast" role="status">{message}<button aria-label="Dismiss" onClick={()=>setMessage('')}>×</button></div>}</div>
 }
