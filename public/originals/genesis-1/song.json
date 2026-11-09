@@ -174,7 +174,7 @@
   "recordings": [
     {
       "id": "classic",
-      "name": "Voice 1 · Clear male",
+      "name": "Voice 1 · Male",
       "badge": "New neural voice",
       "audio": "originals/genesis-1/let-there-be-light-voice1-revised.m4a",
       "preview": "originals/genesis-1/voice1-revised-preview.wav",
@@ -184,7 +184,7 @@
     },
     {
       "id": "warm",
-      "name": "Voice 2 · Warm expressive",
+      "name": "Voice 2 · Female",
       "badge": "Revised singing",
       "audio": "originals/genesis-1/let-there-be-light-voice2-revised.m4a",
       "preview": "originals/genesis-1/voice2-revised-preview.wav",
