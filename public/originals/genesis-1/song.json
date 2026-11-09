@@ -194,23 +194,23 @@
     },
     {
       "id": "voice3",
-      "name": "Voice 3 · Clear ensemble",
-      "badge": "Revised · lighter phrasing",
-      "audio": "originals/genesis-1/let-there-be-light-voice3-vocal.wav",
-      "preview": "originals/genesis-1/voice3-vocal-preview.wav",
-      "description": "A composite neural voice with more melodic movement, preserved consonant timing and an echo-free mix. Experimental synthetic singing.",
-      "creation": "Uses the same locally fine-tuned Matcha-TTS speech model and 124-profile composite as before. The revised recording uses free Praat processing to follow the voice’s pulses, retain unvoiced consonants and give voiced sounds more of the sustained duration. It follows each syllable’s melody note for a livelier delivery, avoids per-word volume pumping, and removes the short echo and added vibrato. This is processed synthetic speech, not a human singer or a singing-trained model; the speech sources and tools are credited below. The line “God’s Spirit moved above the deep” now uses phoneme-aware timing to protect consonants and gives “Spirit” a little extra emphasis.",
-      "credits": "originals/genesis-1/voice3-credits.md"
+      "name": "Voice 3 · Male",
+      "badge": "Kokoro vocal",
+      "audio": "originals/genesis-1/let-there-be-light-voice3-kokoro.m4a",
+      "preview": "originals/genesis-1/voice3-kokoro-preview.wav",
+      "description": "Synthetic male voice with a matching reading and singing profile.",
+      "creation": "Rendered locally with the pretrained Kokoro am_fenrir male speech profile. The same speech profile is fitted to the original melody using local Praat pitch and timing processing, with consonant protection and original accompaniment. No paid service or new voice training was used.",
+      "credits": "originals/genesis-1/voice-updates.md"
     },
     {
       "id": "composite",
-      "name": "Voice 4 · Resonant composite",
-      "badge": "Revised · lighter phrasing",
-      "audio": "originals/genesis-1/let-there-be-light-composite-vocal.wav",
-      "preview": "originals/genesis-1/composite-vocal-preview.wav",
-      "description": "A resonant composite timbre with more melodic movement, clearer consonant timing and an echo-free mix. Experimental synthetic singing.",
-      "creation": "Retains the free Matcha-TTS speech model and eight adapted speaker profiles averaged into one composite voice. The revised vocal uses local Praat processing to follow the voice’s pulses and keep unvoiced consonants close to their original timing while voiced sounds sustain the notes. It follows each syllable’s melody for a livelier delivery, uses gentler phrase-level gain, and removes the short echo and added vibrato. This is synthetic speech processed into song, not a separately trained singer; no paid service was used. The line “God’s Spirit moved above the deep” now uses phoneme-aware timing to protect consonants and gives “Spirit” a little extra emphasis.",
-      "credits": "originals/genesis-1/voice4-credits.md"
+      "name": "Voice 4 · Low male",
+      "badge": "Kokoro vocal",
+      "audio": "originals/genesis-1/let-there-be-light-voice4-kokoro.m4a",
+      "preview": "originals/genesis-1/voice4-kokoro-preview.wav",
+      "description": "Synthetic low male voice with a matching reading and singing profile.",
+      "creation": "Rendered locally with the pretrained Kokoro am_onyx male speech profile. The same speech profile is fitted to the original melody using local Praat pitch and timing processing, with consonant protection and original accompaniment. No paid service or new voice training was used.",
+      "credits": "originals/genesis-1/voice-updates.md"
     },
     {
       "id": "voice5",
