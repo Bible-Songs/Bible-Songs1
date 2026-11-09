@@ -63,3 +63,30 @@
   cursor: default;
   opacity: .55;
 }
+
+.chapter-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.chapter-actions .chapter-picker {
+  flex: 1;
+}
+.continuous-reading {
+  padding: 8px 10px;
+  border: 1px solid #cbd8bf;
+  border-radius: 6px;
+  color: #315332;
+  background: #f3f6ef;
+  font-size: 11px;
+}
+.continuous-reading[aria-pressed=true] {
+  color: white;
+  background: #315332;
+}
+.queued-voice {
+  margin: 12px 0 0;
+  color: #53684a;
+  font-size: 12px;
+}
