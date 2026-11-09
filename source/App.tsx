@@ -167,10 +167,17 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   if(!bibleReading)return;
   const voiceId=voiceChange?.voiceId??selectedRecording.id;
   setVoiceChange(null);
-  const next=continuing?chapters[chapters.indexOf(chapter)+1]:undefined;
+  const next=continuing?chapters[(chapters.indexOf(chapter)+1)%chapters.length]:undefined;
   if(next){
    const entry=next.recordings.find(track=>track.voiceId===voiceId&&track.mode==='reading'&&track.content==='bible');
    if(entry){
+    const track=audio.current;
+    if(entry.audio===selectedAudio&&track){
+     track.currentTime=0;
+     setTime(0);
+     void play(track);
+     return;
+    }
     resume.current={audio:entry.audio,start:0};
     setRecording(voiceId);
     setChapter(next);
