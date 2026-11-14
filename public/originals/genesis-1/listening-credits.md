@@ -17,3 +17,5 @@ Genesis 2–10 readings use the official [Berean Standard Bible USJ download](ht
 - Voice 7 uses Kokoro `am_puck`. The singing tracks use local Praat pitch and duration processing.
 
 - Voice 9 uses Kokoro `am_adam`. The singing tracks use local Praat pitch and duration processing.
+
+- Voice 8 uses Kokoro `af_sarah`. The singing tracks use local Praat pitch and duration processing.

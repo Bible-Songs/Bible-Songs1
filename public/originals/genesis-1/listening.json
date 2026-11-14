@@ -6847,6 +6847,901 @@
       "method": "Unpitched local speech synthesis, no music",
       "sourceTextSha256": "ec98eb16e05b64358fd323b436411272127366f83878e8ddc520232e8afe1e3b",
       "creation": "Rendered locally with the pretrained Kokoro am_adam speech profile. Reading preserves the phrasing and punctuation of the adapted lyrics."
+    },
+    {
+      "voiceId": "voice8",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "originals/genesis-1/bible-reading-voice8.m4a",
+      "duration": 237.97256235827663,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 2.7151927437641725,
+          "sentenceCues": []
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 3.0951927437641724,
+          "end": 11.774285714285714,
+          "sentenceCues": [
+            {
+              "offset": 84,
+              "start": 8.365294784580499
+            }
+          ]
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 12.154285714285715,
+          "end": 14.945351473922903,
+          "sentenceCues": []
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 15.325351473922902,
+          "end": 19.5556462585034,
+          "sentenceCues": []
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 19.9356462585034,
+          "end": 26.644897959183673,
+          "sentenceCues": [
+            {
+              "offset": 64,
+              "start": 23.706972789115646
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 27.024897959183672,
+          "end": 32.32544217687075,
+          "sentenceCues": []
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 32.70544217687075,
+          "end": 38.79773242630385,
+          "sentenceCues": [
+            {
+              "offset": 83,
+              "start": 37.88257369614512
+            }
+          ]
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 39.177732426303855,
+          "end": 44.3027664399093,
+          "sentenceCues": [
+            {
+              "offset": 30,
+              "start": 41.44869614512472
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 44.682766439909294,
+          "end": 52.2302947845805,
+          "sentenceCues": [
+            {
+              "offset": 106,
+              "start": 51.31513605442177
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 52.610294784580496,
+          "end": 58.841179138322,
+          "sentenceCues": [
+            {
+              "offset": 79,
+              "start": 57.362528344671205
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 59.22117913832199,
+          "end": 69.4235827664399,
+          "sentenceCues": [
+            {
+              "offset": 144,
+              "start": 68.50842403628117
+            }
+          ]
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 69.8035827664399,
+          "end": 79.802947845805,
+          "sentenceCues": [
+            {
+              "offset": 136,
+              "start": 78.3242970521542
+            }
+          ]
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 80.18294784580499,
+          "end": 83.01265306122448,
+          "sentenceCues": []
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 83.3926530612245,
+          "end": 92.96929705215419,
+          "sentenceCues": []
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 93.3492970521542,
+          "end": 99.32893424036281,
+          "sentenceCues": [
+            {
+              "offset": 81,
+              "start": 98.41395691609976
+            }
+          ]
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 99.70893424036281,
+          "end": 107.05555555555556,
+          "sentenceCues": [
+            {
+              "offset": 101,
+              "start": 105.54565759637188
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 107.43555555555555,
+          "end": 111.45369614512471,
+          "sentenceCues": []
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 111.83369614512472,
+          "end": 118.27768707482993,
+          "sentenceCues": [
+            {
+              "offset": 84,
+              "start": 116.79903628117913
+            }
+          ]
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 118.65768707482994,
+          "end": 121.23151927437642,
+          "sentenceCues": []
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 121.61151927437642,
+          "end": 128.89455782312925,
+          "sentenceCues": []
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 129.27455782312924,
+          "end": 141.27215419501132,
+          "sentenceCues": [
+            {
+              "offset": 170,
+              "start": 139.8019387755102
+            }
+          ]
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 141.65215419501135,
+          "end": 149.23210884353742,
+          "sentenceCues": []
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 149.6121088435374,
+          "end": 152.21092970521542,
+          "sentenceCues": []
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 152.59092970521542,
+          "end": 163.37873015873015,
+          "sentenceCues": [
+            {
+              "offset": 161,
+              "start": 162.4637528344671
+            }
+          ]
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 163.75873015873015,
+          "end": 175.0481179138322,
+          "sentenceCues": [
+            {
+              "offset": 164,
+              "start": 173.5694671201814
+            }
+          ]
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 175.4281179138322,
+          "end": 187.79727891156463,
+          "sentenceCues": []
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 188.17727891156463,
+          "end": 195.1544671201814,
+          "sentenceCues": []
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 195.5344671201814,
+          "end": 206.61360544217686,
+          "sentenceCues": []
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 206.99360544217686,
+          "end": 217.15768707482994,
+          "sentenceCues": [
+            {
+              "offset": 138,
+              "start": 215.75985260770975
+            }
+          ]
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 217.53768707482993,
+          "end": 229.6005442176871,
+          "sentenceCues": [
+            {
+              "offset": 191,
+              "start": 228.68556689342404
+            }
+          ]
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 229.98054421768708,
+          "end": 237.59256235827664,
+          "sentenceCues": [
+            {
+              "offset": 72,
+              "start": 234.8435260770975
+            }
+          ]
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "Rendered locally with the pretrained Kokoro af_sarah speech profile. Reading uses whole sentences with punctuation and an explicit pause after “seas.”"
+    },
+    {
+      "voiceId": "voice8",
+      "content": "bible",
+      "mode": "singing",
+      "audio": "originals/genesis-1/bible-singing-voice8.m4a",
+      "duration": 359.8694784580499,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.040997732426304,
+          "sentenceCues": []
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.490975056689343,
+          "end": 19.481179138321995,
+          "sentenceCues": [
+            {
+              "offset": 84,
+              "start": 12.71449886621315
+            }
+          ]
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 19.931156462585033,
+          "end": 23.922131519274377,
+          "sentenceCues": []
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.372108843537415,
+          "end": 31.578140589569163,
+          "sentenceCues": []
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 32.0281179138322,
+          "end": 42.06884353741496,
+          "sentenceCues": [
+            {
+              "offset": 64,
+              "start": 37.08378458049887
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.518820861678,
+          "end": 51.53442176870748,
+          "sentenceCues": []
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 51.98439909297052,
+          "end": 61.733061224489795,
+          "sentenceCues": [
+            {
+              "offset": 83,
+              "start": 60.32201814058957
+            }
+          ]
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 62.18303854875283,
+          "end": 70.08090702947845,
+          "sentenceCues": [
+            {
+              "offset": 30,
+              "start": 64.73870521541949
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 70.5308843537415,
+          "end": 81.68263038548753,
+          "sentenceCues": [
+            {
+              "offset": 106,
+              "start": 80.25440816326518
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 82.13260770975057,
+          "end": 91.45977324263039,
+          "sentenceCues": [
+            {
+              "offset": 79,
+              "start": 88.97398866213149
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 91.90975056689342,
+          "end": 104.47179138321995,
+          "sentenceCues": [
+            {
+              "offset": 144,
+              "start": 103.05817913832195
+            }
+          ]
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 104.921768707483,
+          "end": 118.8639455782313,
+          "sentenceCues": [
+            {
+              "offset": 136,
+              "start": 116.38467346938789
+            }
+          ]
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 119.31392290249433,
+          "end": 124.37600907029478,
+          "sentenceCues": []
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 124.82598639455782,
+          "end": 138.8205442176871,
+          "sentenceCues": []
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 139.2705215419501,
+          "end": 147.5655328798186,
+          "sentenceCues": [
+            {
+              "offset": 81,
+              "start": 146.111902494331
+            }
+          ]
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 148.01551020408164,
+          "end": 159.12775510204082,
+          "sentenceCues": [
+            {
+              "offset": 101,
+              "start": 156.64260544217683
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 159.57773242630387,
+          "end": 165.68997732426303,
+          "sentenceCues": []
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 166.13995464852607,
+          "end": 176.17700680272108,
+          "sentenceCues": [
+            {
+              "offset": 84,
+              "start": 173.69195464852606
+            }
+          ]
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 176.62698412698413,
+          "end": 181.68902494331067,
+          "sentenceCues": []
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 182.1390022675737,
+          "end": 193.30739229024942,
+          "sentenceCues": []
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 193.75736961451247,
+          "end": 212.05909297052153,
+          "sentenceCues": [
+            {
+              "offset": 170,
+              "start": 209.57365532879805
+            }
+          ]
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 212.50907029478458,
+          "end": 223.64281179138322,
+          "sentenceCues": []
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 224.09278911564627,
+          "end": 229.15478458049887,
+          "sentenceCues": []
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 229.60476190476192,
+          "end": 243.97750566893424,
+          "sentenceCues": [
+            {
+              "offset": 161,
+              "start": 242.56390476190464
+            }
+          ]
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 244.4274829931973,
+          "end": 261.3027664399093,
+          "sentenceCues": [
+            {
+              "offset": 164,
+              "start": 258.8151972789115
+            }
+          ]
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 261.75274376417235,
+          "end": 282.5320634920635,
+          "sentenceCues": []
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 282.9820408163265,
+          "end": 293.8041723356009,
+          "sentenceCues": []
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 294.25414965986397,
+          "end": 311.7772335600907,
+          "sentenceCues": []
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 312.2272108843537,
+          "end": 326.5594557823129,
+          "sentenceCues": [
+            {
+              "offset": 138,
+              "start": 324.42573469387753
+            }
+          ]
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 327.00943310657595,
+          "end": 347.09678004535147,
+          "sentenceCues": [
+            {
+              "offset": 191,
+              "start": 345.68286167800403
+            }
+          ]
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 347.5467573696145,
+          "end": 359.41950113378687,
+          "sentenceCues": [
+            {
+              "offset": 72,
+              "start": 354.4344716553288
+            }
+          ]
+        }
+      ],
+      "textSource": "Berean Standard Bible — public domain",
+      "method": "Original melodic setting of the complete BSB text; Praat processing and original accompaniment",
+      "sourceTextSha256": "0c0ede7704df90f5212c7f135f663e0b40852af3cf1ebfd6e31e0fb7ff939c5c",
+      "creation": "Rendered locally with the pretrained Kokoro af_sarah speech profile. The same speech profile is fitted to the original melody using local Praat pitch and timing processing, with consonant protection and original accompaniment."
+    },
+    {
+      "voiceId": "voice8",
+      "content": "lyrics",
+      "mode": "reading",
+      "audio": "originals/genesis-1/lyrics-reading-voice8.m4a",
+      "duration": 80.61850340136054,
+      "segments": [
+        {
+          "key": "1-0",
+          "section": "Day one · Light",
+          "start": 0.0,
+          "end": 1.607437641723356,
+          "sentenceCues": []
+        },
+        {
+          "key": "1-1",
+          "section": "Day one · Light",
+          "start": 1.987437641723356,
+          "end": 3.891111111111111,
+          "sentenceCues": []
+        },
+        {
+          "key": "1-2",
+          "section": "Day one · Light",
+          "start": 4.271111111111111,
+          "end": 6.157052154195012,
+          "sentenceCues": []
+        },
+        {
+          "key": "1-3",
+          "section": "Day one · Light",
+          "start": 6.5370521541950115,
+          "end": 8.742176870748299,
+          "sentenceCues": []
+        },
+        {
+          "key": "2-0",
+          "section": "Day two · Sky",
+          "start": 9.1221768707483,
+          "end": 11.463492063492064,
+          "sentenceCues": []
+        },
+        {
+          "key": "2-1",
+          "section": "Day two · Sky",
+          "start": 11.843492063492063,
+          "end": 13.782721088435375,
+          "sentenceCues": []
+        },
+        {
+          "key": "2-2",
+          "section": "Day two · Sky",
+          "start": 14.162721088435374,
+          "end": 16.12145124716553,
+          "sentenceCues": []
+        },
+        {
+          "key": "2-3",
+          "section": "Day two · Sky",
+          "start": 16.501451247165534,
+          "end": 18.149977324263038,
+          "sentenceCues": []
+        },
+        {
+          "key": "3-0",
+          "section": "Refrain",
+          "start": 18.52997732426304,
+          "end": 20.539002267573697,
+          "sentenceCues": []
+        },
+        {
+          "key": "3-1",
+          "section": "Refrain",
+          "start": 20.919002267573696,
+          "end": 22.76721088435374,
+          "sentenceCues": []
+        },
+        {
+          "key": "3-2",
+          "section": "Refrain",
+          "start": 23.14721088435374,
+          "end": 24.736916099773243,
+          "sentenceCues": []
+        },
+        {
+          "key": "3-3",
+          "section": "Refrain",
+          "start": 25.116916099773242,
+          "end": 26.746031746031747,
+          "sentenceCues": []
+        },
+        {
+          "key": "4-0",
+          "section": "Day three · Land and life",
+          "start": 27.126031746031746,
+          "end": 28.770204081632652,
+          "sentenceCues": []
+        },
+        {
+          "key": "4-1",
+          "section": "Day three · Land and life",
+          "start": 29.15020408163265,
+          "end": 31.379183673469388,
+          "sentenceCues": []
+        },
+        {
+          "key": "4-2",
+          "section": "Day three · Land and life",
+          "start": 31.759183673469387,
+          "end": 34.12390022675737,
+          "sentenceCues": []
+        },
+        {
+          "key": "4-3",
+          "section": "Day three · Land and life",
+          "start": 34.50390022675737,
+          "end": 36.14616780045351,
+          "sentenceCues": []
+        },
+        {
+          "key": "5-0",
+          "section": "Day four · Sun, moon and stars",
+          "start": 36.526167800453514,
+          "end": 38.140907029478456,
+          "sentenceCues": []
+        },
+        {
+          "key": "5-1",
+          "section": "Day four · Sun, moon and stars",
+          "start": 38.52090702947846,
+          "end": 40.22458049886621,
+          "sentenceCues": []
+        },
+        {
+          "key": "5-2",
+          "section": "Day four · Sun, moon and stars",
+          "start": 40.60458049886621,
+          "end": 42.81578231292517,
+          "sentenceCues": []
+        },
+        {
+          "key": "5-3",
+          "section": "Day four · Sun, moon and stars",
+          "start": 43.19578231292517,
+          "end": 44.931337868480725,
+          "sentenceCues": []
+        },
+        {
+          "key": "6-0",
+          "section": "Refrain",
+          "start": 45.31133786848073,
+          "end": 47.32031746031746,
+          "sentenceCues": []
+        },
+        {
+          "key": "6-1",
+          "section": "Refrain",
+          "start": 47.70031746031746,
+          "end": 49.548480725623584,
+          "sentenceCues": []
+        },
+        {
+          "key": "6-2",
+          "section": "Refrain",
+          "start": 49.92848072562358,
+          "end": 51.5231746031746,
+          "sentenceCues": []
+        },
+        {
+          "key": "6-3",
+          "section": "Refrain",
+          "start": 51.903174603174605,
+          "end": 53.53219954648526,
+          "sentenceCues": []
+        },
+        {
+          "key": "7-0",
+          "section": "Day five · Sea and sky",
+          "start": 53.91219954648526,
+          "end": 55.75573696145125,
+          "sentenceCues": []
+        },
+        {
+          "key": "7-1",
+          "section": "Day five · Sea and sky",
+          "start": 56.13573696145125,
+          "end": 58.04326530612245,
+          "sentenceCues": []
+        },
+        {
+          "key": "7-2",
+          "section": "Day five · Sea and sky",
+          "start": 58.42326530612245,
+          "end": 60.37909297052154,
+          "sentenceCues": []
+        },
+        {
+          "key": "7-3",
+          "section": "Day five · Sea and sky",
+          "start": 60.75909297052154,
+          "end": 62.77614512471656,
+          "sentenceCues": []
+        },
+        {
+          "key": "8-0",
+          "section": "Day six · Life on earth",
+          "start": 63.15614512471655,
+          "end": 64.88149659863946,
+          "sentenceCues": []
+        },
+        {
+          "key": "8-1",
+          "section": "Day six · Life on earth",
+          "start": 65.26149659863945,
+          "end": 66.97015873015873,
+          "sentenceCues": []
+        },
+        {
+          "key": "8-2",
+          "section": "Day six · Life on earth",
+          "start": 67.35015873015873,
+          "end": 69.39392290249432,
+          "sentenceCues": []
+        },
+        {
+          "key": "8-3",
+          "section": "Day six · Life on earth",
+          "start": 69.77392290249433,
+          "end": 71.64281179138322,
+          "sentenceCues": []
+        },
+        {
+          "key": "9-0",
+          "section": "Refrain",
+          "start": 72.02281179138322,
+          "end": 74.03183673469388,
+          "sentenceCues": []
+        },
+        {
+          "key": "9-1",
+          "section": "Refrain",
+          "start": 74.41183673469388,
+          "end": 76.26,
+          "sentenceCues": []
+        },
+        {
+          "key": "9-2",
+          "section": "Refrain",
+          "start": 76.64,
+          "end": 78.22938775510204,
+          "sentenceCues": []
+        },
+        {
+          "key": "9-3",
+          "section": "Refrain",
+          "start": 78.60938775510203,
+          "end": 80.23850340136055,
+          "sentenceCues": []
+        }
+      ],
+      "textSource": "Original adapted song lyrics",
+      "method": "Unpitched local speech synthesis, no music",
+      "sourceTextSha256": "ec98eb16e05b64358fd323b436411272127366f83878e8ddc520232e8afe1e3b",
+      "creation": "Rendered locally with the pretrained Kokoro af_sarah speech profile. Reading preserves the phrasing and punctuation of the adapted lyrics."
     }
   ]
 }
