@@ -1329,6 +1329,161 @@
       ],
       "creation": "Synthesized locally using the pretrained Kokoro af_sarah profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
       "sourceTextSha256": "b15f639d5742cf8aa1afdbdd083863334f59a2e1050a385b989f6031f0f1c4ba"
+    },
+    {
+      "voiceId": "voice5",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-15/voice5.m4a",
+      "duration": 144.02303854875282,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 8.981133786848073,
+          "sentenceCues": [
+            {
+              "offset": 94,
+              "start": 6.4304421768707485
+            }
+          ]
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 9.221133786848073,
+          "end": 17.91981859410431
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 18.15981859410431,
+          "end": 24.892426303854876
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 25.132426303854874,
+          "end": 33.25297052154195
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 33.49297052154195,
+          "end": 42.2924716553288,
+          "sentenceCues": [
+            {
+              "offset": 104,
+              "start": 39.440238095238094
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.5324716553288,
+          "end": 46.62344671201814
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 46.86344671201814,
+          "end": 53.71891156462585
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 53.95891156462585,
+          "end": 58.17310657596372
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 58.41310657596372,
+          "end": 66.07664399092971
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 66.3166439909297,
+          "end": 75.48684807256235,
+          "sentenceCues": [
+            {
+              "offset": 112,
+              "start": 72.93302721088435
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 75.72684807256236,
+          "end": 80.14866213151927
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 80.38866213151927,
+          "end": 87.00798185941044
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 87.24798185941043,
+          "end": 97.6934693877551
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 97.9334693877551,
+          "end": 104.01482993197278
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 104.2548299319728,
+          "end": 109.22136054421769
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 109.46136054421768,
+          "end": 116.06090702947846
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 116.30090702947845,
+          "end": 125.54272108843537
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 125.78272108843538,
+          "end": 135.39111111111112
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 135.63111111111112,
+          "end": 138.3421768707483
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 138.5821768707483,
+          "end": 140.38571428571427
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 140.62571428571428,
+          "end": 144.02303854875282
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro af_bella profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "b15f639d5742cf8aa1afdbdd083863334f59a2e1050a385b989f6031f0f1c4ba"
     }
   ]
 }
