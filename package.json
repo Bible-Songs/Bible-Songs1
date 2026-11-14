@@ -1,6 +1,6 @@
 {
   "name": "bible-songs",
-  "version": "1.0.61",
+  "version": "1.0.62",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",
+    "kokoro-js": "^1.2.1",
     "lucide-react": "1.31.0",
+    "mammoth": "^1.13.0",
+    "pdfjs-dist": "^6.5.438",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
