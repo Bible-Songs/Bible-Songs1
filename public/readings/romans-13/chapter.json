@@ -816,6 +816,157 @@
       ],
       "creation": "Synthesized locally using the pretrained Kokoro am_michael profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
       "sourceTextSha256": "27c0b41ff11c3fd8d97fa88d53a17fe1deb9ebd5cfb05d80b54ca08e1b5212f2"
+    },
+    {
+      "voiceId": "voice9",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-13/voice9.m4a",
+      "duration": 113.92321995464853,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 9.651972789115646,
+          "sentenceCues": [
+            {
+              "offset": 116,
+              "start": 6.523231292517007
+            }
+          ]
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 9.891972789115647,
+          "end": 17.694149659863946
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 17.934149659863944,
+          "end": 26.506757369614512,
+          "sentenceCues": [
+            {
+              "offset": 57,
+              "start": 21.310986394557823
+            },
+            {
+              "offset": 109,
+              "start": 24.06109977324263
+            }
+          ]
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 26.746757369614514,
+          "end": 36.77242630385488,
+          "sentenceCues": [
+            {
+              "offset": 39,
+              "start": 28.919648526077097
+            },
+            {
+              "offset": 112,
+              "start": 33.149625850340136
+            }
+          ]
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 37.01242630385487,
+          "end": 43.92403628117914
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 44.164036281179136,
+          "end": 50.463038548752834,
+          "sentenceCues": [
+            {
+              "offset": 32,
+              "start": 46.39239229024943
+            }
+          ]
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 50.703038548752836,
+          "end": 60.04829931972789
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 60.28829931972789,
+          "end": 66.31696145124717,
+          "sentenceCues": [
+            {
+              "offset": 54,
+              "start": 63.66826530612245
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 66.55696145124716,
+          "end": 76.777052154195
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 77.01705215419501,
+          "end": 81.581179138322,
+          "sentenceCues": [
+            {
+              "offset": 36,
+              "start": 79.01465986394558
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 81.821179138322,
+          "end": 90.39256235827665,
+          "sentenceCues": [
+            {
+              "offset": 41,
+              "start": 84.34463718820862
+            }
+          ]
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 90.63256235827664,
+          "end": 97.8277097505669,
+          "sentenceCues": [
+            {
+              "offset": 50,
+              "start": 93.90695011337868
+            }
+          ]
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 98.06770975056689,
+          "end": 107.60099773242631
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 107.8409977324263,
+          "end": 113.92321995464853
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_adam profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "27c0b41ff11c3fd8d97fa88d53a17fe1deb9ebd5cfb05d80b54ca08e1b5212f2"
     }
   ]
 }
