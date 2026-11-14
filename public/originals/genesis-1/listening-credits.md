@@ -8,4 +8,8 @@ The current Kokoro profiles are am_michael (Voice 1), af_heart (Voice 2), am_fen
 
 The complete Bible's text is from [Berean Standard Bible](https://berean.bible/terms.htm) and is public domain. Local changes consist of speech synthesis, original melody/accompaniment, phoneme/voicing-aware timing and pitch processing, and AAC encoding. No third-party song recordings, named-artist imitation or paid generation services were used.
 
-Genesis 2–10 readings use the official [Berean Standard Bible USJ download](https://bereanbible.com/bsb_usj.zip). Each of the five Kokoro profiles reads the verses with the original punctuation. Sentence cues seek within the spoken audio and are independent of its phrasing.
+Genesis 2–10 readings use the official [Berean Standard Bible USJ download](https://bereanbible.com/bsb_usj.zip). Each Kokoro profile reads the verses with the original punctuation. Sentence cues seek within the spoken audio and are independent of its phrasing.
+
+## Voices 6–10
+
+- Voice 10 uses Kokoro `af_nova`. The singing tracks use local Praat pitch and duration processing.
