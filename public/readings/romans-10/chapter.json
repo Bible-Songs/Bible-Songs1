@@ -1,0 +1,283 @@
+{
+  "number": 10,
+  "chapter": "Romans 10",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "Brothers, my heart’s desire and prayer to God for the Israelites is for their salvation."
+    },
+    {
+      "verse": 2,
+      "text": "For I testify about them that they are zealous for God, but not on the basis of knowledge."
+    },
+    {
+      "verse": 3,
+      "text": "Because they were ignorant of God’s righteousness and sought to establish their own, they did not submit to God’s righteousness."
+    },
+    {
+      "verse": 4,
+      "text": "For Christ is the end of the law, to bring righteousness to everyone who believes."
+    },
+    {
+      "verse": 5,
+      "text": "For concerning the righteousness that is by the law, Moses writes: “The man who does these things will live by them.”"
+    },
+    {
+      "verse": 6,
+      "text": "But the righteousness that is by faith says: “Do not say in your heart, ‘Who will ascend into heaven?’ (that is, to bring Christ down)"
+    },
+    {
+      "verse": 7,
+      "text": "or, ‘Who will descend into the Abyss?’ (that is, to bring Christ up from the dead).”"
+    },
+    {
+      "verse": 8,
+      "text": "But what does it say? “The word is near you; it is in your mouth and in your heart,” that is, the word of faith we are proclaiming:"
+    },
+    {
+      "verse": 9,
+      "text": "that if you confess with your mouth, “Jesus is Lord,” and believe in your heart that God raised Him from the dead, you will be saved."
+    },
+    {
+      "verse": 10,
+      "text": "For with your heart you believe and are justified, and with your mouth you confess and are saved."
+    },
+    {
+      "verse": 11,
+      "text": "It is just as the Scripture says: “Anyone who believes in Him will never be put to shame.”"
+    },
+    {
+      "verse": 12,
+      "text": "For there is no difference between Jew and Greek: The same Lord is Lord of all, and gives richly to all who call on Him,"
+    },
+    {
+      "verse": 13,
+      "text": "for, “Everyone who calls on the name of the Lord will be saved.”"
+    },
+    {
+      "verse": 14,
+      "text": "How then can they call on the One in whom they have not believed? And how can they believe in the One of whom they have not heard? And how can they hear without someone to preach?"
+    },
+    {
+      "verse": 15,
+      "text": "And how can they preach unless they are sent? As it is written: “How beautiful are the feet of those who bring good news!”"
+    },
+    {
+      "verse": 16,
+      "text": "But not all of them welcomed the good news. For Isaiah says, “Lord, who has believed our message?”"
+    },
+    {
+      "verse": 17,
+      "text": "Consequently, faith comes by hearing, and hearing by the word of Christ."
+    },
+    {
+      "verse": 18,
+      "text": "But I ask, did they not hear? Indeed they did: “Their voice has gone out into all the earth, their words to the ends of the world.”"
+    },
+    {
+      "verse": 19,
+      "text": "I ask instead, did Israel not understand? First, Moses says: “I will make you jealous by those who are not a nation; I will make you angry by a nation without understanding.”"
+    },
+    {
+      "verse": 20,
+      "text": "And Isaiah boldly says: “I was found by those who did not seek Me; I revealed Myself to those who did not ask for Me.”"
+    },
+    {
+      "verse": 21,
+      "text": "But as for Israel he says: “All day long I have held out My hands to a disobedient and obstinate people.”"
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-10/composite.m4a",
+      "duration": 139.36503401360545,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.422539682539682
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.662539682539682,
+          "end": 11.222902494331066
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 11.462902494331066,
+          "end": 18.5324716553288
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 18.772471655328797,
+          "end": 23.681950113378686
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 23.921950113378685,
+          "end": 30.579863945578232
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 30.81986394557823,
+          "end": 38.40530612244898,
+          "sentenceCues": [
+            {
+              "offset": 103,
+              "start": 35.90450113378685
+            }
+          ]
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 38.64530612244898,
+          "end": 43.65151927437642,
+          "sentenceCues": [
+            {
+              "offset": 39,
+              "start": 40.69833333333333
+            }
+          ]
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 43.891519274376414,
+          "end": 50.79968253968254,
+          "sentenceCues": [
+            {
+              "offset": 22,
+              "start": 44.78354875283446
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 51.03968253968254,
+          "end": 58.16798185941043
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 58.407981859410434,
+          "end": 63.866031746031744
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 64.10603174603175,
+          "end": 69.5390022675737
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 69.7790022675737,
+          "end": 76.55174603174603
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 76.79174603174603,
+          "end": 80.59510204081633
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 80.83510204081632,
+          "end": 89.6657596371882,
+          "sentenceCues": [
+            {
+              "offset": 66,
+              "start": 83.85447845804988
+            },
+            {
+              "offset": 131,
+              "start": 86.79933106575963
+            }
+          ]
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 89.90575963718821,
+          "end": 96.66185941043084,
+          "sentenceCues": [
+            {
+              "offset": 46,
+              "start": 92.08146258503402
+            }
+          ]
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 96.90185941043084,
+          "end": 102.68793650793651,
+          "sentenceCues": [
+            {
+              "offset": 44,
+              "start": 99.11842403628118
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 102.92793650793651,
+          "end": 107.2595918367347
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 107.4995918367347,
+          "end": 114.31120181405896,
+          "sentenceCues": [
+            {
+              "offset": 30,
+              "start": 108.97674603174603
+            }
+          ]
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 114.55120181405896,
+          "end": 124.81551020408163,
+          "sentenceCues": [
+            {
+              "offset": 42,
+              "start": 116.91946712018141
+            }
+          ]
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 125.05551020408163,
+          "end": 132.43659863945578
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 132.6765986394558,
+          "end": 139.36503401360545
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "f91ad2021d807e90a08ab5757ac4a3f575241e5970095b1c98fe123658589561"
+    }
+  ]
+}
