@@ -1,0 +1,317 @@
+{
+  "number": 4,
+  "chapter": "Romans 4",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "What then shall we say that Abraham, our forefather according to the flesh, has discovered?"
+    },
+    {
+      "verse": 2,
+      "text": "If Abraham was indeed justified by works, he had something to boast about, but not before God."
+    },
+    {
+      "verse": 3,
+      "text": "For what does the Scripture say? “Abraham believed God, and it was credited to him as righteousness.”"
+    },
+    {
+      "verse": 4,
+      "text": "Now the wages of the worker are not credited as a gift, but as an obligation."
+    },
+    {
+      "verse": 5,
+      "text": "However, to the one who does not work, but believes in Him who justifies the ungodly, his faith is credited as righteousness."
+    },
+    {
+      "verse": 6,
+      "text": "And David speaks likewise of the blessedness of the man to whom God credits righteousness apart from works:"
+    },
+    {
+      "verse": 7,
+      "text": "“Blessed are they whose lawless acts are forgiven, whose sins are covered."
+    },
+    {
+      "verse": 8,
+      "text": "Blessed is the man whose sin the Lord will never count against him.”"
+    },
+    {
+      "verse": 9,
+      "text": "Is this blessing only on the circumcised, or also on the uncircumcised? We have been saying that Abraham’s faith was credited to him as righteousness."
+    },
+    {
+      "verse": 10,
+      "text": "In what context was it credited? Was it after his circumcision, or before? It was not after, but before."
+    },
+    {
+      "verse": 11,
+      "text": "And he received the sign of circumcision as a seal of the righteousness that he had by faith while he was still uncircumcised. So then, he is the father of all who believe but are not circumcised, in order that righteousness might be credited to them."
+    },
+    {
+      "verse": 12,
+      "text": "And he is also the father of the circumcised who not only are circumcised, but who also walk in the footsteps of the faith that our father Abraham had before he was circumcised."
+    },
+    {
+      "verse": 13,
+      "text": "For the promise to Abraham and his offspring that he would be heir of the world was not given through the law, but through the righteousness that comes by faith."
+    },
+    {
+      "verse": 14,
+      "text": "For if those who live by the law are heirs, faith is useless and the promise is worthless,"
+    },
+    {
+      "verse": 15,
+      "text": "because the law brings wrath. And where there is no law, there is no transgression."
+    },
+    {
+      "verse": 16,
+      "text": "Therefore, the promise comes by faith, so that it may rest on grace and may be guaranteed to all Abraham’s offspring — not only to those who are of the law, but also to those who are of the faith of Abraham. He is the father of us all."
+    },
+    {
+      "verse": 17,
+      "text": "As it is written: “I have made you a father of many nations.” He is our father in the presence of God, in whom he believed, the God who gives life to the dead and calls into being what does not yet exist."
+    },
+    {
+      "verse": 18,
+      "text": "Against all hope, Abraham in hope believed and so became the father of many nations, just as he had been told, “So shall your offspring be.”"
+    },
+    {
+      "verse": 19,
+      "text": "Without weakening in his faith, he acknowledged the decrepitness of his body (since he was about a hundred years old) and the lifelessness of Sarah’s womb."
+    },
+    {
+      "verse": 20,
+      "text": "Yet he did not waver through disbelief in the promise of God, but was strengthened in his faith and gave glory to God,"
+    },
+    {
+      "verse": 21,
+      "text": "being fully persuaded that God was able to do what He had promised."
+    },
+    {
+      "verse": 22,
+      "text": "This is why “it was credited to him as righteousness.”"
+    },
+    {
+      "verse": 23,
+      "text": "Now the words “it was credited to him” were written not only for Abraham,"
+    },
+    {
+      "verse": 24,
+      "text": "but also for us, to whom righteousness will be credited— for us who believe in Him who raised Jesus our Lord from the dead."
+    },
+    {
+      "verse": 25,
+      "text": "He was delivered over to death for our trespasses and was raised to life for our justification."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-4/composite.m4a",
+      "duration": 182.58902494331065,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.383083900226757
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.623083900226757,
+          "end": 11.8784126984127
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 12.118412698412698,
+          "end": 18.005215419501134,
+          "sentenceCues": [
+            {
+              "offset": 33,
+              "start": 13.610759637188208
+            }
+          ]
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 18.245215419501132,
+          "end": 23.290884353741497
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 23.530884353741495,
+          "end": 31.100816326530612
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 31.34081632653061,
+          "end": 37.78639455782313
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 38.02639455782313,
+          "end": 42.212925170068026
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 42.45292517006803,
+          "end": 46.52199546485261
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 46.76199546485261,
+          "end": 55.87795918367347,
+          "sentenceCues": [
+            {
+              "offset": 72,
+              "start": 51.30255102040817
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 56.11795918367347,
+          "end": 62.82249433106576,
+          "sentenceCues": [
+            {
+              "offset": 33,
+              "start": 58.001507936507934
+            },
+            {
+              "offset": 75,
+              "start": 60.4915306122449
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 63.06249433106576,
+          "end": 76.79755102040816,
+          "sentenceCues": [
+            {
+              "offset": 127,
+              "start": 69.79007936507936
+            }
+          ]
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 77.03755102040816,
+          "end": 87.35487528344672
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 87.59487528344671,
+          "end": 96.32666666666667
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 96.56666666666666,
+          "end": 101.95124716553288
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 102.19124716553289,
+          "end": 106.88721088435373,
+          "sentenceCues": [
+            {
+              "offset": 30,
+              "start": 103.79656462585035
+            }
+          ]
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 107.12721088435374,
+          "end": 120.27637188208617,
+          "sentenceCues": [
+            {
+              "offset": 208,
+              "start": 118.18722222222223
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 120.51637188208616,
+          "end": 131.55551020408163,
+          "sentenceCues": [
+            {
+              "offset": 62,
+              "start": 123.82835600907029
+            }
+          ]
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 131.79551020408164,
+          "end": 140.08861678004536
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 140.32861678004537,
+          "end": 148.84721088435373
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 149.08721088435374,
+          "end": 156.06321995464853
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 156.30321995464854,
+          "end": 160.61333333333334
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 160.85333333333332,
+          "end": 164.50172335600908
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 164.74172335600906,
+          "end": 169.30185941043084
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 169.54185941043085,
+          "end": 176.82204081632653
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 177.06204081632654,
+          "end": 182.58902494331065
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "9b0bb7e28648e1043cc07e37ef321a18800727ca8952c9b6c425efaa2a86ec9d"
+    }
+  ]
+}

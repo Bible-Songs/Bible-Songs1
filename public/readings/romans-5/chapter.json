@@ -1,0 +1,249 @@
+{
+  "number": 5,
+  "chapter": "Romans 5",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ,"
+    },
+    {
+      "verse": 2,
+      "text": "through whom we have gained access by faith into this grace in which we stand. And we rejoice in the hope of the glory of God."
+    },
+    {
+      "verse": 3,
+      "text": "Not only that, but we also rejoice in our sufferings, because we know that suffering produces perseverance;"
+    },
+    {
+      "verse": 4,
+      "text": "perseverance, character; and character, hope."
+    },
+    {
+      "verse": 5,
+      "text": "And hope does not disappoint us, because God has poured out His love into our hearts through the Holy Spirit, whom He has given us."
+    },
+    {
+      "verse": 6,
+      "text": "For at just the right time, while we were still powerless, Christ died for the ungodly."
+    },
+    {
+      "verse": 7,
+      "text": "Very rarely will anyone die for a righteous man, though for a good man someone might possibly dare to die."
+    },
+    {
+      "verse": 8,
+      "text": "But God proves His love for us in this: While we were still sinners, Christ died for us."
+    },
+    {
+      "verse": 9,
+      "text": "Therefore, since we have now been justified by His blood, how much more shall we be saved from wrath through Him!"
+    },
+    {
+      "verse": 10,
+      "text": "For if, when we were enemies of God, we were reconciled to Him through the death of His Son, how much more, having been reconciled, shall we be saved through His life!"
+    },
+    {
+      "verse": 11,
+      "text": "Not only that, but we also rejoice in God through our Lord Jesus Christ, through whom we have now received reconciliation."
+    },
+    {
+      "verse": 12,
+      "text": "Therefore, just as sin entered the world through one man, and death through sin, so also death was passed on to all men, because all sinned."
+    },
+    {
+      "verse": 13,
+      "text": "For sin was in the world before the law was given; but sin is not taken into account when there is no law."
+    },
+    {
+      "verse": 14,
+      "text": "Nevertheless, death reigned from Adam until Moses, even over those who did not sin in the way that Adam transgressed. He is a pattern of the One to come."
+    },
+    {
+      "verse": 15,
+      "text": "But the gift is not like the trespass. For if the many died by the trespass of the one man, how much more did God’s grace and the gift that came by the grace of the one man, Jesus Christ, abound to the many!"
+    },
+    {
+      "verse": 16,
+      "text": "Again, the gift is not like the result of the one man’s sin: The judgment that followed one sin brought condemnation, but the gift that followed many trespasses brought justification."
+    },
+    {
+      "verse": 17,
+      "text": "For if, by the trespass of the one man, death reigned through that one man, how much more will those who receive the abundance of grace and of the gift of righteousness reign in life through the one man, Jesus Christ!"
+    },
+    {
+      "verse": 18,
+      "text": "So then, just as one trespass brought condemnation for all men, so also one act of righteousness brought justification and life for all men."
+    },
+    {
+      "verse": 19,
+      "text": "For just as through the disobedience of the one man the many were made sinners, so also through the obedience of the one man the many will be made righteous."
+    },
+    {
+      "verse": 20,
+      "text": "The law came in so that the trespass would increase; but where sin increased, grace increased all the more,"
+    },
+    {
+      "verse": 21,
+      "text": "so that, just as sin reigned in death, so also grace might reign through righteousness to bring eternal life through Jesus Christ our Lord."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-5/composite.m4a",
+      "duration": 162.6449886621315,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.124444444444444
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 6.364444444444445,
+          "end": 13.63501133786848,
+          "sentenceCues": [
+            {
+              "offset": 79,
+              "start": 10.394115646258504
+            }
+          ]
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 13.87501133786848,
+          "end": 20.353650793650793
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 20.593650793650795,
+          "end": 23.682630385487528
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 23.92263038548753,
+          "end": 30.94544217687075
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 31.185442176870747,
+          "end": 36.22031746031746
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 36.46031746031746,
+          "end": 43.03006802721089
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 43.27006802721088,
+          "end": 48.307755102040815
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 48.54775510204082,
+          "end": 54.951292517006806
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 55.1912925170068,
+          "end": 64.14589569160998
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 64.38589569160997,
+          "end": 71.63106575963718
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 71.87106575963719,
+          "end": 79.56480725623582
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 79.80480725623583,
+          "end": 86.23809523809524
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 86.47809523809524,
+          "end": 95.34104308390023,
+          "sentenceCues": [
+            {
+              "offset": 118,
+              "start": 93.15552154195011
+            }
+          ]
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 95.58104308390023,
+          "end": 107.2019954648526,
+          "sentenceCues": [
+            {
+              "offset": 39,
+              "start": 97.55515873015872
+            }
+          ]
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 107.44199546485261,
+          "end": 118.40321995464852
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 118.64321995464853,
+          "end": 130.11056689342405
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 130.35056689342403,
+          "end": 138.84
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 139.08,
+          "end": 148.1627664399093
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 148.4027664399093,
+          "end": 154.43482993197279
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 154.6748299319728,
+          "end": 162.6449886621315
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "b55dfff3b9d83792f9b47b5bfdf750184b4860bf88b51c537be223810fff5631"
+    }
+  ]
+}
