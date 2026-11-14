@@ -13,8 +13,13 @@ type VoiceChange={voiceId:string;audio:string;at:number|null;start:number};
 const listeningTracks=listening.recordings as ReadingTrack[];
 const chapters:Chapter[]=[
  {number:1,...scripture,recordings:listeningTracks},
- ...Object.values(import.meta.glob<Chapter>('../public/readings/genesis-*/chapter.json',{eager:true,import:'default'})),
-].sort((a,b)=>a.number-b.number);
+ ...Object.values(import.meta.glob<Chapter>('../public/readings/*/chapter.json',{eager:true,import:'default'})),
+].sort((a,b)=>Number(isRomans(a))-Number(isRomans(b))||a.number-b.number);
+function isRomans(chapter:Chapter){return chapter.chapter.startsWith('Romans ');}
+const chapterId=(chapter:Chapter)=>isRomans(chapter)?`romans-${chapter.number}`:String(chapter.number);
+const genesisEnd=chapters.filter(chapter=>!isRomans(chapter)).at(-1)?.number;
+const romansEnd=chapters.filter(isRomans).at(-1)?.number;
+const readingRange=`Genesis 1–${genesisEnd}${romansEnd?` · Romans 1–${romansEnd}`:''}`;
 const base=import.meta.env.BASE_URL;
 const mediaUrl=(path:string)=>`${base}${path}?v=${APP_VERSION}`;
 const photo=base+'lake.jpg';
@@ -29,7 +34,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  const [continuing,setContinuing]=useState(false);
  const isReading=mode==='reading',isBible=content==='bible';
  const bibleReading=isBible&&isReading;
- const hasMusic=!isBible||chapter.number===1;
+ const hasMusic=!isBible||chapterId(chapter)==='1';
  const tracks=isBible?chapter.recordings:listeningTracks;
  const getTrack=(voiceId:string)=>tracks.find(t=>t.voiceId===voiceId&&t.content===content&&t.mode===mode);
  const availableRecordings=song.recordings.filter(r=>!isBible&&!isReading||r.id!=='instrumental'&&getTrack(r.id));
@@ -128,7 +133,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  }
  function queueFromPool(voices:string[],position:number,order:VoiceOrder){
   if(order==='drama'){
-   const cues=dramaCues(chapter.number,chapter.verses,boundaries);
+   const cues=dramaCues(chapter.number,chapter.verses,boundaries,isRomans(chapter)?'romans':'genesis');
    const next=cues.find(cue=>cue.start>position+.005&&(getTrack(cue.voice)?.voiceId??availableRecordings[0]?.id)!==selectedRecording.id);
    if(next)queueVoice(getTrack(next.voice)?.voiceId??availableRecordings[0].id,position,next);
    else setVoiceChange(null);
@@ -178,7 +183,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  }
  function playFrom(start:number){
   if(bibleReading&&voiceOrder==='drama'){
-   const cue=dramaCues(chapter.number,chapter.verses,boundaries).reverse().find(item=>item.start<=start+.001);
+   const cue=dramaCues(chapter.number,chapter.verses,boundaries,isRomans(chapter)?'romans':'genesis').reverse().find(item=>item.start<=start+.001);
    const target=cue&&getTrack(cue.voice);
    const source=selectedEntry?.segments.find(segment=>start>=segment.start&&start<segment.end);
    const segment=target?.segments.find(item=>item.verse===source?.verse);
@@ -240,8 +245,8 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  }
  function favorite(){const next=!liked;setLiked(next);try{localStorage.setItem(key,String(next))}catch{setMessage('Favorites could not be saved on this browser.')}}
  function read(){setContent('bible');setMode('reading');setTab('Discover');setQuery('');requestAnimationFrame(()=>chapterControls.current?.scrollIntoView({behavior:'smooth',block:'start'}))}
- function chooseChapter(number:number){
-  const next=chapters.find(item=>item.number===number);
+ function chooseChapter(id:string){
+  const next=chapters.find(item=>chapterId(item)===id);
   if(!next||next===chapter)return;
   setVoiceChange(null);
   if(continuing){
@@ -250,11 +255,11 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
    if(entry&&audio.current&&!audio.current.paused)resume.current={audio:entry.audio,start:0};
   }
   setChapter(next);
-  if(next.number!==1)setMode('reading');
+  if(chapterId(next)!=='1')setMode('reading');
  }
  function chooseBible(){
   setContent('bible');
-  if(chapter.number!==1)setMode('reading');
+  if(chapterId(chapter)!=='1')setMode('reading');
  }
  function leaveBibleReading(){
   resume.current=null;
@@ -266,19 +271,19 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   setQuery(value);
   setTab('Song library');
   const match=chapters.find(item=>item.chapter.toLowerCase()===value.trim().toLowerCase());
-  if(match){setContent('bible');chooseChapter(match.number);}
+  if(match){setContent('bible');chooseChapter(chapterId(match));}
  }
  const visible=(tab!=='My favorites'||liked)&&[...chapters.map(item=>item.chapter),song.title].some(title=>title.toLowerCase().includes(query.trim().toLowerCase()));
  const currentSection=isBible?undefined:mode==='singing'?song.sections.find(s=>time>=s.start&&time<s.end):currentSegment?song.sections[Number(currentSegment.key.split('-')[0])]:undefined;
- return <div className="shell original-library"><aside className="sidebar"><a className="brand" href={base}><span className="brand-icon"><Music2 size={25}/></span>Bible Songs</a><div className="tagline">SCRIPTURE. SET TO MUSIC.</div><nav>{[{name:'Discover',Icon:Compass},{name:'Song library',Icon:BookOpen},{name:'My favorites',Icon:Heart}].map(({name,Icon})=><button className={tab===name?'active':''} onClick={()=>{setTab(name);setQuery('')}} key={name}><Icon size={19}/>{name}</button>)}</nav><div className="side-label">BIBLE READINGS</div><button className="daily" onClick={read}><BookOpen size={20}/><span>Genesis 1–{chapters.at(-1)?.number}<small>Choose a chapter</small></span></button><div className="side-bottom"><div className="verse-mark">“</div><p>In the beginning<br/>God created the heavens<br/>and the earth.</p><span>GENESIS 1:1 · BSB</span><div className="side-foot">Original music, rooted in Scripture.<br/>A new library, beginning with Genesis.</div></div></aside>
+ return <div className="shell original-library"><aside className="sidebar"><a className="brand" href={base}><span className="brand-icon"><Music2 size={25}/></span>Bible Songs</a><div className="tagline">SCRIPTURE. SET TO MUSIC.</div><nav>{[{name:'Discover',Icon:Compass},{name:'Song library',Icon:BookOpen},{name:'My favorites',Icon:Heart}].map(({name,Icon})=><button className={tab===name?'active':''} onClick={()=>{setTab(name);setQuery('')}} key={name}><Icon size={19}/>{name}</button>)}</nav><div className="side-label">BIBLE READINGS</div><button className="daily" onClick={read}><BookOpen size={20}/><span>{readingRange}<small>Choose a chapter</small></span></button><div className="side-bottom"><div className="verse-mark">“</div><p>In the beginning<br/>God created the heavens<br/>and the earth.</p><span>GENESIS 1:1 · BSB</span><div className="side-foot">Original music, rooted in Scripture.<br/>A new library, beginning with Genesis.</div></div></aside>
  <main><header><div className="breadcrumb">Your daily rhythm of faith</div><div className="header-actions"><label className="search"><Search size={17}/><input placeholder="Search chapters and songs" value={query} onChange={e=>search(e.target.value)}/></label><div className="account-menu">{user.email&&<><span className="account-email" title={user.email}>{user.email}</span><span className="avatar">{user.email[0].toUpperCase()}</span></>}{onSignOut&&<button className="signout-button" disabled={signingOut} onClick={onSignOut}>{signingOut?'Signing out…':'Sign out'}</button>}</div></div></header>
- <div className="content"><div className="page-heading"><div><div className="eyebrow"><span/> BIBLE SONGS ORIGINALS</div><h1>{tab==='My favorites'?'Keep the music close.':tab==='Song library'?'Our original song library.':'A new beginning, in song.'}</h1><p>Hear Genesis 1–{chapters.at(-1)?.number}, then explore the original musical setting of Genesis 1.</p></div><span className="edition">ORIGINAL COLLECTION <Music2 size={15}/></span></div>
- {visible?<><section className="hero" style={{backgroundImage:`linear-gradient(90deg,rgba(15,37,31,.79),rgba(15,37,31,.08)),url(${photo})`}}><div className="hero-content"><span className="hero-label"><span/> {isBible?chapter.chapter.toUpperCase():'GENESIS 1'} · {isBible?'BEREAN STANDARD BIBLE':'ORIGINAL SONG LYRICS'}</span><h2>{isBible?(chapter.number===1?<>The story<br/>of creation.</>:chapter.chapter):<>Let There<br/>Be Light.</>}</h2><p>{vocal?selectedRecording.name:'Instrumental only'} <span>·</span> {isReading?'Spoken reading':'Musical setting · C major · 84 BPM'}</p><button className="cream-button" onClick={toggle}>{playing?<Pause size={17}/>:<Play size={17} fill="currentColor"/>}{playing?'Pause':isReading?'Play reading':vocal?'Play singing':'Play instrumental'}</button></div><div className="hero-caption">{isBible?`${chapter.chapter.toUpperCase()} · COMPLETE CHAPTER`:'OUR ORIGINAL ADAPTATION'}</div></section>
+ <div className="content"><div className="page-heading"><div><div className="eyebrow"><span/> BIBLE SONGS ORIGINALS</div><h1>{tab==='My favorites'?'Keep the music close.':tab==='Song library'?'Our original song library.':'A new beginning, in song.'}</h1><p>Hear {readingRange}, then explore the original musical setting of Genesis 1.</p></div><span className="edition">ORIGINAL COLLECTION <Music2 size={15}/></span></div>
+ {visible?<><section className="hero" style={{backgroundImage:`linear-gradient(90deg,rgba(15,37,31,.79),rgba(15,37,31,.08)),url(${photo})`}}><div className="hero-content"><span className="hero-label"><span/> {isBible?chapter.chapter.toUpperCase():'GENESIS 1'} · {isBible?'BEREAN STANDARD BIBLE':'ORIGINAL SONG LYRICS'}</span><h2>{isBible?(chapterId(chapter)==='1'?<>The story<br/>of creation.</>:chapter.chapter):<>Let There<br/>Be Light.</>}</h2><p>{vocal?selectedRecording.name:'Instrumental only'} <span>·</span> {isReading?'Spoken reading':'Musical setting · C major · 84 BPM'}</p><button className="cream-button" onClick={toggle}>{playing?<Pause size={17}/>:<Play size={17} fill="currentColor"/>}{playing?'Pause':isReading?'Play reading':vocal?'Play singing':'Play instrumental'}</button></div><div className="hero-caption">{isBible?`${chapter.chapter.toUpperCase()} · COMPLETE CHAPTER`:'OUR ORIGINAL ADAPTATION'}</div></section>
  <section className="original-status"><Music2 size={22}/><div><strong>Choose the voice for your listening moment</strong><p>{isBible?`Hear the complete ${chapter.chapter} chapter in the Berean Standard Bible. ${hasMusic?'Choose reading or singing.':'Choose a reading voice.'}`:'These original song lyrics adapt Genesis 1; they are not the complete chapter word for word.'} All voices are synthetic and made with free local tools.</p></div><button className={liked?'liked':''} onClick={favorite} aria-label={liked?'Remove favorite':'Save favorite'}><Heart size={21} fill={liked?'currentColor':'none'}/></button></section>
  <section className="listen-panel vocal-choice-panel" ref={chapterControls}><div className="section-heading"><div><h2>Your choice of vocal</h2><p>Select the words, choose reading or singing, then choose a voice.</p></div><div className="listening-controls">
   {isBible&&<div className="chapter-actions"><label className="chapter-picker">Chapter
-   <select value={chapter.number} onChange={event=>{setQuery('');chooseChapter(Number(event.target.value));}}>
-    {chapters.map(item=><option key={item.number} value={item.number}>{item.chapter}</option>)}
+   <select value={chapterId(chapter)} onChange={event=>{setQuery('');chooseChapter(event.target.value);}}>
+    {chapters.map(item=><option key={chapterId(item)} value={chapterId(item)}>{item.chapter}</option>)}
    </select>
   </label>{bibleReading&&<button type="button" className="continuous-reading" aria-pressed={continuing}
    onClick={continueChapters}>Continuous reading</button>}</div>}

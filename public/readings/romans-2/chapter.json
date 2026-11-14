@@ -1,0 +1,335 @@
+{
+  "number": 2,
+  "chapter": "Romans 2",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "You, therefore, have no excuse, you who pass judgment on another. For on whatever grounds you judge the other, you are condemning yourself, because you who pass judgment do the same things."
+    },
+    {
+      "verse": 2,
+      "text": "And we know that God’s judgment against those who do such things is based on truth."
+    },
+    {
+      "verse": 3,
+      "text": "So when you, O man, pass judgment on others, yet do the same things, do you think you will escape God’s judgment?"
+    },
+    {
+      "verse": 4,
+      "text": "Or do you disregard the riches of His kindness, tolerance, and patience, not realizing that God’s kindness leads you to repentance?"
+    },
+    {
+      "verse": 5,
+      "text": "But because of your hard and unrepentant heart, you are storing up wrath against yourself for the day of wrath, when God’s righteous judgment will be revealed."
+    },
+    {
+      "verse": 6,
+      "text": "God “will repay each one according to his deeds.”"
+    },
+    {
+      "verse": 7,
+      "text": "To those who by perseverance in doing good seek glory, honor, and immortality, He will give eternal life."
+    },
+    {
+      "verse": 8,
+      "text": "But for those who are self-seeking and who reject the truth and follow wickedness, there will be wrath and anger."
+    },
+    {
+      "verse": 9,
+      "text": "There will be trouble and distress for every human being who does evil, first for the Jew, then for the Greek;"
+    },
+    {
+      "verse": 10,
+      "text": "but glory, honor, and peace for everyone who does good, first for the Jew, then for the Greek."
+    },
+    {
+      "verse": 11,
+      "text": "For God does not show favoritism."
+    },
+    {
+      "verse": 12,
+      "text": "All who sin apart from the law will also perish apart from the law, and all who sin under the law will be judged by the law."
+    },
+    {
+      "verse": 13,
+      "text": "For it is not the hearers of the law who are righteous before God, but it is the doers of the law who will be declared righteous."
+    },
+    {
+      "verse": 14,
+      "text": "Indeed, when Gentiles, who do not have the law, do by nature what the law requires, they are a law to themselves, even though they do not have the law."
+    },
+    {
+      "verse": 15,
+      "text": "So they show that the work of the law is written on their hearts, their consciences also bearing witness, and their thoughts either accusing or defending them"
+    },
+    {
+      "verse": 16,
+      "text": "on the day when God will judge men’s secrets through Christ Jesus, as proclaimed by my gospel."
+    },
+    {
+      "verse": 17,
+      "text": "Now you, if you call yourself a Jew; if you rely on the law and boast in God;"
+    },
+    {
+      "verse": 18,
+      "text": "if you know His will and approve of what is superior because you are instructed by the law;"
+    },
+    {
+      "verse": 19,
+      "text": "if you are convinced that you are a guide for the blind, a light for those in darkness,"
+    },
+    {
+      "verse": 20,
+      "text": "an instructor of the foolish, a teacher of infants, because you have in the law the embodiment of knowledge and truth —"
+    },
+    {
+      "verse": 21,
+      "text": "you, then, who teach others, do you not teach yourself? You who preach against stealing, do you steal?"
+    },
+    {
+      "verse": 22,
+      "text": "You who forbid adultery, do you commit adultery? You who abhor idols, do you rob temples?"
+    },
+    {
+      "verse": 23,
+      "text": "You who boast in the law, do you dishonor God by breaking the law?"
+    },
+    {
+      "verse": 24,
+      "text": "As it is written: “God’s name is blasphemed among the Gentiles because of you.”"
+    },
+    {
+      "verse": 25,
+      "text": "Circumcision has value if you observe the law, but if you break the law, your circumcision has become uncircumcision."
+    },
+    {
+      "verse": 26,
+      "text": "If a man who is not circumcised keeps the requirements of the law, will not his uncircumcision be regarded as circumcision?"
+    },
+    {
+      "verse": 27,
+      "text": "The one who is physically uncircumcised yet keeps the law will condemn you who, even though you have the written code and circumcision, are a lawbreaker."
+    },
+    {
+      "verse": 28,
+      "text": "A man is not a Jew because he is one outwardly, nor is circumcision only outward and physical."
+    },
+    {
+      "verse": 29,
+      "text": "No, a man is a Jew because he is one inwardly, and circumcision is a matter of the heart, by the Spirit, not by the written code. Such a man’s praise does not come from men, but from God."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-2/composite.m4a",
+      "duration": 196.6775963718821,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 10.094920634920635,
+          "sentenceCues": [
+            {
+              "offset": 66,
+              "start": 3.4108503401360544
+            }
+          ]
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 10.334920634920636,
+          "end": 15.296462585034014
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 15.536462585034014,
+          "end": 22.08984126984127
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 22.32984126984127,
+          "end": 30.474285714285713
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 30.714285714285715,
+          "end": 39.31641723356009
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 39.55641723356009,
+          "end": 42.980725623582764
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 43.220725623582766,
+          "end": 49.71573696145125
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 49.955736961451244,
+          "end": 56.29337868480726
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 56.53337868480725,
+          "end": 62.59083900226757
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 62.830839002267574,
+          "end": 68.11909297052154
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 68.35909297052154,
+          "end": 71.24444444444444
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 71.48444444444445,
+          "end": 78.67904761904762
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 78.91904761904762,
+          "end": 86.21791383219954
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 86.45791383219955,
+          "end": 95.22625850340135
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 95.46625850340136,
+          "end": 103.96285714285715
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 104.20285714285714,
+          "end": 110.2534693877551
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 110.4934693877551,
+          "end": 115.52539682539683
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 115.76539682539682,
+          "end": 121.24761904761905
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 121.48761904761905,
+          "end": 126.47251700680272
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 126.71251700680273,
+          "end": 133.56344671201813
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 133.80344671201814,
+          "end": 139.3154195011338,
+          "sentenceCues": [
+            {
+              "offset": 56,
+              "start": 136.40985260770975
+            }
+          ]
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 139.5554195011338,
+          "end": 145.1906575963719,
+          "sentenceCues": [
+            {
+              "offset": 49,
+              "start": 142.2069501133787
+            }
+          ]
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 145.43065759637187,
+          "end": 149.50956916099773
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 149.74956916099774,
+          "end": 154.8310657596372
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 155.07106575963718,
+          "end": 162.0917006802721
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 162.33170068027212,
+          "end": 170.2509297052154
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 170.49092970521542,
+          "end": 179.11959183673468
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 179.3595918367347,
+          "end": 185.53764172335602
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 185.777641723356,
+          "end": 196.6775963718821,
+          "sentenceCues": [
+            {
+              "offset": 130,
+              "start": 192.956746031746
+            }
+          ]
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "1cf375c6300267f00a6ac109463d6fced6bb08da201bf4f82d21553338983056"
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "number": 3,
+  "chapter": "Romans 3",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "What, then, is the advantage of being a Jew? Or what is the value of circumcision?"
+    },
+    {
+      "verse": 2,
+      "text": "Much in every way. First of all, they have been entrusted with the very words of God."
+    },
+    {
+      "verse": 3,
+      "text": "What if some did not have faith? Will their lack of faith nullify God’s faithfulness?"
+    },
+    {
+      "verse": 4,
+      "text": "Certainly not! Let God be true and every man a liar. As it is written: “So that You may be proved right when You speak and victorious when You judge.”"
+    },
+    {
+      "verse": 5,
+      "text": "But if our unrighteousness highlights the righteousness of God, what shall we say? That God is unjust to inflict His wrath on us? I am speaking in human terms."
+    },
+    {
+      "verse": 6,
+      "text": "Certainly not! In that case, how could God judge the world?"
+    },
+    {
+      "verse": 7,
+      "text": "However, if my falsehood accentuates God’s truthfulness, to the increase of His glory, why am I still condemned as a sinner?"
+    },
+    {
+      "verse": 8,
+      "text": "Why not say, as some slanderously claim that we say, “Let us do evil that good may result”? Their condemnation is deserved!"
+    },
+    {
+      "verse": 9,
+      "text": "What then? Are we any better? Not at all. For we have already made the charge that Jews and Greeks alike are all under sin."
+    },
+    {
+      "verse": 10,
+      "text": "As it is written: “There is no one righteous, not even one."
+    },
+    {
+      "verse": 11,
+      "text": "There is no one who understands, no one who seeks God."
+    },
+    {
+      "verse": 12,
+      "text": "All have turned away, they have together become worthless; there is no one who does good, not even one.”"
+    },
+    {
+      "verse": 13,
+      "text": "“Their throats are open graves; their tongues practice deceit.” “The venom of vipers is on their lips.”"
+    },
+    {
+      "verse": 14,
+      "text": "“Their mouths are full of cursing and bitterness.”"
+    },
+    {
+      "verse": 15,
+      "text": "“Their feet are swift to shed blood;"
+    },
+    {
+      "verse": 16,
+      "text": "ruin and misery lie in their wake,"
+    },
+    {
+      "verse": 17,
+      "text": "and the way of peace they have not known.”"
+    },
+    {
+      "verse": 18,
+      "text": "“There is no fear of God before their eyes.”"
+    },
+    {
+      "verse": 19,
+      "text": "Now we know that whatever the law says, it says to those who are under the law, so that every mouth may be silenced and the whole world held accountable to God."
+    },
+    {
+      "verse": 20,
+      "text": "Therefore no one will be justified in His sight by works of the law. For the law merely brings awareness of sin."
+    },
+    {
+      "verse": 21,
+      "text": "But now, apart from the law, the righteousness of God has been revealed, as attested by the Law and the Prophets."
+    },
+    {
+      "verse": 22,
+      "text": "And this righteousness from God comes through faith in Jesus Christ to all who believe. There is no distinction,"
+    },
+    {
+      "verse": 23,
+      "text": "for all have sinned and fall short of the glory of God,"
+    },
+    {
+      "verse": 24,
+      "text": "and are justified freely by His grace through the redemption that is in Christ Jesus."
+    },
+    {
+      "verse": 25,
+      "text": "God presented Him as an atoning sacrifice in His blood through faith, in order to demonstrate His righteousness, because in His forbearance He had passed over the sins committed beforehand."
+    },
+    {
+      "verse": 26,
+      "text": "He did this to demonstrate His righteousness at the present time, so as to be just and to justify the one who has faith in Jesus."
+    },
+    {
+      "verse": 27,
+      "text": "Where, then, is boasting? It is excluded. On what principle? On that of works? No, but on that of faith."
+    },
+    {
+      "verse": 28,
+      "text": "For we maintain that a man is justified by faith apart from works of the law."
+    },
+    {
+      "verse": 29,
+      "text": "Is God the God of Jews only? Is He not the God of Gentiles too? Yes, of Gentiles too,"
+    },
+    {
+      "verse": 30,
+      "text": "since there is only one God, who will justify the circumcised by faith and the uncircumcised through that same faith."
+    },
+    {
+      "verse": 31,
+      "text": "Do we, then, nullify the law by this faith? Certainly not! Instead, we uphold the law."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-3/composite.m4a",
+      "duration": 184.83877551020407,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.158775510204082,
+          "sentenceCues": [
+            {
+              "offset": 45,
+              "start": 2.4060430839002267
+            }
+          ]
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.398775510204081,
+          "end": 10.528616780045352,
+          "sentenceCues": [
+            {
+              "offset": 19,
+              "start": 6.552029478458049
+            }
+          ]
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 10.76861678004535,
+          "end": 15.826893424036282,
+          "sentenceCues": [
+            {
+              "offset": 33,
+              "start": 12.42939909297052
+            }
+          ]
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 16.06689342403628,
+          "end": 24.39764172335601,
+          "sentenceCues": [
+            {
+              "offset": 15,
+              "start": 16.844773242630385
+            },
+            {
+              "offset": 53,
+              "start": 19.37475056689342
+            }
+          ]
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 24.63764172335601,
+          "end": 33.81138321995465,
+          "sentenceCues": [
+            {
+              "offset": 83,
+              "start": 28.675884353741495
+            },
+            {
+              "offset": 130,
+              "start": 31.440736961451247
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 34.05138321995465,
+          "end": 37.86807256235828,
+          "sentenceCues": [
+            {
+              "offset": 15,
+              "start": 34.88527210884354
+            }
+          ]
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 38.108072562358274,
+          "end": 45.64086167800453
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 45.880861678004536,
+          "end": 53.23555555555556,
+          "sentenceCues": [
+            {
+              "offset": 92,
+              "start": 50.7147052154195
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 53.47555555555556,
+          "end": 60.408208616780044,
+          "sentenceCues": [
+            {
+              "offset": 11,
+              "start": 54.055839002267575
+            },
+            {
+              "offset": 30,
+              "start": 54.96073696145125
+            },
+            {
+              "offset": 42,
+              "start": 55.88073696145125
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 60.648208616780046,
+          "end": 64.45727891156463
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 64.69727891156462,
+          "end": 68.40993197278911
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 68.64993197278912,
+          "end": 74.53419501133787
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 74.77419501133787,
+          "end": 80.84294784580499,
+          "sentenceCues": [
+            {
+              "offset": 64,
+              "start": 78.2691723356009
+            }
+          ]
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 81.082947845805,
+          "end": 84.25845804988663
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 84.49845804988662,
+          "end": 86.86122448979592
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 87.10122448979592,
+          "end": 89.58643990929706
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 89.82643990929705,
+          "end": 92.53333333333333
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 92.77333333333333,
+          "end": 95.85963718820862
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 96.09963718820862,
+          "end": 105.13827664399093
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 105.37827664399093,
+          "end": 111.98185941043084,
+          "sentenceCues": [
+            {
+              "offset": 69,
+              "start": 108.88640589569161
+            }
+          ]
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 112.22185941043084,
+          "end": 119.06589569160998
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 119.30589569160998,
+          "end": 126.03519274376417,
+          "sentenceCues": [
+            {
+              "offset": 88,
+              "start": 124.07447845804988
+            }
+          ]
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 126.27519274376417,
+          "end": 129.91990929705216
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 130.15990929705217,
+          "end": 135.4292970521542
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 135.6692970521542,
+          "end": 146.11714285714285
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 146.35714285714286,
+          "end": 154.2996371882086
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 154.53963718820862,
+          "end": 160.44965986394558,
+          "sentenceCues": [
+            {
+              "offset": 26,
+              "start": 155.7145238095238
+            },
+            {
+              "offset": 42,
+              "start": 156.59951247165532
+            },
+            {
+              "offset": 61,
+              "start": 157.4695351473923
+            },
+            {
+              "offset": 79,
+              "start": 158.41951247165534
+            }
+          ]
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 160.68965986394556,
+          "end": 165.65038548752835
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 165.89038548752833,
+          "end": 171.74689342403627,
+          "sentenceCues": [
+            {
+              "offset": 29,
+              "start": 167.66908163265305
+            },
+            {
+              "offset": 64,
+              "start": 169.50912698412696
+            }
+          ]
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 171.98689342403628,
+          "end": 179.14045351473922
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 179.38045351473923,
+          "end": 184.83877551020407,
+          "sentenceCues": [
+            {
+              "offset": 44,
+              "start": 181.61642857142857
+            },
+            {
+              "offset": 59,
+              "start": 182.61143990929705
+            }
+          ]
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "d6fef31cf5a943016ac0a4384f702b740689e498915e573679aa43b809e17888"
+    }
+  ]
+}
