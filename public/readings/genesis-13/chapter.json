@@ -1,0 +1,241 @@
+{
+  "number": 13,
+  "chapter": "Genesis 13",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "So Abram went up out of Egypt into the Negev— he and his wife and all his possessions— and Lot was with him."
+    },
+    {
+      "verse": 2,
+      "text": "And Abram had become extremely wealthy in livestock and silver and gold."
+    },
+    {
+      "verse": 3,
+      "text": "From the Negev he journeyed from place to place toward Bethel, until he came to the place between Bethel and Ai where his tent had formerly been pitched,"
+    },
+    {
+      "verse": 4,
+      "text": "to the site where he had built the altar. And there Abram called on the name of the LORD."
+    },
+    {
+      "verse": 5,
+      "text": "Now Lot, who was traveling with Abram, also had flocks and herds and tents."
+    },
+    {
+      "verse": 6,
+      "text": "But the land was unable to support both of them while they stayed together, for they had so many possessions that they were unable to coexist."
+    },
+    {
+      "verse": 7,
+      "text": "And there was discord between the herdsmen of Abram and the herdsmen of Lot. At that time the Canaanites and the Perizzites were also living in the land."
+    },
+    {
+      "verse": 8,
+      "text": "So Abram said to Lot, “Please let there be no contention between you and me, or between your herdsmen and my herdsmen. After all, we are kinsmen."
+    },
+    {
+      "verse": 9,
+      "text": "Is not the whole land before you? Now separate yourself from me. If you go to the left, I will go to the right; if you go to the right, I will go to the left.”"
+    },
+    {
+      "verse": 10,
+      "text": "And Lot looked out and saw that the whole plain of the Jordan, all the way to Zoar, was well watered like the garden of the LORD, like the land of Egypt. (This was before the LORD destroyed Sodom and Gomorrah.)"
+    },
+    {
+      "verse": 11,
+      "text": "So Lot chose the whole plain of the Jordan for himself and set out toward the east. And Abram and Lot parted company."
+    },
+    {
+      "verse": 12,
+      "text": "Abram lived in the land of Canaan, but Lot settled in the cities of the plain and pitched his tent toward Sodom."
+    },
+    {
+      "verse": 13,
+      "text": "But the men of Sodom were wicked, sinning greatly against the LORD."
+    },
+    {
+      "verse": 14,
+      "text": "After Lot had departed, the LORD said to Abram, “Now lift up your eyes from the place where you are, and look to the north and south and east and west,"
+    },
+    {
+      "verse": 15,
+      "text": "for all the land that you see, I will give to you and your offspring forever."
+    },
+    {
+      "verse": 16,
+      "text": "I will make your offspring like the dust of the earth, so that if one could count the dust of the earth, then your offspring could be counted."
+    },
+    {
+      "verse": 17,
+      "text": "Get up and walk around the land, through its length and breadth, for I will give it to you.”"
+    },
+    {
+      "verse": 18,
+      "text": "So Abram moved his tent and went to live near the Oaks of Mamre at Hebron, where he built an altar to the LORD."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-13/composite.m4a",
+      "duration": 129.47637188208617,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.6794557823129255
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 6.919455782312925,
+          "end": 11.675646258503402
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 11.9156462585034,
+          "end": 20.36716553287982
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 20.60716553287982,
+          "end": 25.564399092970522,
+          "sentenceCues": [
+            {
+              "offset": 42,
+              "start": 22.606224489795917
+            }
+          ]
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 25.80439909297052,
+          "end": 30.686530612244898
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 30.926530612244896,
+          "end": 39.17727891156463
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 39.41727891156462,
+          "end": 48.26195011337869,
+          "sentenceCues": [
+            {
+              "offset": 77,
+              "start": 43.80100907029478
+            }
+          ]
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 48.50195011337868,
+          "end": 57.452063492063495,
+          "sentenceCues": [
+            {
+              "offset": 119,
+              "start": 55.13901360544217
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 57.69206349206349,
+          "end": 66.0966439909297,
+          "sentenceCues": [
+            {
+              "offset": 34,
+              "start": 59.37452380952381
+            },
+            {
+              "offset": 65,
+              "start": 61.049625850340135
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 66.3366439909297,
+          "end": 78.33759637188209,
+          "sentenceCues": [
+            {
+              "offset": 154,
+              "start": 74.78676870748299
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 78.57759637188208,
+          "end": 86.00616780045351,
+          "sentenceCues": [
+            {
+              "offset": 84,
+              "start": 83.11597505668934
+            }
+          ]
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 86.24616780045352,
+          "end": 92.94489795918368
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 93.18489795918367,
+          "end": 97.13578231292517
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 97.37578231292517,
+          "end": 105.8409977324263
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 106.0809977324263,
+          "end": 110.55995464852607
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 110.79995464852608,
+          "end": 117.70512471655329
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 117.9451247165533,
+          "end": 122.83151927437642
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 123.07151927437641,
+          "end": 129.47637188208617
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "05331c72069d49bbfe1b761ec1cc978c8400c1efaa80c738a2c1995c93dee2f6"
+    }
+  ]
+}

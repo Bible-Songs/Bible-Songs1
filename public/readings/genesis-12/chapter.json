@@ -1,0 +1,279 @@
+{
+  "number": 12,
+  "chapter": "Genesis 12",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "Then the LORD said to Abram, “Leave your country, your kindred, and your father’s household, and go to the land I will show you."
+    },
+    {
+      "verse": 2,
+      "text": "I will make you into a great nation, and I will bless you; I will make your name great, so that you will be a blessing."
+    },
+    {
+      "verse": 3,
+      "text": "I will bless those who bless you and curse those who curse you; and all the families of the earth will be blessed through you.”"
+    },
+    {
+      "verse": 4,
+      "text": "So Abram departed, as the LORD had directed him, and Lot went with him. Abram was seventy-five years old when he left Haran."
+    },
+    {
+      "verse": 5,
+      "text": "And Abram took his wife Sarai, his nephew Lot, and all the possessions and people they had acquired in Haran, and set out for the land of Canaan. When they came to the land of Canaan,"
+    },
+    {
+      "verse": 6,
+      "text": "Abram traveled through the land as far as the site of the Oak of Moreh at Shechem. And at that time the Canaanites were in the land."
+    },
+    {
+      "verse": 7,
+      "text": "Then the LORD appeared to Abram and said, “I will give this land to your offspring.” So Abram built an altar there to the LORD, who had appeared to him."
+    },
+    {
+      "verse": 8,
+      "text": "From there Abram moved on to the hill country east of Bethel and pitched his tent, with Bethel to the west and Ai to the east. There he built an altar to the LORD, and he called on the name of the LORD."
+    },
+    {
+      "verse": 9,
+      "text": "And Abram journeyed on toward the Negev."
+    },
+    {
+      "verse": 10,
+      "text": "Now there was a famine in the land. So Abram went down to Egypt to live there for a while because the famine was severe."
+    },
+    {
+      "verse": 11,
+      "text": "As he was about to enter Egypt, he said to his wife Sarai, “Look, I know that you are a beautiful woman,"
+    },
+    {
+      "verse": 12,
+      "text": "and when the Egyptians see you, they will say, ‘This is his wife.’ Then they will kill me but will let you live."
+    },
+    {
+      "verse": 13,
+      "text": "Please say you are my sister, so that I will be treated well for your sake, and on account of you my life will be spared.”"
+    },
+    {
+      "verse": 14,
+      "text": "So when Abram entered Egypt, the Egyptians saw that the woman was very beautiful."
+    },
+    {
+      "verse": 15,
+      "text": "When Pharaoh’s officials saw Sarai, they commended her to him, and she was taken into the palace of Pharaoh."
+    },
+    {
+      "verse": 16,
+      "text": "He treated Abram well on her account, and Abram acquired sheep and cattle, male and female donkeys, menservants and maidservants, and camels."
+    },
+    {
+      "verse": 17,
+      "text": "The LORD, however, afflicted Pharaoh and his household with severe plagues because of Abram’s wife Sarai."
+    },
+    {
+      "verse": 18,
+      "text": "So Pharaoh summoned Abram and asked, “What have you done to me? Why didn’t you tell me she was your wife?"
+    },
+    {
+      "verse": 19,
+      "text": "Why did you say, ‘She is my sister,’ so that I took her as my wife? Now then, here is your wife. Take her and go!”"
+    },
+    {
+      "verse": 20,
+      "text": "Then Pharaoh gave his men orders concerning Abram, and they sent him away with his wife and all his possessions."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-12/composite.m4a",
+      "duration": 142.32539682539684,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 7.119410430839002
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 7.359410430839002,
+          "end": 13.607301587301587
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 13.847301587301587,
+          "end": 20.27845804988662
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 20.518458049886622,
+          "end": 28.23764172335601,
+          "sentenceCues": [
+            {
+              "offset": 72,
+              "start": 24.770668934240362
+            }
+          ]
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 28.477641723356008,
+          "end": 38.79587301587301,
+          "sentenceCues": [
+            {
+              "offset": 146,
+              "start": 36.41116780045351
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 39.035873015873015,
+          "end": 46.60172335600907,
+          "sentenceCues": [
+            {
+              "offset": 83,
+              "start": 43.56105442176871
+            }
+          ]
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 46.84172335600907,
+          "end": 55.01102040816327,
+          "sentenceCues": [
+            {
+              "offset": 85,
+              "start": 51.255158730158726
+            }
+          ]
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 55.251020408163264,
+          "end": 66.21913832199546,
+          "sentenceCues": [
+            {
+              "offset": 127,
+              "start": 62.17606575963719
+            }
+          ]
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 66.45913832199547,
+          "end": 69.44666666666667
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 69.68666666666667,
+          "end": 76.72816326530612,
+          "sentenceCues": [
+            {
+              "offset": 36,
+              "start": 71.68250566893424
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 76.96816326530612,
+          "end": 83.20426303854876
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 83.44426303854875,
+          "end": 89.1534693877551,
+          "sentenceCues": [
+            {
+              "offset": 67,
+              "start": 86.54554421768708
+            }
+          ]
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 89.3934693877551,
+          "end": 95.94961451247165
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 96.18961451247165,
+          "end": 101.34702947845805
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 101.58702947845805,
+          "end": 107.65777777777778
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 107.89777777777778,
+          "end": 116.3168253968254
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 116.5568253968254,
+          "end": 122.9756462585034
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 123.2156462585034,
+          "end": 128.87532879818593,
+          "sentenceCues": [
+            {
+              "offset": 64,
+              "start": 126.43143990929705
+            }
+          ]
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 129.11532879818594,
+          "end": 135.46643990929707,
+          "sentenceCues": [
+            {
+              "offset": 68,
+              "start": 132.60096371882085
+            },
+            {
+              "offset": 97,
+              "start": 133.9810090702948
+            }
+          ]
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 135.70643990929705,
+          "end": 142.32539682539684
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "e1db3bbad84fb0f19ccd296503bb8b81a9a8910ea628ae6083cca8cb948fc4d7"
+    }
+  ]
+}
