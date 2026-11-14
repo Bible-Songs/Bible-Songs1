@@ -1,3 +1,4 @@
+import {dramaCues} from './drama';
 import {APP_VERSION} from './version';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Music2,Compass,Heart,BookOpen,Search,Play,Pause,Volume2,Repeat,ArrowUpRight,Headphones,Download} from 'lucide-react';
@@ -33,7 +34,8 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  const getTrack=(voiceId:string)=>tracks.find(t=>t.voiceId===voiceId&&t.content===content&&t.mode===mode);
  const availableRecordings=song.recordings.filter(r=>!isBible&&!isReading||r.id!=='instrumental'&&getTrack(r.id));
  const selectedRecording=availableRecordings.find(r=>r.id===recording)||availableRecordings[0]||song.recordings[0];
- const voicePool=readingVoices??[selectedRecording.id];
+ const chapterVoices=readingVoices?.filter(id=>availableRecordings.some(voice=>voice.id===id));
+ const voicePool=chapterVoices?.length?chapterVoices:[selectedRecording.id];
  const selectedEntry=getTrack(selectedRecording.id);
  const boundaries=useMemo(
   ()=>bibleReading&&selectedEntry?readingBoundaries(chapter.verses,selectedEntry.segments):[],
@@ -109,16 +111,29 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   }
  }
  function toggle(){const track=audio.current;if(track){if(playing)track.pause();else void play(track);}}
- function queueVoice(voiceId:string,position:number){
+ useEffect(()=>{
+  const track=audio.current;
+  if(!bibleReading||voiceOrder!=='drama'||!track)return;
+  track.playbackRate=selectedRecording.id==='warm'?1:.94;
+  return ()=>{track.playbackRate=1;};
+ },[bibleReading,voiceOrder,selectedRecording.id]);
+ function queueVoice(voiceId:string,position:number,boundary?:typeof boundaries[number]){
   const target=getTrack(voiceId);
   if(!target)return;
-  const next=boundaries.find(cue=>cue.start>position+.005);
+  const next=boundary??boundaries.find(cue=>cue.start>position+.005);
   const segment=target.segments.find(item=>item.verse===next?.verse);
   const start=next?.offset===0?segment?.start:segment?.sentenceCues?.find(cue=>cue.offset===next?.offset)?.start;
   if(next&&start===undefined)return;
   setVoiceChange({voiceId,audio:target.audio,at:next?.start??null,start:start??0});
  }
  function queueFromPool(voices:string[],position:number,order:VoiceOrder){
+  if(order==='drama'){
+   const cues=dramaCues(chapter.number,chapter.verses,boundaries);
+   const next=cues.find(cue=>cue.start>position+.005&&(getTrack(cue.voice)?.voiceId??availableRecordings[0]?.id)!==selectedRecording.id);
+   if(next)queueVoice(getTrack(next.voice)?.voiceId??availableRecordings[0].id,position,next);
+   else setVoiceChange(null);
+   return;
+  }
   const next=nextReadingVoice(voices,selectedRecording.id,order);
   if(next)queueVoice(next,position);
   else setVoiceChange(null);
@@ -146,6 +161,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  function chooseVoiceOrder(order:VoiceOrder){
   setVoiceOrder(order);
   const track=audio.current;
+  if(order==='drama'&&track?.paused){setVoiceChange(null);setRecording(getTrack('warm')?'warm':availableRecordings[0].id);return;}
   if(track&&(!track.paused||voiceChange))queueFromPool(voicePool,track.currentTime,order);
  }
  function startTrack(track:HTMLAudioElement){
@@ -157,9 +173,25 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   if(!track)return;
   track.currentTime=start;
   setTime(start);
-  if(voiceChange)queueVoice(voiceChange.voiceId,start);
+  if(voiceOrder==='drama'&&bibleReading)queueFromPool(voicePool,start,voiceOrder);
+  else if(voiceChange)queueVoice(voiceChange.voiceId,start);
  }
  function playFrom(start:number){
+  if(bibleReading&&voiceOrder==='drama'){
+   const cue=dramaCues(chapter.number,chapter.verses,boundaries).reverse().find(item=>item.start<=start+.001);
+   const target=cue&&getTrack(cue.voice);
+   const source=selectedEntry?.segments.find(segment=>start>=segment.start&&start<segment.end);
+   const segment=target?.segments.find(item=>item.verse===source?.verse);
+   const offset=source?.sentenceCues?.find(item=>item.start===start)?.offset;
+   const destination=offset===undefined?segment?.start:segment?.sentenceCues?.find(item=>item.offset===offset)?.start;
+   if(target&&destination!==undefined&&target.audio!==selectedAudio){
+    resume.current={audio:target.audio,start:destination};
+    audio.current?.pause();
+    setVoiceChange(null);
+    setRecording(target.voiceId);
+    return;
+   }
+  }
   seekTo(start);
   if(audio.current)void play(audio.current);
  }
@@ -179,11 +211,12 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  function finishTrack(){
   setPlaying(false);
   if(!bibleReading)return;
-  const voiceId=voiceChange?.voiceId??selectedRecording.id;
+  const voiceId=voiceOrder==='drama'?'warm':voiceChange?.voiceId??selectedRecording.id;
   setVoiceChange(null);
   const next=continuing?chapters[(chapters.indexOf(chapter)+1)%chapters.length]:undefined;
   if(next){
-   const entry=next.recordings.find(track=>track.voiceId===voiceId&&track.mode==='reading'&&track.content==='bible');
+   const readings=next.recordings.filter(track=>track.mode==='reading'&&track.content==='bible');
+   const entry=readings.find(track=>track.voiceId===voiceId)??readings.find(track=>readingVoices?.includes(track.voiceId))??readings[0];
    if(entry){
     const track=audio.current;
     if(entry.audio===selectedAudio&&track){
@@ -193,7 +226,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
      return;
     }
     resume.current={audio:entry.audio,start:0};
-    setRecording(voiceId);
+    setRecording(entry.voiceId);
     setChapter(next);
     setQuery('');
     return;
@@ -212,7 +245,8 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   if(!next||next===chapter)return;
   setVoiceChange(null);
   if(continuing){
-   const entry=next.recordings.find(track=>track.voiceId===selectedRecording.id&&track.mode==='reading'&&track.content==='bible');
+   const readings=next.recordings.filter(track=>track.mode==='reading'&&track.content==='bible');
+   const entry=readings.find(track=>track.voiceId===selectedRecording.id)??readings.find(track=>readingVoices?.includes(track.voiceId))??readings[0];
    if(entry&&audio.current&&!audio.current.paused)resume.current={audio:entry.audio,start:0};
   }
   setChapter(next);
@@ -249,17 +283,18 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   </label>{bibleReading&&<button type="button" className="continuous-reading" aria-pressed={continuing}
    onClick={continueChapters}>Continuous reading</button>}</div>}
   <div className="listening-toggle content-toggle" role="group" aria-label="Choose text"><button type="button" aria-pressed={isBible} onClick={chooseBible}>Bible (Berean Standard Bible)</button><button type="button" aria-pressed={!isBible} onClick={()=>{if(isBible)leaveBibleReading();setContent('lyrics');}}>Song lyrics</button></div><div className="listening-toggle" role="group" aria-label="Choose reading or singing"><button type="button" aria-pressed={isReading} onClick={()=>setMode('reading')}>Reading</button><button type="button" aria-pressed={!isReading} disabled={!hasMusic} onClick={()=>{if(isReading)leaveBibleReading();setMode('singing');}}>Singing</button></div>{!hasMusic&&<small className="chapter-mode-note">Singing is available for Genesis 1.</small>}</div></div>{bibleReading&&<div className="reading-voice-options">
-  <p>Choose several voices before playing to change voices after each sentence. With one selected, choosing another during playback switches to it.</p>
+  <p>{voiceOrder==='drama'?'Drama assigns voices to the narrator and characters at sentence boundaries.':'Choose several voices before playing to change voices after each sentence. With one selected, choosing another during playback switches to it.'}</p>
   <div className="voice-order" role="group" aria-label="Reading voice order">
    <button type="button" aria-pressed={voiceOrder==='rotating'} onClick={()=>chooseVoiceOrder('rotating')}>Rotating voices</button>
    <button type="button" aria-pressed={voiceOrder==='random'} onClick={()=>chooseVoiceOrder('random')}>Random voices</button>
+   <button type="button" aria-pressed={voiceOrder==='drama'} onClick={()=>chooseVoiceOrder('drama')}>Drama</button>
   </div>
-  <button type="button" className="all-voices" aria-pressed={voicePool.length===availableRecordings.length}
+  <button type="button" className="all-voices" disabled={voiceOrder==='drama'} aria-pressed={voicePool.length===availableRecordings.length}
    onClick={()=>updateVoicePool(voicePool.length===availableRecordings.length?[selectedRecording.id]:availableRecordings.map(option=>option.id))}>
    All voices
   </button>
  </div>}
- <fieldset className="voice-choices">
+ <fieldset className="voice-choices" disabled={bibleReading&&voiceOrder==='drama'}>
   <legend className="visually-hidden">{bibleReading?'Choose reading voices':'Choose a vocal or instrumental recording'}</legend>
   {availableRecordings.map(option=>{
    const chosen=bibleReading?voicePool.includes(option.id):selectedRecording.id===option.id;
@@ -273,7 +308,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
    </label>;
   })}
  </fieldset>
- {voiceChange&&voicePool.length===1&&<p className="queued-voice" role="status">
+ {voiceChange&&voiceOrder!=='drama'&&voicePool.length===1&&<p className="queued-voice" role="status">
   {song.recordings.find(option=>option.id===voiceChange.voiceId)?.name} will start after the current sentence.
  </p>}<details className="voice-creation-notes"><summary>How each voice was created</summary>{song.recordings.filter(r=>r.id!=='instrumental').map(option=><article key={option.id}><h3>{option.name}</h3><p>{!isBible&&!isReading?option.creation:getTrack(option.id)?.creation||option.creation}</p></article>)}<p className="voice-note">These are original synthetic options, not celebrity sound-alikes or artist-endorsed recordings. The neural voices are experimental and may still sound artificial.</p></details></section>
  <section className="listen-panel original-reader" ref={passageReader}>

@@ -4,7 +4,7 @@ type Verse = {verse: number; text: string};
 type VerseSegment = {verse?: number; start: number; sentenceCues?: SentenceCue[]};
 
 export type ReadingBoundary = SentenceCue & {verse: number};
-export type VoiceOrder = 'rotating' | 'random';
+export type VoiceOrder = 'rotating' | 'random' | 'drama';
 
 export function nextReadingVoice(voices: string[], current: string, order: VoiceOrder) {
  if (order === 'random') {
