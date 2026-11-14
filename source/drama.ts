@@ -31,11 +31,11 @@ const romansRoles:typeof roles={
  4:{3:['Scripture'],7:['Scripture'],17:['God'],18:['God'],22:['Scripture'],23:['Scripture']},
 };
 
-export function dramaCues(chapter:number, verses:{verse:number;text:string}[], boundaries:ReadingBoundary[],book:'genesis'|'romans'='genesis'){
+export function dramaCues(chapter:number, verses:{verse:number;text:string}[], boundaries:ReadingBoundary[],book:'genesis'|'romans'|'luke'='genesis'){
  let speaker:string|undefined;
  const dialogue=new Map<number,{start:number;end:number;voice:string}[]>();
  for(const verse of verses){
-  const speakers=(book==='romans'?romansRoles:roles)[chapter]?.[verse.verse]??[];
+  const speakers=(book==='romans'?romansRoles:book==='genesis'?roles:{})[chapter]?.[verse.verse]??[];
   let opening=0;
   let start=0;
   const ranges:{start:number;end:number;voice:string}[]=[];

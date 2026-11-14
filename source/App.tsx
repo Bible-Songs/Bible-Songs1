@@ -11,15 +11,17 @@ type ReadingTrack={voiceId:string;content:string;mode:string;audio:string;durati
 type Chapter={number:number;chapter:string;source:string;verses:{verse:number;text:string}[];recordings:ReadingTrack[]};
 type VoiceChange={voiceId:string;audio:string;at:number|null;start:number};
 const listeningTracks=listening.recordings as ReadingTrack[];
+const books=['Genesis','Luke','Romans'] as const;
 const chapters:Chapter[]=[
  {number:1,...scripture,recordings:listeningTracks},
  ...Object.values(import.meta.glob<Chapter>('../public/readings/*/chapter.json',{eager:true,import:'default'})),
-].sort((a,b)=>Number(isRomans(a))-Number(isRomans(b))||a.number-b.number);
-function isRomans(chapter:Chapter){return chapter.chapter.startsWith('Romans ');}
-const chapterId=(chapter:Chapter)=>isRomans(chapter)?`romans-${chapter.number}`:String(chapter.number);
-const genesisEnd=chapters.filter(chapter=>!isRomans(chapter)).at(-1)?.number;
-const romansEnd=chapters.filter(isRomans).at(-1)?.number;
-const readingRange=`Genesis 1–${genesisEnd}${romansEnd?` · Romans 1–${romansEnd}`:''}`;
+].sort((a,b)=>bookIndex(a)-bookIndex(b)||a.number-b.number);
+function bookIndex(chapter:Chapter){return books.findIndex(book=>chapter.chapter.startsWith(book+' '));}
+const chapterId=(chapter:Chapter)=>bookIndex(chapter)===0?String(chapter.number):chapter.chapter.toLowerCase().replace(' ','-');
+const readingRange=books.flatMap((book,index)=>{
+ const end=chapters.filter(chapter=>bookIndex(chapter)===index).at(-1)?.number;
+ return end?[`${book} 1–${end}`]:[];
+}).join(' · ');
 const base=import.meta.env.BASE_URL;
 const mediaUrl=(path:string)=>`${base}${path}?v=${APP_VERSION}`;
 const photo=base+'lake.jpg';
@@ -133,7 +135,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  }
  function queueFromPool(voices:string[],position:number,order:VoiceOrder){
   if(order==='drama'){
-   const cues=dramaCues(chapter.number,chapter.verses,boundaries,isRomans(chapter)?'romans':'genesis');
+   const cues=dramaCues(chapter.number,chapter.verses,boundaries,books[bookIndex(chapter)]==='Romans'?'romans':books[bookIndex(chapter)]==='Luke'?'luke':'genesis');
    const next=cues.find(cue=>cue.start>position+.005&&(getTrack(cue.voice)?.voiceId??availableRecordings[0]?.id)!==selectedRecording.id);
    if(next)queueVoice(getTrack(next.voice)?.voiceId??availableRecordings[0].id,position,next);
    else setVoiceChange(null);
@@ -183,7 +185,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  }
  function playFrom(start:number){
   if(bibleReading&&voiceOrder==='drama'){
-   const cue=dramaCues(chapter.number,chapter.verses,boundaries,isRomans(chapter)?'romans':'genesis').reverse().find(item=>item.start<=start+.001);
+   const cue=dramaCues(chapter.number,chapter.verses,boundaries,books[bookIndex(chapter)]==='Romans'?'romans':books[bookIndex(chapter)]==='Luke'?'luke':'genesis').reverse().find(item=>item.start<=start+.001);
    const target=cue&&getTrack(cue.voice);
    const source=selectedEntry?.segments.find(segment=>start>=segment.start&&start<segment.end);
    const segment=target?.segments.find(item=>item.verse===source?.verse);
