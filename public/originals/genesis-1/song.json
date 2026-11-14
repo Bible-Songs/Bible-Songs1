@@ -233,6 +233,16 @@
       "credits": "originals/genesis-1/listening-credits.md"
     },
     {
+      "id": "voice9",
+      "name": "Voice 9 · Deep male",
+      "badge": "Kokoro vocal",
+      "audio": "originals/genesis-1/let-there-be-light-voice9.m4a",
+      "preview": "originals/genesis-1/voice9-preview.wav",
+      "description": "Synthetic deep male voice with a matching reading and singing profile.",
+      "creation": "Rendered locally with the pretrained Kokoro am_adam speech profile. The same speech profile is fitted to the original melody using local Praat pitch and timing processing, with consonant protection and original accompaniment. No paid service or new voice training was used.",
+      "credits": "originals/genesis-1/listening-credits.md"
+    },
+    {
       "id": "voice10",
       "name": "Voice 10 · Female",
       "badge": "Kokoro vocal",
