@@ -1,3 +1,4 @@
+import {documentDrama,speakerLine} from './document-drama';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {APP_VERSION} from './version';
 import {nextReadingVoice} from './reading-cues';
@@ -40,12 +41,13 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
  const [history,setHistory]=useState<Entry[]>(()=>{try{return JSON.parse(localStorage.getItem(key)??'[]');}catch{return [];}});
  const [name,setName]=useState(defaultName),[text,setText]=useState(''),[source,setSource]=useState('Pasted text');
  const [id,setId]=useState<string>(),[filter,setFilter]=useState(''),[status,setStatus]=useState('');
- const [pool,setPool]=useState(['classic']),[order,setOrder]=useState<'rotating'|'random'>('rotating');
+ const [pool,setPool]=useState(['classic']),[order,setOrder]=useState<'rotating'|'random'|'drama'>('rotating');
  const [active,setActive]=useState(-1),[paused,setPaused]=useState(false),[busy,setBusy]=useState(false);
  const choices=useRef({pool,order});choices.current={pool,order};
  const audio=useRef<HTMLAudioElement>(null),run=useRef(0),cancel=useRef<()=>void>(()=>{});
  const current=useRef<HTMLButtonElement>(null);
- const lines=useMemo(()=>sentences(text),[text]);
+ const lines=useMemo(()=>text.split(/\n+/).flatMap(line=>speakerLine.test(line.trim())?[line.trim()]:sentences(line)),[text]);
+ const drama=useMemo(()=>documentDrama(lines),[lines]);
  useEffect(()=>{current.current?.scrollIntoView({block:'nearest'});},[active]);
  useEffect(()=>()=>{run.current++;cancel.current();},[]);
  function stop(){run.current++;cancel.current();audio.current?.pause();setActive(-1);setPaused(false);setBusy(false);}
@@ -83,10 +85,10 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     const voice=nextReadingVoice(pool,previous,order)??pool[0];
     previous=voice;
     setActive(index);
-    const parts=lines[index].match(/.{1,300}(?:\s+|$)|.{1,300}/gu)??[];
-    for(const part of parts){
+    const passage=order==='drama'?drama[index]:[{text:lines[index],voice}];
+    for(const part of passage.flatMap(item=>(item.text.match(/.{1,300}(?:\s+|$)|.{1,300}/gu)??[]).map(text=>({text,voice:item.voice})))){
      if(ticket!==run.current)return;
-     const sound=await model.generate(part,{voice:profiles[voice],speed:.95});
+     const sound=await model.generate(part.text,{voice:profiles[part.voice],speed:order==='drama'&&part.voice!=='warm'?.9:.95});
      if(ticket!==run.current)return;
      const player=audio.current;
      if(!player)return;
@@ -126,9 +128,10 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   </section>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Your choice of vocal</h2><p>Reading · Kokoro speech profiles</p></div></div>
-   <div className="listening-toggle" role="group" aria-label="Voice order"><button aria-pressed={order==='rotating'} onClick={()=>setOrder('rotating')}>Rotating voices</button><button aria-pressed={order==='random'} onClick={()=>setOrder('random')}>Random voices</button></div>
-   <button aria-pressed={pool.length===voices.length} onClick={()=>setPool(voices.map(voice=>voice.id))}>All voices</button>
-   <fieldset className="document-voices"><legend>Choose reading voices</legend>{voices.map(voice=><label key={voice.id}><input type="checkbox" checked={pool.includes(voice.id)} onChange={()=>setPool(current=>current.includes(voice.id)?current.length>1?current.filter(id=>id!==voice.id):current:[...current,voice.id])}/>{voice.name}</label>)}</fieldset>
+   <div className="listening-toggle" role="group" aria-label="Voice order"><button aria-pressed={order==='rotating'} onClick={()=>setOrder('rotating')}>Rotating voices</button><button aria-pressed={order==='random'} onClick={()=>setOrder('random')}>Random voices</button><button aria-pressed={order==='drama'} onClick={()=>setOrder('drama')}>Drama</button></div>
+   {order==='drama'&&<p>Drama casts narration and recognizable dialogue automatically. For scripts, start a line with a speaker label such as “Mary:”.</p>}
+   <button disabled={order==='drama'} aria-pressed={pool.length===voices.length} onClick={()=>setPool(voices.map(voice=>voice.id))}>All voices</button>
+   <fieldset className="document-voices" disabled={order==='drama'}><legend>Choose reading voices</legend>{voices.map(voice=><label key={voice.id}><input type="checkbox" checked={pool.includes(voice.id)} onChange={()=>setPool(current=>current.includes(voice.id)?current.length>1?current.filter(id=>id!==voice.id):current:[...current,voice.id])}/>{voice.name}</label>)}</fieldset>
    <div className="document-actions">
     <button disabled={!lines.length||busy} onClick={()=>active<0?void play(0):paused?void audio.current?.play().then(()=>setPaused(false)).catch(()=>setStatus('Playback could not resume.')):(audio.current?.pause(),setPaused(true))}>{active<0?'Read aloud':paused?'Resume':'Pause'}</button>
     <button disabled={active<0&&!busy} onClick={stop}>Stop</button>
