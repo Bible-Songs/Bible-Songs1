@@ -2,7 +2,7 @@ import type {ReadingBoundary} from './reading-cues';
 
 const narrator='warm';
 const cast:Record<string,string>={
- God:'composite', Adam:'classic', Eve:'voice5', Serpent:'voice9', Cain:'voice3',
+ God:'composite', Scripture:'voice7', 'Unnamed speakers':'voice9', Adam:'classic', Eve:'voice5', Serpent:'voice9', Cain:'voice3',
  Lamech:'voice7', Noah:'voice7', Builders:'voice7', Abram:'classic',
  Pharaoh:'voice9', Melchizedek:'voice7', 'King of Sodom':'voice3',
 };
@@ -23,11 +23,19 @@ const roles:Record<number,Record<number,string[]>>={
  15:{1:['God'],2:['Abram'],3:['Abram'],4:['God'],5:['God','God'],7:['God'],8:['Abram'],9:['God'],13:['God'],18:['God']},
 };
 
-export function dramaCues(chapter:number, verses:{verse:number;text:string}[], boundaries:ReadingBoundary[]){
+const romansRoles:typeof roles={
+ 1:{17:['Scripture']},
+ 2:{6:['Scripture'],24:['Scripture']},
+ 3:{4:['Scripture'],8:['Unnamed speakers'],10:['Scripture'],13:['Scripture','Scripture'],
+    14:['Scripture'],15:['Scripture'],18:['Scripture']},
+ 4:{3:['Scripture'],7:['Scripture'],17:['God'],18:['God'],22:['Scripture'],23:['Scripture']},
+};
+
+export function dramaCues(chapter:number, verses:{verse:number;text:string}[], boundaries:ReadingBoundary[],book:'genesis'|'romans'='genesis'){
  let speaker:string|undefined;
  const dialogue=new Map<number,{start:number;end:number;voice:string}[]>();
  for(const verse of verses){
-  const speakers=roles[chapter]?.[verse.verse]??[];
+  const speakers=(book==='romans'?romansRoles:roles)[chapter]?.[verse.verse]??[];
   let opening=0;
   let start=0;
   const ranges:{start:number;end:number;voice:string}[]=[];
