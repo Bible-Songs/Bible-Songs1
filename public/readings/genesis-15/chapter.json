@@ -1,0 +1,249 @@
+{
+  "number": 15,
+  "chapter": "Genesis 15",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "After these events, the word of the LORD came to Abram in a vision: “Do not be afraid, Abram. I am your shield, your very great reward.”"
+    },
+    {
+      "verse": 2,
+      "text": "But Abram replied, “O Lord GOD, what can You give me, since I remain childless, and the heir of my house is Eliezer of Damascus?”"
+    },
+    {
+      "verse": 3,
+      "text": "Abram continued, “Behold, You have given me no offspring, so a servant in my household will be my heir.”"
+    },
+    {
+      "verse": 4,
+      "text": "Then the word of the LORD came to Abram, saying, “This one will not be your heir, but one who comes from your own body will be your heir.”"
+    },
+    {
+      "verse": 5,
+      "text": "And the LORD took him outside and said, “Now look to the heavens and count the stars, if you are able.” Then He told him, “So shall your offspring be.”"
+    },
+    {
+      "verse": 6,
+      "text": "Abram believed the LORD, and it was credited to him as righteousness."
+    },
+    {
+      "verse": 7,
+      "text": "The LORD also told him, “I am the LORD, who brought you out of Ur of the Chaldeans to give you this land to possess.”"
+    },
+    {
+      "verse": 8,
+      "text": "But Abram replied, “Lord GOD, how can I know that I will possess it?”"
+    },
+    {
+      "verse": 9,
+      "text": "And the LORD said to him, “Bring Me a heifer, a goat, and a ram, each three years old, along with a turtledove and a young pigeon.”"
+    },
+    {
+      "verse": 10,
+      "text": "So Abram brought all these to Him, split each of them down the middle, and laid the halves opposite each other. The birds, however, he did not cut in half."
+    },
+    {
+      "verse": 11,
+      "text": "And the birds of prey descended on the carcasses, but Abram drove them away."
+    },
+    {
+      "verse": 12,
+      "text": "As the sun was setting, Abram fell into a deep sleep, and suddenly great terror and darkness overwhelmed him."
+    },
+    {
+      "verse": 13,
+      "text": "Then the LORD said to Abram, “Know for certain that your descendants will be strangers in a land that is not their own, and they will be enslaved and mistreated four hundred years."
+    },
+    {
+      "verse": 14,
+      "text": "But I will judge the nation they serve as slaves, and afterward they will depart with many possessions."
+    },
+    {
+      "verse": 15,
+      "text": "You, however, will go to your fathers in peace and be buried at a ripe old age."
+    },
+    {
+      "verse": 16,
+      "text": "In the fourth generation your descendants will return here, for the iniquity of the Amorites is not yet complete.”"
+    },
+    {
+      "verse": 17,
+      "text": "When the sun had set and darkness had fallen, behold, a smoking firepot and a flaming torch appeared and passed between the halves of the carcasses."
+    },
+    {
+      "verse": 18,
+      "text": "On that day the LORD made a covenant with Abram, saying, “To your descendants I have given this land — from the river of Egypt to the great River Euphrates —"
+    },
+    {
+      "verse": 19,
+      "text": "the land of the Kenites, Kenizzites, Kadmonites,"
+    },
+    {
+      "verse": 20,
+      "text": "Hittites, Perizzites, Rephaites,"
+    },
+    {
+      "verse": 21,
+      "text": "Amorites, Canaanites, Girgashites, and Jebusites.”"
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-15/composite.m4a",
+      "duration": 139.2948299319728,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 7.928616780045352,
+          "sentenceCues": [
+            {
+              "offset": 94,
+              "start": 5.0570634920634925
+            }
+          ]
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 8.168616780045351,
+          "end": 16.146077097505668
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 16.38607709750567,
+          "end": 22.756916099773242
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 22.99691609977324,
+          "end": 30.316371882086166
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 30.556371882086168,
+          "end": 38.62793650793651,
+          "sentenceCues": [
+            {
+              "offset": 104,
+              "start": 35.81638321995465
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 38.867936507936506,
+          "end": 43.376598639455786
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 43.61659863945578,
+          "end": 50.348571428571425
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 50.58857142857143,
+          "end": 55.17981859410431
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 55.419818594104306,
+          "end": 62.52548752834467
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 62.76548752834467,
+          "end": 71.25845804988663,
+          "sentenceCues": [
+            {
+              "offset": 112,
+              "start": 68.43756235827665
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 71.49845804988662,
+          "end": 76.14213151927437
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 76.38213151927438,
+          "end": 82.98167800453514
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 83.22167800453515,
+          "end": 93.23492063492064
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 93.47492063492064,
+          "end": 99.42149659863945
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 99.66149659863946,
+          "end": 104.54643990929705
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 104.78643990929706,
+          "end": 111.36530612244898
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 111.60530612244898,
+          "end": 120.09768707482993
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 120.33768707482993,
+          "end": 128.9282993197279
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 129.16829931972788,
+          "end": 132.45718820861677
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 132.69718820861678,
+          "end": 135.25215419501134
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 135.49215419501132,
+          "end": 139.2948299319728
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "b15f639d5742cf8aa1afdbdd083863334f59a2e1050a385b989f6031f0f1c4ba"
+    }
+  ]
+}
