@@ -1,0 +1,295 @@
+{
+  "number": 12,
+  "chapter": "Romans 12",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "Therefore I urge you, brothers, on account of God’s mercy, to offer your bodies as living sacrifices, holy and pleasing to God, which is your spiritual service of worship."
+    },
+    {
+      "verse": 2,
+      "text": "Do not be conformed to this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what is the good, pleasing, and perfect will of God."
+    },
+    {
+      "verse": 3,
+      "text": "For by the grace given me I say to every one of you: Do not think of yourself more highly than you ought, but think of yourself with sober judgment, according to the measure of faith God has given you."
+    },
+    {
+      "verse": 4,
+      "text": "Just as each of us has one body with many members, and not all members have the same function,"
+    },
+    {
+      "verse": 5,
+      "text": "so in Christ we who are many are one body, and each member belongs to one another."
+    },
+    {
+      "verse": 6,
+      "text": "We have different gifts according to the grace given us. If one’s gift is prophecy, let him use it in proportion to his faith;"
+    },
+    {
+      "verse": 7,
+      "text": "if it is serving, let him serve; if it is teaching, let him teach;"
+    },
+    {
+      "verse": 8,
+      "text": "if it is encouraging, let him encourage; if it is giving, let him give generously; if it is leading, let him lead with diligence; if it is showing mercy, let him do it cheerfully."
+    },
+    {
+      "verse": 9,
+      "text": "Love must be sincere. Detest what is evil; cling to what is good."
+    },
+    {
+      "verse": 10,
+      "text": "Be devoted to one another in brotherly love. Outdo yourselves in honoring one another."
+    },
+    {
+      "verse": 11,
+      "text": "Do not let your zeal subside; keep your spiritual fervor, serving the Lord."
+    },
+    {
+      "verse": 12,
+      "text": "Be joyful in hope, patient in affliction, persistent in prayer."
+    },
+    {
+      "verse": 13,
+      "text": "Share with the saints who are in need. Practice hospitality."
+    },
+    {
+      "verse": 14,
+      "text": "Bless those who persecute you. Bless and do not curse."
+    },
+    {
+      "verse": 15,
+      "text": "Rejoice with those who rejoice; weep with those who weep."
+    },
+    {
+      "verse": 16,
+      "text": "Live in harmony with one another. Do not be proud, but associate with the lowly. Do not be conceited."
+    },
+    {
+      "verse": 17,
+      "text": "Do not repay anyone evil for evil. Carefully consider what is right in the eyes of everybody."
+    },
+    {
+      "verse": 18,
+      "text": "If it is possible on your part, live at peace with everyone."
+    },
+    {
+      "verse": 19,
+      "text": "Do not avenge yourselves, beloved, but leave room for God’s wrath. For it is written: “Vengeance is Mine; I will repay, says the Lord.”"
+    },
+    {
+      "verse": 20,
+      "text": "On the contrary, “If your enemy is hungry, feed him; if he is thirsty, give him a drink. For in so doing, you will heap burning coals on his head.”"
+    },
+    {
+      "verse": 21,
+      "text": "Do not be overcome by evil, but overcome evil with good."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-12/composite.m4a",
+      "duration": 134.1848072562358,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 10.29922902494331
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 10.53922902494331,
+          "end": 20.30204081632653,
+          "sentenceCues": [
+            {
+              "offset": 84,
+              "start": 14.788492063492065
+            }
+          ]
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 20.54204081632653,
+          "end": 31.036507936507938
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 31.276507936507937,
+          "end": 37.08281179138322
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 37.32281179138322,
+          "end": 42.654603174603174
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 42.894603174603176,
+          "end": 50.31551020408163,
+          "sentenceCues": [
+            {
+              "offset": 57,
+              "start": 45.882823129251705
+            }
+          ]
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 50.555510204081635,
+          "end": 54.66585034013605
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 54.905850340136055,
+          "end": 64.75156462585034
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 64.99156462585034,
+          "end": 69.49705215419502,
+          "sentenceCues": [
+            {
+              "offset": 22,
+              "start": 66.42880952380953
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 69.73705215419501,
+          "end": 75.02380952380952,
+          "sentenceCues": [
+            {
+              "offset": 45,
+              "start": 72.1180612244898
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 75.26380952380953,
+          "end": 80.07092970521542
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 80.31092970521541,
+          "end": 84.50480725623582
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 84.74480725623583,
+          "end": 88.75510204081633,
+          "sentenceCues": [
+            {
+              "offset": 39,
+              "start": 86.66545351473923
+            }
+          ]
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 88.99510204081632,
+          "end": 92.59814058956916,
+          "sentenceCues": [
+            {
+              "offset": 31,
+              "start": 90.5335260770975
+            }
+          ]
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 92.83814058956916,
+          "end": 96.66639455782312
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 96.90639455782313,
+          "end": 102.96498866213152,
+          "sentenceCues": [
+            {
+              "offset": 34,
+              "start": 98.6451814058957
+            },
+            {
+              "offset": 81,
+              "start": 101.09030612244898
+            }
+          ]
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 103.20498866213151,
+          "end": 109.20897959183674,
+          "sentenceCues": [
+            {
+              "offset": 35,
+              "start": 105.3535260770975
+            }
+          ]
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 109.44897959183673,
+          "end": 113.33746031746031
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 113.57746031746032,
+          "end": 121.35705215419502,
+          "sentenceCues": [
+            {
+              "offset": 67,
+              "start": 117.00649659863946
+            }
+          ]
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 121.59705215419501,
+          "end": 130.0267573696145,
+          "sentenceCues": [
+            {
+              "offset": 89,
+              "start": 126.59910430839003
+            }
+          ]
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 130.2667573696145,
+          "end": 134.1848072562358
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "fc46a1fd8bc9da92ee02ce1ce18af5f7a122c211981e6b54edc9fcddae65aab0"
+    }
+  ]
+}

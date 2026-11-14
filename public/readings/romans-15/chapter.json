@@ -1,0 +1,381 @@
+{
+  "number": 15,
+  "chapter": "Romans 15",
+  "source": "https://berean.bible/downloads.htm",
+  "translation": "Berean Standard Bible (BSB)",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "We who are strong ought to bear with the shortcomings of the weak and not to please ourselves."
+    },
+    {
+      "verse": 2,
+      "text": "Each of us should please his neighbor for his good, to build him up."
+    },
+    {
+      "verse": 3,
+      "text": "For even Christ did not please Himself, but as it is written: “The insults of those who insult You have fallen on Me.”"
+    },
+    {
+      "verse": 4,
+      "text": "For everything that was written in the past was written for our instruction, so that through endurance and the encouragement of the Scriptures, we might have hope."
+    },
+    {
+      "verse": 5,
+      "text": "Now may the God who gives endurance and encouragement grant you harmony with one another in Christ Jesus,"
+    },
+    {
+      "verse": 6,
+      "text": "so that with one mind and one voice you may glorify the God and Father of our Lord Jesus Christ."
+    },
+    {
+      "verse": 7,
+      "text": "Accept one another, then, just as Christ accepted you, in order to bring glory to God."
+    },
+    {
+      "verse": 8,
+      "text": "For I tell you that Christ has become a servant of the circumcised on behalf of God’s truth, to confirm the promises made to the patriarchs,"
+    },
+    {
+      "verse": 9,
+      "text": "so that the Gentiles may glorify God for His mercy. As it is written: “Therefore I will praise You among the Gentiles; I will sing hymns to Your name.”"
+    },
+    {
+      "verse": 10,
+      "text": "Again, it says: “Rejoice, O Gentiles, with His people.”"
+    },
+    {
+      "verse": 11,
+      "text": "And again: “Praise the Lord, all you Gentiles, and extol Him, all you peoples.”"
+    },
+    {
+      "verse": 12,
+      "text": "And once more, Isaiah says: “The Root of Jesse will appear, One who will arise to rule over the Gentiles; in Him the Gentiles will put their hope.”"
+    },
+    {
+      "verse": 13,
+      "text": "Now may the God of hope fill you with all joy and peace as you believe in Him, so that you may overflow with hope by the power of the Holy Spirit."
+    },
+    {
+      "verse": 14,
+      "text": "I myself am convinced, my brothers, that you yourselves are full of goodness, brimming with knowledge, and able to instruct one another."
+    },
+    {
+      "verse": 15,
+      "text": "However, I have written you a bold reminder on some points, because of the grace God has given me"
+    },
+    {
+      "verse": 16,
+      "text": "to be a minister of Christ Jesus to the Gentiles in the priestly service of the gospel of God, so that the Gentiles might become an offering acceptable to God, sanctified by the Holy Spirit."
+    },
+    {
+      "verse": 17,
+      "text": "Therefore I exult in Christ Jesus in my service to God."
+    },
+    {
+      "verse": 18,
+      "text": "I will not presume to speak of anything except what Christ has accomplished through me in leading the Gentiles to obedience by word and deed,"
+    },
+    {
+      "verse": 19,
+      "text": "by the power of signs and wonders, and by the power of the Spirit of God. So from Jerusalem all the way around to Illyricum, I have fully proclaimed the gospel of Christ."
+    },
+    {
+      "verse": 20,
+      "text": "In this way I have aspired to preach the gospel where Christ was not known, so that I would not be building on someone else’s foundation."
+    },
+    {
+      "verse": 21,
+      "text": "Rather, as it is written: “Those who were not told about Him will see, and those who have not heard will understand.”"
+    },
+    {
+      "verse": 22,
+      "text": "That is why I have often been hindered from coming to you."
+    },
+    {
+      "verse": 23,
+      "text": "But now that there are no further opportunities for me in these regions, and since I have longed for many years to visit you,"
+    },
+    {
+      "verse": 24,
+      "text": "I hope to see you on my way to Spain. And after I have enjoyed your company for a while, you can equip me for my journey."
+    },
+    {
+      "verse": 25,
+      "text": "Now, however, I am on my way to Jerusalem to serve the saints there."
+    },
+    {
+      "verse": 26,
+      "text": "For Macedonia and Achaia were pleased to make a contribution for the poor among the saints in Jerusalem."
+    },
+    {
+      "verse": 27,
+      "text": "They were pleased to do it, and indeed they owe it to them. For if the Gentiles have shared in their spiritual blessings, they are obligated to minister to them with material blessings."
+    },
+    {
+      "verse": 28,
+      "text": "So after I have completed this service and have safely delivered this bounty to them, I will set off to Spain by way of you."
+    },
+    {
+      "verse": 29,
+      "text": "I know that when I come to you, I will come in the fullness of the blessing of Christ."
+    },
+    {
+      "verse": 30,
+      "text": "Now I urge you, brothers, by our Lord Jesus Christ and by the love of the Spirit, to join me in my struggle by praying to God for me."
+    },
+    {
+      "verse": 31,
+      "text": "Pray that I may be delivered from the unbelievers in Judea, and that my service in Jerusalem may be acceptable to the saints there,"
+    },
+    {
+      "verse": 32,
+      "text": "so that by God’s will I may come to you with joy and together with you be refreshed."
+    },
+    {
+      "verse": 33,
+      "text": "The God of peace be with all of you. Amen."
+    }
+  ],
+  "recordings": [
+    {
+      "voiceId": "composite",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-15/composite.m4a",
+      "duration": 226.99877551020407,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.332743764172336
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.572743764172335,
+          "end": 9.41233560090703
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 9.65233560090703,
+          "end": 16.23687074829932
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 16.47687074829932,
+          "end": 24.80204081632653
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 25.04204081632653,
+          "end": 31.460680272108842
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 31.700680272108844,
+          "end": 37.70526077097506
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 37.945260770975054,
+          "end": 43.18036281179138
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 43.420362811791385,
+          "end": 51.64077097505669
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 51.88077097505669,
+          "end": 60.64988662131519,
+          "sentenceCues": [
+            {
+              "offset": 52,
+              "start": 55.13924036281179
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 60.88988662131519,
+          "end": 64.8271201814059
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 65.0671201814059,
+          "end": 70.01741496598639
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 70.2574149659864,
+          "end": 78.83641723356008
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 79.0764172335601,
+          "end": 87.24952380952381
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 87.4895238095238,
+          "end": 95.4138775510204
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 95.65387755102041,
+          "end": 101.35668934240363
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 101.59668934240362,
+          "end": 112.82185941043083
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 113.06185941043084,
+          "end": 117.31632653061224
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 117.55632653061224,
+          "end": 125.77469387755102
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 126.01469387755103,
+          "end": 135.94934240362812,
+          "sentenceCues": [
+            {
+              "offset": 74,
+              "start": 130.38926303854876
+            }
+          ]
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 136.18934240362813,
+          "end": 143.85909297052154
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 144.09909297052155,
+          "end": 150.58244897959185
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 150.82244897959183,
+          "end": 154.3558276643991
+        },
+        {
+          "key": "23",
+          "verse": 23,
+          "start": 154.59582766439908,
+          "end": 161.39469387755102
+        },
+        {
+          "key": "24",
+          "verse": 24,
+          "start": 161.63469387755103,
+          "end": 168.56780045351474,
+          "sentenceCues": [
+            {
+              "offset": 38,
+              "start": 163.82051020408164
+            }
+          ]
+        },
+        {
+          "key": "25",
+          "verse": 25,
+          "start": 168.80780045351474,
+          "end": 173.51219954648525
+        },
+        {
+          "key": "26",
+          "verse": 26,
+          "start": 173.75219954648526,
+          "end": 180.05115646258503
+        },
+        {
+          "key": "27",
+          "verse": 27,
+          "start": 180.29115646258504,
+          "end": 189.9572335600907,
+          "sentenceCues": [
+            {
+              "offset": 60,
+              "start": 183.0254081632653
+            }
+          ]
+        },
+        {
+          "key": "28",
+          "verse": 28,
+          "start": 190.1972335600907,
+          "end": 197.2902947845805
+        },
+        {
+          "key": "29",
+          "verse": 29,
+          "start": 197.5302947845805,
+          "end": 202.36163265306124
+        },
+        {
+          "key": "30",
+          "verse": 30,
+          "start": 202.60163265306122,
+          "end": 210.51832199546485
+        },
+        {
+          "key": "31",
+          "verse": 31,
+          "start": 210.75832199546485,
+          "end": 218.4813605442177
+        },
+        {
+          "key": "32",
+          "verse": 32,
+          "start": 218.72136054421767,
+          "end": 223.68240362811792
+        },
+        {
+          "key": "33",
+          "verse": 33,
+          "start": 223.9224036281179,
+          "end": 226.99877551020407,
+          "sentenceCues": [
+            {
+              "offset": 37,
+              "start": 225.76336734693876
+            }
+          ]
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_onyx profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "159d3a6cf6e602f5de968bd4b3523bf7c49def10cd49a7529cc17ca48b89077e"
+    }
+  ]
+}
