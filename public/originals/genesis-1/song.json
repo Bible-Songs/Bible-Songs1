@@ -223,6 +223,16 @@
       "credits": "originals/genesis-1/voice-updates.md"
     },
     {
+      "id": "voice7",
+      "name": "Voice 7 · Male",
+      "badge": "Kokoro vocal",
+      "audio": "originals/genesis-1/let-there-be-light-voice7.m4a",
+      "preview": "originals/genesis-1/voice7-preview.wav",
+      "description": "Synthetic male voice with a matching reading and singing profile.",
+      "creation": "Rendered locally with the pretrained Kokoro am_puck speech profile. The same speech profile is fitted to the original melody using local Praat pitch and timing processing, with consonant protection and original accompaniment. No paid service or new voice training was used.",
+      "credits": "originals/genesis-1/listening-credits.md"
+    },
+    {
       "id": "voice10",
       "name": "Voice 10 · Female",
       "badge": "Kokoro vocal",

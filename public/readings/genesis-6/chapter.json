@@ -1095,6 +1095,173 @@
       ],
       "creation": "Synthesized locally using the pretrained Kokoro af_nova profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
       "sourceTextSha256": "631cbdd4791febbee15a6b3ec92c4d7e0b5e0ca831c4d345c365d6dabec97945"
+    },
+    {
+      "voiceId": "voice7",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-6/voice7.m4a",
+      "duration": 161.05850340136055,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 5.1276190476190475
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 5.367619047619048,
+          "end": 11.583219954648525
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 11.823219954648525,
+          "end": 19.733333333333334
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 19.973333333333333,
+          "end": 33.00231292517007,
+          "sentenceCues": [
+            {
+              "offset": 131,
+              "start": 27.574342403628116
+            }
+          ]
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 33.24231292517007,
+          "end": 43.10448979591837
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 43.34448979591837,
+          "end": 48.28507936507936
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 48.525079365079364,
+          "end": 59.80235827664399
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 60.04235827664399,
+          "end": 62.93360544217687
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 63.17360544217687,
+          "end": 70.0475283446712,
+          "sentenceCues": [
+            {
+              "offset": 29,
+              "start": 64.87815192743764
+            }
+          ]
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 70.2875283446712,
+          "end": 73.31891156462585
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 73.55891156462584,
+          "end": 77.18825396825397
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 77.42825396825397,
+          "end": 84.39560090702948
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 84.63560090702948,
+          "end": 95.84657596371882,
+          "sentenceCues": [
+            {
+              "offset": 128,
+              "start": 91.62826530612246
+            }
+          ]
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 96.08657596371881,
+          "end": 102.32208616780045
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 102.56208616780046,
+          "end": 110.2892970521542
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 110.52929705215419,
+          "end": 119.42181405895691
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 119.66181405895692,
+          "end": 129.24943310657596,
+          "sentenceCues": [
+            {
+              "offset": 125,
+              "start": 126.50880952380953
+            }
+          ]
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 129.48943310657597,
+          "end": 137.2918820861678
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 137.5318820861678,
+          "end": 143.76566893424035
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 144.00566893424036,
+          "end": 149.55836734693878
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 149.7983673469388,
+          "end": 157.1138775510204
+        },
+        {
+          "key": "22",
+          "verse": 22,
+          "start": 157.35387755102042,
+          "end": 161.05850340136055
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro am_puck profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "631cbdd4791febbee15a6b3ec92c4d7e0b5e0ca831c4d345c365d6dabec97945"
     }
   ]
 }
