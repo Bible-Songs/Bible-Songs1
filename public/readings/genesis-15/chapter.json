@@ -554,6 +554,161 @@
       ],
       "creation": "Synthesized locally using the pretrained Kokoro am_adam profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
       "sourceTextSha256": "b15f639d5742cf8aa1afdbdd083863334f59a2e1050a385b989f6031f0f1c4ba"
+    },
+    {
+      "voiceId": "warm",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/genesis-15/warm.m4a",
+      "duration": 138.43015873015872,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 8.685215419501134,
+          "sentenceCues": [
+            {
+              "offset": 94,
+              "start": 6.1416893424036285
+            }
+          ]
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 8.925215419501134,
+          "end": 17.12643990929705
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 17.366439909297053,
+          "end": 23.811337868480727
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 24.051337868480726,
+          "end": 31.857732426303855
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 32.09773242630386,
+          "end": 40.55451247165533,
+          "sentenceCues": [
+            {
+              "offset": 104,
+              "start": 37.81071428571429
+            }
+          ]
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 40.79451247165533,
+          "end": 44.76380952380952
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 45.00380952380952,
+          "end": 51.680680272108845
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 51.92068027210885,
+          "end": 56.00303854875283
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 56.243038548752835,
+          "end": 63.41215419501134
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 63.652154195011335,
+          "end": 72.54539682539682,
+          "sentenceCues": [
+            {
+              "offset": 112,
+              "start": 69.97329931972789
+            }
+          ]
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 72.78539682539683,
+          "end": 77.01224489795918
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 77.25224489795919,
+          "end": 83.67120181405896
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 83.91120181405896,
+          "end": 94.07981859410431
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 94.3198185941043,
+          "end": 100.11437641723356
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 100.35437641723357,
+          "end": 105.13718820861678
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 105.37718820861679,
+          "end": 111.68943310657596
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 111.92943310657597,
+          "end": 120.71419501133786
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 120.95419501133787,
+          "end": 130.1578231292517
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 130.3978231292517,
+          "end": 133.03124716553287
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 133.27124716553288,
+          "end": 135.03360544217688
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 135.27360544217686,
+          "end": 138.43015873015872
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro af_heart profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "b15f639d5742cf8aa1afdbdd083863334f59a2e1050a385b989f6031f0f1c4ba"
     }
   ]
 }
