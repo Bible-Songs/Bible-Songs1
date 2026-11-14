@@ -79,30 +79,52 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   setBusy(true);setStatus('Preparing speech. The first playback downloads the voice model.');
   try{
    const model=await speechEngine();
-   let previous='';
-   for(let index=start;index<lines.length&&ticket===run.current;index++){
-    const {pool,order}=choices.current;
-    const voice=nextReadingVoice(pool,previous,order)??pool[0];
-    previous=voice;
-    setActive(index);
-    const passage=order==='drama'?drama[index]:[{text:lines[index],voice}];
-    for(const part of passage.flatMap(item=>(item.text.match(/.{1,300}(?:\s+|$)|.{1,300}/gu)??[]).map(text=>({text,voice:item.voice})))){
-     if(ticket!==run.current)return;
-     const sound=await model.generate(part.text,{voice:profiles[part.voice],speed:order==='drama'&&part.voice!=='warm'?.9:.95});
-     if(ticket!==run.current)return;
-     const player=audio.current;
-     if(!player)return;
-     const url=URL.createObjectURL(sound.toBlob());
-     try{
-      await new Promise<void>((resolve,reject)=>{
-       cancel.current=resolve;
-       player.onended=()=>resolve();
-       player.onerror=()=>reject(new Error('Audio playback failed'));
-       player.src=url;
-       player.play().then(()=>{if(ticket===run.current){setBusy(false);setStatus('');}}).catch(reject);
-      });
-     }finally{URL.revokeObjectURL(url);if(ticket===run.current){player.onended=null;player.onerror=null;}}
+   function* chunks(){
+    let previous='';
+    for(let index=start;index<lines.length;index++){
+     const {pool,order}=choices.current;
+     const voice=nextReadingVoice(pool,previous,order)??pool[0];
+     previous=voice;
+     const passage=order==='drama'?drama[index]:[{text:lines[index],voice}];
+     for(const part of passage){
+      const pieces=part.text.match(/.{1,300}(?:\s+|$)|.{1,300}/gu)??[];
+      for(const text of pieces){
+       yield {index,text,voice:profiles[part.voice],speed:order==='drama'&&part.voice!=='warm'?.9:.95};
+      }
+     }
     }
+   }
+   const queue=chunks();
+   async function prepare(){
+    const next=queue.next();
+    if(next.done||ticket!==run.current)return;
+    const {index,text,voice,speed}=next.value;
+    try{return {index,sound:await model.generate(text,{voice,speed})};}
+    catch(error){return {error};}
+   }
+   let pending=prepare();
+   while(ticket===run.current){
+    const prepared=await pending;
+    if(!prepared||ticket!==run.current)break;
+    if('error' in prepared)throw prepared.error;
+    const {index,sound}=prepared;
+    setActive(index);
+    const player=audio.current;
+    if(!player)return;
+    const url=URL.createObjectURL(sound.toBlob());
+    try{
+     await new Promise<void>((resolve,reject)=>{
+      cancel.current=resolve;
+      player.onended=()=>resolve();
+      player.onerror=()=>reject(new Error('Audio playback failed'));
+      player.src=url;
+      player.play().then(()=>{
+       if(ticket!==run.current)return;
+       setBusy(false);setStatus('');
+       pending=prepare();
+      }).catch(reject);
+     });
+    }finally{URL.revokeObjectURL(url);if(ticket===run.current){player.onended=null;player.onerror=null;}}
    }
    if(ticket===run.current){stop();setStatus('Finished reading.');}
   }catch{if(ticket===run.current){stop();setStatus('Could not play the reading. Check your connection for the first model download, then try again.');}}
