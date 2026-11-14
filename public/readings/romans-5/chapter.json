@@ -554,6 +554,161 @@
       ],
       "creation": "Synthesized locally using the pretrained Kokoro am_fenrir profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
       "sourceTextSha256": "b55dfff3b9d83792f9b47b5bfdf750184b4860bf88b51c537be223810fff5631"
+    },
+    {
+      "voiceId": "voice5",
+      "content": "bible",
+      "mode": "reading",
+      "audio": "readings/romans-5/voice5.m4a",
+      "duration": 172.96326530612245,
+      "segments": [
+        {
+          "key": "1",
+          "verse": 1,
+          "start": 0.0,
+          "end": 6.208072562358277
+        },
+        {
+          "key": "2",
+          "verse": 2,
+          "start": 6.448072562358277,
+          "end": 14.054784580498866,
+          "sentenceCues": [
+            {
+              "offset": 79,
+              "start": 11.214387755102042
+            }
+          ]
+        },
+        {
+          "key": "3",
+          "verse": 3,
+          "start": 14.294784580498867,
+          "end": 20.907437641723355
+        },
+        {
+          "key": "4",
+          "verse": 4,
+          "start": 21.147437641723357,
+          "end": 23.752426303854875
+        },
+        {
+          "key": "5",
+          "verse": 5,
+          "start": 23.992426303854874,
+          "end": 31.507074829931973
+        },
+        {
+          "key": "6",
+          "verse": 6,
+          "start": 31.74707482993197,
+          "end": 36.604353741496595
+        },
+        {
+          "key": "7",
+          "verse": 7,
+          "start": 36.8443537414966,
+          "end": 43.77034013605442
+        },
+        {
+          "key": "8",
+          "verse": 8,
+          "start": 44.010340136054424,
+          "end": 49.06199546485261
+        },
+        {
+          "key": "9",
+          "verse": 9,
+          "start": 49.30199546485261,
+          "end": 55.5437641723356
+        },
+        {
+          "key": "10",
+          "verse": 10,
+          "start": 55.7837641723356,
+          "end": 65.59419501133787
+        },
+        {
+          "key": "11",
+          "verse": 11,
+          "start": 65.83419501133787,
+          "end": 73.6550566893424
+        },
+        {
+          "key": "12",
+          "verse": 12,
+          "start": 73.8950566893424,
+          "end": 82.54834467120182
+        },
+        {
+          "key": "13",
+          "verse": 13,
+          "start": 82.78834467120181,
+          "end": 89.43074829931973
+        },
+        {
+          "key": "14",
+          "verse": 14,
+          "start": 89.67074829931973,
+          "end": 99.46589569160997,
+          "sentenceCues": [
+            {
+              "offset": 118,
+              "start": 97.65348072562358
+            }
+          ]
+        },
+        {
+          "key": "15",
+          "verse": 15,
+          "start": 99.70589569160998,
+          "end": 112.76240362811791,
+          "sentenceCues": [
+            {
+              "offset": 39,
+              "start": 102.0220068027211
+            }
+          ]
+        },
+        {
+          "key": "16",
+          "verse": 16,
+          "start": 113.00240362811792,
+          "end": 124.63011337868481
+        },
+        {
+          "key": "17",
+          "verse": 17,
+          "start": 124.8701133786848,
+          "end": 138.29818594104307
+        },
+        {
+          "key": "18",
+          "verse": 18,
+          "start": 138.53818594104308,
+          "end": 147.54
+        },
+        {
+          "key": "19",
+          "verse": 19,
+          "start": 147.78,
+          "end": 157.4639909297052
+        },
+        {
+          "key": "20",
+          "verse": 20,
+          "start": 157.7039909297052,
+          "end": 163.88839002267574
+        },
+        {
+          "key": "21",
+          "verse": 21,
+          "start": 164.12839002267575,
+          "end": 172.96326530612245
+        }
+      ],
+      "creation": "Synthesized locally using the pretrained Kokoro af_bella profile, with the Berean Standard Bible punctuation preserved for natural phrasing.",
+      "sourceTextSha256": "b55dfff3b9d83792f9b47b5bfdf750184b4860bf88b51c537be223810fff5631"
     }
   ]
 }
