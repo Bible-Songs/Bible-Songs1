@@ -86,6 +86,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
  }
  async function play(start:number,options?:{entry:Entry;render:boolean;started:number}){
   if(!lines[start])return;
+  setPortion(undefined);
   stop();const ticket=run.current;
   if(options?.render)setRendering({id:options.entry.id,sentence:0,total:lines.length});
   setBusy(true);setStatus(options?.render?'Rendering saved audio. Completed batches are saved as you go…':'Preparing audio…');
@@ -204,6 +205,26 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   const link=document.createElement('a');link.href=url;link.download=`${row.name}.txt`;link.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
  }
+ const [draftKeys,setDraftKeys]=useState<IDBValidKey[]>([]);
+ const [portion,setPortion]=useState<{name:string;urls:string[];index:number}>();
+ const [portionStatus,setPortionStatus]=useState('');
+ const portionPlayer=useRef<HTMLAudioElement>(null);
+ useEffect(()=>{
+  if(visible)void savedAudio('readonly',store=>store.getAllKeys()).then(setDraftKeys).catch(()=>{});
+  else{portionPlayer.current?.pause();setPortion(undefined);}
+ },[visible,history,rendering?.id]);
+ useEffect(()=>()=>portion?.urls.forEach(url=>URL.revokeObjectURL(url)),[portion?.urls]);
+ async function playPortion(entry:Entry){
+  setPortionStatus('');
+  try{
+   const draft=await savedAudio('readonly',store=>store.get(key+':'+entry.id+':draft')) as SavedAudio|undefined;
+   if(draft?.text!==entry.text||!draft.chunks.length){
+    setPortionStatus('No saved batches are available yet.');return;
+   }
+   if(!rendering)stop();
+   setPortion({name:entry.name,urls:draft.chunks.map(chunk=>URL.createObjectURL(chunk.blob)),index:0});
+  }catch{setPortionStatus('Could not load the saved portion.');}
+ }
  const [requested,setRequested]=useState<{entry:Entry;render:boolean;started:number}>();
  useEffect(()=>{
   if(requested&&requested.entry.text===text){
@@ -247,26 +268,33 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   </section>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Listening history</h2><p>{rows.length} of {history.length} saved readings</p></div></div>
+   {portionStatus&&<p role="status">{portionStatus}</p>}
+   {portion&&<div>
+    <p>Saved portion of {portion.name}</p>
+    <audio ref={portionPlayer} controls autoPlay src={portion.urls[portion.index]}
+     onEnded={()=>setPortion(current=>current&&current.index+1<current.urls.length?{...current,index:current.index+1}:current)}/>
+    <button onClick={()=>setPortion(undefined)}>Close saved portion</button>
+   </div>}
    <label>Search history<input type="search" value={filter} onChange={event=>setFilter(event.target.value)} placeholder="Search filename or source"/></label>
    {rows.length?<div className="document-table"><table>
     <thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Audio</th><th>Rendered with</th><th>Render time</th><th>Actions</th></tr></thead>
-    <tbody>{rows.map(row=><Fragment key={row.id}>
+    <tbody>{rows.map(row=>{const partial=draftKeys.includes(key+':'+row.id+':draft')||(rendering?.id===row.id&&rendering.sentence>0);return <Fragment key={row.id}>
      <tr><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>Text only</td><td>—</td><td>—</td>
       <td><div className="document-actions"><button onClick={()=>open(row)}>Open</button>
        {!row.rendered&&<button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render audio</button>}
        <button onClick={()=>download(row)}>Download text</button>
        <button disabled={busy} onClick={()=>{if(confirm(`Delete “${row.name}” from listening history?`)&&store(history.filter(item=>item.id!==row.id))){if(id===row.id){stop();setId(undefined);}void savedAudio('readwrite',store=>{store.delete(key+':'+row.id+':draft');return store.delete(key+':'+row.id);}).catch(()=>{});}}}>Delete</button>
       </div></td></tr>
-     {(row.rendered||rendering?.id===row.id)&&<tr className="document-rendered-row">
+     {(row.rendered||partial||rendering?.id===row.id)&&<tr className="document-rendered-row">
       <td>{row.name} · Audio</td><td>{row.source}</td><td>—</td>
-      <td>{rendering?.id===row.id?<span role="status">{rendering.sentence?`Rendering… ${rendering.sentence} / ${rendering.total} sentences`:'Rendering… preparing speech'}</span>:'Rendered'}</td>
+      <td>{rendering?.id===row.id?<span role="status">{rendering.sentence?`Rendering… ${rendering.sentence} / ${rendering.total} sentences`:'Rendering… preparing speech'}</span>:row.rendered?'Rendered':'Partially rendered'}</td>
       <td>{row.renderedWith??'—'}</td>
       <td>{row.renderSeconds===undefined?'—':row.renderSeconds<60?`${row.renderSeconds} s`:`${Math.floor(row.renderSeconds/60)} min ${row.renderSeconds%60} s`}</td>
-      <td><div className="document-actions">{row.rendered&&<>
+      <td><div className="document-actions">{partial&&<button onClick={()=>void playPortion(row)}>Play saved portion</button>}{row.rendered&&<>
        <button onClick={()=>historyAudio(row,false)}>Play saved audio</button>
        <button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render again</button>
       </>}</div></td></tr>}
-    </Fragment>)}</tbody>
+    </Fragment>;})}</tbody>
    </table></div>:<p>{history.length?'No matching readings.':'No saved readings yet.'}</p>}
 
   </section>
