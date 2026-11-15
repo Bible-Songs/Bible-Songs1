@@ -1,3 +1,4 @@
+import edwardsCues from './edwards-cues.json';
 import paydayCues from './payday-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useRef,useState} from 'react';
@@ -14,6 +15,7 @@ const readings=[
  {title:'The Immutability of God',author:'C. H. Spurgeon',filename:'immutability-of-god-spurgeon.m4a',cues:immutabilityCues},
  {title:'Compel Them to Come In',author:'C. H. Spurgeon',filename:'compel-them-to-come-in-spurgeon.m4a',cues:compelCues},
  {title:'Payday Someday',author:'R. G. Lee',filename:'payday-someday-rg-lee.m4a',cues:paydayCues},
+ {title:'Sinners in the Hands of an Angry God',author:'Jonathan Edwards',filename:'sinners-in-the-hands-of-an-angry-god-edwards.m4a',cues:edwardsCues},
 ] as const;
 const source=(filename:string)=>`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`;
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
