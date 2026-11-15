@@ -1,3 +1,4 @@
+import paydayCues from './payday-cues.json';
 import {useEffect,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
 import compelCues from './compel-cues.json';
@@ -8,15 +9,16 @@ import PlaybackSpeed from './PlaybackSpeed';
 import {APP_VERSION} from './version';
 
 const readings=[
- {title:'God’s Jewels',filename:'gods-jewels-spurgeon.m4a',bytes:19937230,cues:sermonCues},
- {title:'The Immutability of God',filename:'immutability-of-god-spurgeon.m4a',bytes:26109049,cues:immutabilityCues},
- {title:'Compel Them to Come In',filename:'compel-them-to-come-in-spurgeon.m4a',bytes:26092471,cues:compelCues},
-];
+ {title:'God’s Jewels',author:'C. H. Spurgeon',filename:'gods-jewels-spurgeon.m4a',cues:sermonCues},
+ {title:'The Immutability of God',author:'C. H. Spurgeon',filename:'immutability-of-god-spurgeon.m4a',cues:immutabilityCues},
+ {title:'Compel Them to Come In',author:'C. H. Spurgeon',filename:'compel-them-to-come-in-spurgeon.m4a',cues:compelCues},
+ {title:'Payday Someday',author:'R. G. Lee',filename:'payday-someday-rg-lee.m4a',cues:paydayCues},
+] as const;
 const source=(filename:string)=>`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`;
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'");
 export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(value:number)=>void}){
- const [query,setQuery]=useState(''),[selected,setSelected]=useState(readings[0]);
+ const [query,setQuery]=useState(''),[selected,setSelected]=useState<(typeof readings)[number]>(readings[0]);
  const [time,setTime]=useState(0),[duration,setDuration]=useState(0),[playing,setPlaying]=useState(false);
  const [volume,setVolume]=useState(.75),[message,setMessage]=useState('');
  const audio=useRef<HTMLAudioElement>(null);
@@ -37,15 +39,15 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
   });
  }
  const term=normalize(query.trim());
- const filtered=readings.filter(reading=>normalize(reading.title+' C. H. Spurgeon').includes(term)||
+ const filtered=readings.filter(reading=>normalize(reading.title+' '+reading.author).includes(term)||
   reading.cues.some(cue=>normalize(cue.text).includes(term)));
  return <div className="content document-library">
   <div className="page-heading"><h1>Listening Library</h1></div>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
    <label>Search Listening Library<input type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search titles, authors or transcripts"/></label>
-   {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title}
-    size={`${(reading.bytes/1024**2).toFixed(1)} MB`} cues={reading.cues}
+   {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
+    cues={reading.cues}
     speed={speed} onSpeed={onSpeed} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>No readings match your search.</p>}
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
@@ -55,7 +57,7 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
    onPlaying={()=>setPlaying(true)} onPause={()=>setPlaying(false)} onEnded={()=>setPlaying(false)}/>
   {message&&<p role="status">{message}</p>}
   <div className="player original-player">
-   <div className="now-playing"><div><strong>{selected.title}</strong><span>C. H. Spurgeon · Drama</span></div><span className="player-version">Version {APP_VERSION}</span></div>
+   <div className="now-playing"><div><strong>{selected.title}</strong><span>{selected.author} · Drama</span></div><span className="player-version">Version {APP_VERSION}</span></div>
    <div className="player-center">
     <div className="transport">
      <button className="main-play" aria-label={playing?'Pause audio':'Play audio'} onClick={()=>playing?audio.current?.pause():play(selected)}>

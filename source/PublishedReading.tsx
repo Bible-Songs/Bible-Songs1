@@ -3,7 +3,7 @@ import PlaybackSpeed from './PlaybackSpeed';
 import {Play} from 'lucide-react';
 
 export type Cue={start:number;text:string};
-export default function PublishedReading({cues,title,size,time,onPlay,speed,onSpeed}:{cues:Cue[];title:string;size:string;time:number|null;onPlay:(start:number)=>void;speed:number;onSpeed:(value:number)=>void}){
+export default function PublishedReading({cues,title,author,time,onPlay,speed,onSpeed}:{cues:Cue[];title:string;author:string;time:number|null;onPlay:(start:number)=>void;speed:number;onSpeed:(value:number)=>void}){
  const transcript=useRef<HTMLDivElement>(null);
  const current=useRef<HTMLButtonElement>(null);
  let active=-1;
@@ -16,7 +16,7 @@ export default function PublishedReading({cues,title,size,time,onPlay,speed,onSp
  },[active]);
  return <article>
   <h3>{title}</h3>
-  <p>C. H. Spurgeon · Drama · {size}</p>
+  <p>{author} · Drama</p>
   <div className="document-actions"><button className="document-reading-play" onClick={()=>onPlay(0)} aria-label={`Play ${title}`}><Play size={16}/> Play</button><PlaybackSpeed speed={speed} onChange={onSpeed}/></div>
   <div ref={transcript} className="document-preview" aria-label={`${title} transcript`}>
    {cues.map((cue,index)=><button key={cue.start} ref={index===active?current:undefined}
