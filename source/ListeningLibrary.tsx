@@ -1,4 +1,5 @@
 import paydayCues from './payday-cues.json';
+import downloadSizes from './library-download-sizes.json';
 import {useEffect,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
 import compelCues from './compel-cues.json';
@@ -47,6 +48,12 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
    <label>Search Listening Library<input type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search titles, authors or transcripts"/></label>
    {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
+    downloads={(['MP3','M4A','PDF','Word'] as const).map(format=>{
+     const name=reading.filename.replace(/\.m4a$/,'.'+(format==='Word'?'docx':format.toLowerCase()));
+     const bytes=downloadSizes[reading.filename][format];
+     const size=bytes<1_000_000?`${(bytes/1_000).toFixed(1)} KB`:`${(bytes/1_000_000).toFixed(1)} MB`;
+     return {format,name,url:source(name),size};
+    })}
     cues={reading.cues}
     speed={speed} onSpeed={onSpeed} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>No readings match your search.</p>}
   </section>
