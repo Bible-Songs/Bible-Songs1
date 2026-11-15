@@ -143,3 +143,6 @@
 .document-note{font-size:.9rem}
 .document-rendered-row{background:#243e35;color:#f5f4e8}
 .document-rendered-row td:first-child{padding-left:20px}
+.playback-speed{font:inherit;font-size:12px;color:#e5efdf;background:#243e35;border:1px solid #658073;border-radius:6px;padding:4px;max-width:62px}
+.document-reading-play{display:inline-flex;align-items:center;gap:6px;margin:8px 0}
+.document-library{padding-bottom:125px}

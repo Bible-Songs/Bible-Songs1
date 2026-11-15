@@ -1,40 +1,26 @@
-import {useEffect,useRef,useState} from 'react';
-import {APP_VERSION} from './version';
+import {useEffect,useRef} from 'react';
+import PlaybackSpeed from './PlaybackSpeed';
+import {Play} from 'lucide-react';
 
-type Cue={start:number;text:string};
-export default function PublishedReading({cues,title,filename,size}:{cues:Cue[];title:string;filename:string;size:string}){
- const [active,setActive]=useState(-1);
- const audio=useRef<HTMLAudioElement>(null);
+export type Cue={start:number;text:string};
+export default function PublishedReading({cues,title,size,time,onPlay,speed,onSpeed}:{cues:Cue[];title:string;size:string;time:number|null;onPlay:(start:number)=>void;speed:number;onSpeed:(value:number)=>void}){
  const transcript=useRef<HTMLDivElement>(null);
  const current=useRef<HTMLButtonElement>(null);
+ let active=-1;
+ if(time!==null)while(active+1<cues.length&&cues[active+1].start<=time)active++;
  useEffect(()=>{
   const panel=transcript.current,button=current.current;
   if(!panel||!button)return;
   const bounds=panel.getBoundingClientRect(),cue=button.getBoundingClientRect();
   if(cue.top<bounds.top||cue.bottom>bounds.bottom)panel.scrollTop+=cue.top-bounds.top;
  },[active]);
- function update(time:number){
-  let index=active;
-  if(index<0 || cues[index].start>time)index=0;
-  while(index+1<cues.length&&cues[index+1].start<=time)index++;
-  setActive(index);
- }
  return <article>
   <h3>{title}</h3>
   <p>C. H. Spurgeon · Drama · {size}</p>
-  <audio ref={audio} controls preload="none"
-   src={`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`}
-   onTimeUpdate={event=>update(event.currentTarget.currentTime)}
-   onSeeked={event=>update(event.currentTarget.currentTime)}/>
+  <div className="document-actions"><button className="document-reading-play" onClick={()=>onPlay(0)} aria-label={`Play ${title}`}><Play size={16}/> Play</button><PlaybackSpeed speed={speed} onChange={onSpeed}/></div>
   <div ref={transcript} className="document-preview" aria-label={`${title} transcript`}>
    {cues.map((cue,index)=><button key={cue.start} ref={index===active?current:undefined}
-    aria-current={index===active?'true':undefined} onClick={()=>{
-     const player=audio.current;
-     if(!player)return;
-     player.currentTime=cue.start;
-     update(cue.start);
-     void player.play().catch(()=>{});
-    }}>{cue.text}</button>)}
+    aria-current={index===active?'true':undefined} onClick={()=>onPlay(cue.start)}>{cue.text}</button>)}
   </div>
  </article>;
 }
