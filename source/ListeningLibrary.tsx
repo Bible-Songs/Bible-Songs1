@@ -11,6 +11,12 @@ type RenderProgress=SavedAudio&{settings:string;plan:Chunk[];elapsed:number};
 type Entry={id:string;name:string;text:string;source:string;saved:string;rendered?:boolean;renderedWith?:string;renderSeconds?:number};
 type KokoroVoice=keyof import('kokoro-js').KokoroTTS['voices'];
 const profiles:Record<string,KokoroVoice>={classic:'am_michael',warm:'af_heart',voice3:'am_fenrir',composite:'am_onyx',voice5:'af_bella',voice6:'af_nicole',voice7:'am_puck',voice8:'af_sarah',voice9:'am_adam',voice10:'af_nova'};
+function fileSize(bytes:number){
+ if(bytes<1024)return `${bytes} B`;
+ if(bytes<1024**2)return `${(bytes/1024).toFixed(1)} KB`;
+ return `${(bytes/1024**2).toFixed(1)} MB`;
+}
+const textBytes=new TextEncoder();
 const defaultName=()=>`Listening notes ${new Date().toLocaleDateString('en-CA')}`;
 const sentences=(text:string)=>Array.from(new Intl.Segmenter('en',{granularity:'sentence'}).segment(text),item=>item.segment.trim()).filter(Boolean);
 let engine:Promise<import('kokoro-js').KokoroTTS>|undefined;
@@ -227,6 +233,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   const link=document.createElement('a');link.href=url;link.download=`${row.name}.txt`;link.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
  }
+ const [audioSizes,setAudioSizes]=useState<Record<string,number>>({});
  const [draftKeys,setDraftKeys]=useState<IDBValidKey[]>([]);
  const [portion,setPortion]=useState<{name:string;urls:string[];index:number}>();
  const [portionStatus,setPortionStatus]=useState('');
@@ -235,6 +242,15 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   if(visible)void savedAudio('readonly',store=>store.getAllKeys()).then(setDraftKeys).catch(()=>{});
   else{portionPlayer.current?.pause();setPortion(undefined);}
  },[visible,history,rendering?.id]);
+ useEffect(()=>{
+  if(!visible)return;
+  let active=true;
+  void Promise.all(history.filter(row=>row.rendered).map(async row=>{
+   const saved=await savedAudio('readonly',store=>store.get(key+':'+row.id)) as SavedAudio|undefined;
+   return [row.id,saved?.chunks.reduce((bytes,chunk)=>bytes+chunk.blob.size,0)] as const;
+  })).then(entries=>{if(active)setAudioSizes(Object.fromEntries(entries.filter(entry=>entry[1]!==undefined)) as Record<string,number>);}).catch(()=>{});
+  return ()=>{active=false;};
+ },[history,key,visible]);
  useEffect(()=>()=>portion?.urls.forEach(url=>URL.revokeObjectURL(url)),[portion?.urls]);
  async function playPortion(entry:Entry){
   setPortionStatus('');
@@ -299,9 +315,9 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
    </div>}
    <label>Search history<input type="search" value={filter} onChange={event=>setFilter(event.target.value)} placeholder="Search filename or source"/></label>
    {rows.length?<div className="document-table"><table>
-    <thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Audio</th><th>Rendered with</th><th>Render time</th><th>Actions</th></tr></thead>
+    <thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Audio</th><th>Rendered with</th><th>Render time</th><th>File size</th><th>Actions</th></tr></thead>
     <tbody>{rows.map(row=>{const partial=draftKeys.includes(key+':'+row.id+':draft')||(rendering?.id===row.id&&rendering.sentence>0);return <Fragment key={row.id}>
-     <tr><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>Text only</td><td>—</td><td>—</td>
+     <tr><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>Text only</td><td>—</td><td>—</td><td>{fileSize(textBytes.encode(row.text).length)}</td>
       <td><div className="document-actions"><button onClick={()=>open(row)}>Open</button>
        {!row.rendered&&<button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render audio</button>}
        <button disabled={busy} onClick={()=>rename(row)}>Rename</button>
@@ -315,6 +331,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
       <td>{rendering?.id===row.id?<span role="status">{rendering.sentence?`Rendering… ${rendering.sentence} / ${rendering.total} sentences`:'Rendering… preparing speech'}</span>:row.rendered?'Rendered':'Partially rendered'}</td>
       <td>{row.renderedWith??'—'}</td>
       <td>{row.renderSeconds===undefined?'—':row.renderSeconds<60?`${row.renderSeconds} s`:`${Math.floor(row.renderSeconds/60)} min ${row.renderSeconds%60} s`}</td>
+      <td>{audioSizes[row.id]===undefined?'—':fileSize(audioSizes[row.id])}</td>
       <td><div className="document-actions">{partial&&<button onClick={()=>void playPortion(row)}>Play saved portion</button>}{row.rendered&&<>
        <button onClick={()=>historyAudio(row,false)}>Play saved audio</button>
        <button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render again</button>
@@ -327,7 +344,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
    <article>
     <h3>God’s Jewels</h3>
-    <p>C. H. Spurgeon · Drama</p>
+    <p>C. H. Spurgeon · Drama · {fileSize(20187877)}</p>
     {visible&&<audio controls preload="none"
      src={`${import.meta.env.BASE_URL}library/gods-jewels-spurgeon.m4a?v=${APP_VERSION}`}
      onPlay={()=>{stop();setPortion(undefined);}}/>}
