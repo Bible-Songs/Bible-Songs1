@@ -63,5 +63,10 @@ export function useAccountSync(userId:string,preferences:Preferences,apply:(valu
   const timeout=window.setTimeout(autoSync,800);
   return ()=>window.clearTimeout(timeout);
  },[ready,busy,preferences.favorite,preferences.speed]);
- return {status,busy,sync};
+ async function readCloud(){
+  const {data,error}=await supabase.auth.getUser();
+  if(error||data.user?.id!==userId)throw Error('Unable to reach this account');
+  return parsePreferences(data.user.user_metadata[metadataKey]);
+ }
+ return {status,busy,sync,readCloud};
 }

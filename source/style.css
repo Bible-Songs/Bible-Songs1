@@ -190,3 +190,34 @@
  .sidebar{overflow-y:auto}
  .account-view .sidebar{bottom:0}
 }
+
+.sidebar-reading-ranges{display:grid;gap:4px;min-width:0;text-align:left;white-space:normal}
+.sidebar-reading-ranges span{display:block}
+.sidebar-reading-ranges small{margin-top:3px}
+.daily:has(.sidebar-reading-ranges){align-items:flex-start;white-space:normal}
+.daily:has(.sidebar-reading-ranges)>svg{flex-shrink:0;margin-top:2px}
+.account-popover{min-width:270px}
+.account-popover .account-actions+.account-actions{margin-top:9px}
+.account-theme{margin:12px 0 0;padding:9px;border:1px solid var(--border);border-radius:8px}
+.account-theme legend{padding:0 5px;font-weight:650}
+.account-actions [aria-pressed=true]{background:#d9ead9;border-color:#7c9c83;color:#203e30}
+.account-panel details .account-actions{margin-top:10px}
+[data-layout=mobile] .sidebar{position:static;width:auto;height:auto;padding:16px 22px;display:block;border-right:0;border-bottom:1px solid var(--border)}
+[data-layout=mobile] .sidebar nav{display:flex;flex-wrap:wrap;gap:5px}
+[data-layout=mobile] .sidebar .tagline,[data-layout=mobile] .sidebar>.side-label,[data-layout=mobile] .sidebar>.daily{display:none}
+[data-layout=mobile] .sidebar-account{padding-top:12px}
+[data-layout=mobile] .sidebar-version{margin-top:8px;padding-top:6px}
+[data-layout=mobile] main{margin-left:0}
+[data-theme=dark]{--ink:#e2eee5;--muted:#b2c4ba;--border:#3c554e;--cream:#111d21;--green:#467e64;color:var(--ink);background:var(--cream);min-height:100vh;color-scheme:dark}
+[data-theme=dark] :is(.sidebar,.app-header,.player,.account-popover,.toast){background:#172b2d;border-color:var(--border)}
+[data-theme=dark] :is(.listen-panel,.original-status,.voice-option,.listening-toggle,.scripture-text,.original-reader,.original-rights){background:#1c3032;border-color:var(--border)}
+[data-theme=dark] :is(.side-label,.sidebar-version,.tagline,.daily small,.sync-status,.breadcrumb,.page-heading p,.section-heading p,.now-playing span,.progress,.eyebrow,.edition,.copyright-notice){color:#b2c4ba}
+[data-theme=dark] .sync-status{color:#8cd6aa}
+[data-theme=dark] :is(nav button,.daily,.account-popover p,.original-reader p,.reader-note,.original-status p,.voice-option p,.voice-option strong,.voice-option label,.listening-toggle button,.original-downloads a,.original-rights p,.text-cue,.chapter-mode-note){color:var(--ink)}
+[data-theme=dark] :is(nav button.active,.header-action,.account-actions button,.account-actions .account-file,.document-workspace button,.document-upload,.filters select,.chapter-picker select){background:#263f40;color:var(--ink);border-color:#4c6962}
+[data-theme=dark] :is(.account-actions [aria-pressed=true],.listening-toggle button[aria-pressed=true],.voice-option:has(input:checked),.document-workspace button[aria-current=true],.text-cue[aria-current=true]){background:#315d4b;color:#f0faee;border-color:#76a78c}
+[data-theme=dark] :is(.search input,.chapter-search,.account-panel summary){color:var(--ink)}
+.account-panel h3{margin:8px 0 0}
+.account-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;overflow-wrap:anywhere}
+.account-table :is(th,td){border-bottom:1px solid var(--border);text-align:left;padding:9px 7px}
+.account-table .account-actions :is(button,.account-file){min-height:30px;padding:5px 8px}

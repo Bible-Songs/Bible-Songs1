@@ -1,3 +1,5 @@
+import {usePreferenceHistory} from './preference-history';
+import {layouts,themes,useAppearance} from './appearance';
 import AccountPages, {type AccountPage} from './AccountPages';
 import {parsePreferences,useAccountSync,type Preferences} from './account-sync';
 import PlaybackSpeed from './PlaybackSpeed';
@@ -28,10 +30,11 @@ const chapters:Chapter[]=[
 ].sort((a,b)=>bookIndex(a)-bookIndex(b)||a.number-b.number);
 function bookIndex(chapter:Chapter){return books.findIndex(book=>chapter.chapter.startsWith(book+' '));}
 const chapterId=(chapter:Chapter)=>bookIndex(chapter)===0?String(chapter.number):chapter.chapter.toLowerCase().replace(' ','-');
-const readingRange=books.flatMap((book,index)=>{
+const readingRanges=books.flatMap((book,index)=>{
  const end=chapters.filter(chapter=>bookIndex(chapter)===index).at(-1)?.number;
  return end?[`${book} 1–${end}`]:[];
-}).join(' · ');
+});
+const readingRange=readingRanges.join(' · ');
 const base=import.meta.env.BASE_URL;
 const mediaUrl=(path:string)=>`${base}${path}?v=${APP_VERSION}`;
 const photo=base+'lake.jpg';
@@ -45,10 +48,13 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   try{return parsePreferences({favorite:false,speed:Number(localStorage.getItem(key+':speed'))})?.speed??1;}
   catch{return 1;}
  });
+ const appearance=useAppearance(key);
  const preferences={favorite:liked,speed};
  function applyPreferences(value:Preferences){setLiked(value.favorite);setSpeed(value.speed);}
  const syncState=useAccountSync(user.id,preferences,applyPreferences);
+ const preferenceHistory=usePreferenceHistory(key,preferences,syncState.status);
  const headerSearch=useRef<HTMLInputElement>(null);
+ const accountMenu=useRef<HTMLDetailsElement>(null);
  const activeAccountPage=accountPages.find(page=>page===tab);
  useEffect(()=>{
   try{localStorage.setItem(key,String(liked));localStorage.setItem(key+':speed',String(speed));}
@@ -56,6 +62,7 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  },[key,liked,speed]);
  function navigate(page:Tab){
   if(page!=='Bible'&&page!=='My favorites'){audio.current?.pause();leaveBibleReading();}
+  if(accountMenu.current)accountMenu.current.open=false;
   setTab(page);setQuery('');
  }
  function focusSearch(){
@@ -312,19 +319,29 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
  }
  const visible=(tab!=='My favorites'||liked)&&[...chapters.map(item=>item.chapter),song.title].some(title=>title.toLowerCase().includes(query.trim().toLowerCase()));
  const currentSection=isBible?undefined:mode==='singing'?song.sections.find(s=>time>=s.start&&time<s.end):currentSegment?song.sections[Number(currentSegment.key.split('-')[0])]:undefined;
- return <div className={`shell original-library${activeAccountPage?' account-view':''}`}><aside className="sidebar"><a className="brand" href={base}><span className="brand-icon"><Music2 size={25}/></span>Bible Songs</a><div className="tagline">SCRIPTURE. SET TO MUSIC.</div><nav>{([{name:'Bible',Icon:Compass},{name:'Listening Library',Icon:Headphones},{name:'My favorites',Icon:Heart}] as const).map(({name,Icon})=><button className={tab===name?'active':''} onClick={()=>navigate(name)} key={name}><Icon size={19}/>{name}</button>)}</nav><div className="side-label">BIBLE READINGS</div><button className="daily" onClick={read}><BookOpen size={20}/><span>{readingRange}<small>Choose a chapter</small></span></button><div className="sidebar-account"><div className="side-label">ACCOUNT</div>
+ return <div className={`shell original-library${activeAccountPage?' account-view':''}`} data-theme={appearance.dark?'dark':'light'} data-layout={appearance.layout?.toLowerCase()}><aside className="sidebar"><a className="brand" href={base}><span className="brand-icon"><Music2 size={25}/></span>Bible Songs</a><div className="tagline">SCRIPTURE. SET TO MUSIC.</div><nav>{([{name:'Bible',Icon:Compass},{name:'Listening Library',Icon:Headphones},{name:'My favorites',Icon:Heart}] as const).map(({name,Icon})=><button className={tab===name?'active':''} onClick={()=>navigate(name)} key={name}><Icon size={19}/>{name}</button>)}</nav><div className="side-label">BIBLE READINGS</div><button className="daily" onClick={read}><BookOpen size={20}/><span className="sidebar-reading-ranges">{readingRanges.map(range=><span key={range}>{range}</span>)}<small>Choose a chapter</small></span></button><div className="sidebar-account"><div className="side-label">ACCOUNT</div>
  <nav aria-label="Account pages">{accountPages.map(page=><button type="button" className={tab===page?'active':''} key={page} onClick={()=>navigate(page)}>{page}</button>)}</nav>
  <span className="sidebar-version">Version {APP_VERSION}</span></div></aside>
  <main><header className="app-header"><div className="breadcrumb">{tab}</div><div className="header-actions">
  <span className="sync-status" role="status">{syncState.status}</span>
  <button className="header-action" type="button" disabled={syncState.busy} onClick={()=>void syncState.sync()}>Sync now</button>
  <button className="header-action" type="button" onClick={focusSearch}><Search size={15}/>Search</button>
- <details className="header-account"><summary className="header-action">Account</summary><div className="account-popover">
+ <details className="header-account" ref={accountMenu}><summary className="header-action">Account</summary><div className="account-popover">
   {user.email&&<p>{user.email}</p>}
-  {onSignOut&&<button className="header-action" type="button" disabled={signingOut} onClick={()=>void onSignOut()}>{signingOut?'Signing out…':'Sign out'}</button>}
+  <div className="account-actions" role="group" aria-label="Layout">
+   {layouts.map(layout=><button key={layout} className="header-action" type="button" aria-pressed={appearance.layout===layout} onClick={()=>appearance.setLayout(layout)}>{layout}</button>)}
+   {appearance.layout&&<button className="header-action" type="button" onClick={()=>appearance.setLayout(undefined)}>Responsive layout</button>}
+  </div>
+  <div className="account-actions">
+   <button className="header-action" type="button" onClick={()=>navigate('Sync & backups')}>Troubleshoot Sync</button>
+   {onSignOut&&<button className="header-action" type="button" disabled={signingOut} onClick={()=>void onSignOut()}>{signingOut?'Logging out…':'Log out'}</button>}
+  </div>
+  <fieldset className="account-theme"><legend>Theme</legend><div className="account-actions">
+   {themes.map(theme=><button key={theme} className="header-action" type="button" aria-pressed={appearance.theme===theme} onClick={()=>appearance.setTheme(theme)}>{theme}</button>)}
+  </div></fieldset>
  </div></details></div></header>
  {activeAccountPage&&<AccountPages key={activeAccountPage} page={activeAccountPage} preferences={preferences} restore={applyPreferences}
-  status={syncState.status} busy={syncState.busy} sync={()=>void syncState.sync()}/>}
+  status={syncState.status} busy={syncState.busy} readCloud={syncState.readCloud} copies={preferenceHistory.copies} problems={preferenceHistory.problems} sync={()=>void syncState.sync()}/>}
  {!activeAccountPage&&tab!=='Listening Library'&&<div className="chapter-search"><label className="search"><Search size={17}/>
  <input ref={headerSearch} aria-label="Search chapters and songs" placeholder="Search chapters and songs" value={query} onChange={event=>search(event.target.value)}/></label></div>}
 

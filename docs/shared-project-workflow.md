@@ -1,0 +1,28 @@
+# Shared project workflow
+
+The shared release source is [Bible-Songs/Bible-Songs1 on GitHub](https://github.com/Bible-Songs/Bible-Songs1). The public app is [Bible Songs](https://bible-songs.github.io/Bible-Songs1/). ChatGPT, Claude and Codex use the same workflow. A chat’s last reply and a browser’s displayed version can lag behind GitHub.
+
+## Start or take over
+
+1. Read AGENTS.md and docs/release-handoff.md. On Mike’s Mac the checkout is `/Users/mike/Documents/ChatGPT/Bible Song/github-pages`. The parent folder contains rendering tools, drafts and GitHub History. Check task notes and logs there if work is underway.
+2. Run `git status --short --branch`, `git fetch origin main`, `git log -5 --oneline origin/main` and `git log --left-right --oneline HEAD...origin/main`. Read the remote version with `git show origin/main:package.json`. Inspect incoming changes and any local edits before integrating them.
+3. For a clean main with no local commits, update using `git merge --ff-only origin/main`. If it diverged, preserve local work and integrate on a task branch. Resolve conflicts with both changes present where applicable. Coordinate with Mike before editing files another assistant has open. Use separate task branches and checkouts for simultaneous edits. Preserve unrelated work.
+4. Tell Mike the base commit/version, what the last release added, and what you will change. If this chat lacks a current checkout, request the exact latest source archive or files and its commit SHA. Prepare a patch or handoff while Codex or Claude runs local commands. Keep credentials in the Git credential store or authorized connector.
+
+## Add or correct a sermon
+
+- Take inventory of `source/ListeningLibrary.tsx`, its cue imports, `source/library-download-sizes.json` and `public/library/`. An earlier assistant’s new title, cue file and four downloadable files should still be present after your edit. Extend the current entries and size map. Review the diff for unexpected removals or stale replacements.
+- Check supplied text against a suitable published edition before rendering. Document proposed corrections and edition differences. Keep a consistent narrator in Drama. Switch voices only for clearly attributed speech. Trim quiet padding at technical joins inside a continuing phrase. For an existing reading correction, reuse unaffected PCM chunks when available.
+- The local free renderer and assembler are in `voice-training/listening/published-library/` in the parent workspace. Keep source, plan, PCM checkpoints and logs in a title-specific folder there. Include final AAC/M4A, MP3, PDF, DOCX, timed cue JSON, download sizes and catalog entry in the release. Use chapter headings at complete sentence boundaries.
+- Run strict checks and the production build, then test local playback, transcript seeking and downloads. Compare existing catalog entries and assets against the fetched main before committing. If work stops, hand off the source/checkpoint paths, commands, completed batches and what remains.
+
+## Publish and confirm
+
+1. Before assigning the release version, fetch main again. Integrate any new contributions, review the resulting diff, and rerun affected checks. Use a version higher than current remote main. Update both package.json and package-lock.json using `npm version --no-git-tag-version patch` once based on the integrated version. Update the handoff with the version, changes and verification.
+2. Commit only intended files and run `git diff --cached --check` before committing. Check that the release contains current remote main with `git merge-base --is-ancestor origin/main HEAD`. Push normally. A non-fast-forward or stale-version rejection means fetch, integrate, recheck and retry. A branch backup or a GitHub upload from another checkout does not itself authorize publication.
+3. Preserve the exact upload in a new dated folder under `GitHub History/` on Mike’s Mac. The configured pre-push hook makes the archive. If publishing another way, arrange an equivalent exact-source archive using Mike’s repository tools. Include tracked source only, excluding credentials, dependency directories and Git internals.
+4. Verify remote main’s commit using `git ls-remote origin refs/heads/main`, and mark the matching archive record `confirmed-upload` after confirmation. If the remote advanced again, verify the release commit is in main’s history before marking it confirmed. Report version, commit, tests and a clickable dated backup link. GitHub upload and hosting deployment are separate. Skip routine live-site checks unless Mike asks.
+
+## Handoff notes
+
+Update `docs/release-handoff.md` in each release. For work in progress, send the next assistant the task branch and base commit, a concise status, exact changed paths, any local inputs and checkpoints needed to continue, the validation results and publication authorization. On the same Mac, preserve uncommitted work and indicate which checkout owns it. GitHub tracks published source; PCM checkpoints, private source documents and other local inputs must be shared separately when needed.
