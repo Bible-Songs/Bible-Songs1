@@ -5,6 +5,7 @@ import {APP_VERSION} from './version';
 import {nextReadingVoice} from './reading-cues';
 
 type Voice={id:string;name:string};
+const MAX_SENTENCES_PER_BATCH=5;
 type Chunk={index:number;end:number;text:string;voice:KokoroVoice;speed:number};
 type RenderProgress=SavedAudio&{settings:string;plan:Chunk[];elapsed:number};
 type Entry={id:string;name:string;text:string;source:string;saved:string;rendered?:boolean;renderedWith?:string;renderSeconds?:number};
@@ -39,7 +40,7 @@ async function extract(file:File){
  return file.text();
 }
 
-export default function ListeningLibrary({userId,voices}:{userId:string;voices:Voice[]}){
+export default function ListeningLibrary({userId,voices,visible}:{userId:string;voices:Voice[];visible:boolean}){
  const key=`bible-songs:listening-library:${userId}`;
  const [history,setHistory]=useState<Entry[]>(()=>{try{return JSON.parse(localStorage.getItem(key)??'[]');}catch{return [];}});
  const [name,setName]=useState(defaultName),[text,setText]=useState(''),[source,setSource]=useState('Pasted text');
@@ -51,10 +52,13 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
  const current=useRef<HTMLButtonElement>(null);
  const lines=useMemo(()=>text.split(/\n+/).flatMap(line=>speakerLine.test(line.trim())?[line.trim()]:sentences(line)),[text]);
  const drama=useMemo(()=>documentDrama(lines),[lines]);
- useEffect(()=>{current.current?.scrollIntoView({block:'nearest'});},[active]);
+ useEffect(()=>{if(visible)current.current?.scrollIntoView({block:'nearest'});},[active,visible]);
  useEffect(()=>()=>{run.current++;cancel.current();},[]);
  const [rendering,setRendering]=useState<{id:string;sentence:number;total:number}>();
  function stop(){setRendering(undefined);run.current++;cancel.current();audio.current?.pause();setActive(-1);setPaused(false);setBusy(false);}
+ useEffect(()=>{
+  if(!visible&&!rendering)stop();
+ },[visible,rendering]);
  function store(rows:Entry[]){
   try{localStorage.setItem(key,JSON.stringify(rows));setHistory(rows);return true;}
   catch{setStatus('Could not save. Browser storage may be full or unavailable.');return false;}
@@ -63,7 +67,9 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   if(!text.trim()||busy)return;
   const prior=history.find(row=>row.id===id);
   const entry={renderedWith:prior?.text===text?prior?.renderedWith:undefined,renderSeconds:prior?.text===text?prior?.renderSeconds:undefined,rendered:prior?.text===text&&prior.rendered,id:id??crypto.randomUUID(),name:name.trim()||defaultName(),text,source,saved:new Date().toISOString()};
-  if(store([entry,...history.filter(row=>row.id!==entry.id)])){setId(entry.id);setName(entry.name);setStatus('Saved in this browser.');if(prior?.rendered&&prior.text!==text)void savedAudio('readwrite',store=>store.delete(key+':'+entry.id)).catch(()=>{});}
+  if(store([entry,...history.filter(row=>row.id!==entry.id)])){setId(entry.id);setName(entry.name);setStatus('Saved in this browser.');if(prior&&prior.text!==text)void savedAudio('readwrite',store=>{
+   store.delete(key+':'+entry.id+':draft');return store.delete(key+':'+entry.id);
+  }).catch(()=>{});}
  }
  function open(row?:Entry){
   stop();setId(row?.id);setName(row?.name??defaultName());setText(row?.text??'');setSource(row?.source??'Pasted text');setStatus('');
@@ -88,12 +94,11 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
    const cached=cacheKey&&!options?.render?await savedAudio('readonly',store=>store.get(cacheKey)) as SavedAudio|undefined:undefined;
    if(options&&!options.render&&cached?.text!==options.entry.text)throw Error('Saved audio missing');
    const draftKey=cacheKey&&cacheKey+':draft';
-   const selected=choices.current;
-   const settings=JSON.stringify(selected);
    const draft=options?.render&&draftKey
     ?await savedAudio('readonly',store=>store.get(draftKey)) as RenderProgress|undefined:undefined;
-   const resume=draft?.text===text&&draft.settings===settings?draft:undefined;
-   const model=cached?undefined:await speechEngine();
+   const resume=draft?.text===text?draft:undefined;
+   const selected:typeof choices.current=resume?JSON.parse(resume.settings):choices.current;
+   const settings=JSON.stringify(selected);
    const recorded:SavedAudio['chunks']=resume?.chunks??[];
    const elapsed=()=> (resume?.elapsed??0)+performance.now()-(options?.started??performance.now());
    let cachedIndex=0;
@@ -116,7 +121,8 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     const plan:Chunk[]=[];
     for(const chunk of chunks()){
      const previous=plan.at(-1);
-     if(previous&&previous.voice===chunk.voice&&previous.speed===chunk.speed&&previous.text.length+chunk.text.length+1<=300){
+     if(previous&&chunk.end-previous.index<MAX_SENTENCES_PER_BATCH&&
+        previous.voice===chunk.voice&&previous.speed===chunk.speed&&previous.text.length+chunk.text.length+1<=300){
       previous.text+=' '+chunk.text;
       previous.end=chunk.end;
      }else plan.push(chunk);
@@ -131,6 +137,11 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     setRendering({id:options.entry.id,sentence,total:lines.length});
     setStatus(`Resuming after sentence ${sentence} of ${lines.length}…`);
    }
+   if(options?.render&&draftKey&&!resume){
+    await savedAudio('readwrite',store=>store.put({text,settings,plan,chunks:recorded,elapsed:elapsed()},draftKey));
+   }
+   if(ticket!==run.current)return;
+   const model=cached?undefined:await speechEngine();
    async function prepare(){
     if(ticket!==run.current)return;
     if(cached)return cached.chunks[cachedIndex++];
@@ -152,7 +163,7 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
      if(ticket!==run.current)return;
      const sentence=(end??index)+1;
      setRendering({id:options.entry.id,sentence,total:lines.length});
-     setStatus(`Rendering sentence ${sentence} of ${lines.length}…`);
+     setStatus(`Progress saved through sentence ${sentence} of ${lines.length}. Rendering continues…`);
      pending=prepare();
      continue;
     }
@@ -186,7 +197,7 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     if(ticket!==run.current)return;
     stop();if(saved)setStatus('Rendered audio saved in this browser.');
    }else if(ticket===run.current){stop();setStatus('Finished reading.');}
-  }catch{if(ticket===run.current){stop();setStatus('Could not prepare audio. Check available browser storage and try again.');}}
+  }catch{if(ticket===run.current){stop();setStatus('Could not prepare audio. If rendering was interrupted, click Render audio again to resume from the last saved batch.');}}
  }
  function download(row:Entry){
   const url=URL.createObjectURL(new Blob([row.text],{type:'text/plain;charset=utf-8'}));
@@ -231,7 +242,7 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     <label>Volume <input type="range" min="0" max="1" step=".05" defaultValue="1" onChange={event=>{if(audio.current)audio.current.volume=Number(event.target.value);}}/></label>
    </div>
    <p role="status">{status}</p>
-   <audio ref={audio}/>
+   {visible&&<audio ref={audio}/>}
    {!!lines.length&&<div className="document-preview" aria-label="Reading preview">{lines.map((line,index)=><button ref={active===index?current:undefined} aria-current={active===index?'true':undefined} onClick={()=>void play(index)} key={index}>{line}</button>)}</div>}
   </section>
   <section className="listen-panel document-workspace">
