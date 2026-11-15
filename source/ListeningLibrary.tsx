@@ -1,3 +1,5 @@
+import PublishedReading from './PublishedReading';
+import sermonCues from './gods-jewels-cues.json';
 import {savedAudio,type SavedAudio} from './listening-audio';
 import {documentDrama,speakerLine} from './document-drama';
 import {Fragment,useEffect,useMemo,useRef,useState} from 'react';
@@ -342,13 +344,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   </section>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
-   <article>
-    <h3>God’s Jewels</h3>
-    <p>C. H. Spurgeon · Drama · {fileSize(20187877)}</p>
-    {visible&&<audio controls preload="none"
-     src={`${import.meta.env.BASE_URL}library/gods-jewels-spurgeon.m4a?v=${APP_VERSION}`}
-     onPlay={()=>{stop();setPortion(undefined);}}/>}
-   </article>
+   <PublishedReading cues={sermonCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
  </div>;
