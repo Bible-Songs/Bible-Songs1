@@ -1,0 +1,62 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright';
+
+const user={
+ id:'00000000-0000-4000-8000-000000000009',
+ aud:'authenticated',role:'authenticated',email:'fixture@example.invalid',
+ app_metadata:{},user_metadata:{bible_songs_preferences:{favorite:false,speed:1}},
+};
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--autoplay-policy=no-user-gesture-required']});
+try{
+ const context=await browser.newContext();
+ await context.addInitScript(account=>{
+  const exp=Math.floor(Date.now()/1000)+3600;
+  const encode=(value:object)=>btoa(JSON.stringify(value)).replaceAll('=','');
+  sessionStorage.setItem('sb-rzvfeeatzksvgxucbzbo-auth-token',JSON.stringify({
+   access_token:encode({alg:'HS256'})+'.'+encode({sub:account.id,exp})+'.fixture',
+   refresh_token:'fixture',expires_at:exp,user:account,
+  }));
+ },user);
+ const page=await context.newPage();
+ await page.route('https://rzvfeeatzksvgxucbzbo.supabase.co/**',async route=>{
+  if(route.request().method()==='PUT'){
+   const body:unknown=route.request().postDataJSON();
+   assert(body&&typeof body==='object'&&'data' in body);
+  }
+  await route.fulfill({json:user});
+ });
+ await page.goto('http://127.0.0.1:5190/Bible-Songs1/');
+ const header=page.locator('.app-header');
+ await header.getByText(/Auto-synced at/).waitFor();
+ await header.getByRole('button',{name:'Sync now'}).click();
+ await header.getByText(/^Synced at/).waitFor();
+ await header.getByText('Account',{exact:true}).click();
+ await header.getByText(user.email,{exact:true}).waitFor();
+ await header.getByText('Account',{exact:true}).click();
+ await page.getByRole('button',{name:'About',exact:true}).click();
+ await page.getByRole('heading',{name:'About',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Sync & backups',exact:true}).click();
+ const [download]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'Download backup'}).click()]);
+ assert.equal(download.suggestedFilename(),'bible-songs-backup.json');
+ await page.getByRole('button',{name:'Recovery centre'}).click();
+ page.once('dialog',dialog=>void dialog.accept());
+ await page.getByLabel('Import backup').setInputFiles({
+  name:'backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({favorite:true,speed:1.5})),
+ });
+ await page.getByText('Preferences restored.',{exact:true}).waitFor();
+ await page.getByRole('button',{name:'Listening Library',exact:true}).click();
+ await header.getByRole('button',{name:'Search',exact:true}).click();
+ assert(await page.getByRole('searchbox',{name:'Title'}).evaluate(input=>input===document.activeElement));
+ const name='God’s Jewels';
+ const card=page.getByRole('article').filter({hasText:name});
+ await card.getByRole('button',{name:'Play '+name,exact:true}).click();
+ await card.getByRole('button',{name:'Pause '+name,exact:true}).click();
+ await card.getByRole('button',{name:'Play '+name,exact:true}).waitFor();
+ await page.getByRole('button',{name:'Bible',exact:true}).click();
+ assert.equal(await page.getByRole('combobox',{name:'Playback speed'}).inputValue(),'1.5');
+ await page.getByRole('button',{name:'Play audio',exact:true}).click();
+ await page.getByRole('button',{name:'Pause audio',exact:true}).click();
+ await page.setViewportSize({width:390,height:844});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
+ console.log('Account sync fixture, backup, recovery, Bible playback, sermon play/pause and mobile layout passed.');
+}finally{await browser.close();}

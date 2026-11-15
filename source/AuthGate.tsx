@@ -8,13 +8,14 @@ import Home from './App';
 type Mode = 'signin' | 'signup' | 'forgot' | 'recovery';
 const base = import.meta.env.BASE_URL;
 export function friendlyError(error: unknown) {
-  const e = error as {code?: string; message?: string};
-  if (e.code === 'invalid_credentials') return 'The email or password is incorrect. Please try again.';
-  if (e.code === 'email_not_confirmed') return 'Please confirm your email address before signing in.';
-  if (e.code === 'user_already_exists') return 'An account with this email already exists. Please sign in.';
-  if (e.code === 'over_email_send_rate_limit' || e.code === 'over_request_rate_limit') return 'Too many attempts. Please wait a few minutes and try again.';
-  if (/fetch|network|load failed/i.test(e.message || '')) return 'We could not reach the sign-in service. Check your connection and try again.';
-  return e.message || 'Something went wrong. Please try again.';
+  const code = typeof error==='object'&&error!==null&&'code' in error?error.code:undefined;
+  const message = typeof error==='object'&&error!==null&&'message' in error&&typeof error.message==='string'?error.message:'';
+  if (code === 'invalid_credentials') return 'The email or password is incorrect. Please try again.';
+  if (code === 'email_not_confirmed') return 'Please confirm your email address before signing in.';
+  if (code === 'user_already_exists') return 'An account with this email already exists. Please sign in.';
+  if (code === 'over_email_send_rate_limit' || code === 'over_request_rate_limit') return 'Too many attempts. Please wait a few minutes and try again.';
+  if (/fetch|network|load failed/i.test(message)) return 'We could not reach the sign-in service. Check your connection and try again.';
+  return message || 'Something went wrong. Please try again.';
 }
 export default function AuthGate() {
   const [user, setUser] = useState<User | null>(null);

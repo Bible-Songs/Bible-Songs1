@@ -69,7 +69,8 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
      return {format,name,url:source(name),size};
     })}
     cues={reading.cues}
-    speed={speed} onSpeed={onSpeed} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>No readings match your search.</p>}
+    speed={speed} onSpeed={onSpeed} playing={reading===selected&&playing}
+    onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>No readings match your search.</p>}
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
   <audio ref={audio} preload="metadata" src={source(readings[0].filename)}

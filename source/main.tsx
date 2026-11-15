@@ -1,5 +1,6 @@
-import React from 'react';
 import {createRoot} from 'react-dom/client';
 import AuthGate from './AuthGate';
 import './style.css';
-createRoot(document.getElementById('root')!).render(<AuthGate/>);
+const root=document.getElementById('root');
+if(!root)throw new Error('Missing application root');
+createRoot(root).render(<AuthGate/>);

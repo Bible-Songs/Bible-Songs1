@@ -149,3 +149,44 @@
 
 .library-search{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
 .library-search label{display:grid;gap:7px;font-weight:600}
+
+.sidebar-account{margin-top:auto;padding-top:24px}
+.sidebar-account .side-label{margin:0 0 8px}
+.sidebar-account nav{display:grid;gap:4px;margin:0}
+.sidebar-account nav button{min-height:38px;padding:8px 12px}
+.sidebar-version{display:block;margin-top:16px;padding:12px 4px 0;border-top:1px solid var(--border);font-size:12px;color:#4a6458}
+.app-header{gap:14px;min-height:64px;height:auto;padding-block:10px}
+.app-header .breadcrumb{font-size:15px;font-weight:700;color:var(--ink)}
+.app-header .header-actions,.account-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.header-action,.account-actions :is(button,.account-file){display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:7px 12px;border:1px solid #cbd7cc;border-radius:8px;background:#f4f7ef;color:#254737;font-weight:600;cursor:pointer}
+.header-action:hover,.account-actions :is(button,.account-file):hover{background:#e6eee2}
+.header-action:disabled,.account-actions button:disabled{opacity:.6;cursor:wait}
+.sync-status{color:#37634f;font-size:12px}
+.header-account{position:relative}
+.header-account summary{list-style:none}
+.header-account summary::-webkit-details-marker{display:none}
+.account-popover{position:absolute;right:0;top:calc(100% + 6px);z-index:20;min-width:190px;max-width:min(320px,90vw);padding:12px;border:1px solid #cbd7cc;border-radius:10px;background:#fff;box-shadow:0 8px 22px #243e3522}
+.account-popover p{margin:0 0 8px;overflow-wrap:anywhere}
+.account-panel{max-width:820px;display:grid;gap:12px}
+.account-panel :is(h2,p){margin:0}
+.account-panel details{padding:12px;border:1px solid #dce4d8;border-radius:8px}
+.account-panel summary{cursor:pointer;font-weight:600}
+.account-panel details p{margin-top:8px}
+.account-file{position:relative;overflow:hidden}
+.account-file:focus-within{outline:2px solid #37634f;outline-offset:2px}
+.account-file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.chapter-search{padding:12px clamp(20px,4vw,52px) 0}
+.chapter-search .search{max-width:320px}
+@media(max-width:760px){
+ .sidebar-account{padding-top:12px}
+ .sidebar-account .side-label{display:block}
+ .sidebar-account nav{display:flex;flex-wrap:wrap}
+ .sidebar-version{margin-top:8px;padding-top:6px}
+ .app-header{flex-wrap:wrap;align-items:center}
+ .app-header .header-actions{display:flex;justify-content:flex-start}
+}
+
+@media(min-width:761px){
+ .sidebar{overflow-y:auto}
+ .account-view .sidebar{bottom:0}
+}

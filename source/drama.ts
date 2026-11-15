@@ -40,16 +40,16 @@ export function dramaCues(chapter:number, verses:{verse:number;text:string}[], b
   let start=0;
   const ranges:{start:number;end:number;voice:string}[]=[];
   for(const match of verse.text.matchAll(/[“”]/g)){
-   const offset=match.index!;
+   const offset=match.index??0;
    if(match[0]==='“'){
     speaker=speakers[opening++];
     start=offset;
    }else{
-    if(speaker)ranges.push({start,end:offset+1,voice:cast[speaker]});
+    if(speaker)ranges.push({start,end:offset+1,voice:cast[speaker]??narrator});
     speaker=undefined;
    }
   }
-  if(speaker)ranges.push({start,end:verse.text.length,voice:cast[speaker]});
+  if(speaker)ranges.push({start,end:verse.text.length,voice:cast[speaker]??narrator});
   dialogue.set(verse.verse,ranges);
  }
  return boundaries.map((cue,index)=>{

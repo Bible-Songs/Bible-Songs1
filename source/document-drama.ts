@@ -9,12 +9,15 @@ export function documentDrama(lines:string[],scriptLabels=true):Part[][]{
  let dialogueVoice:string|undefined;
  function voiceFor(name:string){
   const key=name.toLowerCase();
-  if(!speakers.has(key))speakers.set(key,cast[speakers.size%cast.length]);
-  return speakers.get(key)!;
+  const existing=speakers.get(key);
+  if(existing)return existing;
+  const voice=cast[speakers.size%cast.length]??narrator;
+  speakers.set(key,voice);
+  return voice;
  }
  return lines.map(line=>{
   const script=scriptLabels?line.match(speakerLine):null;
-  if(script&&!dialogueVoice)return [{text:script[2],voice:voiceFor(script[1])}];
+  if(script?.[1]&&script[2]&&!dialogueVoice)return [{text:script[2],voice:voiceFor(script[1])}];
   const parts:Part[]=[];
   const push=(text:string,voice:string)=>{
    if(!text.trim())return;
