@@ -141,3 +141,5 @@
 .document-table table{border-collapse:collapse;width:100%;text-align:left}
 .document-table th,.document-table td{padding:10px;border-bottom:1px solid #547268;overflow-wrap:anywhere}
 .document-note{font-size:.9rem}
+.document-rendered-row{background:#243e35;color:#f5f4e8}
+.document-rendered-row td:first-child{padding-left:20px}

@@ -1,4 +1,4 @@
-export type SavedAudio={text:string;chunks:{index:number;blob:Blob}[]};
+export type SavedAudio={text:string;chunks:{index:number;end?:number;blob:Blob}[]};
 export async function savedAudio<T>(mode:IDBTransactionMode, operation:(store:IDBObjectStore)=>IDBRequest<T>){
  const database=await new Promise<IDBDatabase>((resolve,reject)=>{
   const request=indexedDB.open('bible-songs-listening-audio',1);

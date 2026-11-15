@@ -1,11 +1,13 @@
 import {savedAudio,type SavedAudio} from './listening-audio';
 import {documentDrama,speakerLine} from './document-drama';
-import {useEffect,useMemo,useRef,useState} from 'react';
+import {Fragment,useEffect,useMemo,useRef,useState} from 'react';
 import {APP_VERSION} from './version';
 import {nextReadingVoice} from './reading-cues';
 
 type Voice={id:string;name:string};
-type Entry={id:string;name:string;text:string;source:string;saved:string;rendered?:boolean;renderSeconds?:number};
+type Chunk={index:number;end:number;text:string;voice:KokoroVoice;speed:number};
+type RenderProgress=SavedAudio&{settings:string;plan:Chunk[];elapsed:number};
+type Entry={id:string;name:string;text:string;source:string;saved:string;rendered?:boolean;renderedWith?:string;renderSeconds?:number};
 type KokoroVoice=keyof import('kokoro-js').KokoroTTS['voices'];
 const profiles:Record<string,KokoroVoice>={classic:'am_michael',warm:'af_heart',voice3:'am_fenrir',composite:'am_onyx',voice5:'af_bella',voice6:'af_nicole',voice7:'am_puck',voice8:'af_sarah',voice9:'am_adam',voice10:'af_nova'};
 const defaultName=()=>`Listening notes ${new Date().toLocaleDateString('en-CA')}`;
@@ -60,7 +62,7 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
  function save(){
   if(!text.trim()||busy)return;
   const prior=history.find(row=>row.id===id);
-  const entry={renderSeconds:prior?.text===text?prior?.renderSeconds:undefined,rendered:prior?.text===text&&prior.rendered,id:id??crypto.randomUUID(),name:name.trim()||defaultName(),text,source,saved:new Date().toISOString()};
+  const entry={renderedWith:prior?.text===text?prior?.renderedWith:undefined,renderSeconds:prior?.text===text?prior?.renderSeconds:undefined,rendered:prior?.text===text&&prior.rendered,id:id??crypto.randomUUID(),name:name.trim()||defaultName(),text,source,saved:new Date().toISOString()};
   if(store([entry,...history.filter(row=>row.id!==entry.id)])){setId(entry.id);setName(entry.name);setStatus('Saved in this browser.');if(prior?.rendered&&prior.text!==text)void savedAudio('readwrite',store=>store.delete(key+':'+entry.id)).catch(()=>{});}
  }
  function open(row?:Entry){
@@ -80,37 +82,62 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   if(!lines[start])return;
   stop();const ticket=run.current;
   if(options?.render)setRendering({id:options.entry.id,sentence:0,total:lines.length});
-  setBusy(true);setStatus(options?.render?'Rendering saved audio…':'Preparing audio…');
+  setBusy(true);setStatus(options?.render?'Rendering saved audio. Completed batches are saved as you go…':'Preparing audio…');
   try{
    const cacheKey=options&&key+':'+options.entry.id;
    const cached=cacheKey&&!options?.render?await savedAudio('readonly',store=>store.get(cacheKey)) as SavedAudio|undefined:undefined;
    if(options&&!options.render&&cached?.text!==options.entry.text)throw Error('Saved audio missing');
+   const draftKey=cacheKey&&cacheKey+':draft';
+   const selected=choices.current;
+   const settings=JSON.stringify(selected);
+   const draft=options?.render&&draftKey
+    ?await savedAudio('readonly',store=>store.get(draftKey)) as RenderProgress|undefined:undefined;
+   const resume=draft?.text===text&&draft.settings===settings?draft:undefined;
    const model=cached?undefined:await speechEngine();
-   const recorded:SavedAudio['chunks']=[];
+   const recorded:SavedAudio['chunks']=resume?.chunks??[];
+   const elapsed=()=> (resume?.elapsed??0)+performance.now()-(options?.started??performance.now());
    let cachedIndex=0;
    function* chunks(){
     let previous='';
     for(let index=start;index<lines.length;index++){
-     const {pool,order}=choices.current;
+     const {pool,order}=options?.render?selected:choices.current;
      const voice=nextReadingVoice(pool,previous,order)??pool[0];
      previous=voice;
      const passage=order==='drama'?drama[index]:[{text:lines[index],voice}];
      for(const part of passage){
       const pieces=part.text.match(/.{1,300}(?:\s+|$)|.{1,300}/gu)??[];
       for(const text of pieces){
-       yield {index,text,voice:profiles[part.voice],speed:order==='drama'&&part.voice!=='warm'?.9:.95};
+       yield {index,end:index,text,voice:profiles[part.voice],speed:order==='drama'&&part.voice!=='warm'?.9:.95};
       }
      }
     }
    }
-   const queue=chunks();
+   function batchPlan(){
+    const plan:Chunk[]=[];
+    for(const chunk of chunks()){
+     const previous=plan.at(-1);
+     if(previous&&previous.voice===chunk.voice&&previous.speed===chunk.speed&&previous.text.length+chunk.text.length+1<=300){
+      previous.text+=' '+chunk.text;
+      previous.end=chunk.end;
+     }else plan.push(chunk);
+    }
+    return plan;
+   }
+   const plan=options?.render?(resume?.plan??batchPlan()):undefined;
+   const queue=plan?plan.slice(recorded.length).values():chunks();
+   if(options?.render&&recorded.length){
+    const last=recorded.at(-1)!;
+    const sentence=(last.end??last.index)+1;
+    setRendering({id:options.entry.id,sentence,total:lines.length});
+    setStatus(`Resuming after sentence ${sentence} of ${lines.length}…`);
+   }
    async function prepare(){
     if(ticket!==run.current)return;
     if(cached)return cached.chunks[cachedIndex++];
     const next=queue.next();
     if(next.done||ticket!==run.current)return;
-    const {index,text,voice,speed}=next.value;
-    try{return {index,blob:(await model!.generate(text,{voice,speed})).toBlob()};}
+    const {index,end,text,voice,speed}=next.value;
+    try{return {index,end,blob:(await model!.generate(text,{voice,speed})).toBlob()};}
     catch(error){return {error};}
    }
    let pending=prepare();
@@ -118,11 +145,14 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     const prepared=await pending;
     if(!prepared||ticket!==run.current)break;
     if('error' in prepared)throw prepared.error;
-    const {index,blob}=prepared;
-    if(options?.render){
-     recorded.push({index,blob});
-     setRendering({id:options.entry.id,sentence:index+1,total:lines.length});
-     setStatus(`Rendering sentence ${index+1} of ${lines.length}…`);
+    const {index,end,blob}=prepared;
+    if(options?.render&&draftKey){
+     recorded.push({index,end,blob});
+     await savedAudio('readwrite',store=>store.put({text,settings,plan,chunks:recorded,elapsed:elapsed()},draftKey));
+     if(ticket!==run.current)return;
+     const sentence=(end??index)+1;
+     setRendering({id:options.entry.id,sentence,total:lines.length});
+     setStatus(`Rendering sentence ${sentence} of ${lines.length}…`);
      pending=prepare();
      continue;
     }
@@ -144,11 +174,16 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
      });
     }finally{URL.revokeObjectURL(url);if(ticket===run.current){player.onended=null;player.onerror=null;}}
    }
-   if(ticket===run.current&&options?.render&&cacheKey){
+   if(ticket===run.current&&options?.render&&cacheKey&&draftKey){
     await savedAudio('readwrite',store=>store.put({text:options.entry.text,chunks:recorded},cacheKey));
     if(ticket!==run.current)return;
-    const renderSeconds=Math.max(1,Math.round((performance.now()-options.started)/1000));
-    const saved=store(history.map(row=>row.id===options.entry.id?{...row,rendered:true,renderSeconds}:row));
+    const renderSeconds=Math.max(1,Math.round(elapsed()/1000));
+    const names=selected.pool.map(id=>voices.find(voice=>voice.id===id)?.name??id).join(', ');
+    const renderedWith=selected.order==='drama'?'Drama':selected.pool.length===1?names:
+     `${selected.order==='random'?'Random':'Rotating'} · ${names}`;
+    const saved=store(history.map(row=>row.id===options.entry.id?{...row,rendered:true,renderSeconds,renderedWith}:row));
+    if(saved)await savedAudio('readwrite',store=>store.delete(draftKey));
+    if(ticket!==run.current)return;
     stop();if(saved)setStatus('Rendered audio saved in this browser.');
    }else if(ticket===run.current){stop();setStatus('Finished reading.');}
   }catch{if(ticket===run.current){stop();setStatus('Could not prepare audio. Check available browser storage and try again.');}}
@@ -202,7 +237,27 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Listening history</h2><p>{rows.length} of {history.length} saved readings</p></div></div>
    <label>Search history<input type="search" value={filter} onChange={event=>setFilter(event.target.value)} placeholder="Search filename or source"/></label>
-   {rows.length?<div className="document-table"><table><thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Audio</th><th>Render time</th><th>Actions</th></tr></thead><tbody>{rows.map(row=><tr key={row.id}><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>{rendering?.id===row.id?<span role="status">{rendering.sentence?`Rendering… ${rendering.sentence} / ${rendering.total} sentences`:'Rendering… preparing speech'}</span>:row.rendered?'Rendered':'Text only'}</td><td>{row.renderSeconds===undefined?'—':row.renderSeconds<60?`${row.renderSeconds} s`:`${Math.floor(row.renderSeconds/60)} min ${row.renderSeconds%60} s`}</td><td><div className="document-actions"><button onClick={()=>open(row)}>Open</button>{row.rendered&&<button onClick={()=>historyAudio(row,false)}>Play saved audio</button>}<button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>{row.rendered?'Render again':'Render audio'}</button><button onClick={()=>download(row)}>Download text</button><button disabled={busy} onClick={()=>{if(confirm(`Delete “${row.name}” from listening history?`)&&store(history.filter(item=>item.id!==row.id))){if(id===row.id){stop();setId(undefined);}void savedAudio('readwrite',store=>store.delete(key+':'+row.id)).catch(()=>{});}}}>Delete</button></div></td></tr>)}</tbody></table></div>:<p>{history.length?'No matching readings.':'No saved readings yet.'}</p>}
+   {rows.length?<div className="document-table"><table>
+    <thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Audio</th><th>Rendered with</th><th>Render time</th><th>Actions</th></tr></thead>
+    <tbody>{rows.map(row=><Fragment key={row.id}>
+     <tr><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>Text only</td><td>—</td><td>—</td>
+      <td><div className="document-actions"><button onClick={()=>open(row)}>Open</button>
+       {!row.rendered&&<button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render audio</button>}
+       <button onClick={()=>download(row)}>Download text</button>
+       <button disabled={busy} onClick={()=>{if(confirm(`Delete “${row.name}” from listening history?`)&&store(history.filter(item=>item.id!==row.id))){if(id===row.id){stop();setId(undefined);}void savedAudio('readwrite',store=>{store.delete(key+':'+row.id+':draft');return store.delete(key+':'+row.id);}).catch(()=>{});}}}>Delete</button>
+      </div></td></tr>
+     {(row.rendered||rendering?.id===row.id)&&<tr className="document-rendered-row">
+      <td>{row.name} · Audio</td><td>{row.source}</td><td>—</td>
+      <td>{rendering?.id===row.id?<span role="status">{rendering.sentence?`Rendering… ${rendering.sentence} / ${rendering.total} sentences`:'Rendering… preparing speech'}</span>:'Rendered'}</td>
+      <td>{row.renderedWith??'—'}</td>
+      <td>{row.renderSeconds===undefined?'—':row.renderSeconds<60?`${row.renderSeconds} s`:`${Math.floor(row.renderSeconds/60)} min ${row.renderSeconds%60} s`}</td>
+      <td><div className="document-actions">{row.rendered&&<>
+       <button onClick={()=>historyAudio(row,false)}>Play saved audio</button>
+       <button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render again</button>
+      </>}</div></td></tr>}
+    </Fragment>)}</tbody>
+   </table></div>:<p>{history.length?'No matching readings.':'No saved readings yet.'}</p>}
+
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
  </div>;
