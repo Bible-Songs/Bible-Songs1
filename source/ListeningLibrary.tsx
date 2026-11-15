@@ -323,6 +323,16 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
    </table></div>:<p>{history.length?'No matching readings.':'No saved readings yet.'}</p>}
 
   </section>
+  <section className="listen-panel document-workspace">
+   <div className="section-heading"><div><h2>Published readings</h2></div></div>
+   <article>
+    <h3>God’s Jewels</h3>
+    <p>C. H. Spurgeon · Drama</p>
+    {visible&&<audio controls preload="none"
+     src={`${import.meta.env.BASE_URL}library/gods-jewels-spurgeon.m4a?v=${APP_VERSION}`}
+     onPlay={()=>{stop();setPortion(undefined);}}/>}
+   </article>
+  </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
  </div>;
 }
