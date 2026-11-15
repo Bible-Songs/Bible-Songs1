@@ -1,10 +1,11 @@
+import {savedAudio,type SavedAudio} from './listening-audio';
 import {documentDrama,speakerLine} from './document-drama';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {APP_VERSION} from './version';
 import {nextReadingVoice} from './reading-cues';
 
 type Voice={id:string;name:string};
-type Entry={id:string;name:string;text:string;source:string;saved:string};
+type Entry={id:string;name:string;text:string;source:string;saved:string;rendered?:boolean};
 type KokoroVoice=keyof import('kokoro-js').KokoroTTS['voices'];
 const profiles:Record<string,KokoroVoice>={classic:'am_michael',warm:'af_heart',voice3:'am_fenrir',composite:'am_onyx',voice5:'af_bella',voice6:'af_nicole',voice7:'am_puck',voice8:'af_sarah',voice9:'am_adam',voice10:'af_nova'};
 const defaultName=()=>`Listening notes ${new Date().toLocaleDateString('en-CA')}`;
@@ -56,9 +57,10 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   catch{setStatus('Could not save. Browser storage may be full or unavailable.');return false;}
  }
  function save(){
-  if(!text.trim())return;
-  const entry={id:id??crypto.randomUUID(),name:name.trim()||defaultName(),text,source,saved:new Date().toISOString()};
-  if(store([entry,...history.filter(row=>row.id!==entry.id)])){setId(entry.id);setName(entry.name);setStatus('Saved in this browser.');}
+  if(!text.trim()||busy)return;
+  const prior=history.find(row=>row.id===id);
+  const entry={rendered:prior?.text===text&&prior.rendered,id:id??crypto.randomUUID(),name:name.trim()||defaultName(),text,source,saved:new Date().toISOString()};
+  if(store([entry,...history.filter(row=>row.id!==entry.id)])){setId(entry.id);setName(entry.name);setStatus('Saved in this browser.');if(prior?.rendered&&prior.text!==text)void savedAudio('readwrite',store=>store.delete(key+':'+entry.id)).catch(()=>{});}
  }
  function open(row?:Entry){
   stop();setId(row?.id);setName(row?.name??defaultName());setText(row?.text??'');setSource(row?.source??'Pasted text');setStatus('');
@@ -73,12 +75,17 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
    setName(file.name.replace(/\.[^.]+$/,''));setText(result);setSource(file.name);setId(undefined);setStatus('Text imported. You can edit it before listening or saving.');
   }catch{if(ticket===run.current)setStatus('Could not read this file. Try an unlocked PDF, a .docx file, or plain text.');}
  }
- async function play(start:number){
+ async function play(start:number,options?:{entry:Entry;render:boolean}){
   if(!lines[start])return;
   stop();const ticket=run.current;
-  setBusy(true);setStatus('Preparing speech. The first playback downloads the voice model.');
+  setBusy(true);setStatus(options?.render?'Rendering saved audio…':'Preparing audio…');
   try{
-   const model=await speechEngine();
+   const cacheKey=options&&key+':'+options.entry.id;
+   const cached=cacheKey&&!options?.render?await savedAudio('readonly',store=>store.get(cacheKey)) as SavedAudio|undefined:undefined;
+   if(options&&!options.render&&cached?.text!==options.entry.text)throw Error('Saved audio missing');
+   const model=cached?undefined:await speechEngine();
+   const recorded:SavedAudio['chunks']=[];
+   let cachedIndex=0;
    function* chunks(){
     let previous='';
     for(let index=start;index<lines.length;index++){
@@ -96,10 +103,12 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
    }
    const queue=chunks();
    async function prepare(){
+    if(ticket!==run.current)return;
+    if(cached)return cached.chunks[cachedIndex++];
     const next=queue.next();
     if(next.done||ticket!==run.current)return;
     const {index,text,voice,speed}=next.value;
-    try{return {index,sound:await model.generate(text,{voice,speed})};}
+    try{return {index,blob:(await model!.generate(text,{voice,speed})).toBlob()};}
     catch(error){return {error};}
    }
    let pending=prepare();
@@ -107,11 +116,17 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
     const prepared=await pending;
     if(!prepared||ticket!==run.current)break;
     if('error' in prepared)throw prepared.error;
-    const {index,sound}=prepared;
+    const {index,blob}=prepared;
+    if(options?.render){
+     recorded.push({index,blob});
+     setStatus(`Rendering sentence ${index+1} of ${lines.length}…`);
+     pending=prepare();
+     continue;
+    }
     setActive(index);
     const player=audio.current;
     if(!player)return;
-    const url=URL.createObjectURL(sound.toBlob());
+    const url=URL.createObjectURL(blob);
     try{
      await new Promise<void>((resolve,reject)=>{
       cancel.current=resolve;
@@ -126,13 +141,29 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
      });
     }finally{URL.revokeObjectURL(url);if(ticket===run.current){player.onended=null;player.onerror=null;}}
    }
-   if(ticket===run.current){stop();setStatus('Finished reading.');}
-  }catch{if(ticket===run.current){stop();setStatus('Could not play the reading. Check your connection for the first model download, then try again.');}}
+   if(ticket===run.current&&options?.render&&cacheKey){
+    await savedAudio('readwrite',store=>store.put({text:options.entry.text,chunks:recorded},cacheKey));
+    if(ticket!==run.current)return;
+    const saved=store(history.map(row=>row.id===options.entry.id?{...row,rendered:true}:row));
+    stop();if(saved)setStatus('Rendered audio saved in this browser.');
+   }else if(ticket===run.current){stop();setStatus('Finished reading.');}
+  }catch{if(ticket===run.current){stop();setStatus('Could not prepare audio. Check available browser storage and try again.');}}
  }
  function download(row:Entry){
   const url=URL.createObjectURL(new Blob([row.text],{type:'text/plain;charset=utf-8'}));
   const link=document.createElement('a');link.href=url;link.download=`${row.name}.txt`;link.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
+ }
+ const [requested,setRequested]=useState<{entry:Entry;render:boolean}>();
+ useEffect(()=>{
+  if(requested&&requested.entry.text===text){
+   setRequested(undefined);
+   void play(0,requested);
+  }
+ },[requested,text]);
+ function historyAudio(entry:Entry,render:boolean){
+  open(entry);
+  setRequested({entry,render});
  }
  const rows=history.filter(row=>`${row.name} ${row.source}`.toLowerCase().includes(filter.toLowerCase()));
  return <div className="content document-library">
@@ -146,7 +177,7 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
    <label>Storage filename<input value={name} onChange={event=>setName(event.target.value)}/></label>
    <label>Paste or edit text<textarea rows={10} value={text} placeholder="Paste text here or upload a file." onChange={event=>{stop();setText(event.target.value);}}/></label>
    <p className="document-note">Speech is generated on this device. Saved text and filenames stay in this browser.</p>
-   <button disabled={!text.trim()} onClick={save}>Save to history</button>
+   <button disabled={!text.trim()||busy} onClick={save}>Save to history</button>
   </section>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Your choice of vocal</h2><p>Reading · Kokoro speech profiles</p></div></div>
@@ -166,7 +197,7 @@ export default function ListeningLibrary({userId,voices}:{userId:string;voices:V
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Listening history</h2><p>{rows.length} of {history.length} saved readings</p></div></div>
    <label>Search history<input type="search" value={filter} onChange={event=>setFilter(event.target.value)} placeholder="Search filename or source"/></label>
-   {rows.length?<div className="document-table"><table><thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Actions</th></tr></thead><tbody>{rows.map(row=><tr key={row.id}><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td><div className="document-actions"><button onClick={()=>open(row)}>Open</button><button onClick={()=>download(row)}>Download text</button><button onClick={()=>{if(confirm(`Delete “${row.name}” from listening history?`)&&store(history.filter(item=>item.id!==row.id))&&id===row.id)setId(undefined);}}>Delete</button></div></td></tr>)}</tbody></table></div>:<p>{history.length?'No matching readings.':'No saved readings yet.'}</p>}
+   {rows.length?<div className="document-table"><table><thead><tr><th>Filename</th><th>Source</th><th>Updated</th><th>Audio</th><th>Actions</th></tr></thead><tbody>{rows.map(row=><tr key={row.id}><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>{row.rendered?'Rendered':'Text only'}</td><td><div className="document-actions"><button onClick={()=>open(row)}>Open</button>{row.rendered&&<button onClick={()=>historyAudio(row,false)}>Play saved audio</button>}<button onClick={()=>historyAudio(row,true)}>{row.rendered?'Render again':'Render audio'}</button><button onClick={()=>download(row)}>Download text</button><button disabled={busy} onClick={()=>{if(confirm(`Delete “${row.name}” from listening history?`)&&store(history.filter(item=>item.id!==row.id))){if(id===row.id){stop();setId(undefined);}void savedAudio('readwrite',store=>store.delete(key+':'+row.id)).catch(()=>{});}}}>Delete</button></div></td></tr>)}</tbody></table></div>:<p>{history.length?'No matching readings.':'No saved readings yet.'}</p>}
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
  </div>;
