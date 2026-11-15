@@ -200,6 +200,28 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
    }else if(ticket===run.current){stop();setStatus('Finished reading.');}
   }catch{if(ticket===run.current){stop();setStatus('Could not prepare audio. If rendering was interrupted, click Render audio again to resume from the last saved batch.');}}
  }
+ async function importRecording(row:Entry,file?:File){
+  if(!file||busy)return;
+  stop();
+  const ticket=run.current;
+  setBusy(true);
+  setStatus('Saving imported recording…');
+  try{
+   const cacheKey=key+':'+row.id;
+   await savedAudio('readwrite',store=>store.put({text:row.text,chunks:[{index:0,blob:file}]},cacheKey));
+   if(ticket!==run.current)return;
+   if(store(history.map(item=>item.id===row.id?{...item,rendered:true,renderedWith:'Imported audio',renderSeconds:undefined}:item))){
+    await savedAudio('readwrite',store=>store.delete(cacheKey+':draft'));
+    if(ticket===run.current)setStatus('Imported recording saved.');
+   }
+  }catch{if(ticket===run.current)setStatus('Could not save the imported recording.');}
+  finally{if(ticket===run.current)setBusy(false);}
+ }
+ function rename(row:Entry){
+  const name=window.prompt('Storage filename',row.name)?.trim();
+  if(!name||name===row.name)return;
+  if(store(history.map(item=>item.id===row.id?{...item,name}:item))&&id===row.id)setName(name);
+ }
  function download(row:Entry){
   const url=URL.createObjectURL(new Blob([row.text],{type:'text/plain;charset=utf-8'}));
   const link=document.createElement('a');link.href=url;link.download=`${row.name}.txt`;link.click();
@@ -282,6 +304,9 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
      <tr><td>{row.name}</td><td>{row.source}</td><td>{new Date(row.saved).toLocaleString()}</td><td>Text only</td><td>—</td><td>—</td>
       <td><div className="document-actions"><button onClick={()=>open(row)}>Open</button>
        {!row.rendered&&<button disabled={rendering?.id===row.id} onClick={()=>historyAudio(row,true)}>Render audio</button>}
+       <button disabled={busy} onClick={()=>rename(row)}>Rename</button>
+       <label className="document-upload">Import audio<input aria-label={`Import audio for ${row.name}`} type="file" accept="audio/*,.m4a,.mp3,.wav" disabled={busy}
+        onChange={event=>{void importRecording(row,event.currentTarget.files?.[0]);event.currentTarget.value='';}}/></label>
        <button onClick={()=>download(row)}>Download text</button>
        <button disabled={busy} onClick={()=>{if(confirm(`Delete “${row.name}” from listening history?`)&&store(history.filter(item=>item.id!==row.id))){if(id===row.id){stop();setId(undefined);}void savedAudio('readwrite',store=>{store.delete(key+':'+row.id+':draft');return store.delete(key+':'+row.id);}).catch(()=>{});}}}>Delete</button>
       </div></td></tr>
