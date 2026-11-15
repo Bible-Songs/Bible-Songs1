@@ -1,7 +1,7 @@
 import edwardsCues from './edwards-cues.json';
 import paydayCues from './payday-cues.json';
 import downloadSizes from './library-download-sizes.json';
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useMemo,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
 import compelCues from './compel-cues.json';
 import immutabilityCues from './immutability-cues.json';
@@ -19,9 +19,17 @@ const readings=[
 ] as const;
 const source=(filename:string)=>`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`;
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
-const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'");
+const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
+const searchFields=['Title','Author','Transcript'] as const;
+const searchIndex=readings.map(reading=>({
+ reading,
+ Title:normalize(reading.title),
+ Author:normalize(reading.author),
+ Transcript:normalize(reading.cues.map(cue=>cue.text).join(' ')),
+}));
 export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(value:number)=>void}){
- const [query,setQuery]=useState(''),[selected,setSelected]=useState<(typeof readings)[number]>(readings[0]);
+ const [queries,setQueries]=useState({Title:'',Author:'',Transcript:''});
+ const [selected,setSelected]=useState<(typeof readings)[number]>(readings[0]);
  const [time,setTime]=useState(0),[duration,setDuration]=useState(0),[playing,setPlaying]=useState(false);
  const [volume,setVolume]=useState(.75),[message,setMessage]=useState('');
  const audio=useRef<HTMLAudioElement>(null);
@@ -41,14 +49,18 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
    if(error?.name!=='AbortError')setMessage('The audio could not start. Please try again.');
   });
  }
- const term=normalize(query.trim());
- const filtered=readings.filter(reading=>normalize(reading.title+' '+reading.author).includes(term)||
-  reading.cues.some(cue=>normalize(cue.text).includes(term)));
+ const filtered=useMemo(()=>{
+  const terms=searchFields.map(field=>[field,normalize(queries[field])] as const);
+  return searchIndex.filter(entry=>terms.every(([field,term])=>entry[field].includes(term))).map(entry=>entry.reading);
+ },[queries]);
  return <div className="content document-library">
   <div className="page-heading"><h1>Listening Library</h1></div>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
-   <label>Search Listening Library<input type="search" value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search titles, authors or transcripts"/></label>
+   <div className="library-search" role="group" aria-label="Search Listening Library">
+    {searchFields.map(field=><label key={field}>{field}<input type="search" value={queries[field]}
+     onChange={event=>setQueries({...queries,[field]:event.target.value})} placeholder={`Search ${field.toLowerCase()}`}/></label>)}
+   </div>
    {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
     downloads={(['MP3','M4A','PDF','Word'] as const).map(format=>{
      const name=reading.filename.replace(/\.m4a$/,'.'+(format==='Word'?'docx':format.toLowerCase()));
