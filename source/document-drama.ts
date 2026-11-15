@@ -4,7 +4,7 @@ const cast=['classic','voice5','voice3','voice8','composite','voice10','voice7',
 
 export const speakerLine=/^([A-Z][\p{L}'’-]*(?: [A-Z][\p{L}'’-]*)?):\s+(.+)$/u;
 
-export function documentDrama(lines:string[]):Part[][]{
+export function documentDrama(lines:string[],scriptLabels=true):Part[][]{
  const speakers=new Map<string,string>();
  let dialogueVoice:string|undefined;
  function voiceFor(name:string){
@@ -13,20 +13,25 @@ export function documentDrama(lines:string[]):Part[][]{
   return speakers.get(key)!;
  }
  return lines.map(line=>{
-  const script=line.match(speakerLine);
+  const script=scriptLabels?line.match(speakerLine):null;
   if(script&&!dialogueVoice)return [{text:script[2],voice:voiceFor(script[1])}];
   const parts:Part[]=[];
-  const push=(text:string,voice:string)=>{if(text.trim())parts.push({text:text.trim(),voice});};
+  const push=(text:string,voice:string)=>{
+   if(!text.trim())return;
+   const previous=parts.at(-1);
+   if(previous?.voice===voice)previous.text+=' '+text.trim();
+   else parts.push({text:text.trim(),voice});
+  };
   let start=0;
   for(const quote of line.matchAll(/[“”"]/g)){
    const offset=quote.index;
    const opening=quote[0]==='“'||(quote[0]==='"'&&!dialogueVoice);
    if(opening){
-    push(line.slice(start,offset),dialogueVoice??narrator);
     const before=line.slice(0,offset).match(/\b([A-Z][\p{L}'’-]*) (?:said|asked|replied|whispered|shouted)[,:]?\s*$/u);
     const after=line.slice(offset+1).match(/^[^“”"]*[”"]\s*[, ]*([A-Z][\p{L}'’-]*) (?:said|asked|replied|whispered|shouted)\b/u);
     const name=before?.[1]??after?.[1];
-    dialogueVoice=name?voiceFor(name):'voice7';
+    push(line.slice(start,offset),dialogueVoice??narrator);
+    dialogueVoice=name?voiceFor(name):narrator;
    }else{
     push(line.slice(start,offset),dialogueVoice??narrator);
     dialogueVoice=undefined;

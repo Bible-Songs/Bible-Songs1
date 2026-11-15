@@ -1,3 +1,4 @@
+import immutabilityCues from './immutability-cues.json';
 import PublishedReading from './PublishedReading';
 import sermonCues from './gods-jewels-cues.json';
 import {savedAudio,type SavedAudio} from './listening-audio';
@@ -294,7 +295,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Your choice of vocal</h2><p>Reading · Kokoro speech profiles</p></div></div>
    <div className="listening-toggle" role="group" aria-label="Voice order"><button aria-pressed={order==='rotating'} onClick={()=>setOrder('rotating')}>Rotating voices</button><button aria-pressed={order==='random'} onClick={()=>setOrder('random')}>Random voices</button><button aria-pressed={order==='drama'} onClick={()=>setOrder('drama')}>Drama</button></div>
-   {order==='drama'&&<p>Drama casts narration and recognizable dialogue automatically. For scripts, start a line with a speaker label such as “Mary:”.</p>}
+   {order==='drama'&&<p>Drama changes voices for attributed dialogue. For scripts, start a line with a speaker label such as “Mary:”.</p>}
    <button disabled={order==='drama'} aria-pressed={pool.length===voices.length} onClick={()=>setPool(voices.map(voice=>voice.id))}>All voices</button>
    <fieldset className="document-voices" disabled={order==='drama'}><legend>Choose reading voices</legend>{voices.map(voice=><label key={voice.id}><input type="checkbox" checked={pool.includes(voice.id)} onChange={()=>setPool(current=>current.includes(voice.id)?current.length>1?current.filter(id=>id!==voice.id):current:[...current,voice.id])}/>{voice.name}</label>)}</fieldset>
    <div className="document-actions">
@@ -344,7 +345,8 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   </section>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
-   <PublishedReading cues={sermonCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
+   <PublishedReading title="God’s Jewels" filename="gods-jewels-spurgeon.m4a" size="19.0 MB" cues={sermonCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
+   <PublishedReading title="The Immutability of God" filename="immutability-of-god-spurgeon.m4a" size={fileSize(26109049)} cues={immutabilityCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
  </div>;
