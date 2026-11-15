@@ -345,7 +345,7 @@ export default function ListeningLibrary({userId,voices,visible}:{userId:string;
   </section>
   <section className="listen-panel document-workspace">
    <div className="section-heading"><div><h2>Published readings</h2></div></div>
-   <PublishedReading title="God’s Jewels" filename="gods-jewels-spurgeon.m4a" size="19.0 MB" cues={sermonCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
+   <PublishedReading title="God’s Jewels" filename="gods-jewels-spurgeon.m4a" size={fileSize(19937230)} cues={sermonCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
    <PublishedReading title="The Immutability of God" filename="immutability-of-god-spurgeon.m4a" size={fileSize(26109049)} cues={immutabilityCues} visible={visible} onPlay={()=>{stop();setPortion(undefined);}}/>
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
