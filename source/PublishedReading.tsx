@@ -2,17 +2,17 @@ import {useEffect,useRef,useState} from 'react';
 import {APP_VERSION} from './version';
 
 type Cue={start:number;text:string};
-export default function PublishedReading({cues,visible,onPlay,title,filename,size}:{cues:Cue[];visible:boolean;onPlay:()=>void;title:string;filename:string;size:string}){
+export default function PublishedReading({cues,title,filename,size}:{cues:Cue[];title:string;filename:string;size:string}){
  const [active,setActive]=useState(-1);
  const audio=useRef<HTMLAudioElement>(null);
  const transcript=useRef<HTMLDivElement>(null);
  const current=useRef<HTMLButtonElement>(null);
  useEffect(()=>{
   const panel=transcript.current,button=current.current;
-  if(!visible||!panel||!button)return;
+  if(!panel||!button)return;
   const bounds=panel.getBoundingClientRect(),cue=button.getBoundingClientRect();
   if(cue.top<bounds.top||cue.bottom>bounds.bottom)panel.scrollTop+=cue.top-bounds.top;
- },[active,visible]);
+ },[active]);
  function update(time:number){
   let index=active;
   if(index<0 || cues[index].start>time)index=0;
@@ -22,10 +22,10 @@ export default function PublishedReading({cues,visible,onPlay,title,filename,siz
  return <article>
   <h3>{title}</h3>
   <p>C. H. Spurgeon · Drama · {size}</p>
-  {visible&&<audio ref={audio} controls preload="none"
+  <audio ref={audio} controls preload="none"
    src={`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`}
-   onPlay={onPlay} onTimeUpdate={event=>update(event.currentTarget.currentTime)}
-   onSeeked={event=>update(event.currentTarget.currentTime)}/>}
+   onTimeUpdate={event=>update(event.currentTarget.currentTime)}
+   onSeeked={event=>update(event.currentTarget.currentTime)}/>
   <div ref={transcript} className="document-preview" aria-label={`${title} transcript`}>
    {cues.map((cue,index)=><button key={cue.start} ref={index===active?current:undefined}
     aria-current={index===active?'true':undefined} onClick={()=>{
