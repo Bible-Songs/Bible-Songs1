@@ -17,6 +17,7 @@ const readings=[
  {title:'Payday Someday',author:'R. G. Lee',filename:'payday-someday-rg-lee.m4a',cues:paydayCues},
  {title:'Sinners in the Hands of an Angry God',author:'Jonathan Edwards',filename:'sinners-in-the-hands-of-an-angry-god-edwards.m4a',cues:edwardsCues},
 ] as const;
+export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 const source=(filename:string)=>`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`;
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
@@ -27,12 +28,23 @@ const searchIndex=readings.map(reading=>({
  Author:normalize(reading.author),
  Transcript:normalize(reading.cues.map(cue=>cue.text).join(' ')),
 }));
-export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(value:number)=>void}){
+export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}:{speed:number;onSpeed:(value:number)=>void;hiddenReadings:string[];onRemove:(id:string)=>void}){
  const [queries,setQueries]=useState({Title:'',Author:'',Transcript:''});
- const [selected,setSelected]=useState<(typeof readings)[number]>(readings[0]);
+ const [selected,setSelected]=useState<(typeof readings)[number]>(()=>readings.find(reading=>!hiddenReadings.includes(reading.filename))??readings[0]);
  const [time,setTime]=useState(0),[duration,setDuration]=useState(0),[playing,setPlaying]=useState(false);
  const [volume,setVolume]=useState(.75),[message,setMessage]=useState('');
  const audio=useRef<HTMLAudioElement>(null);
+ const selectedHidden=hiddenReadings.includes(selected.filename);
+ useEffect(()=>{
+  if(!selectedHidden)return;
+  const player=audio.current;
+  player?.pause();
+  const replacement=readings.find(reading=>!hiddenReadings.includes(reading.filename));
+  if(!replacement||!player)return;
+  player.src=source(replacement.filename);
+  setSelected(replacement);setDuration(0);setTime(0);
+ },[selectedHidden,hiddenReadings]);
+ const initialSource=useRef(source(selected.filename));
  useEffect(()=>{
   if(audio.current){audio.current.playbackRate=speed;audio.current.volume=volume;}
  },[speed,volume]);
@@ -51,8 +63,8 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
  }
  const filtered=useMemo(()=>{
   const terms=searchFields.map(field=>[field,normalize(queries[field])] as const);
-  return searchIndex.filter(entry=>terms.every(([field,term])=>entry[field].includes(term))).map(entry=>entry.reading);
- },[queries]);
+  return searchIndex.filter(entry=>!hiddenReadings.includes(entry.reading.filename)&&terms.every(([field,term])=>entry[field].includes(term))).map(entry=>entry.reading);
+ },[queries,hiddenReadings]);
  return <div className="content document-library">
   <div className="page-heading"><h1>Listening Library</h1></div>
   <section className="listen-panel document-workspace">
@@ -62,6 +74,7 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
      onChange={event=>setQueries({...queries,[field]:event.target.value})} placeholder={`Search ${field.toLowerCase()}`}/></label>)}
    </div>
    {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
+    onRemove={()=>{if(window.confirm(`Remove ${reading.title} from your library? You can restore it in Recovery centre.`))onRemove(reading.filename);}}
     downloads={(['MP3','M4A','PDF','Word'] as const).map(format=>{
      const name=reading.filename.replace(/\.m4a$/,'.'+(format==='Word'?'docx':format.toLowerCase()));
      const bytes=downloadSizes[reading.filename][format];
@@ -70,10 +83,10 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
     })}
     cues={reading.cues}
     speed={speed} onSpeed={onSpeed} playing={reading===selected&&playing}
-    onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>No readings match your search.</p>}
+    onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
-  <audio ref={audio} preload="metadata" src={source(readings[0].filename)}
+  <audio ref={audio} preload="metadata" src={initialSource.current}
    onLoadedMetadata={event=>{const player=event.currentTarget;setDuration(player.duration);player.playbackRate=speed;}}
    onTimeUpdate={event=>setTime(event.currentTarget.currentTime)}
    onPlaying={()=>setPlaying(true)} onPause={()=>setPlaying(false)} onEnded={()=>setPlaying(false)}/>
@@ -82,7 +95,7 @@ export default function ListeningLibrary({speed,onSpeed}:{speed:number;onSpeed:(
    <div className="now-playing"><div><strong>{selected.title}</strong><span>{selected.author} · Drama</span></div><span className="player-version">Version {APP_VERSION}</span></div>
    <div className="player-center">
     <div className="transport">
-     <button className="main-play" aria-label={playing?'Pause audio':'Play audio'} onClick={()=>playing?audio.current?.pause():play(selected)}>
+     <button className="main-play" aria-label={playing?'Pause audio':'Play audio'} disabled={selectedHidden} onClick={()=>playing?audio.current?.pause():play(selected)}>
       {playing?<Pause size={20} fill="currentColor"/>:<Play size={20} fill="currentColor"/>}
      </button>
      <PlaybackSpeed speed={speed} onChange={onSpeed}/>

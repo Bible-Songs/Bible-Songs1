@@ -1,5 +1,5 @@
 import {useEffect,useRef,useState} from 'react';
-import {parsePreferences,type Preferences} from './account-sync';
+import {equalPreferences,parsePreferences,type Preferences} from './account-sync';
 
 export type RecoveryCopy={savedAt:number;preferences:Preferences};
 export type SyncProblem={at:number;message:string};
@@ -26,7 +26,7 @@ export function usePreferenceHistory(key:string,preferences:Preferences,status:s
  const previous=useRef(preferences);
  useEffect(()=>{
   const old=previous.current;
-  if(old.favorite===preferences.favorite&&old.speed===preferences.speed)return;
+  if(equalPreferences(old,preferences))return;
   previous.current=preferences;
   const copy={savedAt:Date.now(),preferences:old};
   setCopies(items=>[copy,...items].slice(0,10));
@@ -39,5 +39,8 @@ export function usePreferenceHistory(key:string,preferences:Preferences,status:s
   }
  },[status]);
  useEffect(()=>{write(problemKey,problems);},[problemKey,problems]);
- return {copies,problems};
+ function deleteCopy(copy:RecoveryCopy){
+  setCopies(items=>items.filter(item=>item!==copy));
+ }
+ return {copies,problems,deleteCopy};
 }

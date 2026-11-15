@@ -221,3 +221,6 @@
 .account-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;overflow-wrap:anywhere}
 .account-table :is(th,td){border-bottom:1px solid var(--border);text-align:left;padding:9px 7px}
 .account-table .account-actions :is(button,.account-file){min-height:30px;padding:5px 8px}
+.published-reading-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.document-workspace .library-remove{display:grid;place-items:center;padding:5px;color:#9b3229;background:transparent;border-color:#b77b73}
+[data-theme=dark] .document-workspace .library-remove{color:#ffa998;border-color:#99665f}

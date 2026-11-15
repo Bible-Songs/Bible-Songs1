@@ -3,7 +3,7 @@ import {layouts,themes,useAppearance} from './appearance';
 import AccountPages, {type AccountPage} from './AccountPages';
 import {parsePreferences,useAccountSync,type Preferences} from './account-sync';
 import PlaybackSpeed from './PlaybackSpeed';
-import ListeningLibrary from './ListeningLibrary';
+import ListeningLibrary,{libraryTitles} from './ListeningLibrary';
 import {dramaCues} from './drama';
 import {APP_VERSION} from './version';
 import {useEffect,useMemo,useRef,useState} from 'react';
@@ -49,17 +49,22 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   catch{return 1;}
  });
  const appearance=useAppearance(key);
- const preferences={favorite:liked,speed};
- function applyPreferences(value:Preferences){setLiked(value.favorite);setSpeed(value.speed);}
+ const [hiddenReadings,setHiddenReadings]=useState<string[]>(()=>{
+  try{
+   return parsePreferences({favorite:false,speed:1,hiddenReadings:JSON.parse(localStorage.getItem(key+':hidden-readings')??'[]')})?.hiddenReadings??[];
+  }catch{return [];}
+ });
+ const preferences={favorite:liked,speed,hiddenReadings};
+ function applyPreferences(value:Preferences){setLiked(value.favorite);setSpeed(value.speed);setHiddenReadings(value.hiddenReadings);}
  const syncState=useAccountSync(user.id,preferences,applyPreferences);
  const preferenceHistory=usePreferenceHistory(key,preferences,syncState.status);
  const headerSearch=useRef<HTMLInputElement>(null);
  const accountMenu=useRef<HTMLDetailsElement>(null);
  const activeAccountPage=accountPages.find(page=>page===tab);
  useEffect(()=>{
-  try{localStorage.setItem(key,String(liked));localStorage.setItem(key+':speed',String(speed));}
+  try{localStorage.setItem(key,String(liked));localStorage.setItem(key+':speed',String(speed));localStorage.setItem(key+':hidden-readings',JSON.stringify(hiddenReadings));}
   catch{}
- },[key,liked,speed]);
+ },[key,liked,speed,hiddenReadings]);
  function navigate(page:Tab){
   if(page!=='Bible'&&page!=='My favorites'){audio.current?.pause();leaveBibleReading();}
   if(accountMenu.current)accountMenu.current.open=false;
@@ -341,11 +346,14 @@ export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;
   </div></fieldset>
  </div></details></div></header>
  {activeAccountPage&&<AccountPages key={activeAccountPage} page={activeAccountPage} preferences={preferences} restore={applyPreferences}
-  status={syncState.status} busy={syncState.busy} readCloud={syncState.readCloud} copies={preferenceHistory.copies} problems={preferenceHistory.problems} sync={()=>void syncState.sync()}/>}
+  status={syncState.status} busy={syncState.busy} readCloud={syncState.readCloud} copies={preferenceHistory.copies} problems={preferenceHistory.problems} deleteCopy={preferenceHistory.deleteCopy}
+  removed={libraryTitles.filter(reading=>hiddenReadings.includes(reading.filename))}
+  restoreReading={id=>setHiddenReadings(current=>current.filter(item=>item!==id))}
+  writeCloud={value=>syncState.sync(false,value)} sync={()=>void syncState.sync()}/>}
  {!activeAccountPage&&tab!=='Listening Library'&&<div className="chapter-search"><label className="search"><Search size={17}/>
  <input ref={headerSearch} aria-label="Search chapters and songs" placeholder="Search chapters and songs" value={query} onChange={event=>search(event.target.value)}/></label></div>}
 
- {tab==='Listening Library'&&<ListeningLibrary speed={speed} onSpeed={setSpeed}/>}
+ {tab==='Listening Library'&&<ListeningLibrary speed={speed} onSpeed={setSpeed} hiddenReadings={hiddenReadings} onRemove={id=>setHiddenReadings(current=>Array.from(new Set([...current,id])).sort())}/>}
  {!activeAccountPage&&tab!=='Listening Library'&&<div className="content"><div className="page-heading"><div><div className="eyebrow"><span/> BIBLE SONGS ORIGINALS</div><h1>{tab==='My favorites'?'Keep the music close.':'A new beginning, in song.'}</h1><p>Hear {readingRange}, then explore the original musical setting of Genesis 1.</p></div><span className="edition">ORIGINAL COLLECTION <Music2 size={15}/></span></div>
  {visible?<><section className="hero" style={{backgroundImage:`linear-gradient(90deg,rgba(15,37,31,.79),rgba(15,37,31,.08)),url(${photo})`}}><div className="hero-content"><span className="hero-label"><span/> {isBible?chapter.chapter.toUpperCase():'GENESIS 1'} · {isBible?'BEREAN STANDARD BIBLE':'ORIGINAL SONG LYRICS'}</span><h2>{isBible?(chapterId(chapter)==='1'?<>The story<br/>of creation.</>:chapter.chapter):<>Let There<br/>Be Light.</>}</h2><p>{vocal?selectedRecording.name:'Instrumental only'} <span>·</span> {isReading?'Spoken reading':'Musical setting · C major · 84 BPM'}</p><button className="cream-button" onClick={toggle}>{playing?<Pause size={17}/>:<Play size={17} fill="currentColor"/>}{playing?'Pause':isReading?'Play reading':vocal?'Play singing':'Play instrumental'}</button></div><div className="hero-caption">{isBible?`${chapter.chapter.toUpperCase()} · COMPLETE CHAPTER`:'OUR ORIGINAL ADAPTATION'}</div></section>
  <section className="original-status"><Music2 size={22}/><div><strong>Choose the voice for your listening moment</strong><p>{isBible?`Hear the complete ${chapter.chapter} chapter in the Berean Standard Bible. ${hasMusic?'Choose reading or singing.':'Choose a reading voice.'}`:'These original song lyrics adapt Genesis 1; they are not the complete chapter word for word.'} All voices are synthetic and made with free local tools.</p></div><button className={liked?'liked':''} onClick={favorite} aria-label={liked?'Remove favorite':'Save favorite'}><Heart size={21} fill={liked?'currentColor':'none'}/></button></section>
