@@ -2,11 +2,14 @@ import {APP_VERSION} from './version';
 
 const releases='https://github.com/Bible-Songs/Bible-Songs1/releases/download/';
 const audioRelease=releases+'audio-1.0.114/';
-// Revised recordings get a new release URL; the 1.0.114 assets stay for clients on older versions.
-const revisedLibraryAudio:ReadonlyMap<string,string>=new Map([
- 'gods-jewels-spurgeon','immutability-of-god-spurgeon','compel-them-to-come-in-spurgeon',
- 'payday-someday-rg-lee','sinners-in-the-hands-of-an-angry-god-edwards',
-].flatMap(stem=>['m4a','mp3'].map(ext=>[`${stem}.${ext}`,releases+'audio-1.0.115/'] as const)));
+// Revised recordings get a new release URL so cached pages never pair new audio with old cue timings.
+// Each sermon's current recording, by the release that holds it (newest wins).
+const libraryReleases:readonly (readonly [string,readonly string[]])[]=[
+ ['audio-1.0.115',['sinners-in-the-hands-of-an-angry-god-edwards']],
+ ['audio-1.0.116',['gods-jewels-spurgeon','immutability-of-god-spurgeon','compel-them-to-come-in-spurgeon','payday-someday-rg-lee','christ-crucified-spurgeon']],
+];
+const revisedLibraryAudio:ReadonlyMap<string,string>=new Map(libraryReleases.flatMap(([tag,stems])=>
+ stems.flatMap(stem=>['m4a','mp3'].map(ext=>[`${stem}.${ext}`,releases+tag+'/'] as const))));
 
 export function mediaUrl(path:string){
  const libraryAudio=/^library\/[^/]+\.(m4a|mp3)$/.test(path);

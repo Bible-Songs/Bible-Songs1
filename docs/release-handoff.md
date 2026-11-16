@@ -4,11 +4,21 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.115 |
+| Release | 1.0.116 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ |
-| Latest change | Revised recordings, transcripts, PDF and Word for the five sermons before The Excellency of Christ; revised audio on release audio-1.0.115 |
-| Previous archive | `GitHub History/2026-11-16_10-46-23-493284_SGT_b40a3363/files/` |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified |
+| Latest change | Added Christ Crucified (Spurgeon); section numbers and Payday “mother lives” fixed; “Drama” label removed from sermons; audio-1.0.116 |
+| Previous archive | `GitHub History/2026-11-16_13-30-51-392186_SGT_1cef4b08/files/` |
+
+## 1.0.116 Christ Crucified (Claude)
+
+- New sermon: Christ Crucified (C. H. Spurgeon, Nos. 7–8), 46.3 min, 220 transcript passages. Supplied text matched spurgeon.org; 26 corrections from a comparison with CCEL vol. 1, including a dropped line (“everything might be a god, but not forsooth the God of heaven; vice might be…”), “hut”→“but” ×3, “ire same”→“are some”, “balls”→“halls”, “snail”→“shall”. Table: `improved/christ-crucified-spurgeon/corrections.md`.
+- Payday Someday: “as long as our mother lives” now short i (Codex’s open correction). Root cause: the noun-lookbehind matched “mot*her* lives”; fixed with word boundaries and every live/lives/liveth occurrence reviewed by eye.
+- Section numbers I./II./III. were read “Roman two/three”; now “One/Two/Three” (Christ Crucified, God’s Jewels, Immutability, Compel).
+- “ · Drama” removed from sermon cards and the library player (Mike: all sermons use the same style). The Bible reader’s Drama option is unchanged.
+- Audio routing: `source/mediaUrl.ts` maps each sermon to its current release — audio-1.0.116 (God’s Jewels, Immutability, Compel, Payday, Christ Crucified), audio-1.0.115 (Sinners), audio-1.0.114 (Excellency, Luke, Romans). The superseded 1.0.115 files for God’s Jewels, Immutability, Compel and Payday remain for review.
+- New-sermon checklist added to `docs/shared-project-workflow.md`.
+- Checks: strict check, build, `npm run test:browser` (failed once without a captured message, then passed twice in a row — watch for flakiness), `improved/check.mjs` (7 sermons, 28 sized downloads, release routing, corrected wording, seeking, no Drama label), `excellency/check.mjs`.
 
 ## 1.0.115 library improvements (Claude)
 

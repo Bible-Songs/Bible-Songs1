@@ -16,7 +16,7 @@ export default function PublishedReading({cues,title,author,time,onPlay,speed,on
  },[active]);
  return <article>
   <div className="published-reading-heading"><h3>{title}</h3><button className="library-remove" type="button" onClick={onRemove} aria-label={`Remove ${title} from my library`} title="Remove from my library"><X size={18}/></button></div>
-  <p>{author} · Drama</p>
+  <p>{author}</p>
   <div className="document-actions"><button className="document-reading-play" onClick={onToggle} aria-label={`${playing?'Pause':'Play'} ${title}`}>{playing?<Pause size={16}/>:<Play size={16}/>} {playing?'Pause':'Play'}</button><PlaybackSpeed speed={speed} onChange={onSpeed}/>{downloads.map(file=><a key={file.format} className="document-upload" href={file.url} download={file.name}>Download {file.format} · {file.size}</a>)}</div>
   <div ref={transcript} className="document-preview" aria-label={`${title} transcript`}>
    {cues.map((cue,index)=><button key={cue.start} ref={index===active?current:undefined}

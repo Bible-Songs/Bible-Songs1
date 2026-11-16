@@ -1,5 +1,6 @@
 import edwardsCues from './edwards-cues.json';
 import excellencyCues from './excellency-cues.json';
+import christCrucifiedCues from './christ-crucified-cues.json';
 import paydayCues from './payday-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
@@ -19,6 +20,7 @@ const readings=[
  {title:'Payday Someday',author:'R. G. Lee',filename:'payday-someday-rg-lee.m4a',cues:paydayCues},
  {title:'Sinners in the Hands of an Angry God',author:'Jonathan Edwards',filename:'sinners-in-the-hands-of-an-angry-god-edwards.m4a',cues:edwardsCues},
  {title:'The Excellency of Christ',author:'Jonathan Edwards',filename:'excellency-of-christ-edwards.m4a',cues:excellencyCues},
+ {title:'Christ Crucified',author:'C. H. Spurgeon',filename:'christ-crucified-spurgeon.m4a',cues:christCrucifiedCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 const source=(filename:string)=>mediaUrl(`library/${filename}`);
@@ -95,7 +97,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
    onPlaying={()=>setPlaying(true)} onPause={()=>setPlaying(false)} onEnded={()=>setPlaying(false)}/>
   {message&&<p role="status">{message}</p>}
   <div className="player original-player">
-   <div className="now-playing"><div><strong>{selected.title}</strong><span>{selected.author} · Drama</span></div><span className="player-version">Version {APP_VERSION}</span></div>
+   <div className="now-playing"><div><strong>{selected.title}</strong><span>{selected.author}</span></div><span className="player-version">Version {APP_VERSION}</span></div>
    <div className="player-center">
     <div className="transport">
      <button className="main-play" aria-label={playing?'Pause audio':'Play audio'} disabled={selectedHidden} onClick={()=>playing?audio.current?.pause():play(selected)}>

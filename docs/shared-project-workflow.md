@@ -17,6 +17,19 @@ The shared release source is [Bible-Songs/Bible-Songs1 on GitHub](https://github
 - Publish sermon MP3 and M4A files as GitHub Release assets with their download filenames. Publish Luke and Romans M4A files with names such as `readings--luke-1--warm.m4a`. The current release tag and URL rules are in `source/mediaUrl.ts`. Keep sermon PDFs and DOCX files and the Bible chapter JSON on Pages. Do not stage the hosted audio in `public/`. Before switching the app to new assets, verify their sizes, SHA-256 checksums and byte-range playback. For a recording revision, upload to a new URL and preserve the existing asset for clients running the preceding version.
 - Run strict checks and the production build, then test local playback, transcript seeking and downloads. Compare existing catalog entries and assets against the fetched main before committing. If work stops, hand off the source/checkpoint paths, commands, completed batches and what remains.
 
+## New sermon checklist (Mike’s standing instruction)
+
+Mike asked that every new sermon follows these steps, and that assistants check the text, correct it, render and publish without asking again when he has asked for publication.
+
+1. Read the latest handoff from the other assistants, fetch `main`, confirm the version, and include any open correction they list.
+2. Extract the supplied Word file into `voice-training/listening/published-library/improved/<slug>/`. Compare it word by word with independent editions online (CCEL volume text, spurgeon.org, archive.org printings). Sites often share the same scanning errors, so use a second edition before accepting a reading. Remove editorial text that is not part of the sermon.
+3. Put every correction in the title’s `prepare.py`, which asserts each replacement applies once, and give Mike a side-by-side table of the changes.
+4. Plan with `improved/plan.mjs`: one narrator, other voices only for clearly attributed speech. Audio-only forms keep the written text in the transcript: verb live/lives/liveth with the short i, verse ranges “to”, modern Scripture references, “Number”, “Reverend”, section numbers as “One”, “Two”, “Three”. Check every live/lives/liveth occurrence in context by eye and with the Kokoro phonemizer.
+5. Render with `render-improved.py <slug> <previous folder> 10` and `OMP_NUM_THREADS=1`. It reuses unchanged chunks. Assemble and encode with `improved/finish.sh`.
+6. Upload the MP3 and M4A to a new release tag with `improved/upload-release.py <tag> <slugs>` and route them in `source/mediaUrl.ts`. Never replace audio under an existing release URL. PDF and Word stay in `public/library/`.
+7. Bump the version, run `npm ci`, `npm run check`, `npm run build`, `npm run test:browser` and `improved/check.mjs` against the preview on port 5190, update `docs/release-handoff.md`, push, confirm the archive and the Pages deployment.
+8. Send Mike a summary table and a PDF handoff for the other assistants, including anything left for them to decide.
+
 ## Publish and confirm
 
 1. Before assigning the release version, fetch main again. Integrate any new contributions, review the resulting diff, and rerun affected checks. Use a version higher than current remote main. Update both package.json and package-lock.json using `npm version --no-git-tag-version patch` once based on the integrated version. Update the handoff with the version, changes and verification.
