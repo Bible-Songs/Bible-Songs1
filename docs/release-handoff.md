@@ -4,11 +4,20 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.114 |
+| Release | 1.0.115 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ |
-| Latest change | Moved sermon MP3 and M4A files and Luke and Romans recordings to GitHub Releases. Genesis audio, Bible chapter JSON, sermon transcripts, PDF and Word stay on Pages. |
-| Previous archive | `GitHub History/2026-11-16_10-22-23-945020_SGT_3bcbd00d/files/` |
+| Latest change | Revised recordings, transcripts, PDF and Word for the five sermons before The Excellency of Christ; revised audio on release audio-1.0.115 |
+| Previous archive | `GitHub History/2026-11-16_10-46-23-493284_SGT_b40a3363/files/` |
+
+## 1.0.115 library improvements (Claude)
+
+- Texts checked against CCEL (Spurgeon vols. 1, 5, 52; Edwards) and spurgeon.org. Immutability: restored three dropped passages (“secondly, the persons…”, “he has promised… He varies not in the goodness”, “Jacob have I loved…”), fixed “sons of Jacob”, quotes. God’s Jewels: 13 scanning errors (crown, Kidderminster, living soul, great ocean, sits, ones, were, jeweller…). Compel: opening quotes. Sinners: 18 Roman-numeral references to modern form, Isaiah 33:12-14, Meshach, etc. Payday: removed a third-person summary that was not part of the sermon, rebuilt 542 PDF-wrapped lines into 129 paragraphs, one run-on fixed.
+- Audio: verb live/lives/liveth spoken with short i (all 44 occurrences in six sermons verified with the Kokoro phonemizer); Isaiah’s words in Immutability now a male voice (was female); headers read with pauses and “Number”, “Reverend”; list numbers start their own sentence; long sentences split at clause punctuation; chunks no longer cross paragraphs.
+- Word/PDF: sermon details in the heading area instead of repeated under Chapter 1 (all six sermons, Excellency included); hymn line breaks kept.
+- Revised MP3/M4A are on [audio-1.0.115](https://github.com/Bible-Songs/Bible-Songs1/releases/tag/audio-1.0.115) via `source/mediaUrl.ts`. The superseded 1.0.114 files for these five remain (left for ChatGPT/Mike to review and decide); Excellency audio stays on audio-1.0.114 and is still in use.
+- Local work: `voice-training/listening/published-library/improved/` (prepare.py, plan.mjs, finish.sh, check.mjs, upload-release.py) and `render-improved.py` (reuses identical chunks). Archive of release audio: `GitHub History/Release Assets/2026-11-16_audio-1.0.115/`.
+- Checks: strict check, build, `npm run test:browser`, improved/check.mjs (5 sermons: release audio, corrected wording, seeking; 24 sized downloads), excellency/check.mjs.
 
 ## 1.0.114 audio migration
 
