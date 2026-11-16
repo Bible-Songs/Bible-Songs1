@@ -1,4 +1,5 @@
 import edwardsCues from './edwards-cues.json';
+import excellencyCues from './excellency-cues.json';
 import paydayCues from './payday-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
@@ -16,6 +17,7 @@ const readings=[
  {title:'Compel Them to Come In',author:'C. H. Spurgeon',filename:'compel-them-to-come-in-spurgeon.m4a',cues:compelCues},
  {title:'Payday Someday',author:'R. G. Lee',filename:'payday-someday-rg-lee.m4a',cues:paydayCues},
  {title:'Sinners in the Hands of an Angry God',author:'Jonathan Edwards',filename:'sinners-in-the-hands-of-an-angry-god-edwards.m4a',cues:edwardsCues},
+ {title:'The Excellency of Christ',author:'Jonathan Edwards',filename:'excellency-of-christ-edwards.m4a',cues:excellencyCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 const source=(filename:string)=>`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`;
