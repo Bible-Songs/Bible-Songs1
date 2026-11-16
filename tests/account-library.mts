@@ -107,11 +107,42 @@ try{
  await page.getByRole('button',{name:'Restore '+name,exact:true}).click();
  await page.getByRole('button',{name:'Listening Library',exact:true}).click();
  await card.waitFor();
+ const excellency=page.getByRole('article').filter({hasText:'The Excellency of Christ'});
+ const passage=excellency.getByLabel('The Excellency of Christ transcript').getByRole('button').nth(350);
+ await passage.click();
+ const libraryAudio=page.locator('.document-library audio');
+ await page.waitForFunction(()=>Array.from(document.querySelectorAll<HTMLAudioElement>('.document-library audio')).some(
+  audio=>!audio.paused&&!audio.seeking&&audio.currentTime>4000&&audio.playbackRate===1.5,
+ ));
+ assert.match(await libraryAudio.evaluate(audio=>(audio as HTMLAudioElement).currentSrc),/github\.com.*excellency-of-christ-edwards\.m4a/);
+ assert.equal(await passage.getAttribute('aria-current'),'true');
+ const [sermonDownload]=await Promise.all([page.waitForEvent('download'),excellency.getByRole('link',{name:/Download MP3/}).click()]);
+ assert.equal(sermonDownload.suggestedFilename(),'excellency-of-christ-edwards.mp3');
+ assert.equal(await sermonDownload.failure(),null);
+ assert.match(await excellency.getByRole('link',{name:/Download PDF/}).getAttribute('href')??'',/^\/Bible-Songs1\/library\//);
  await page.getByRole('button',{name:'Bible',exact:true}).click();
  assert.equal(await page.getByRole('combobox',{name:'Playback speed'}).inputValue(),'1.5');
  await page.getByRole('button',{name:'Play audio',exact:true}).click();
  await page.getByRole('button',{name:'Pause audio',exact:true}).click();
+ const chapter=page.locator('.chapter-picker select');
+ await chapter.selectOption({label:'Luke 1'});
+ await page.locator('.scripture-text .text-cue').nth(60).click();
+ await page.waitForFunction(()=>Array.from(document.querySelectorAll('audio')).some(
+  audio=>audio.currentSrc.includes('readings--luke-1--')&&!audio.paused&&!audio.seeking&&audio.currentTime>60,
+ ));
+ await page.getByRole('button',{name:'Continuous reading'}).click();
+ await page.locator('audio').evaluate(audio=>{
+  if(audio instanceof HTMLAudioElement&&Number.isFinite(audio.duration))audio.currentTime=audio.duration-4;
+ });
+ await page.waitForFunction(()=>Array.from(document.querySelectorAll('audio')).some(
+  audio=>audio.currentSrc.includes('readings--luke-2--')&&!audio.paused&&audio.currentTime>0,
+ ));
+ await chapter.selectOption({label:'Romans 1'});
+ await page.locator('.scripture-text .text-cue').nth(20).click();
+ await page.waitForFunction(()=>Array.from(document.querySelectorAll('audio')).some(
+  audio=>audio.currentSrc.includes('readings--romans-1--')&&!audio.paused&&!audio.seeking&&audio.currentTime>30,
+ ));
  await page.setViewportSize({width:390,height:844});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);
- console.log('Account theme and layout, cloud comparison, recovery copies, About, and playback passed.');
+ console.log('Account, recovery, sermon seeking and download, Bible seeking and continuous chapter playback passed.');
 }finally{await browser.close();}

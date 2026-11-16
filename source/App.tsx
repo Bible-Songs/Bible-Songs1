@@ -6,6 +6,7 @@ import PlaybackSpeed from './PlaybackSpeed';
 import ListeningLibrary,{libraryTitles} from './ListeningLibrary';
 import {dramaCues} from './drama';
 import {APP_VERSION} from './version';
+import {mediaUrl} from './mediaUrl';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Music2,Compass,Heart,BookOpen,Search,Play,Pause,Volume2,Repeat,ArrowUpRight,Headphones,Download} from 'lucide-react';
 import song from '../public/originals/genesis-1/song.json';
@@ -36,7 +37,6 @@ const readingRanges=books.flatMap((book,index)=>{
 });
 const readingRange=readingRanges.join(' · ');
 const base=import.meta.env.BASE_URL;
-const mediaUrl=(path:string)=>`${base}${path}?v=${APP_VERSION}`;
 const photo=base+'lake.jpg';
 const fmt=(n:number)=>`${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,'0')}`;
 type Tab='Bible'|'Listening Library'|'My favorites'|AccountPage;

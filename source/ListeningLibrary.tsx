@@ -9,6 +9,7 @@ import immutabilityCues from './immutability-cues.json';
 import PublishedReading from './PublishedReading';
 import sermonCues from './gods-jewels-cues.json';
 import PlaybackSpeed from './PlaybackSpeed';
+import {mediaUrl} from './mediaUrl';
 import {APP_VERSION} from './version';
 
 const readings=[
@@ -20,7 +21,7 @@ const readings=[
  {title:'The Excellency of Christ',author:'Jonathan Edwards',filename:'excellency-of-christ-edwards.m4a',cues:excellencyCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
-const source=(filename:string)=>`${import.meta.env.BASE_URL}library/${filename}?v=${APP_VERSION}`;
+const source=(filename:string)=>mediaUrl(`library/${filename}`);
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
 const searchFields=['Title','Author','Transcript'] as const;

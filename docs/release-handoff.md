@@ -4,12 +4,17 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.113 |
+| Release | 1.0.114 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ |
-| Latest change | Added The Excellency of Christ (Jonathan Edwards), 91 min Drama reading with synced transcript and MP3, M4A, PDF and Word downloads |
-| Verification | Strict TypeScript, production build, `npm run test:browser`, local Chrome sermon check (titles, 24 sized downloads, playback, search, transcript seeking, corrected wording) |
-| Previous archive | `GitHub History/2026-11-16_07-48-58-669748_SGT_d4bb9063/files/` |
+| Latest change | Moved sermon MP3 and M4A files and Luke and Romans recordings to GitHub Releases. Genesis audio, Bible chapter JSON, sermon transcripts, PDF and Word stay on Pages. |
+| Previous archive | `GitHub History/2026-11-16_10-22-23-945020_SGT_3bcbd00d/files/` |
+
+## 1.0.114 audio migration
+
+- [Hosted audio](https://github.com/Bible-Songs/Bible-Songs1/releases/tag/audio-1.0.114) contains 412 assets. The exact audio, download URLs, byte counts and GitHub-verified SHA-256 checksums are in `GitHub History/Release Assets/2026-11-16_audio-1.0.114/` on Mike’s Mac.
+- The clean production build is 508,178,006 bytes. Checks covered strict TypeScript, the production build, every migrated asset name, and the size labels for all 24 sermon downloads. Chrome and WebKit with iPhone emulation verified release asset seeking and playback speed on M4A and an MP3 download. A physical iPhone was unavailable.
+- The local Chrome app suite passed account and recovery flows, seeking and download for The Excellency of Christ, Luke and Romans sentence seeking, and continuous playback from Luke 1 to Luke 2.
 
 ## 1.0.113 notes (Claude)
 
