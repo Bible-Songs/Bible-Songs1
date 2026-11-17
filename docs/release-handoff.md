@@ -4,11 +4,15 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.121 |
+| Release | 1.0.122 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Full-sermon animation and transcript following for Prayer, the Cure for Care |
+| Latest change | Smooth left-to-right caption reveal for Prayer, the Cure for Care |
 | Previous archive | `GitHub History/2026-11-17_13-36-56-243438_SGT_a097a0b7/files/` |
+
+## 1.0.122 caption reveal (Codex)
+
+- Caption text reveals continuously from left to right using the recording clock and existing phrase timings. Already revealed text remains visible, and the previous caption dims before the next one starts. With reduced motion enabled the wipe becomes a discrete reveal.
 
 ## 1.0.121 full sermon animation (Codex)
 

@@ -449,6 +449,7 @@ export default function PrayerAnimation({audio,time,playing}:{
 }){
  const figure=useRef<HTMLElement>(null);
  const canvas=useRef<HTMLCanvasElement>(null);
+ const caption=useRef<HTMLSpanElement>(null);
  useEffect(()=>{figure.current?.scrollIntoView({block:'start'});},[]);
  const index=Math.max(0,captionScenes.findLastIndex(entry=>(cues[entry.cue]?.start??Infinity)<=time));
  const scene=captionScenes[index]??captionScenes[0];
@@ -463,6 +464,7 @@ export default function PrayerAnimation({audio,time,playing}:{
   const context=canvas.current?.getContext('2d');
   if(!context)return;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const words=Array.from(caption.current?.querySelectorAll<HTMLSpanElement>('[data-reveal-start]')??[]);
   let frame=0,last=-1;
   function draw(){
    if(!context)return;
@@ -471,20 +473,36 @@ export default function PrayerAnimation({audio,time,playing}:{
     const elapsed=reduced?14:Math.max(0,position-change);
     paint(context,art,reduced?0:position,elapsed);last=position;
    }
+   for(const word of words){
+    const start=Number(word.dataset['revealStart']),end=Number(word.dataset['revealEnd']);
+    const progress=reduced?Number(position>=start):Math.min(1,Math.max(0,(position-start)/(end-start)));
+    word.style.clipPath=`inset(0 ${(1-progress)*100}% 0 0)`;
+   }
    if(playing&&!reduced)frame=requestAnimationFrame(draw);
   }
   draw();
   return ()=>cancelAnimationFrame(frame);
- },[art,audio,change,playing,time]);
+ },[art,audio,change,playing,scene,time]);
  return <figure ref={figure} className="prayer-animation" aria-label="Prayer, the Cure for Care animation">
   <div className="prayer-animation-stage">
    <canvas ref={canvas} width={width} height={height} aria-hidden="true"/>
   </div>
   <figcaption className="prayer-animation-caption">
    {previous&&previousOpacity>0&&<span className="prayer-animation-previous" aria-hidden="true" style={{opacity:previousOpacity}}>{previous.line}</span>}
-   <span className="prayer-animation-line">{scene.phrases.map((phrase,part)=>{
-    const visible=time>=(starts?.[part]??change);
-    return <span key={part} aria-hidden={!visible} style={{visibility:visible?'visible':'hidden'}}>{part>0?' ':''}{phrase}</span>;
+   <span className="prayer-animation-line" ref={caption} aria-label={scene.line}>{scene.phrases.map((phrase,part)=>{
+    const start=starts?.[part]??change;
+    const end=starts?.[part+1]??Math.min(start+1.15,cues[captionScenes[index+1]?.cue??-1]?.start??Infinity);
+    const words=phrase.split(' ');
+    const length=phrase.length+1;
+    let offset=0;
+    return words.map((word,i)=>{
+     const from=start+(end-start)*offset/length;
+     offset+=word.length+1;
+     const to=start+(end-start)*offset/length;
+     return <span key={`${scene.cue}-${part}-${i}`} aria-hidden="true">
+      {(part>0||i>0)&&' '}<span className="prayer-animation-word" data-reveal-start={from} data-reveal-end={to}>{word}</span>
+     </span>;
+    });
    })}</span>
    {'reference' in scene&&<small>{scene.reference}</small>}
   </figcaption>
