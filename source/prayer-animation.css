@@ -1,0 +1,45 @@
+.prayer-animation {
+ margin: 14px 0;
+ overflow: hidden;
+ border: 1px solid #748a79;
+ border-radius: 12px;
+ color: #f8e9cb;
+ background: #192c32;
+}
+.prayer-animation-stage {
+ position: relative;
+ aspect-ratio: 2 / 1;
+}
+.prayer-animation-stage canvas {
+ display: block;
+ width: 100%;
+ height: 100%;
+}
+.prayer-animation-stage canvas[hidden] { display: none; }
+.prayer-animation-caption {
+ display: grid;
+ gap: .25rem;
+ padding: .85rem 1rem .95rem;
+ text-align: center;
+ color: #f8e9cb;
+ font-family: Georgia, serif;
+ font-size: clamp(1rem, 2.4vw, 1.32rem);
+ line-height: 1.4;
+}
+.prayer-animation-caption small {
+ color: #d9cbaa;
+ font-family: system-ui, sans-serif;
+ font-size: .76rem;
+}
+.prayer-animation-end {
+ position: absolute;
+ inset: 0;
+ display: grid;
+ place-content: center;
+ justify-items: center;
+ gap: .7rem;
+ padding: .75rem;
+ text-align: center;
+ background: radial-gradient(ellipse at 50% 35%, #4a6251, #192c32 73%);
+}
+.prayer-animation-control { margin: .4rem 0; }

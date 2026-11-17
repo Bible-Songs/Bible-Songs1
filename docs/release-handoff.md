@@ -4,11 +4,17 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.119 |
+| Release | 1.0.120 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Git history rewritten (Mike’s approval) to remove old sermon and Luke/Romans audio now served from GitHub Releases; repository 2.4 GB → about 0.6 GB |
+| Latest change | Five-minute Watch with animation pilot for Prayer, the Cure for Care |
 | Previous archive | `GitHub History/2026-11-17_13-36-56-243438_SGT_a097a0b7/files/` |
+
+## 1.0.120 animation pilot (Codex)
+
+- In the Listening Library, select **Watch with animation** on *Prayer, the Cure for Care*. The Canvas illustrations and captions follow the existing audio clock and transcript cues. At 5:00 the animation ends and sermon audio continues. The pilot respects reduced-motion preferences.
+- The existing GitHub release audio is reused. The illustrations are drawn by the app from `source/PrayerAnimation.tsx`, with styles in `source/prayer-animation.css`.
+- Strict TypeScript and production build passed. Local Chrome verified start, pause, transcript seeking, mobile layout, the 5:00 cutoff, replay and hiding the animation. The full browser suite passed on rerun after the existing Luke chapter-transition timeout.
 
 ## 1.0.119 history cleanup (Claude) — every other checkout must re-clone
 

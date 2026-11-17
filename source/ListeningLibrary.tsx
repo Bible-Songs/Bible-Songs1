@@ -9,6 +9,7 @@ import {Pause,Play,Volume2} from 'lucide-react';
 import compelCues from './compel-cues.json';
 import immutabilityCues from './immutability-cues.json';
 import PublishedReading from './PublishedReading';
+import PrayerAnimation from './PrayerAnimation';
 import sermonCues from './gods-jewels-cues.json';
 import PlaybackSpeed from './PlaybackSpeed';
 import {mediaUrl} from './mediaUrl';
@@ -40,6 +41,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
  const [selected,setSelected]=useState<(typeof readings)[number]>(()=>readings.find(reading=>!hiddenReadings.includes(reading.filename))??readings[0]);
  const [time,setTime]=useState(0),[duration,setDuration]=useState(0),[playing,setPlaying]=useState(false);
  const [volume,setVolume]=useState(.75),[message,setMessage]=useState('');
+ const [watching,setWatching]=useState(false);
  const audio=useRef<HTMLAudioElement>(null);
  const selectedHidden=hiddenReadings.includes(selected.filename);
  useEffect(()=>{
@@ -62,6 +64,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
    player.src=source(reading.filename);
    setSelected(reading);setDuration(0);
   }
+  if(reading.filename!=='prayer-the-cure-for-care-spurgeon.m4a')setWatching(false);
   if(start!==undefined){player.currentTime=start;setTime(start);}
   player.playbackRate=speed;
   void player.play().then(()=>setMessage('')).catch(error=>{
@@ -90,7 +93,18 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
     })}
     cues={reading.cues}
     speed={speed} onSpeed={onSpeed} playing={reading===selected&&playing}
-    onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}/>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
+    onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}>
+    {reading.filename==='prayer-the-cure-for-care-spurgeon.m4a'&&<>
+     <button className="document-upload prayer-animation-control" type="button"
+      aria-expanded={watching&&reading===selected} onClick={()=>{
+       if(watching&&reading===selected){setWatching(false);return;}
+       setWatching(true);
+       if(reading!==selected||time>=300)play(reading,0);
+       else if(!playing)play(reading);
+      }}>{watching&&reading===selected?'Hide animation':'Watch with animation'}</button>
+     {watching&&reading===selected&&<PrayerAnimation audio={audio} time={time} playing={playing} onRestart={()=>play(reading,0)}/>}
+    </>}
+   </PublishedReading>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
   <audio ref={audio} preload="metadata" src={initialSource.current}
