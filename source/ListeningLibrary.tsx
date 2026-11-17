@@ -1,6 +1,7 @@
 import edwardsCues from './edwards-cues.json';
 import excellencyCues from './excellency-cues.json';
 import christCrucifiedCues from './christ-crucified-cues.json';
+import prayerCureCues from './prayer-the-cure-for-care-cues.json';
 import paydayCues from './payday-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
@@ -21,6 +22,7 @@ const readings=[
  {title:'Sinners in the Hands of an Angry God',author:'Jonathan Edwards',filename:'sinners-in-the-hands-of-an-angry-god-edwards.m4a',cues:edwardsCues},
  {title:'The Excellency of Christ',author:'Jonathan Edwards',filename:'excellency-of-christ-edwards.m4a',cues:excellencyCues},
  {title:'Christ Crucified',author:'C. H. Spurgeon',filename:'christ-crucified-spurgeon.m4a',cues:christCrucifiedCues},
+ {title:'Prayer, the Cure for Care',author:'C. H. Spurgeon',filename:'prayer-the-cure-for-care-spurgeon.m4a',cues:prayerCureCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 const source=(filename:string)=>mediaUrl(`library/${filename}`);

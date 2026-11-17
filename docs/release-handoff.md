@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.116 |
+| Release | 1.0.117 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified |
-| Latest change | Added Christ Crucified (Spurgeon); section numbers and Payday “mother lives” fixed; “Drama” label removed from sermons; audio-1.0.116 |
-| Previous archive | `GitHub History/2026-11-16_13-30-51-392186_SGT_1cef4b08/files/` |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
+| Latest change | Added Prayer, the Cure for Care (Spurgeon No. 2351); Payday “Dr. Lee” read without a pause; audio-1.0.117 |
+| Previous archive | `GitHub History/2026-11-16_14-20-21-126851_SGT_8b19d64a/files/` |
+
+## 1.0.117 Prayer, the Cure for Care (Claude)
+
+- New sermon: Prayer, the Cure for Care (C. H. Spurgeon, No. 2351, delivered January 12, 1888; MTP vol. 40), 27.9 min, 137 transcript passages. Supplied text matched spurgeon.org; CCEL vol. 40 is a modernised edition, so only 4 corrections (stray quote before “whom the master”, stray full stop, run-together header, reference). Table: `improved/prayer-the-cure-for-care-spurgeon/corrections.md`.
+- New audio-only rules in `improved/plan.mjs`: “Dr.” → “Doctor” (Kokoro paused after “Doctor.”), drachm → dram, two or more initials read without full stops (“C H Spurgeon”, “R G Lee”). Payday’s four “Dr. Lee” chunks re-rendered.
+- Physical iPhone playback verified by Mike on 1.0.116.
+- Checks: strict check, build, `improved/check.mjs` (8 sermons, 32 sized downloads, release routing, wording, seeking), `excellency/check.mjs`, `npm run test:browser` passed 4 of 5 runs (one TimeoutError, not reproduced in 4 reruns — known flaky).
+- Claude now has a project skill `/new-sermon` (`.claude/skills/new-sermon/SKILL.md` in Mike’s workspace) mirroring the checklist in `docs/shared-project-workflow.md`.
 
 ## 1.0.116 Christ Crucified (Claude)
 
