@@ -6,8 +6,8 @@ const audioRelease=releases+'audio-1.0.114/';
 // Each sermon's current recording, by the release that holds it (newest wins).
 const libraryReleases:readonly (readonly [string,readonly string[]])[]=[
  ['audio-1.0.115',['sinners-in-the-hands-of-an-angry-god-edwards']],
- ['audio-1.0.116',['gods-jewels-spurgeon','immutability-of-god-spurgeon','compel-them-to-come-in-spurgeon','christ-crucified-spurgeon']],
- ['audio-1.0.117',['payday-someday-rg-lee','prayer-the-cure-for-care-spurgeon']],
+ ['audio-1.0.117',['prayer-the-cure-for-care-spurgeon']],
+ ['audio-1.0.118',['gods-jewels-spurgeon','immutability-of-god-spurgeon','compel-them-to-come-in-spurgeon','payday-someday-rg-lee','christ-crucified-spurgeon']],
 ];
 const revisedLibraryAudio:ReadonlyMap<string,string>=new Map(libraryReleases.flatMap(([tag,stems])=>
  stems.flatMap(stem=>['m4a','mp3'].map(ext=>[`${stem}.${ext}`,releases+tag+'/'] as const))));

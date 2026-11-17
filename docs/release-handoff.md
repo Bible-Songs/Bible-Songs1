@@ -4,11 +4,18 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.117 |
+| Release | 1.0.118 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Added Prayer, the Cure for Care (Spurgeon No. 2351); Payday “Dr. Lee” read without a pause; audio-1.0.117 |
-| Previous archive | `GitHub History/2026-11-16_14-20-21-126851_SGT_8b19d64a/files/` |
+| Latest change | Initials read without pauses (“C H Spurgeon”, “R G Lee”) in five sermons; superseded release audio deleted; audio-1.0.118 |
+| Previous archive | `GitHub History/2026-11-17_13-36-56-243438_SGT_a097a0b7/files/` |
+
+## 1.0.118 initials and audio cleanup (Claude)
+
+- Mike found the pauses in “C. H. Spurgeon” too long. The header chunk of God’s Jewels, Immutability, Compel, Christ Crucified and Payday (“R. G. Lee”) re-rendered with the initials rule (one chunk each; cue timings rebuilt). Sinners and Excellency have no initials.
+- Current audio: audio-1.0.118 (God’s Jewels, Immutability, Compel, Payday, Christ Crucified), audio-1.0.117 (Prayer, the Cure for Care), audio-1.0.115 (Sinners), audio-1.0.114 (Excellency, Luke, Romans).
+- With Mike’s instruction (“no need to keep old copies”), superseded assets were deleted after the 1.0.118 deploy: the whole audio-1.0.116 release and Payday on audio-1.0.117. Local copies remain under `GitHub History/Release Assets/`.
+- Checks: build, `improved/check.mjs` (8 sermons, 32 downloads, release routing, wording, seeking), `excellency/check.mjs`; `npm run test:browser` again timed out once on the first run right after a build and passed on the next runs — looks like a cold-start timing issue in the test, not an app fault.
 
 ## 1.0.117 Prayer, the Cure for Care (Claude)
 
