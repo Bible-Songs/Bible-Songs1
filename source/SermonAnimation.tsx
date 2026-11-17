@@ -6,6 +6,7 @@ import type {RefObject} from 'react';
 import './prayer-animation.css';
 
 export type Scene={readonly cue:number;readonly art:string;readonly line:string};
+// One timing entry per scene, in scene order: the start of each three-word phrase of its caption.
 export type CaptionTiming={readonly cue:number;readonly at:readonly number[]};
 export type Painter=(context:CanvasRenderingContext2D,art:string,t:number,elapsed:number,variant:number)=>void;
 type Cue={readonly start:number;readonly text:string};
@@ -25,16 +26,21 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
  const canvas=useRef<HTMLCanvasElement>(null);
  const caption=useRef<HTMLSpanElement>(null);
  useEffect(()=>{figure.current?.scrollIntoView({block:'start'});},[]);
- const starts=new Map(timing.map(({cue,at})=>[cue,at]));
- const index=Math.max(0,scenes.findLastIndex(entry=>(cues[entry.cue]?.start??Infinity)<=time));
+ // A scene begins with its transcript passage; a second scene in the same passage begins just before its words.
+ const sceneStart=(i:number)=>{
+  const entry=scenes[i];if(!entry)return Infinity;
+  const cueStart=cues[entry.cue]?.start??Infinity;
+  return scenes[i-1]?.cue===entry.cue?Math.max(cueStart,(timing[i]?.at[0]??cueStart)-.8):cueStart;
+ };
+ const index=Math.max(0,scenes.findLastIndex((_,i)=>sceneStart(i)<=time));
  const scene=scenes[index]??scenes[0];
  if(!scene)throw new Error('Missing animation scenes for '+label);
  const previous=scenes[index-1];
- const phraseStarts=starts.get(scene.cue);
- const change=cues[scene.cue]?.start??0;
+ const phraseStarts=timing[index]?.cue===scene.cue?timing[index]?.at:undefined;
+ const change=sceneStart(index);
  const fadeDuration=Math.min(.75,(phraseStarts?.[0]??change)-change);
  const previousOpacity=fadeDuration>0?.5*Math.max(0,1-(time-change)/fadeDuration):0;
- const nextChange=cues[scenes[index+1]?.cue??-1]?.start??Infinity;
+ const nextChange=sceneStart(index+1);
  const art=scene.art;
  useEffect(()=>{
   const context=canvas.current?.getContext('2d');
