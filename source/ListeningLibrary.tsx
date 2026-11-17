@@ -10,6 +10,8 @@ import compelCues from './compel-cues.json';
 import immutabilityCues from './immutability-cues.json';
 import PublishedReading from './PublishedReading';
 import PrayerAnimation from './PrayerAnimation';
+import ExcellencyAnimation from './ExcellencyAnimation';
+import type {ComponentType,RefObject} from 'react';
 import sermonCues from './gods-jewels-cues.json';
 import PlaybackSpeed from './PlaybackSpeed';
 import {mediaUrl} from './mediaUrl';
@@ -26,6 +28,12 @@ const readings=[
  {title:'Prayer, the Cure for Care',author:'C. H. Spurgeon',filename:'prayer-the-cure-for-care-spurgeon.m4a',cues:prayerCureCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
+type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean};
+// Sermons with an optional Canvas animation (drawn by the browser from the audio clock and cue timings).
+const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
+ ['prayer-the-cure-for-care-spurgeon.m4a',PrayerAnimation],
+ ['excellency-of-christ-edwards.m4a',ExcellencyAnimation],
+]);
 const source=(filename:string)=>mediaUrl(`library/${filename}`);
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
@@ -64,7 +72,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
    player.src=source(reading.filename);
    setSelected(reading);setDuration(0);
   }
-  if(reading.filename!=='prayer-the-cure-for-care-spurgeon.m4a')setWatching(false);
+  if(!animations.has(reading.filename))setWatching(false);
   if(start!==undefined){player.currentTime=start;setTime(start);}
   player.playbackRate=speed;
   void player.play().then(()=>setMessage('')).catch(error=>{
@@ -92,10 +100,10 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
      return {format,name,url:source(name),size};
     })}
     cues={reading.cues}
-    followAnimation={watching&&reading===selected&&reading.filename==='prayer-the-cure-for-care-spurgeon.m4a'}
+    followAnimation={watching&&reading===selected&&animations.has(reading.filename)}
     speed={speed} onSpeed={onSpeed} playing={reading===selected&&playing}
     onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}>
-    {reading.filename==='prayer-the-cure-for-care-spurgeon.m4a'&&<>
+    {animations.has(reading.filename)&&<>
      <button className="document-upload prayer-animation-control" type="button"
       aria-expanded={watching&&reading===selected} onClick={()=>{
        if(watching&&reading===selected){setWatching(false);return;}
@@ -103,7 +111,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
        if(reading!==selected||audio.current?.ended)play(reading,0);
        else if(!playing)play(reading);
       }}>{watching&&reading===selected?'Hide animation':'Watch with animation'}</button>
-     {watching&&reading===selected&&<PrayerAnimation audio={audio} time={time} playing={playing}/>}
+     {watching&&reading===selected&&(()=>{const Animation=animations.get(reading.filename);return Animation?<Animation audio={audio} time={time} playing={playing}/>:null;})()}
     </>}
    </PublishedReading>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
   </section>

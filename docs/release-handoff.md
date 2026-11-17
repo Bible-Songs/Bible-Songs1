@@ -4,11 +4,23 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.123 |
+| Release | 1.0.124 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Verbatim animation captions for Prayer, the Cure for Care |
-| Previous archive | `GitHub History/2026-11-17_13-36-56-243438_SGT_a097a0b7/files/` |
+| Latest change | The Excellency of Christ animation; years read naturally in five sermon headers; audio-1.0.124 |
+| Previous archive | `GitHub History/2026-11-17_20-43-53-446284_SGT_fbc37ca9/files/` |
+
+## 1.0.124 Excellency of Christ animation (Claude)
+
+- **Watch with animation** now also appears on *The Excellency of Christ* (91 min, full sermon). Following Codex’s Prayer approach: the browser draws each scene on a Canvas from code (no image or video files), captions are exact excerpts of the words being spoken and wipe in left to right on the recording clock, the previous caption dims, and the transcript follows below.
+- 198 scenes, 27 drawn scene types in `source/excellency-paint.ts` (sealed book, throne with the Lamb and elders’ crowns, lion, lamb, lion and lamb, heavens, scales, gate, meadow, hearth, path, Gethsemane, three crosses, stable and star, sun, storm stilled, Dagon’s temple, great white throne, lamps, feast, fountain, door, rose and lily, three lights, dawn). Scene plan: `source/excellency-scenes.json` (validated at load: every caption must occur in its cue). Phrase timings: `source/excellency-caption-timing.json` from Whisper small.en on short local clips (731 of 738 phrase onsets matched by Whisper; 7 estimated from text position).
+- New reusable `source/SermonAnimation.tsx` (Codex’s caption/sync logic generalised; same CSS classes). `source/ListeningLibrary.tsx` now keeps a map of animated sermons, so adding another sermon is one entry. `PrayerAnimation.tsx` is unchanged; it could later move onto `SermonAnimation`.
+- Local work: `video-previews/excellency-canvas/` (draft_plan.py, review.py with the hand corrections, timing.py, check-animation.mjs).
+- Years in sermon headers were read as “one thousand eight hundred fifty-five”. `improved/plan.mjs` now speaks years as people say them (eighteen fifty-five, nineteen oh six); the header chunk of God’s Jewels, Immutability, Compel, Christ Crucified and Prayer was re-rendered (one chunk each) and their audio moved to release audio-1.0.124. Transcripts keep the numerals.
+- Prayer’s recording is 1.684 s shorter after its header, so every Prayer caption timing for cue 2 onward was shifted by −1.684 s in `source/prayer-caption-timing.json` (Whisper re-check: “How often Luther…” and “Look, mamma…” keep the same small lead as before).
+- `SermonAnimation` clamps the caption wipe to the end of the recording (the final Excellency caption ends 0.75 s before the audio does).
+- Checks: strict check, build, `npm run test:browser` (first run after build timed out as before, rerun passed), `improved/check.mjs` (8 sermons, 32 downloads, release routing), `excellency/check.mjs`, `video-previews/excellency-canvas/check-animation.mjs` (198 verbatim captions, 8 seeks, mid-phrase wipe, 1.5× speed, hide, Prayer still opens, 390 px mobile with reduced motion).
+- Superseded audio (audio-1.0.117 Prayer, audio-1.0.118 God’s Jewels, Immutability, Compel, Christ Crucified) is to be deleted after deploy per Mike’s standing instruction; local copies remain in `GitHub History/Release Assets/`.
 
 ## 1.0.123 verbatim captions (Codex)
 
