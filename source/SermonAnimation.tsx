@@ -5,7 +5,7 @@ import {useEffect,useRef} from 'react';
 import type {RefObject} from 'react';
 import './prayer-animation.css';
 
-export type Scene={readonly cue:number;readonly art:string;readonly line:string};
+export type Scene={readonly cue:number;readonly art:string;readonly line:string;readonly start?:number};
 // One timing entry per scene, in scene order: the start of each three-word phrase of its caption.
 export type CaptionTiming={readonly cue:number;readonly at:readonly number[]};
 export type Painter=(context:CanvasRenderingContext2D,art:string,t:number,elapsed:number,variant:number)=>void;
@@ -29,6 +29,7 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
  // A scene begins with its transcript passage; a second scene in the same passage begins just before its words.
  const sceneStart=(i:number)=>{
   const entry=scenes[i];if(!entry)return Infinity;
+  if(entry.start!==undefined)return entry.start;
   const cueStart=cues[entry.cue]?.start??Infinity;
   return scenes[i-1]?.cue===entry.cue?Math.max(cueStart,(timing[i]?.at[0]??cueStart)-.8):cueStart;
  };

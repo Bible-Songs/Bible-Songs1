@@ -35,6 +35,17 @@ const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
  ['excellency-of-christ-edwards.m4a',ExcellencyAnimation],
 ]);
 const source=(filename:string)=>mediaUrl(`library/${filename}`);
+function readingDownloads(filename:(typeof readings)[number]['filename']){
+ const sizes=downloadSizes[filename];
+ const formatDownload=(format:'MP3'|'M4A'|'PDF'|'Word'|'MP4',bytes:number)=>{
+  const name=filename.replace(/\.m4a$/,'.'+(format==='Word'?'docx':format.toLowerCase()));
+  const size=bytes<1_000_000?`${(bytes/1_000).toFixed(1)} KB`:`${(bytes/1_000_000).toFixed(1)} MB`;
+  return {format,name,url:source(name),size};
+ };
+ const downloads=(['MP3','M4A','PDF','Word'] as const).map(format=>formatDownload(format,sizes[format]));
+ if('MP4' in sizes)downloads.push(formatDownload('MP4',sizes.MP4));
+ return downloads;
+}
 const clock=(seconds:number)=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
 const normalize=(text:string)=>text.toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
 const searchFields=['Title','Author','Transcript'] as const;
@@ -93,12 +104,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
    </div>
    {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
     onRemove={()=>{if(window.confirm(`Remove ${reading.title} from your library? You can restore it in Recovery centre.`))onRemove(reading.filename);}}
-    downloads={(['MP3','M4A','PDF','Word'] as const).map(format=>{
-     const name=reading.filename.replace(/\.m4a$/,'.'+(format==='Word'?'docx':format.toLowerCase()));
-     const bytes=downloadSizes[reading.filename][format];
-     const size=bytes<1_000_000?`${(bytes/1_000).toFixed(1)} KB`:`${(bytes/1_000_000).toFixed(1)} MB`;
-     return {format,name,url:source(name),size};
-    })}
+    downloads={readingDownloads(reading.filename)}
     cues={reading.cues}
     followAnimation={watching&&reading===selected&&animations.has(reading.filename)}
     speed={speed} onSpeed={onSpeed} playing={reading===selected&&playing}

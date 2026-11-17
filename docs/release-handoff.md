@@ -4,11 +4,17 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.124 |
+| Release | 1.0.125 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | The Excellency of Christ animation; years read naturally in five sermon headers; audio-1.0.124 |
+| Latest change | Reillustrated The Excellency of Christ in the browser and added an offline Prayer, the Cure for Care MP4 download |
 | Previous archive | `GitHub History/2026-11-17_20-43-53-446284_SGT_fbc37ca9/files/` |
+
+## 1.0.125 Excellency illustrations and Prayer download (Codex)
+
+- *The Excellency of Christ* has 193 timed browser scenes using the existing recording. Codex replaced the artwork with scene-specific compositions and reused Claude’s content-led plan, Whisper timing shards, and shared caption player. Captions are exact excerpts from the timed transcript.
+- *Prayer, the Cure for Care* adds a **Download MP4** link. The MP4 is hosted on `video-1.0.125` and contains the current `audio-1.0.124` recording, Canvas illustrations and timed captions. The original local MP4 retains the previous recording.
+- Strict TypeScript and the production build passed. Chrome checked eight Excellency seek points, caption reveal, transcript following, 1.5× speed, mobile and reduced motion, and downloaded the Prayer MP4 at its advertised size. The MP4 audio hash matches the current recording. The verified video asset archive is `GitHub History/Release Assets/2026-11-18_video-1.0.125/`.
 
 ## 1.0.124 Excellency of Christ animation (Claude)
 

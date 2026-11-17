@@ -1,992 +1,195 @@
 [
-{
-"cue": 0,
-"art": "throne",
-"line": "the Lion of the tribe of Judah, the Root of David, hath prevailed to open the book,"
-},
-{
-"cue": 2,
-"art": "scroll",
-"line": "Introduction."
-},
-{
-"cue": 5,
-"art": "throne",
-"line": "and then sealed, or some way fastened together, to prevent their unfolding and opening."
-},
-{
-"cue": 7,
-"art": "scroll",
-"line": "“sealed with seven seals,”"
-},
-{
-"cue": 9,
-"art": "throne",
-"line": "that on the seventh day God beheld the works of creation finished,"
-},
-{
-"cue": 10,
-"art": "scroll",
-"line": "When John saw this book, he tells us, he “saw a strong angel proclaiming with a"
-},
-{
-"cue": 13,
-"art": "heavens",
-"line": "that Christ was found both able and worthy."
-},
-{
-"cue": 15,
-"art": "throne",
-"line": "the joyful praises that were sung to him in heaven and earth"
-},
-{
-"cue": 17,
-"art": "lion",
-"line": "Behold, the Lion of the tribe of Judah."
-},
-{
-"cue": 18,
-"art": "sun",
-"line": "from the prey, my son, thou art gone up:"
-},
-{
-"cue": 20,
-"art": "lion",
-"line": "and therefore Christ is here called “the Lion of the tribe of Judah.”"
-},
-{
-"cue": 21,
-"art": "lamb",
-"line": "behold a Lamb appears to open the book,"
-},
-{
-"cue": 24,
-"art": "scroll",
-"line": "That which I would observe from the words,"
-},
-{
-"cue": 27,
-"art": "heavens",
-"line": "Part One."
-},
-{
-"cue": 29,
-"art": "star",
-"line": "There is a conjunction of such excellencies in Christ,"
-},
-{
-"cue": 30,
-"art": "heavens",
-"line": "There is in him a conjunction of such really diverse excellencies,"
-},
-{
-"cue": 31,
-"art": "star",
-"line": "Such diverse excellencies are exercised in him towards men"
-},
-{
-"cue": 32,
-"art": "heavens",
-"line": "Such are the various divine perfections and excellencies that Christ is possessed of."
-},
-{
-"cue": 34,
-"art": "star",
-"line": "There do meet in Jesus Christ infinite highness and infinite condescension."
-},
-{
-"cue": 36,
-"art": "dust",
-"line": "all nations are as the drop of the bucket,"
-},
-{
-"cue": 38,
-"art": "heavens",
-"line": "Our understandings, if we stretch them never so far, cannot reach up to his divine glory."
-},
-{
-"cue": 40,
-"art": "star",
-"line": "but Christ’s condescension is sufficient to take a gracious notice of them."
-},
-{
-"cue": 42,
-"art": "gate",
-"line": "and things that are despised, hath God chosen.”"
-},
-{
-"cue": 44,
-"art": "meadow",
-"line": "“Suffer little children to come unto me.”"
-},
-{
-"cue": 47,
-"art": "hearth",
-"line": "His condescension is great enough to become their friend, to become their companion, to unite their"
-},
-{
-"cue": 49,
-"art": "heavens",
-"line": "Yet such an act as this, has his condescension yielded to,"
-},
-{
-"cue": 51,
-"art": "dust",
-"line": "What a distance does he keep from those that are below him!"
-},
-{
-"cue": 53,
-"art": "scales",
-"line": "There meet in Jesus Christ, infinite justice and infinite grace."
-},
-{
-"cue": 55,
-"art": "dawn",
-"line": "yet he has grace sufficient for every sinner,"
-},
-{
-"cue": 57,
-"art": "sun",
-"line": "There is no benefit or blessing that they can receive, so great but the grace of"
-},
-{
-"cue": 59,
-"art": "throne",
-"line": "There do meet in the person of Christ such really diverse excellencies,"
-},
-{
-"cue": 60,
-"art": "heavens",
-"line": "In the person of Christ do meet together infinite glory and lowest humility."
-},
-{
-"cue": 62,
-"art": "throne",
-"line": "yet humility is not properly predicable of God the Father,"
-},
-{
-"cue": 63,
-"art": "heavens",
-"line": "He is a person infinitely exalted in glory and dignity."
-},
-{
-"cue": 65,
-"art": "throne",
-"line": "“Let all the angels of God worship him.”"
-},
-{
-"cue": 67,
-"art": "heavens",
-"line": "None ever was so sensible of the distance between God and him,"
-},
-{
-"cue": 69,
-"art": "throne",
-"line": "In the person of Christ do meet together infinite majesty and transcendent meekness."
-},
-{
-"cue": 71,
-"art": "heavens",
-"line": "Christ was a person of infinite majesty."
-},
-{
-"cue": 73,
-"art": "lamb",
-"line": "the most marvellous instance of meekness,"
-},
-{
-"cue": 75,
-"art": "throne",
-"line": "“I am meek and lowly in heart.”"
-},
-{
-"cue": 79,
-"art": "sun",
-"line": "Christ, when on earth, appeared full of holy reverence towards the Father."
-},
-{
-"cue": 80,
-"art": "heavens",
-"line": "God the Father hath no attribute or perfection that the Son hath not, in equal degree,"
-},
-{
-"cue": 81,
-"art": "star",
-"line": "There are conjoined in the person of Christ infinite worthiness of good,"
-},
-{
-"cue": 85,
-"art": "dawn",
-"line": "He suffered not from his Father for his faults,"
-},
-{
-"cue": 87,
-"art": "path",
-"line": "because Christ also suffered for us, leaving us an example,"
-},
-{
-"cue": 88,
-"art": "cross",
-"line": "There is no such conjunction of innocence, worthiness,"
-},
-{
-"cue": 89,
-"art": "path",
-"line": "In the person of Christ are conjoined an exceeding spirit of obedience, with supreme dominion over"
-},
-{
-"cue": 91,
-"art": "throne",
-"line": "and supreme over all as much as the Father."
-},
-{
-"cue": 92,
-"art": "heavens",
-"line": "but to all intents and purposes supreme God."
-},
-{
-"cue": 94,
-"art": "path",
-"line": "“As the Father gave me commandment,"
-},
-{
-"cue": 98,
-"art": "throne",
-"line": "that he should yield himself to those dreadful sufferings that he underwent."
-},
-{
-"cue": 101,
-"art": "path",
-"line": "Never was there such an instance of obedience in man or angel as this, though he"
-},
-{
-"cue": 102,
-"art": "dawn",
-"line": "In the person of Christ are conjoined absolute sovereignty and perfect resignation."
-},
-{
-"cue": 104,
-"art": "throne",
-"line": "It is he that worketh all things according to the counsel of his own will."
-},
-{
-"cue": 108,
-"art": "garden",
-"line": "and the dreadful cup that he was to drink."
-},
-{
-"cue": 111,
-"art": "garden",
-"line": "“O my Father, if it be possible, let this cup pass from me:"
-},
-{
-"cue": 114,
-"art": "path",
-"line": "In Christ do meet together self-sufficiency, and an entire trust and reliance on God,"
-},
-{
-"cue": 119,
-"art": "throne",
-"line": "“That he committed himself to God.”"
-},
-{
-"cue": 120,
-"art": "scales",
-"line": "justice, mercy, and truth."
-},
-{
-"cue": 122,
-"art": "cross",
-"line": "The strict justice of God,"
-},
-{
-"cue": 125,
-"art": "heavens",
-"line": "Yet how wonderfully is infinite mercy towards sinners displayed in him!"
-},
-{
-"cue": 127,
-"art": "scales",
-"line": "that he might be just, and the justifier of him which believeth in Jesus.”"
-},
-{
-"cue": 128,
-"art": "heavens",
-"line": "as when sin came to be imputed to his own Son."
-},
-{
-"cue": 131,
-"art": "scales",
-"line": "that it is not infringed in the least jot or tittle:"
-},
-{
-"cue": 133,
-"art": "stable",
-"line": "Part Two."
-},
-{
-"cue": 136,
-"art": "star",
-"line": "It appears in what Christ did in taking on him our nature."
-},
-{
-"cue": 139,
-"art": "stable",
-"line": "for though he was conceived in the womb of a poor virgin,"
-},
-{
-"cue": 141,
-"art": "dawn",
-"line": "“The Holy Ghost shall come upon thee,"
-},
-{
-"cue": 143,
-"art": "gate",
-"line": "The Blessed Virgin, being poor and despised, was turned or shut out."
-},
-{
-"cue": 145,
-"art": "lamb",
-"line": "and there he eminently appeared as a lamb."
-},
-{
-"cue": 148,
-"art": "path",
-"line": "This admirable conjunction of excellencies appears in the acts and various passages of Christ’s life."
-},
-{
-"cue": 150,
-"art": "lamb",
-"line": "Herein he appeared as a lamb."
-},
-{
-"cue": 151,
-"art": "lion",
-"line": "as the Lion of the tribe of Judah."
-},
-{
-"cue": 153,
-"art": "lamb",
-"line": "and others. In these things he appeared as a Lamb."
-},
-{
-"cue": 155,
-"art": "sun",
-"line": "and stop and change its course as he pleased."
-},
-{
-"cue": 157,
-"art": "storm",
-"line": "By his walking on the sea in a storm,"
-},
-{
-"cue": 160,
-"art": "heavens",
-"line": "he showed that he has the command of the universe,"
-},
-{
-"cue": 161,
-"art": "storm",
-"line": "when the waves thereof arise, thou stillest them.”"
-},
-{
-"cue": 162,
-"art": "lion",
-"line": "and showed that he was stronger than the roaring lion,"
-},
-{
-"cue": 164,
-"art": "heavens",
-"line": "He showed the glory of his omniscience, by telling the thoughts of men;"
-},
-{
-"cue": 166,
-"art": "throne",
-"line": "and appeared in his divine majesty, so far as it could be outwardly manifested to men"
-},
-{
-"cue": 168,
-"art": "lamb",
-"line": "appearing therein as the Lamb of God;"
-},
-{
-"cue": 170,
-"art": "cross",
-"line": "his offering up himself a sacrifice for sinners in his last sufferings."
-},
-{
-"cue": 172,
-"art": "lamb",
-"line": "Then he was offered up to God as a lamb without blemish,"
-},
-{
-"cue": 173,
-"art": "lion",
-"line": "appear as the Lion of the tribe of Judah;"
-},
-{
-"cue": 174,
-"art": "heavens",
-"line": "and yet by that, above all other things, his divine glory appears."
-},
-{
-"cue": 177,
-"art": "throne",
-"line": "never was his divine glory and majesty covered with so thick and dark a veil;"
-},
-{
-"cue": 178,
-"art": "heavens",
-"line": "as in yielding himself up to these sufferings."
-},
-{
-"cue": 180,
-"art": "scroll",
-"line": "and to open the seals thereof:"
-},
-{
-"cue": 181,
-"art": "lamb",
-"line": "Worthy is the Lamb that was slain,"
-},
-{
-"cue": 182,
-"art": "dawn",
-"line": "and yet never so manifested his love to those that were enemies to God,"
-},
-{
-"cue": 185,
-"art": "garden",
-"line": "That blood of Christ which fell in great drops to the ground, in his agony,"
-},
-{
-"cue": 187,
-"art": "scales",
-"line": "that nothing less than his blood could atone for it."
-},
-{
-"cue": 188,
-"art": "heavens",
-"line": "and yet never suffered so much from divine Justice,"
-},
-{
-"cue": 191,
-"art": "scales",
-"line": "Revenging justice then spent all its force upon him, on account of our guilt;"
-},
-{
-"cue": 192,
-"art": "cross",
-"line": "“I am poured out like water,"
-},
-{
-"cue": 194,
-"art": "dawn",
-"line": "and such love to those that have exposed themselves to it,"
-},
-{
-"cue": 195,
-"art": "scales",
-"line": "Christ’s holiness never so illustriously shone forth as it did in his last sufferings,"
-},
-{
-"cue": 197,
-"art": "cross",
-"line": "and in his obedience to him."
-},
-{
-"cue": 199,
-"art": "scales",
-"line": "and then, he was put to a kind of death,"
-},
-{
-"cue": 200,
-"art": "cross",
-"line": "Christ never so greatly manifested his hatred of sin,"
-},
-{
-"cue": 201,
-"art": "dawn",
-"line": "In this appears those diverse excellencies meeting in Christ, namely, love to God,"
-},
-{
-"cue": 202,
-"art": "cross",
-"line": "as unworthy, as in his last sufferings,"
-},
-{
-"cue": 208,
-"art": "heavens",
-"line": "and infinite condescension and love to the infinitely unworthy."
-},
-{
-"cue": 209,
-"art": "dawn",
-"line": "Christ in his last sufferings suffered most extremely"
-},
-{
-"cue": 214,
-"art": "cross",
-"line": "and pouring out his soul unto death for them."
-},
-{
-"cue": 217,
-"art": "garden",
-"line": "and yet by these, above all, he obtained victory over his enemies."
-},
-{
-"cue": 220,
-"art": "cross",
-"line": "but this is your hour, and the power of darkness.”"
-},
-{
-"cue": 222,
-"art": "garden",
-"line": "obtained a most complete victory and glorious triumph over him,"
-},
-{
-"cue": 224,
-"art": "temple",
-"line": "he conquered his enemies in their own territories,"
-},
-{
-"cue": 226,
-"art": "storm",
-"line": "To this day he is heart-sick of what he then swallowed as his prey."
-},
-{
-"cue": 228,
-"art": "lionlamb",
-"line": "as both a lion and a lamb."
-},
-{
-"cue": 229,
-"art": "lionlamb",
-"line": "yea, he was a lamb actually slain by this lion:"
-},
-{
-"cue": 230,
-"art": "lion",
-"line": "destroying his own destroyer;"
-},
-{
-"cue": 233,
-"art": "lamb",
-"line": "but still he appears as a lamb;"
-},
-{
-"cue": 234,
-"art": "meadow",
-"line": "“And I looked, and lo, a Lamb stood on mount Sion”;"
-},
-{
-"cue": 236,
-"art": "heavens",
-"line": "Though the man Christ Jesus be the highest of all creatures in heaven,"
-},
-{
-"cue": 238,
-"art": "star",
-"line": "yet he treats his saints with infinite condescension, mildness,"
-},
-{
-"cue": 240,
-"art": "lamb",
-"line": "nor has he forgot how to pity those that are subject to them."
-},
-{
-"cue": 242,
-"art": "dawn",
-"line": "Behold him admitting them to sweet communion,"
-},
-{
-"cue": 244,
-"art": "judgment",
-"line": "will be manifest in Christ’s acts at the last judgement."
-},
-{
-"cue": 247,
-"art": "judgment",
-"line": "The devils tremble at the thought of that appearance,"
-},
-{
-"cue": 248,
-"art": "judgment",
-"line": "and receive the terrible sentence of his wrath."
-},
-{
-"cue": 250,
-"art": "lamps",
-"line": "The church shall be then admitted to him as his bride;"
-},
-{
-"cue": 252,
-"art": "star",
-"line": "Part Three."
-},
-{
-"cue": 253,
-"art": "heavens",
-"line": "Christ is called by such a variety of names,"
-},
-{
-"cue": 255,
-"art": "star",
-"line": "“For unto us a Child is born, unto us a Son is given,"
-},
-{
-"cue": 257,
-"art": "sun",
-"line": "in some places he is called a Sun,"
-},
-{
-"cue": 259,
-"art": "lion",
-"line": "And, as in our text, he is compared to a lion in one verse,"
-},
-{
-"cue": 261,
-"art": "flowers",
-"line": "that are sweet and beautiful flowers;"
-},
-{
-"cue": 263,
-"art": "dawn",
-"line": "and close with him as your Savior."
-},
-{
-"cue": 265,
-"art": "stable",
-"line": "he is a poor weak creature, like an infant cast out in its blood in the"
-},
-{
-"cue": 267,
-"art": "dawn",
-"line": "but Christ, who has undertaken for us, is infinitely honorable and worthy."
-},
-{
-"cue": 269,
-"art": "sun",
-"line": "but Christ has performed that righteousness which is infinitely precious in God’s eyes."
-},
-{
-"cue": 272,
-"art": "heavens",
-"line": "infinite grace and gentleness to invite and embolden a poor, unworthy, fearful soul"
-},
-{
-"cue": 274,
-"art": "star",
-"line": "the most humble and lowly in heart of any creature in heaven or earth."
-},
-{
-"cue": 275,
-"art": "lion",
-"line": "Though he is a lion, he will only be a lion to your enemies,"
-},
-{
-"cue": 278,
-"art": "gate",
-"line": "be you never so poor,"
-},
-{
-"cue": 280,
-"art": "dawn",
-"line": "Here let me a little expostulate with the poor, burdened, distressed soul."
-},
-{
-"cue": 281,
-"art": "sun",
-"line": "that he is not strong enough to conquer the enemies of your soul?"
-},
-{
-"cue": 283,
-"art": "cross",
-"line": "Do you think that he that had condescension enough to stoop to these things,"
-},
-{
-"cue": 286,
-"art": "dawn",
-"line": "What is there that you can desire should be in a Savior,"
-},
-{
-"cue": 288,
-"art": "sun",
-"line": "Would you have your Savior to be great and honorable,"
-},
-{
-"cue": 291,
-"art": "dawn",
-"line": "but also of that amazing wrath that you fear hereafter,"
-},
-{
-"cue": 293,
-"art": "sun",
-"line": "who is his only-begotten Son, of the same essence with the Father?"
-},
-{
-"cue": 295,
-"art": "dawn",
-"line": "some great and extraordinary testimony of mercy and love to sinners,"
-},
-{
-"cue": 298,
-"art": "sun",
-"line": "What is there wanting, or what would you add if you could,"
-},
-{
-"cue": 300,
-"art": "lamb",
-"line": "How much Christ appears as the Lamb of God in his invitations to you"
-},
-{
-"cue": 301,
-"art": "fountain",
-"line": "Ho, every one that thirsteth, come ye to the waters,"
-},
-{
-"cue": 303,
-"art": "feast",
-"line": "“Wherefore do ye spend money for that which is not bread?"
-},
-{
-"cue": 305,
-"art": "dawn",
-"line": "and answer your end, and I stand ready to accept of you:"
-},
-{
-"cue": 306,
-"art": "sun",
-"line": "and I will make an everlasting covenant with you,"
-},
-{
-"cue": 308,
-"art": "feast",
-"line": "and to drink of the wine that he hath mingled!"
-},
-{
-"cue": 310,
-"art": "dawn",
-"line": "and learn of me, for I am meek and lowly in heart,"
-},
-{
-"cue": 312,
-"art": "sun",
-"line": "“I will give you rest.”"
-},
-{
-"cue": 318,
-"art": "door",
-"line": "he comes to your door,"
-},
-{
-"cue": 320,
-"art": "door",
-"line": "but he stands there waiting, while you are backward and unwilling."
-},
-{
-"cue": 322,
-"art": "sun",
-"line": "and the bright and morning star."
-},
-{
-"cue": 323,
-"art": "dawn",
-"line": "How does Christ here graciously set before you his own winning attractive excellency!"
-},
-{
-"cue": 325,
-"art": "lion",
-"line": "If you do come to Christ, he will appear as a Lion, in his glorious power"
-},
-{
-"cue": 327,
-"art": "sun",
-"line": "Unless your enemies can conquer this Lion,"
-},
-{
-"cue": 329,
-"art": "hearth",
-"line": "and choose him for your friend and portion."
-},
-{
-"cue": 331,
-"art": "lamps",
-"line": "Whatsoever there is or can be desirable in a friend, is in Christ,"
-},
-{
-"cue": 333,
-"art": "throne",
-"line": "for he is the King of kings."
-},
-{
-"cue": 335,
-"art": "heavens",
-"line": "In Christ infinite greatness and infinite goodness meet together,"
-},
-{
-"cue": 339,
-"art": "sun",
-"line": "The very same excellent qualities of gold"
-},
-{
-"cue": 341,
-"art": "throne",
-"line": "His almighty power, and infinite majesty and self-sufficiency,"
-},
-{
-"cue": 344,
-"art": "hearth",
-"line": "Would you choose a friend far above you,"
-},
-{
-"cue": 347,
-"art": "heavens",
-"line": "This is one end of Christ’s taking upon him man’s nature,"
-},
-{
-"cue": 349,
-"art": "hearth",
-"line": "that he may engross our regard every way,"
-},
-{
-"cue": 351,
-"art": "lamps",
-"line": "that a divine person may be the object even of this inclination of our nature."
-},
-{
-"cue": 353,
-"art": "heavens",
-"line": "that he is one of infinite condescending grace,"
-},
-{
-"cue": 357,
-"art": "dawn",
-"line": "and are additional recommendations of him to our esteem and love,"
-},
-{
-"cue": 359,
-"art": "heavens",
-"line": "The glory of Christ in the qualifications of his human nature,"
-},
-{
-"cue": 361,
-"art": "throne",
-"line": "It tends to endear the divine majesty and holiness of Christ to us,"
-},
-{
-"cue": 363,
-"art": "heavens",
-"line": "as the eternal Son of God, the Lord of heaven and earth!"
-},
-{
-"cue": 365,
-"art": "lamps",
-"line": "Christ will give himself to you,"
-},
-{
-"cue": 367,
-"art": "heavens",
-"line": "When the saints get to heaven, they shall not merely see Christ,"
-},
-{
-"cue": 369,
-"art": "hearth",
-"line": "as a father amongst a company of children,"
-},
-{
-"cue": 371,
-"art": "throne",
-"line": "but he will rather take them into a state of exaltation with him."
-},
-{
-"cue": 373,
-"art": "heavens",
-"line": "“And the glory which thou hast given me, have I given them,"
-},
-{
-"cue": 375,
-"art": "throne",
-"line": "but that they may be exalted with him."
-},
-{
-"cue": 377,
-"art": "heavens",
-"line": "When Christ was going to heaven, he comforted his disciples with the thought,"
-},
-{
-"cue": 379,
-"art": "star",
-"line": "and to partake of glory with him."
-},
-{
-"cue": 381,
-"art": "heavens",
-"line": "that they may behold the glory which thou hast given me.”"
-},
-{
-"cue": 384,
-"art": "feast",
-"line": "and made them to drink new wine with him"
-},
-{
-"cue": 385,
-"art": "heavens",
-"line": "for in heaven, that vital union shall be perfect,"
-},
-{
-"cue": 387,
-"art": "dawn",
-"line": "and those glorious manifestations of love,"
-},
-{
-"cue": 388,
-"art": "lamps",
-"line": "for I am not yet ascended to my Father.”"
-},
-{
-"cue": 390,
-"art": "hearth",
-"line": "that there shall be nothing to hinder the fullest enjoyment of him,"
-},
-{
-"cue": 392,
-"art": "lamps",
-"line": "There shall never be any end of this happiness,"
-},
-{
-"cue": 393,
-"art": "union",
-"line": "they are the children of God in a higher manner than otherwise could be."
-},
-{
-"cue": 395,
-"art": "stable",
-"line": "“God sent forth his Son, made of a woman,"
-},
-{
-"cue": 398,
-"art": "union",
-"line": "“I in them, and thou in me,"
-},
-{
-"cue": 407,
-"art": "lamps",
-"line": "can have a more intimate union and intercourse with God the Father,"
-},
-{
-"cue": 409,
-"art": "heavens",
-"line": "and have hereby advantage for the full enjoyment of him also."
-},
-{
-"cue": 411,
-"art": "union",
-"line": "as thou, Father, art in me,"
-},
-{
-"cue": 413,
-"art": "heavens",
-"line": "that the church should be as it were admitted into the society of the blessed Trinity."
-}
+ {"cue":0,"art":"opening","line":"The Excellency of Christ.","setting":"hall","objects":["lion","scroll","lamb"],"start":0},
+ {"cue":0,"art":"throne_scroll","line":"hath prevailed to open the book","setting":"hall","objects":["throne","scroll"],"start":12.68},
+ {"cue":1,"art":"lamb_throne","line":"stood a Lamb as it had been slain","setting":"hall","objects":["throne","lamb"],"start":22.89},
+ {"cue":5,"art":"parchment","line":"were broad leaves of parchment or paper","setting":"table","objects":["parchment"],"start":53.27},
+ {"cue":7,"art":"seven_seals","line":"“sealed with seven seals,”","setting":"table","objects":["seals"],"start":89.03},
+ {"cue":9,"art":"creation_rest","line":"on the seventh day God beheld the works of creation finished","setting":"mountain","objects":["sun","tree"],"start":116.23},
+ {"cue":10,"art":"angel_trumpet","line":"saw a strong angel proclaiming with a loud voice","setting":"hall","objects":["angel","trumpet"],"start":126.97},
+ {"cue":11,"art":"john_weeps","line":"And that he wept much","setting":"chamber","objects":["weeping"],"start":141.441},
+ {"cue":15,"art":"lamb_takes_scroll","line":"his coming and taking the book out of the right hand of him that sat on the throne","setting":"hall","objects":["throne","scroll","lamb"],"start":189.83},
+ {"cue":17,"art":"lion_rock","line":"He is called a Lion.","setting":"desert","objects":["lion","rock"],"start":209.983},
+ {"cue":18,"art":"jacob_blesses","line":"“Judah is a lion’s whelp;","setting":"chamber","objects":["elder","blessing","child"],"start":228.823},
+ {"cue":19,"art":"lion_banner","line":"the standard of the camp of Judah in the wilderness on which was displayed a lion","setting":"desert","objects":["tents","banner","lion"],"start":238.54},
+ {"cue":20,"art":"david_harp","line":"the valiant acts of David","setting":"desert","objects":["youngwarrior","sword","shield"],"start":247.95},
+ {"cue":21,"art":"lamb_hill","line":"He is called a Lamb.","setting":"meadow","objects":["lamb","flock"],"start":270.7},
+ {"cue":22,"art":"lion_eyes_lamb","line":"A lion is a devourer","setting":"desert","objects":["lion","lamb"],"start":287.042},
+ {"cue":23,"art":"lamb_wounds","line":"with the marks of its deadly wounds appearing on it","setting":"meadow","objects":["lamb","redmark"],"start":304.11},
+ {"cue":24,"art":"lion_and_lamb","line":"There is an admirable conjunction of diverse excellencies in Jesus Christ.","setting":"meadow","objects":["lion","lamb"],"start":313.3},
+ {"cue":26,"art":"lion_roars_lamb_rests","line":"The lion excels in strength, and in the majesty of his appearance and voice","setting":"desert","objects":["lion","lamb"],"start":325.109},
+ {"cue":27,"art":"lion_and_lamb","line":"Part One.","setting":"meadow","objects":["lion","lamb"],"start":365.132},
+ {"cue":34,"art":"high_and_low","line":"There do meet in Jesus Christ infinite highness and infinite condescension.","setting":"summit","objects":["crown","kneeling"],"start":433.81},
+ {"cue":35,"art":"kings_bow","line":"He is higher than the kings of the earth","setting":"hall","objects":["king","kneeling","kneeling"],"start":442.97},
+ {"cue":36,"art":"bucket_drop","line":"all nations are as the drop of the bucket","setting":"table","objects":["bucket","drop"],"start":458.71},
+ {"cue":38,"art":"reach_heaven","line":"“It is high as heaven, what canst thou do?”","setting":"summit","objects":["person","star"],"start":490.51},
+ {"cue":39,"art":"universe","line":"He rules over the whole universe","setting":"night","objects":["globe","orbit"],"start":499.288},
+ {"cue":40,"art":"light_descends","line":"And yet he is one of infinite condescension.","setting":"summit","objects":["beam","traveler"],"start":518.113},
+ {"cue":43,"art":"beggar_gate","line":"Christ condescends to take notice of beggars","setting":"city","objects":["door","beggar","teacher"],"start":560.369},
+ {"cue":44,"art":"children","line":"“Suffer little children to come unto me.”","setting":"meadow","objects":["child","teacher","child"],"start":581.27},
+ {"cue":47,"art":"rings","line":"to unite their souls to him in spiritual marriage","setting":"table","objects":["rings"],"start":612.21},
+ {"cue":48,"art":"mocked","line":"even to expose himself to shame and spitting","setting":"court","objects":["crowd","teacher"],"start":624.75},
+ {"cue":51,"art":"worms_dunghill","line":"If one worm be a little exalted above another","setting":"desert","objects":["earth","worm","worm"],"start":659.251},
+ {"cue":52,"art":"basin_towel","line":"Christ condescends to wash our feet","setting":"table","objects":["basin","towel"],"start":675.92},
+ {"cue":53,"art":"scales_light","line":"There meet in Jesus Christ, infinite justice and infinite grace.","setting":"hall","objects":["scales","lamp"],"start":686.01},
+ {"cue":54,"art":"judgment_seat","line":"He is the Judge of the world","setting":"hall","objects":["throne","petitioners"],"start":699.5},
+ {"cue":55,"art":"sinner_light","line":"yet he has grace sufficient for every sinner","setting":"chamber","objects":["kneeling","lamp"],"start":716.36},
+ {"cue":58,"art":"soul_cup","line":"He had sufferings in his soul","setting":"grove","objects":["chalice","kneeling"],"start":773.79},
+ {"cue":60,"art":"crown_towel","line":"In the person of Christ do meet together infinite glory and lowest humility.","setting":"table","objects":["crown","towel"],"start":808.27},
+ {"cue":63,"art":"form_of_god","line":"“Being in the form of God, he thought it not robbery to be equal with God.”","setting":"summit","objects":["beam","crown"],"start":869.13},
+ {"cue":65,"art":"angels_worship","line":"“Let all the angels of God worship him.”","setting":"hall","objects":["angel","lamp","angel"],"start":896.56},
+ {"cue":68,"art":"carpenter","line":"contentedly living in the family of Joseph the carpenter","setting":"workshop","objects":["saw","bench","hammer"],"start":929.78},
+ {"cue":71,"art":"sword_crown","line":"“Gird thy sword upon thy thigh, O most mighty","setting":"table","objects":["sword","crown"],"start":1006.42},
+ {"cue":72,"art":"hills_melt","line":"at whose presence the earth quakes, and the hills melt","setting":"summit","objects":["mountains","flame"],"start":1030.02},
+ {"cue":72,"art":"grasshoppers","line":"all the inhabitants thereof are as grasshoppers","setting":"meadow","objects":["grasshopper","grasshopper"],"start":1035.39},
+ {"cue":73,"art":"donkey_king","line":"sitting upon an ass, and a colt the foal of an ass.”","setting":"city","objects":["donkey","rider","palm"],"start":1088.62},
+ {"cue":76,"art":"reviled","line":"who, when he was reviled, reviled not again","setting":"court","objects":["crowd","teacher"],"start":1110.97},
+ {"cue":78,"art":"soldiers_ring","line":"With what meekness did he appear in the ring of soldiers","setting":"court","objects":["soldier","teacher","soldier","shield"],"start":1123.043},
+ {"cue":78,"art":"lion_and_lamb","line":"Thus is Christ a Lion in majesty and a Lamb in meekness.","setting":"meadow","objects":["lion","lamb"],"start":1132.79},
+ {"cue":79,"art":"kneeling","line":"“kneeling down and praying,”","setting":"grove","objects":["kneeling"],"start":1154.19},
+ {"cue":84,"art":"cross_shame","line":"“He endured the cross, despising the shame.”","setting":"dusk","objects":["cross"],"start":1222.61},
+ {"cue":87,"art":"footsteps","line":"leaving us an example, that we should follow his steps","setting":"road","objects":["footprints","traveler"],"start":1257.79},
+ {"cue":89,"art":"servant_king","line":"an exceeding spirit of obedience, with supreme dominion over heaven and earth","setting":"hall","objects":["crown","teacher","basin"],"start":1292.13},
+ {"cue":99,"art":"lay_down","line":"“No man taketh it from me, but I lay it down of myself.”","setting":"grove","objects":["teacher","chalice"],"start":1387.131},
+ {"cue":100,"art":"cross_hill","line":"“He humbled himself, and became obedient unto death, even the death of the cross.”","setting":"dusk","objects":["cross"],"start":1406.52},
+ {"cue":104,"art":"universe","line":"It is he that worketh all things according to the counsel of his own will.","setting":"night","objects":["globe","orbit"],"start":1446.25},
+ {"cue":107,"art":"leper_healed","line":"“I will, be thou clean.”","setting":"road","objects":["kneeling","teacher","blessing"],"start":1463.946},
+ {"cue":108,"art":"cup_garden","line":"the dreadful cup that he was to drink","setting":"grove","objects":["chalice","olive"],"start":1478.39},
+ {"cue":109,"art":"blood_drops","line":"his sweat was as it were great drops or clots of blood","setting":"grove","objects":["dropred","leaf"],"start":1488.1},
+ {"cue":111,"art":"garden_prayer","line":"“O my Father, if it be possible, let this cup pass from me:","setting":"grove","objects":["olive","kneeling","chalice"],"start":1500.962},
+ {"cue":118,"art":"mockers_cross","line":"“He trusted in God that he would deliver him,”","setting":"dusk","objects":["crowd","cross","crowd"],"start":1555.183},
+ {"cue":121,"art":"mercy_truth","line":"“Mercy and truth are met together, righteousness and peace have kissed each other.”","setting":"table","objects":["rings","scales"],"start":1583.675},
+ {"cue":126,"art":"fire_light","line":"Though he be a consuming fire to sin, yet he is the light and life of sinners.","setting":"chamber","objects":["flame","lamp"],"start":1640.191},
+ {"cue":127,"art":"cross_hill","line":"“Whom God hath set forth to be a propitiation, through faith in his blood","setting":"dusk","objects":["cross"],"start":1648.224},
+ {"cue":130,"art":"tablets","line":"the covenant of works, that contains those dreadful threatenings","setting":"summit","objects":["tablets"],"start":1708.14},
+ {"cue":131,"art":"jot_tittle","line":"not infringed in the least jot or tittle","setting":"table","objects":["parchment","quill"],"start":1715.61},
+ {"cue":132,"art":"promises","line":"And in him are all the promises of God yea, and Amen.","setting":"table","objects":["scroll","lamp"],"start":1735.62},
+ {"cue":137,"art":"word_flesh","line":"that the word should be made flesh","setting":"chamber","objects":["scroll","infant"],"start":1763.24},
+ {"cue":138,"art":"doves","line":"a pair of turtle-doves, or two young pigeons.”","setting":"meadow","objects":["dove","dove"],"start":1791.83},
+ {"cue":139,"art":"spirit_dove","line":"he was conceived there by the power of the Holy Ghost","setting":"summit","objects":["dove","beam"],"start":1813.9},
+ {"cue":142,"art":"inn_stable","line":"He was brought forth in a stable because there was no room for them in the inn.","setting":"night","objects":["door","stable"],"start":1849.67},
+ {"cue":145,"art":"manger","line":"and laid in a manger.","setting":"stable","objects":["manger","infant"],"start":1880.627},
+ {"cue":146,"art":"manger_vs_lion","line":"born to conquer and triumph over Satan, that roaring lion","setting":"stable","objects":["manger","lion"],"start":1891.17},
+ {"cue":147,"art":"shepherds_angels","line":"the joyful songs of the glorious hosts of angels appearing to the shepherds","setting":"meadow","objects":["shepherd","angel","flock"],"start":1911.17},
+ {"cue":149,"art":"veil_light","line":"yet his divine dignity and glory did in many of his acts shine through the veil","setting":"chamber","objects":["curtain","beam"],"start":1938.26},
+ {"cue":150,"art":"wise_men","line":"presenting him with gold, frankincense, and myrrh","setting":"stable","objects":["visitor","gift","visitor","manger"],"start":1967.14},
+ {"cue":151,"art":"temple_boy","line":"at twelve years old, he disputed with doctors in the temple","setting":"temple","objects":["elder","boy","elder"],"start":1983.14},
+ {"cue":152,"art":"foxes_birds","line":"he had not where to lay his head","setting":"meadow","objects":["fox","birds","roadpost"],"start":2005.53},
+ {"cue":152,"art":"disciples_meal","line":"treating them as a father his children, yea, as friends and companions","setting":"table","objects":["disciple","bread","teacher","cup","disciple"],"start":2020.4},
+ {"cue":156,"art":"healing_eyes","line":"opening the eyes of the blind","setting":"road","objects":["kneeling","teacher","blessing"],"start":2066.87},
+ {"cue":157,"art":"tomb_open","line":"By the dead’s rising at his command","setting":"graves","objects":["tomb","rising"],"start":2080.164},
+ {"cue":157,"art":"walk_on_sea","line":"By his walking on the sea in a storm","setting":"sea","objects":["boat","teacher","waves"],"start":2089.37},
+ {"cue":159,"art":"storm_calm","line":"“Peace, be still,”","setting":"sea","objects":["boat","calm"],"start":2106.583},
+ {"cue":163,"art":"swine_cliff","line":"they could not so much as enter into the swine without his leave","setting":"coast","objects":["pig","pig","cliff"],"start":2170.99},
+ {"cue":165,"art":"cana_jars","line":"“This beginning of miracles did Jesus in Cana of Galilee","setting":"chamber","objects":["jar","jar","jar"],"start":2196.35},
+ {"cue":166,"art":"transfiguration","line":"when he was transfigured in the mount","setting":"summit","objects":["disciple","beam","teacher","disciple"],"start":2217.11},
+ {"cue":167,"art":"cloud_voice","line":"This is my beloved Son, in whom I am well pleased","setting":"summit","objects":["clouds","beam","teacher"],"start":2232.15},
+ {"cue":169,"art":"rebuke","line":"in his so sharply rebuking the scribes and Pharisees","setting":"temple","objects":["elder","teacher","scroll"],"start":2259.177},
+ {"cue":172,"art":"lamb_slaughter","line":"“He came like a lamb to the slaughter,”","setting":"court","objects":["lamb","halter"],"start":2289.92},
+ {"cue":172,"art":"passover_door","line":"“Christ our Passover sacrificed for us.”","setting":"city","objects":["door","redmark","lamp"],"start":2305.85},
+ {"cue":176,"art":"garden_prayer","line":"beginning with his agony in the garden, till he expired on the cross","setting":"grove","objects":["olive","kneeling","chalice"],"start":2358.26},
+ {"cue":177,"art":"dark_veil","line":"covered with so thick and dark a veil","setting":"chamber","objects":["curtain"],"start":2382.04},
+ {"cue":180,"art":"elders_harps","line":"“And they sang a new song, saying, Thou art worthy to take the book","setting":"hall","objects":["elder","harp","scroll","harp","elder"],"start":2424.35},
+ {"cue":181,"art":"angel_host","line":"ten thousand times ten thousand","setting":"hall","objects":["angel","angel","angel"],"start":2451.73},
+ {"cue":185,"art":"blood_drops","line":"That blood of Christ which fell in great drops to the ground","setting":"grove","objects":["dropred","leaf"],"start":2514.88},
+ {"cue":186,"art":"mocked","line":"That shame and spitting, that torment of body","setting":"court","objects":["crowd","teacher"],"start":2522.422},
+ {"cue":187,"art":"altar_fire","line":"in offering up himself a victim to Justice","setting":"chamber","objects":["altar","flame"],"start":2541.15},
+ {"cue":190,"art":"cross_dark","line":"Christ was the target of the vindictive expressions of that very justice of God","setting":"dusk","objects":["cross","clouds"],"start":2578.37},
+ {"cue":191,"art":"spear","line":"the blood and water that issued out of his side, when pierced by the spear","setting":"dusk","objects":["cross","spear","dropred"],"start":2602},
+ {"cue":192,"art":"water_poured","line":"“I am poured out like water","setting":"table","objects":["tippedjar","water"],"start":2614.449},
+ {"cue":196,"art":"furnace_gold","line":"When it was tried in this furnace it came forth as gold","setting":"workshop","objects":["furnace","gold"],"start":2673.25},
+ {"cue":198,"art":"bound","line":"He was apprehended and bound as a malefactor.","setting":"court","objects":["bound","soldier"],"start":2702.08},
+ {"cue":199,"art":"three_crosses","line":"that none but the worst sort of malefactors were wont to suffer","setting":"dusk","objects":["crosses"],"start":2717.45},
+ {"cue":204,"art":"crowd_shout","line":"“Away with him! away with him! Crucify him.”","setting":"court","objects":["crowd","crowd"],"start":2780.146},
+ {"cue":205,"art":"barabbas","line":"And they prefer Barabbas before him.","setting":"court","objects":["bound","gatekeeper","crowd"],"start":2785.4},
+ {"cue":207,"art":"worthy_lamb","line":"is the Lamb that was slain.”","setting":"hall","objects":["lamb","crown"],"start":2823.39},
+ {"cue":210,"art":"cross_dark","line":"“it pleased the Lord to bruise him, and put him to grief.”","setting":"dusk","objects":["cross","clouds"],"start":2852.73},
+ {"cue":213,"art":"sleeping_disciples","line":"that they would not watch with him one hour, in his agony","setting":"grove","objects":["sleeper","olive","kneeling"],"start":2879.45},
+ {"cue":213,"art":"rooster","line":"except Peter, who denied him with oaths and curses","setting":"court","objects":["rooster","brazier"],"start":2886.65},
+ {"cue":215,"art":"forgive_prayer","line":"for whom he prayed while they were crucifying him","setting":"dusk","objects":["cross","kneeling"],"start":2900.17},
+ {"cue":215,"art":"pentecost","line":"brought home to Christ by Peter’s preaching","setting":"hall","objects":["disciple","flame","disciple"],"start":2904.45},
+ {"cue":220,"art":"arrest_torches","line":"but this is your hour, and the power of darkness.”","setting":"grove","objects":["torch","bound","torch"],"start":2970.47},
+ {"cue":221,"art":"serpent_heel","line":"Christ never so effectually bruised Satan’s head, as when Satan bruised his heel.","setting":"grove","objects":["serpent","sandal"],"start":2980.63},
+ {"cue":222,"art":"cross_weapon","line":"was the cross, the instrument and weapon with which he thought he had overthrown Christ","setting":"dusk","objects":["cross","spear"],"start":2992.47},
+ {"cue":224,"art":"goliath","line":"as David cut off Goliath’s head with his own sword","setting":"desert","objects":["youngwarrior","sword","shield"],"start":3024.19},
+ {"cue":225,"art":"whale","line":"The devil had, as it were, swallowed up Christ, as the whale did Jonah","setting":"sea","objects":["whale","boat"],"start":3028.126},
+ {"cue":227,"art":"lion_honey","line":"“Out of the eater came forth meat, and out of the strong came forth sweetness.”","setting":"desert","objects":["lion","honey"],"start":3073.11},
+ {"cue":228,"art":"samson_pillars","line":"he pulls down the temple of Dagon","setting":"temple","objects":["pillars","strong","rubble"],"start":3085.84},
+ {"cue":228,"art":"dagon_ark","line":"breaks off his head and hands in his own temple","setting":"temple","objects":["statue","ark","rubble"],"start":3097.66},
+ {"cue":229,"art":"lamb_jaws","line":"as a lamb in the paws, and between the devouring jaws, of a roaring lion","setting":"desert","objects":["lion","lamb"],"start":3114.89},
+ {"cue":230,"art":"samson_lion","line":"as Samson did the lion that roared upon him","setting":"desert","objects":["strong","lion"],"start":3132.04},
+ {"cue":234,"art":"lamb_zion","line":"a Lamb stood on mount Sion”","setting":"summit","objects":["lamb","mountains"],"start":3185.13},
+ {"cue":237,"art":"lamb_throne","line":"he is a Lamb still, even amidst the throne of his exaltation","setting":"hall","objects":["throne","lamb"],"start":3234.68},
+ {"cue":237,"art":"fountains_flock","line":"shall lead them unto living fountains of waters, and God shall wipe away all tears from their eyes.”","setting":"meadow","objects":["fountain","lamb","flock"],"start":3252.28},
+ {"cue":239,"art":"incense","line":"his intercession for them","setting":"hall","objects":["censer","smoke"],"start":3275.95},
+ {"cue":241,"art":"supper","line":"that he may sup with them, and they with him","setting":"table","objects":["bread","cup","teacher","guest"],"start":3306.21},
+ {"cue":243,"art":"lamb_wounds","line":"with the marks of his wounds upon him","setting":"meadow","objects":["lamb","redmark"],"start":3319.98},
+ {"cue":245,"art":"coming_clouds","line":"when he shall come in the glory of his Father, with all the holy angels","setting":"summit","objects":["clouds","angel","angel"],"start":3349.87},
+ {"cue":246,"art":"white_throne","line":"“that shall sit on a great white throne","setting":"hall","objects":["whitethrone"],"start":3361.28},
+ {"cue":247,"art":"caves_hide","line":"shall hide themselves in the dens, and in the rocks of the mountains","setting":"coast","objects":["cave","hiding"],"start":3382.68},
+ {"cue":249,"art":"welcome","line":"he will receive them as friends and brethren","setting":"chamber","objects":["teacher","guest"],"start":3414.21},
+ {"cue":250,"art":"wedding","line":"that shall be her wedding-day","setting":"garden","objects":["arch","rings","bride","groom"],"start":3430.07},
+ {"cue":253,"art":"names_scroll","line":"Christ is called by such a variety of names","setting":"table","objects":["scroll","quill"],"start":3443.58},
+ {"cue":255,"art":"child_born","line":"“For unto us a Child is born, unto us a Son is given","setting":"stable","objects":["infant"],"start":3464.948},
+ {"cue":257,"art":"sun_rising","line":"in some places he is called a Sun","setting":"meadow","objects":["sun"],"start":3507.45},
+ {"cue":258,"art":"morning_star","line":"he is especially represented by the Morning star","setting":"night","objects":["star","mountains"],"start":3515.969},
+ {"cue":259,"art":"hart","line":"he is compared to a roe or young hart","setting":"meadow","objects":["deer"],"start":3533.05},
+ {"cue":259,"art":"rock_pearl","line":"in some places he is called a rock, in others he is compared to a pearl","setting":"coast","objects":["rock","pearl"],"start":3538.96},
+ {"cue":260,"art":"captain","line":"he is called a man of war, and the Captain of our Salvation","setting":"desert","objects":["sword","banner","soldier"],"start":3544.34},
+ {"cue":261,"art":"rose_lily","line":"he is compared to a rose and a lily","setting":"garden","objects":["rose","lily"],"start":3554.99},
+ {"cue":261,"art":"fruit_tree","line":"he is compared to a tree bearing sweet fruit","setting":"meadow","objects":["fruittree","basket"],"start":3561.53},
+ {"cue":262,"art":"root_dry","line":"he is called a Root out of a dry ground","setting":"desert","objects":["roots"],"start":3566.28},
+ {"cue":262,"art":"tree_life","line":"“in the midst of the paradise of God.”","setting":"garden","objects":["fruittree","fountain"],"start":3574.8},
+ {"cue":263,"art":"open_arms","line":"close with him as your Savior","setting":"road","objects":["teacher","traveler"],"start":3587.67},
+ {"cue":265,"art":"infant_cast","line":"like an infant cast out in its blood in the day that it is born","setting":"desert","objects":["infant","reeds"],"start":3618.46},
+ {"cue":266,"art":"lion_rock","line":"But Christ is the lion of the tribe of Judah; he is strong, though we are weak","setting":"desert","objects":["lion","rock"],"start":3622.697},
+ {"cue":267,"art":"worms_dunghill","line":"Fallen man is a mean despicable creature, a contemptible worm","setting":"desert","objects":["earth","worm","worm"],"start":3631.615},
+ {"cue":272,"art":"foundation","line":"Here is a strong foundation, and an inexhaustible treasure","setting":"ruins","objects":["foundation","gold"],"start":3685.009},
+ {"cue":275,"art":"lion_and_lamb","line":"Though he is a lion, he will only be a lion to your enemies, but he will be a lamb to you.","setting":"meadow","objects":["lion","lamb"],"start":3749.468},
+ {"cue":279,"art":"parent_child","line":"will not despise one of your own children that comes to you in distress","setting":"chamber","objects":["parent","child"],"start":3787.71},
+ {"cue":281,"art":"fearful","line":"What are you afraid of, that you dare not venture your soul upon Christ?","setting":"road","objects":["cloaked","lamp"],"start":3802.89},
+ {"cue":282,"art":"soldiers_ring","line":"as he stood in the ring of soldiers","setting":"court","objects":["soldier","teacher","soldier","shield"],"start":3830.18},
+ {"cue":283,"art":"bound","line":"Behold him bound with his back uncovered to those that smote him!","setting":"court","objects":["bound","soldier"],"start":3837.112},
+ {"cue":283,"art":"cross_hill","line":"And behold him hanging on the cross!","setting":"dusk","objects":["cross"],"start":3840.78},
+ {"cue":294,"art":"vine","line":"the union of the wife to the husband, of the branch to the vine, of the member to the head","setting":"garden","objects":["grapevine"],"start":3986.95},
+ {"cue":300,"art":"wisdom_calls","line":"“Unto you, O men, I call, and my voice is to the sons of men.”","setting":"city","objects":["teacher","crowd"],"start":4061.83},
+ {"cue":301,"art":"waters","line":"“Ho, every one that thirsteth, come ye to the waters","setting":"meadow","objects":["jug","fountain"],"start":4069.49},
+ {"cue":301,"art":"wine_milk","line":"buy wine and milk without money","setting":"table","objects":["milkjug","cup"],"start":4076.59},
+ {"cue":306,"art":"wisdom_house","line":"“Whoso is simple, let him turn in hither;”","setting":"city","objects":["house","doorway"],"start":4168.29},
+ {"cue":307,"art":"bread_wine","line":"“Come, eat of my bread, and drink of the wine which I have mingled.”","setting":"table","objects":["bread","cup"],"start":4180.64},
+ {"cue":310,"art":"burden","line":"“Come unto me, all ye that labor and are heavy laden","setting":"road","objects":["burden"],"start":4204.641},
+ {"cue":315,"art":"rest","line":"O how sweet would rest be to you","setting":"meadow","objects":["traveler","tree","bedroll"],"start":4247.11},
+ {"cue":317,"art":"door_knock","line":"“Behold, I stand at the door and knock","setting":"chamber","objects":["door","knocker"],"start":4266.441},
+ {"cue":320,"art":"door_wait","line":"he stands there waiting, while you are backward and unwilling","setting":"night","objects":["door","visitor","lamp"],"start":4297.08},
+ {"cue":322,"art":"morning_star","line":"“I am the root and the offspring of David, and the bright and morning star.","setting":"night","objects":["star","mountains"],"start":4314.859},
+ {"cue":322,"art":"river_life","line":"let him take of the water of life freely","setting":"meadow","objects":["river","tree"],"start":4329.54},
+ {"cue":325,"art":"lion_defend","line":"he will appear as a Lion, in his glorious power and dominion, to defend you","setting":"meadow","objects":["lion","lamb","shield"],"start":4362.15},
+ {"cue":328,"art":"lion_shepherds","line":"when a multitude of shepherds is called forth against him","setting":"meadow","objects":["lion","shepherd","shepherd"],"start":4403.55},
+ {"cue":329,"art":"friend_hands","line":"choose him for your friend and portion","setting":"road","objects":["teacher","traveler"],"start":4422.02},
+ {"cue":333,"art":"prince_maid","line":"an inferior maid to be the object of the dear love of some great and excellent prince","setting":"hall","objects":["king","bride"],"start":4456.63},
+ {"cue":339,"art":"gold","line":"The very same excellent qualities of gold","setting":"table","objects":["gold"],"start":4530.834},
+ {"cue":346,"art":"brother","line":"that he might not only be your Lord, but your brother","setting":"road","objects":["traveler","teacher"],"start":4624.88},
+ {"cue":348,"art":"brother","line":"“O that thou wert my brother","setting":"road","objects":["traveler","teacher"],"start":4652.02},
+ {"cue":352,"art":"jerusalem_peace","line":"“For my brethren and companions’ sake, will I now say, Peace be within thee.”","setting":"city","objects":["cityscape","dove"],"start":4715.73},
+ {"cue":358,"art":"moon_reflects","line":"reflections of his divine","setting":"sea","objects":["moon","calm"],"start":4786.03},
+ {"cue":365,"art":"gift","line":"Christ will give himself to you","setting":"chamber","objects":["teacher","gift","child"],"start":4896.91},
+ {"cue":369,"art":"father_children","line":"as a father amongst a company of children","setting":"meadow","objects":["child","parent","child"],"start":4951.72},
+ {"cue":369,"art":"bethany","line":"and so he did with Mary, Martha, and Lazarus","setting":"chamber","objects":["woman","teacher","man"],"start":4957.83},
+ {"cue":370,"art":"leaning","line":"one of them that leaned on his bosom","setting":"table","objects":["disciple","teacher","cup"],"start":4966.43},
+ {"cue":374,"art":"firstfruits","line":"as the first fruits, and as representing the whole harvest","setting":"meadow","objects":["stalks","basket"],"start":5017.7},
+ {"cue":376,"art":"head_body","line":"the members have the same relation and union with the head they had before","setting":"hall","objects":["headbody"],"start":5034.08},
+ {"cue":376,"art":"shared_throne","line":"so they shall sit down with him on his throne","setting":"hall","objects":["throne","guest","throne"],"start":5052.08},
+ {"cue":378,"art":"fathers_house","line":"welcomed them to his and their Father’s house","setting":"city","objects":["house","doorway","guests"],"start":5076.75},
+ {"cue":380,"art":"chambers","line":"He took them and led them into his chambers","setting":"chamber","objects":["arch","lamp","curtain"],"start":5093.679},
+ {"cue":382,"art":"fountains_flock","line":"he led them to his living fountains of waters","setting":"meadow","objects":["fountain","lamb","flock"],"start":5110.253},
+ {"cue":384,"art":"kingdom_table","line":"set them down with him at his table in his kingdom","setting":"table","objects":["bread","cup","guests","teacher"],"start":5121.64},
+ {"cue":384,"art":"new_wine","line":"made them to drink new wine with him in the kingdom of his heavenly Father","setting":"table","objects":["winejug","cup","grapes"],"start":5133.01},
+ {"cue":388,"art":"garden_tomb","line":"“Jesus saith unto her, Touch me not; for I am not yet ascended to my Father.”","setting":"graves","objects":["woman","tomb","teacher"],"start":5187.724},
+ {"cue":391,"art":"bread_wine","line":"“Eat, O friends, drink, yea, drink abundantly O beloved.”","setting":"table","objects":["bread","cup"],"start":5238.14},
+ {"cue":395,"art":"abba","line":"crying, Abba, Father.”","setting":"chamber","objects":["child","parent"],"start":5300.08},
+ {"cue":396,"art":"wedding","line":"but as she is the spouse of his eternal Son","setting":"garden","objects":["arch","rings","bride","groom"],"start":5307.68},
+ {"cue":404,"art":"bosom","line":"by his being in the bosom of the Father","setting":"chamber","objects":["parent","child"],"start":5363.35},
+ {"cue":408,"art":"ladder_down","line":"descends from the infinite distance and height above us, and is brought nigh to us","setting":"summit","objects":["ladder","angel"],"start":5412.36},
+ {"cue":409,"art":"ladder_up","line":"do as it were ascend up to God","setting":"summit","objects":["ladder","traveler"],"start":5425.02},
+ {"cue":413,"art":"one_family","line":"that he and his Father, and his people, should be as one society, one family;","setting":"meadow","objects":["child","parent","child","guests"],"start":5472.74},
+ {"cue":413,"art":"trinity","line":"admitted into the society of the blessed Trinity.","setting":"hall","objects":["circles"],"start":5479.8}
 ]
