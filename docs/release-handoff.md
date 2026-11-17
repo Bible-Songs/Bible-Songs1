@@ -4,11 +4,18 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.118 |
+| Release | 1.0.119 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Initials read without pauses (“C H Spurgeon”, “R G Lee”) in five sermons; superseded release audio deleted; audio-1.0.118 |
+| Latest change | Git history rewritten (Mike’s approval) to remove old sermon and Luke/Romans audio now served from GitHub Releases; repository 2.4 GB → about 0.6 GB |
 | Previous archive | `GitHub History/2026-11-17_13-36-56-243438_SGT_a097a0b7/files/` |
+
+## 1.0.119 history cleanup (Claude) — every other checkout must re-clone
+
+- With Mike’s explicit approval, every commit was rewritten to drop `public/library/*.mp3`, `public/library/*.m4a`, `public/readings/luke-*/*.m4a` and `public/readings/romans-*/*.m4a`. Those files are no longer part of the site (served from GitHub Releases since 1.0.114). The current file tree of 1.0.118 was verified identical before and after; all 136 commits kept with new IDs; release tags audio-1.0.114/115/117/118 moved to the rewritten commits.
+- Pushed with a force-push (one-time exception to the normal fast-forward rule) from a separate checkout; the dated source snapshot was made with `GitHub History/tools/snapshot.py`.
+- **ChatGPT/Codex: do not pull into an old checkout.** Re-clone, or `git fetch origin && git reset --hard origin/main` on a clean main, and delete old local branches. Old commit IDs in earlier notes and archives refer to the pre-rewrite history.
+- Full pre-rewrite backup: `GitHub History/Repository backups/2026-11-17_before-history-rewrite.git` (git mirror; can be pushed back if ever needed).
 
 ## 1.0.118 initials and audio cleanup (Claude)
 
