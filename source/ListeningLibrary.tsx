@@ -92,6 +92,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
      return {format,name,url:source(name),size};
     })}
     cues={reading.cues}
+    followAnimation={watching&&reading===selected&&reading.filename==='prayer-the-cure-for-care-spurgeon.m4a'}
     speed={speed} onSpeed={onSpeed} playing={reading===selected&&playing}
     onToggle={()=>reading===selected&&playing?audio.current?.pause():play(reading)} time={reading===selected?time:null} onPlay={start=>play(reading,start)}>
     {reading.filename==='prayer-the-cure-for-care-spurgeon.m4a'&&<>
@@ -99,10 +100,10 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
       aria-expanded={watching&&reading===selected} onClick={()=>{
        if(watching&&reading===selected){setWatching(false);return;}
        setWatching(true);
-       if(reading!==selected||time>=300)play(reading,0);
+       if(reading!==selected||audio.current?.ended)play(reading,0);
        else if(!playing)play(reading);
       }}>{watching&&reading===selected?'Hide animation':'Watch with animation'}</button>
-     {watching&&reading===selected&&<PrayerAnimation audio={audio} time={time} playing={playing} onRestart={()=>play(reading,0)}/>}
+     {watching&&reading===selected&&<PrayerAnimation audio={audio} time={time} playing={playing}/>}
     </>}
    </PublishedReading>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
   </section>

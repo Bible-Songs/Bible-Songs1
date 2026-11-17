@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.120 |
+| Release | 1.0.121 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Five-minute Watch with animation pilot for Prayer, the Cure for Care |
+| Latest change | Full-sermon animation and transcript following for Prayer, the Cure for Care |
 | Previous archive | `GitHub History/2026-11-17_13-36-56-243438_SGT_a097a0b7/files/` |
+
+## 1.0.121 full sermon animation (Codex)
+
+- Extended **Watch with animation** through the final amen of *Prayer, the Cure for Care* using the existing GitHub release audio and transcript cues.
+- Redrew the stones with angular faces, irregular silhouettes, and texture. New scenes include the foggy crossroads, telescope, mountain tarn, and storm settling into calm.
+- The transcript pane sits immediately below the illustration during animation, keeping the current cue at the top. Clicking a passage still seeks the recording and selects its accompanying scene.
+- Captions reveal up to three words at a time. Local speech recognition matched 51 of the 53 quotation onsets. The remaining two onsets and the intermediate phrase timings were estimated from the transcript. The preceding caption dims before the new text appears. Recheck `source/prayer-caption-timing.json` if the recording changes.
+- Strict TypeScript and production build passed. Focused Chrome checks passed for the Luther caption timing and dimming, seeking across the full sermon, transcript following, mobile layout, and the final amen. The browser regression suite passed on rerun after the known Luke chapter-transition timeout.
 
 ## 1.0.120 animation pilot (Codex)
 
