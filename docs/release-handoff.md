@@ -4,11 +4,15 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.126 |
+| Release | 1.0.127 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Full God’s Jewels browser animation using the existing recording and verbatim captions |
+| Latest change | Fix Pages dependency installation so the God’s Jewels animation reaches the live site |
 | Previous archive | `GitHub History/2026-11-17_20-43-53-446284_SGT_fbc37ca9/files/` |
+
+## 1.0.127 deployment repair (Codex)
+
+- The 1.0.126 Pages build failed during `npm ci`: onnxruntime-node tried to download an unavailable optional Linux CUDA archive. The deployment workflow now sets `ONNXRUNTIME_NODE_INSTALL_CUDA=skip` for installation, the package’s supported flag. The static browser build needs no CUDA execution provider.
 
 ## 1.0.126 God’s Jewels animation (Codex)
 
