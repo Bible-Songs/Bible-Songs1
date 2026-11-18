@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.125 |
+| Release | 1.0.126 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Reillustrated The Excellency of Christ in the browser and added an offline Prayer, the Cure for Care MP4 download |
+| Latest change | Full God’s Jewels browser animation using the existing recording and verbatim captions |
 | Previous archive | `GitHub History/2026-11-17_20-43-53-446284_SGT_fbc37ca9/files/` |
+
+## 1.0.126 God’s Jewels animation (Codex)
+
+- Added **Watch with animation** for the full *God’s Jewels* sermon. Its 73 scenes include the casket, mine, rotating lapidary wheel, prism, twelve-gem breastplate, counterfeit sapphire, and stones becoming gems. Existing artwork from the previous animations is reused where it matches the text.
+- Captions are contiguous excerpts from the timed transcript, with a smooth left-to-right reveal and the current transcript passage following below. Local Whisper timings are checkpointed under `video-previews/jewels/`.
+- Saved the reusable project skill at `.agents/skills/sermon-animation/SKILL.md` in the parent workspace. It covers scene planning, drawing reuse, verbatim captions, local Whisper timing, browser verification, publishing, and optional MP4 export.
+- Local Whisper matched 72 of 73 caption onsets. The remaining onset and a few intermediate phrase starts were estimated from the transcript. Recheck the timing JSON if this recording is revised.
+- Strict TypeScript, production build, skill validation, and focused Chrome checks passed for verbatim captions, partial reveal, backward seeking, 1.5× speed, transcript following, mobile layout, reduced motion, and opening Prayer. The standard regression suite hit the known Luke transition timeout. The same account/playback checks passed with the diagnostic test allowing twelve seconds before the natural chapter ending.
 
 ## 1.0.125 Excellency illustrations and Prayer download (Codex)
 

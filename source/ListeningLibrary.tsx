@@ -10,6 +10,7 @@ import compelCues from './compel-cues.json';
 import immutabilityCues from './immutability-cues.json';
 import PublishedReading from './PublishedReading';
 import PrayerAnimation from './PrayerAnimation';
+import JewelsAnimation from './JewelsAnimation';
 import ExcellencyAnimation from './ExcellencyAnimation';
 import type {ComponentType,RefObject} from 'react';
 import sermonCues from './gods-jewels-cues.json';
@@ -31,6 +32,7 @@ export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean};
 // Sermons with an optional Canvas animation (drawn by the browser from the audio clock and cue timings).
 const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
+ ['gods-jewels-spurgeon.m4a',JewelsAnimation],
  ['prayer-the-cure-for-care-spurgeon.m4a',PrayerAnimation],
  ['excellency-of-christ-edwards.m4a',ExcellencyAnimation],
 ]);
