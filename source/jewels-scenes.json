@@ -20,7 +20,7 @@
  {
   "cue": 5,
   "art": "gathering",
-  "line": "who “spake often one to another,”",
+  "line": "who \u201cspake often one to another,\u201d",
   "start": 45.92471655328798
  },
  {
@@ -81,7 +81,7 @@
   "cue": 19,
   "art": "wheel",
   "line": "he cuts the facets of his true brilliants,",
-  "start": 219.56489795918367
+  "start": 225.99
  },
  {
   "cue": 21,
@@ -134,7 +134,7 @@
  {
   "cue": 39,
   "art": "flowers",
-  "line": "the roses and lilies of earth’s caverns.",
+  "line": "the roses and lilies of earth\u2019s caverns.",
   "start": 470.08113378684806
  },
  {
@@ -200,7 +200,7 @@
  {
   "cue": 62,
   "art": "crown",
-  "line": "To make jewels for Christ’s crown is God’s work,",
+  "line": "To make jewels for Christ\u2019s crown is God\u2019s work,",
   "start": 750.5019501133787
  },
  {
@@ -332,7 +332,7 @@
  {
   "cue": 100,
   "art": "crown",
-  "line": "they shall all be “set in gold in their inclosings.”",
+  "line": "they shall all be \u201cset in gold in their inclosings.\u201d",
   "start": 1206.5110204081632
  },
  {
@@ -404,7 +404,7 @@
  {
   "cue": 128,
   "art": "river",
-  "line": "ordinary loose stones in Jordan’s bed.",
+  "line": "ordinary loose stones in Jordan\u2019s bed.",
   "start": 1572.6496145124715
  },
  {

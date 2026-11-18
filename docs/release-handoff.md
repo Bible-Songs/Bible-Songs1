@@ -4,11 +4,15 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.127 |
+| Release | 1.0.128 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
 | Latest change | Fix Pages dependency installation so the God’s Jewels animation reaches the live site |
 | Previous archive | `GitHub History/2026-11-17_20-43-53-446284_SGT_fbc37ca9/files/` |
+
+## 1.0.128 wheel caption hold (Codex)
+
+- In God’s Jewels, keep “a wheel upon which to polish and perfect them.” visible through the next passage’s introductory narration. The next caption begins at 225.99 seconds, shortly before its words at 226.79, giving the completed wheel caption about seven seconds of reading time.
 
 ## 1.0.127 deployment repair (Codex)
 
