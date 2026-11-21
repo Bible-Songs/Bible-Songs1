@@ -1,9 +1,10 @@
-// Reusable sermon animation: a Canvas scene drawn by code plus a caption that wipes in from left to right
-// with the recording. Same behaviour as PrayerAnimation (Codex, 1.0.120–1.0.123): the previous caption dims
-// before the next one starts, the transcript follows below, and reduced motion turns the wipe into a reveal.
-import {useEffect,useRef} from 'react';
+// Scene artwork follows its original timing; captions reveal independently and retain
+// completed outgoing words above the incoming caption before fading.
+import {useEffect,useMemo,useRef} from 'react';
 import type {RefObject} from 'react';
 import './prayer-animation.css';
+import SermonCaptions from './SermonCaptions';
+import {timedCaption} from './caption-timeline';
 
 export type Scene={readonly cue:number;readonly art:string;readonly line:string;readonly start?:number};
 // One timing entry per scene, in scene order: the start of each three-word phrase of its caption.
@@ -13,18 +14,14 @@ type Cue={readonly start:number;readonly text:string};
 
 export const width=960,height=480;
 
-function phrasesOf(line:string){
- const words=line.split(' ');
- return words.flatMap((_,index)=>index%3===0?[words.slice(index,index+3).join(' ')]:[]);
-}
-
-export default function SermonAnimation({audio,time,playing,label,cues,scenes,timing,paint}:{
+export default function SermonAnimation({audio,time,playing,label,cues,scenes,timing,paint,captionHold=3}:{
  audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean;label:string;
  cues:readonly Cue[];scenes:readonly Scene[];timing:readonly CaptionTiming[];paint:Painter;
+ captionHold?:number;
 }){
  const figure=useRef<HTMLElement>(null);
  const canvas=useRef<HTMLCanvasElement>(null);
- const caption=useRef<HTMLSpanElement>(null);
+ const captions=useMemo(()=>scenes.map((scene,index)=>timedCaption(index,scene.line,timing[index]?.at??[],cues[scene.cue]?.start??0)),[scenes,timing,cues]);
  useEffect(()=>{figure.current?.scrollIntoView({block:'start'});},[]);
  // A scene begins with its transcript passage; a second scene in the same passage begins just before its words.
  const sceneStart=(i:number)=>{
@@ -36,18 +33,12 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
  const index=Math.max(0,scenes.findLastIndex((_,i)=>sceneStart(i)<=time));
  const scene=scenes[index]??scenes[0];
  if(!scene)throw new Error('Missing animation scenes for '+label);
- const previous=scenes[index-1];
- const phraseStarts=timing[index]?.cue===scene.cue?timing[index]?.at:undefined;
  const change=sceneStart(index);
- const fadeDuration=Math.min(.75,(phraseStarts?.[0]??change)-change);
- const previousOpacity=fadeDuration>0?.5*Math.max(0,1-(time-change)/fadeDuration):0;
- const nextChange=sceneStart(index+1);
  const art=scene.art;
  useEffect(()=>{
   const context=canvas.current?.getContext('2d');
   if(!context)return;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const words=Array.from(caption.current?.querySelectorAll<HTMLSpanElement>('[data-reveal-start]')??[]);
   let frame=0,last=-1;
   function draw(){
    if(!context)return;
@@ -56,40 +47,15 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
     const elapsed=reduced?14:Math.max(0,position-change);
     paint(context,art,reduced?0:position,elapsed,index);last=position;
    }
-   // a caption spoken in the final moments must finish revealing before the recording ends
-   const finish=(audio.current?.duration||Infinity)-.05;
-   for(const word of words){
-    const start=Math.min(Number(word.dataset['revealStart']),finish-.01),end=Math.min(Number(word.dataset['revealEnd']),finish);
-    const progress=reduced?Number(position>=start):Math.min(1,Math.max(0,(position-start)/(end-start)));
-    word.style.clipPath=`inset(0 ${(1-progress)*100}% 0 0)`;
-   }
    if(playing&&!reduced)frame=requestAnimationFrame(draw);
   }
   draw();
   return ()=>cancelAnimationFrame(frame);
  },[art,audio,change,index,paint,playing,scene,time]);
- const phrases=phrasesOf(scene.line);
  return <figure ref={figure} className="prayer-animation" aria-label={label}>
   <div className="prayer-animation-stage">
    <canvas ref={canvas} width={width} height={height} aria-hidden="true"/>
   </div>
-  <figcaption className="prayer-animation-caption">
-   {previous&&previousOpacity>0&&<span className="prayer-animation-previous" aria-hidden="true" style={{opacity:previousOpacity}}>{previous.line}</span>}
-   <span className="prayer-animation-line" ref={caption} aria-label={scene.line}>{phrases.map((phrase,part)=>{
-    const start=phraseStarts?.[part]??change;
-    const end=phraseStarts?.[part+1]??Math.min(start+1.15,nextChange);
-    const words=phrase.split(' ');
-    const length=phrase.length+1;
-    let offset=0;
-    return words.map((word,i)=>{
-     const from=start+(end-start)*offset/length;
-     offset+=word.length+1;
-     const to=start+(end-start)*offset/length;
-     return <span key={`${scene.cue}-${part}-${i}`} aria-hidden="true">
-      {(part>0||i>0)&&' '}<span className="prayer-animation-word" data-reveal-start={from} data-reveal-end={to}>{word}</span>
-     </span>;
-    });
-   })}</span>
-  </figcaption>
+  <SermonCaptions captions={captions} audio={audio} time={time} playing={playing} minimumHold={captionHold}/>
  </figure>;
 }

@@ -56,3 +56,17 @@
  display: inline-block;
  clip-path: inset(0 100% 0 0);
 }
+.sermon-captions {
+ grid-template-rows: var(--caption-row-height, 3.5em) var(--caption-row-height, 3.5em);
+ row-gap: .65rem;
+ align-items: center;
+}
+.sermon-caption-outgoing { grid-area: 1 / 1; }
+.sermon-caption-current { grid-area: 2 / 1; }
+.sermon-caption-measure {
+ position: absolute;
+ inset-inline: 1rem;
+ top: 0;
+ visibility: hidden;
+ pointer-events: none;
+}

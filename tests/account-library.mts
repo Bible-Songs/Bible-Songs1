@@ -6,7 +6,7 @@ const user={
  aud:'authenticated',role:'authenticated',email:'fixture@example.invalid',
  app_metadata:{},user_metadata:{bible_songs_preferences:{favorite:false,speed:1}},
 };
-const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--autoplay-policy=no-user-gesture-required']});
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,chromiumSandbox:true,args:['--autoplay-policy=no-user-gesture-required']});
 try{
  const context=await browser.newContext();
  await context.addInitScript(account=>{
@@ -128,14 +128,18 @@ try{
  await chapter.selectOption({label:'Luke 1'});
  await page.locator('.scripture-text .text-cue').nth(60).click();
  await page.waitForFunction(()=>Array.from(document.querySelectorAll('audio')).some(
-  audio=>audio.currentSrc.includes('readings--luke-1--')&&!audio.paused&&!audio.seeking&&audio.currentTime>60,
+  audio=>audio.currentSrc.includes('readings--luke-1--')&&!audio.paused&&!audio.seeking
+   &&audio.readyState>=HTMLMediaElement.HAVE_CURRENT_DATA&&Number.isFinite(audio.duration)&&audio.currentTime>60,
  ));
  await page.getByRole('button',{name:'Continuous reading'}).click();
  await page.locator('audio').evaluate(audio=>{
-  if(audio instanceof HTMLAudioElement&&Number.isFinite(audio.duration))audio.currentTime=audio.duration-4;
+  if(!(audio instanceof HTMLAudioElement)||!Number.isFinite(audio.duration)||audio.duration<=4)
+   throw new Error('Luke 1 must have loaded audio and a valid duration before seeking to its end.');
+  audio.currentTime=audio.duration-4;
  });
  await page.waitForFunction(()=>Array.from(document.querySelectorAll('audio')).some(
-  audio=>audio.currentSrc.includes('readings--luke-2--')&&!audio.paused&&audio.currentTime>0,
+  audio=>audio.currentSrc.includes('readings--luke-2--')&&!audio.paused&&!audio.seeking
+   &&audio.readyState>=HTMLMediaElement.HAVE_CURRENT_DATA&&Number.isFinite(audio.duration)&&audio.currentTime>0,
  ));
  await chapter.selectOption({label:'Romans 1'});
  await page.locator('.scripture-text .text-cue').nth(20).click();

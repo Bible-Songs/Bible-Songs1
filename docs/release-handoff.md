@@ -4,11 +4,20 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.128 |
+| Release | 1.0.129 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Fix Pages dependency installation so the God’s Jewels animation reaches the live site |
-| Previous archive | `GitHub History/2026-11-17_20-43-53-446284_SGT_fbc37ca9/files/` |
+| Latest change | Three-second completed-caption retention with outgoing captions above incoming captions across all three animations |
+| Previous archive | `GitHub History/2026-11-18_09-16-23-525643_SGT_d95728dc/files/` |
+
+## 1.0.129 caption retention (Codex, 21 November)
+
+- Mike authorized applying a three-second completed-caption hold across Prayer, Excellency and God's Jewels. Shared caption timing is now independent of illustration changes. The outgoing caption finishes revealing above the incoming caption, stays fully visible for at least three media seconds at 1x, then fades. Two reserved rows prevent collisions. Original words, phrase onsets, illustration timing and recordings are unchanged. The 19 short word-spacing cases are approved exceptions; the actual three-second overlap interval is needed in 17 of them.
+- New shared files: source/SermonCaptions.tsx and source/caption-timeline.ts. PrayerAnimation and SermonAnimation use them. A captionHold override supports future integrations; these existing three animations retain three seconds.
+- All 35 flagged transitions passed desktop/mobile browser checks. The updated retained audit covers all 343 captions / 340 transitions and reports zero holds below three seconds, with unchanged wording and the 19 approved spacing warnings. Evidence: ../video-previews/caption-audit-2026-11-21/retained-audit.json and ../video-previews/caption-retention-2026-11-21/browser-checks.json.
+- All 35 local MP4 review clips are complete and decode with audio and video; index: ../video-previews/caption-retention-2026-11-21/index.html. They use actual components and the active .124 Prayer/Jewels and .114 Excellency recordings. No full-sermon MP4 was regenerated or uploaded.
+- Clean install, strict checks, production build and the full account/library browser suite passed. Existing chromiumSandbox:true and Luke metadata-readiness fixes are preserved. Mike approved publication on 21 November after reviewing the local candidate. Publication uses the normal pre-push archive hook; confirm the matching archive after remote commit verification.
+- Mike separately confirmed four seconds of completed-caption hold and a 12-word spacing target for future videos. The project skill records that future rule without changing this existing three-second trial.
 
 ## 1.0.128 wheel caption hold (Codex)
 

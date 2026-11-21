@@ -3,6 +3,8 @@ import type {RefObject} from 'react';
 import cues from './prayer-the-cure-for-care-cues.json';
 import captionTiming from './prayer-caption-timing.json';
 import './prayer-animation.css';
+import SermonCaptions from './SermonCaptions';
+import {timedCaption} from './caption-timeline';
 
 const scenes=[
  {cue:0,art:'chapel',line:"Prayer, the Cure for Care."},
@@ -91,6 +93,7 @@ const captionScenes=scenes.map(scene=>{
  const phrases=words.flatMap((_,index)=>index%3===0?[words.slice(index,index+3).join(' ')]:[]);
  return {...scene,phrases};
 });
+const captions=captionScenes.map((scene,index)=>timedCaption(index,scene.line,captionStarts.get(scene.cue)??[],cues[scene.cue]?.start??0));
 const width=960,height=480;
 const colors={
  chapel:['#101e30','#697a83','#eab779'],window:['#1b2636','#776756','#f2c479'],
@@ -449,22 +452,16 @@ export default function PrayerAnimation({audio,time,playing}:{
 }){
  const figure=useRef<HTMLElement>(null);
  const canvas=useRef<HTMLCanvasElement>(null);
- const caption=useRef<HTMLSpanElement>(null);
  useEffect(()=>{figure.current?.scrollIntoView({block:'start'});},[]);
  const index=Math.max(0,captionScenes.findLastIndex(entry=>(cues[entry.cue]?.start??Infinity)<=time));
  const scene=captionScenes[index]??captionScenes[0];
  if(!scene)throw new Error('Missing Prayer animation scenes');
- const previous=captionScenes[index-1];
- const starts=captionStarts.get(scene.cue);
  const change=cues[scene.cue]?.start??0;
- const fadeDuration=Math.min(.75,(starts?.[0]??change)-change);
- const previousOpacity=fadeDuration>0?.5*Math.max(0,1-(time-change)/fadeDuration):0;
  const art=scene.art;
  useEffect(()=>{
   const context=canvas.current?.getContext('2d');
   if(!context)return;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const words=Array.from(caption.current?.querySelectorAll<HTMLSpanElement>('[data-reveal-start]')??[]);
   let frame=0,last=-1;
   function draw(){
    if(!context)return;
@@ -472,11 +469,6 @@ export default function PrayerAnimation({audio,time,playing}:{
    if(!playing||Math.abs(position-last)>=1/24){
     const elapsed=reduced?14:Math.max(0,position-change);
     paint(context,art,reduced?0:position,elapsed);last=position;
-   }
-   for(const word of words){
-    const start=Number(word.dataset['revealStart']),end=Number(word.dataset['revealEnd']);
-    const progress=reduced?Number(position>=start):Math.min(1,Math.max(0,(position-start)/(end-start)));
-    word.style.clipPath=`inset(0 ${(1-progress)*100}% 0 0)`;
    }
    if(playing&&!reduced)frame=requestAnimationFrame(draw);
   }
@@ -487,23 +479,6 @@ export default function PrayerAnimation({audio,time,playing}:{
   <div className="prayer-animation-stage">
    <canvas ref={canvas} width={width} height={height} aria-hidden="true"/>
   </div>
-  <figcaption className="prayer-animation-caption">
-   {previous&&previousOpacity>0&&<span className="prayer-animation-previous" aria-hidden="true" style={{opacity:previousOpacity}}>{previous.line}</span>}
-   <span className="prayer-animation-line" ref={caption} aria-label={scene.line}>{scene.phrases.map((phrase,part)=>{
-    const start=starts?.[part]??change;
-    const end=starts?.[part+1]??Math.min(start+1.15,cues[captionScenes[index+1]?.cue??-1]?.start??Infinity);
-    const words=phrase.split(' ');
-    const length=phrase.length+1;
-    let offset=0;
-    return words.map((word,i)=>{
-     const from=start+(end-start)*offset/length;
-     offset+=word.length+1;
-     const to=start+(end-start)*offset/length;
-     return <span key={`${scene.cue}-${part}-${i}`} aria-hidden="true">
-      {(part>0||i>0)&&' '}<span className="prayer-animation-word" data-reveal-start={from} data-reveal-end={to}>{word}</span>
-     </span>;
-    });
-   })}</span>
-  </figcaption>
+  <SermonCaptions captions={captions} audio={audio} time={time} playing={playing}/>
  </figure>;
 }
