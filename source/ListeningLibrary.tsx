@@ -4,6 +4,7 @@ import christCrucifiedCues from './christ-crucified-cues.json';
 import prayerCureCues from './prayer-the-cure-for-care-cues.json';
 import paydayCues from './payday-cues.json';
 import freeGraceCues from './free-grace-cues.json';
+import wayOfSalvationCues from './way-of-salvation-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
@@ -29,6 +30,7 @@ const readings=[
  {title:'Christ Crucified',author:'C. H. Spurgeon',filename:'christ-crucified-spurgeon.m4a',cues:christCrucifiedCues},
  {title:'Prayer, the Cure for Care',author:'C. H. Spurgeon',filename:'prayer-the-cure-for-care-spurgeon.m4a',cues:prayerCureCues},
  {title:'Free Grace',author:'John Wesley',filename:'free-grace-wesley.m4a',cues:freeGraceCues},
+ {title:'The Way of Salvation',author:'C. H. Spurgeon',filename:'way-of-salvation-spurgeon.m4a',cues:wayOfSalvationCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean};
@@ -40,7 +42,7 @@ const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
 ]);
 const source=(filename:string)=>mediaUrl(`library/${filename}`);
 type ReadingFile=(typeof readings)[number]['filename'];
-// The .m4a filename is each sermon's id; a sermon released without an M4A (Free Grace, 1.0.130) plays its MP3.
+// The .m4a filename is each sermon's id; a sermon whose size entry has no M4A plays its MP3.
 const playback=(filename:ReadingFile)=>source('M4A' in downloadSizes[filename]?filename:filename.replace(/\.m4a$/,'.mp3'));
 function readingDownloads(filename:ReadingFile){
  const sizes=downloadSizes[filename];

@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.130 |
+| Release | 1.0.131 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace |
-| Latest change | New sermon: John Wesley, Free Grace (audio on `audio-1.0.130`) |
-| Previous archive | `GitHub History/2026-11-21_14-09-40-711775_SGT_3abdb2f8` (1.0.129) |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation |
+| Latest change | New sermon: C. H. Spurgeon, The Way of Salvation (audio on `audio-1.0.131`) |
+| Previous archive | `GitHub History/2026-11-21_23-53-52-892056_SGT_f58c65c3` (1.0.130) |
+
+## 1.0.131 The Way of Salvation (Claude, 22 November)
+
+- New sermon: C. H. Spurgeon, The Way of Salvation (No. 209, 15 August 1858). 28:43.3, 151 passages. spurgeon.org and CCEL share the same scanning errors, so the text was checked word for word against the 1858 New Park Street Pulpit printing (spurgeon.org PDF scan, OCR'd locally and read by eye). 25 corrections are listed in `improved/way-of-salvation-spurgeon/corrections.md`.
+- Voices: warm narrator. Voice 3 for the imagined hearer, composite (voice 4) for the Brahmin and Satan, and classic for God the Father, as in Immutability.
+- Rendered with the normal process-pool `render-improved.py`, 6 workers (the sandbox is now off). Chunk 30's 0.9 s Kokoro tail was trimmed to 0.55 s, and the original is kept in `rejected/`. Audit: peak 0.84, no clipping, longest silence 0.96 s. Whisper `small.en` matched seven review passages.
+- Audio release `audio-1.0.131`: MP3 20,680,829 bytes and M4A 20,591,721 bytes. PDF and Word are in `public/library/`.
+- Fixed the two stale comments that said Free Grace shipped without an M4A (`ListeningLibrary.tsx`, `upload-release.py`).
 
 ## 1.0.130 Free Grace (Claude, 21 November)
 
