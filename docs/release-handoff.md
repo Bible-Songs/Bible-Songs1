@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.129 |
+| Release | 1.0.130 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care |
-| Latest change | Three-second completed-caption retention with outgoing captions above incoming captions across all three animations |
-| Previous archive | `GitHub History/2026-11-18_09-16-23-525643_SGT_d95728dc/files/` |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace |
+| Latest change | New sermon: John Wesley, Free Grace (audio on `audio-1.0.130`) |
+| Previous archive | `GitHub History/2026-11-21_14-09-40-711775_SGT_3abdb2f8` (1.0.129) |
+
+## 1.0.130 Free Grace (Claude, 21 November)
+
+- New sermon: John Wesley, Free Grace. 33:20.7, 149 passages. The text was corrected against the 1890 edition (`improved/free-grace-wesley/corrections.md`). The Greek and "Esau" use spoken respellings.
+- Rendered in Claude's locked session with `published-library/render-threads.py`, which uses threads instead of the process pool because the sandbox blocks semaphores. The model, voices and speed are unchanged. The M4A was encoded outside the sandbox with the `finish.sh` settings.
+- Audio release `audio-1.0.130`: `free-grace-wesley.mp3` 24,008,934 bytes and `free-grace-wesley.m4a` 23,909,109 bytes. Sizes and checksums are verified, and the files are archived in `GitHub History/Release Assets/2026-11-21_audio-1.0.130`. PDF and Word are in `public/library/`.
+- The player falls back to the MP3 when a sermon has no M4A size entry. Free Grace has both.
+- Checks: strict check and build. `npm run test:browser` passed. `improved/check.mjs` passed on port 5190: 36 sized downloads, Free Grace on 1.0.130. Its playing-audio regex now includes 1.0.130. Whisper checked the six review passages against the text. Mike approved publication.
 
 ## 1.0.129 caption retention (Codex, 21 November)
 

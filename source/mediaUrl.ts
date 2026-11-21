@@ -8,6 +8,7 @@ const libraryReleases:readonly (readonly [string,readonly string[]])[]=[
  ['audio-1.0.115',['sinners-in-the-hands-of-an-angry-god-edwards']],
  ['audio-1.0.118',['payday-someday-rg-lee']],
  ['audio-1.0.124',['gods-jewels-spurgeon','immutability-of-god-spurgeon','compel-them-to-come-in-spurgeon','christ-crucified-spurgeon','prayer-the-cure-for-care-spurgeon']],
+ ['audio-1.0.130',['free-grace-wesley']],
 ];
 const revisedLibraryAudio:ReadonlyMap<string,string>=new Map(libraryReleases.flatMap(([tag,stems])=>
  stems.flatMap(stem=>['m4a','mp3'].map(ext=>[`${stem}.${ext}`,releases+tag+'/'] as const))));

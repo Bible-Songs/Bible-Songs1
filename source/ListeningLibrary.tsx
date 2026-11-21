@@ -3,6 +3,7 @@ import excellencyCues from './excellency-cues.json';
 import christCrucifiedCues from './christ-crucified-cues.json';
 import prayerCureCues from './prayer-the-cure-for-care-cues.json';
 import paydayCues from './payday-cues.json';
+import freeGraceCues from './free-grace-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
@@ -27,6 +28,7 @@ const readings=[
  {title:'The Excellency of Christ',author:'Jonathan Edwards',filename:'excellency-of-christ-edwards.m4a',cues:excellencyCues},
  {title:'Christ Crucified',author:'C. H. Spurgeon',filename:'christ-crucified-spurgeon.m4a',cues:christCrucifiedCues},
  {title:'Prayer, the Cure for Care',author:'C. H. Spurgeon',filename:'prayer-the-cure-for-care-spurgeon.m4a',cues:prayerCureCues},
+ {title:'Free Grace',author:'John Wesley',filename:'free-grace-wesley.m4a',cues:freeGraceCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean};
@@ -37,14 +39,19 @@ const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
  ['excellency-of-christ-edwards.m4a',ExcellencyAnimation],
 ]);
 const source=(filename:string)=>mediaUrl(`library/${filename}`);
-function readingDownloads(filename:(typeof readings)[number]['filename']){
+type ReadingFile=(typeof readings)[number]['filename'];
+// The .m4a filename is each sermon's id; a sermon released without an M4A (Free Grace, 1.0.130) plays its MP3.
+const playback=(filename:ReadingFile)=>source('M4A' in downloadSizes[filename]?filename:filename.replace(/\.m4a$/,'.mp3'));
+function readingDownloads(filename:ReadingFile){
  const sizes=downloadSizes[filename];
  const formatDownload=(format:'MP3'|'M4A'|'PDF'|'Word'|'MP4',bytes:number)=>{
   const name=filename.replace(/\.m4a$/,'.'+(format==='Word'?'docx':format.toLowerCase()));
   const size=bytes<1_000_000?`${(bytes/1_000).toFixed(1)} KB`:`${(bytes/1_000_000).toFixed(1)} MB`;
   return {format,name,url:source(name),size};
  };
- const downloads=(['MP3','M4A','PDF','Word'] as const).map(format=>formatDownload(format,sizes[format]));
+ const downloads=[formatDownload('MP3',sizes.MP3)];
+ if('M4A' in sizes)downloads.push(formatDownload('M4A',sizes.M4A));
+ downloads.push(formatDownload('PDF',sizes.PDF),formatDownload('Word',sizes.Word));
  if('MP4' in sizes)downloads.push(formatDownload('MP4',sizes.MP4));
  return downloads;
 }
@@ -71,10 +78,10 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
   player?.pause();
   const replacement=readings.find(reading=>!hiddenReadings.includes(reading.filename));
   if(!replacement||!player)return;
-  player.src=source(replacement.filename);
+  player.src=playback(replacement.filename);
   setSelected(replacement);setDuration(0);setTime(0);
  },[selectedHidden,hiddenReadings]);
- const initialSource=useRef(source(selected.filename));
+ const initialSource=useRef(playback(selected.filename));
  useEffect(()=>{
   if(audio.current){audio.current.playbackRate=speed;audio.current.volume=volume;}
  },[speed,volume]);
@@ -82,7 +89,7 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
   const player=audio.current;
   if(!player)return;
   if(reading!==selected){
-   player.src=source(reading.filename);
+   player.src=playback(reading.filename);
    setSelected(reading);setDuration(0);
   }
   if(!animations.has(reading.filename))setWatching(false);
