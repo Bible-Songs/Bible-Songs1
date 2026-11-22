@@ -67,6 +67,8 @@ const searchIndex=readings.map(reading=>({
  Transcript:normalize(reading.cues.map(cue=>cue.text).join(' ')),
 }));
 export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}:{speed:number;onSpeed:(value:number)=>void;hiddenReadings:string[];onRemove:(id:string)=>void}){
+ const [sort,setSort]=useState<'Title'|'Author'>('Title');
+ const cards=useRef(new Map<string,HTMLDivElement>());
  const [queries,setQueries]=useState({Title:'',Author:'',Transcript:''});
  const [selected,setSelected]=useState<(typeof readings)[number]>(()=>readings.find(reading=>!hiddenReadings.includes(reading.filename))??readings[0]);
  const [time,setTime]=useState(0),[duration,setDuration]=useState(0),[playing,setPlaying]=useState(false);
@@ -101,10 +103,24 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
    if(error?.name!=='AbortError')setMessage('The audio could not start. Please try again.');
   });
  }
+ function jump(reading:typeof selected){
+  const card=cards.current.get(reading.filename);
+  card?.scrollIntoView({block:'start',behavior:'smooth'});
+  card?.focus({preventScroll:true});
+ }
+ function remove(reading:typeof selected){
+  if(window.confirm(`Remove ${reading.title} from your library? You can restore it in Recovery centre.`))onRemove(reading.filename);
+ }
+ function watch(reading:typeof selected){
+  setWatching(true);
+  if(reading!==selected||audio.current?.ended)play(reading,0);
+  else if(!playing)play(reading);
+ }
  const filtered=useMemo(()=>{
   const terms=searchFields.map(field=>[field,normalize(queries[field])] as const);
   return searchIndex.filter(entry=>!hiddenReadings.includes(entry.reading.filename)&&terms.every(([field,term])=>entry[field].includes(term))).map(entry=>entry.reading);
  },[queries,hiddenReadings]);
+ const sorted=[...filtered].sort((a,b)=>(sort==='Author'?a.author.localeCompare(b.author):0)||a.title.localeCompare(b.title));
  return <div className="content document-library">
   <div className="page-heading"><h1>Listening Library</h1></div>
   <section className="listen-panel document-workspace">
@@ -113,8 +129,21 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
     {searchFields.map(field=><label key={field}>{field}<input type="search" value={queries[field]}
      onChange={event=>setQueries({...queries,[field]:event.target.value})} placeholder={`Search ${field.toLowerCase()}`}/></label>)}
    </div>
-   {filtered.length?filtered.map(reading=><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
-    onRemove={()=>{if(window.confirm(`Remove ${reading.title} from your library? You can restore it in Recovery centre.`))onRemove(reading.filename);}}
+   <div className="library-table-toolbar"><label>Sort by <select value={sort} onChange={event=>setSort(event.target.value==='Author'?'Author':'Title')}><option value="Title">Title — A to Z</option><option value="Author">Author — A to Z</option></select></label><span>{filtered.length} readings</span></div>
+   <div className="library-table-scroll" role="region" aria-label="Listening Library table" tabIndex={0}>
+    <table className="library-table"><caption>Published readings — quick actions</caption><thead><tr>{['Delete','Title','Author','Audio Play','Watch with Animation','Download MP3','Download PDF'].map(heading=><th key={heading} scope="col">{heading}</th>)}</tr></thead>
+     <tbody>{sorted.map(reading=><tr key={reading.filename}>
+      <td><button className="library-remove" onClick={()=>remove(reading)} aria-label={`Remove ${reading.title} from table`}>×</button></td>
+      <th scope="row"><button className="library-title-link" onClick={()=>jump(reading)}>{reading.title}</button></th>
+      <td>{reading.author}</td>
+      <td><button onClick={()=>{jump(reading);if(reading===selected&&playing)audio.current?.pause();else play(reading);}} aria-label={`${reading===selected&&playing?'Pause':'Play'} audio for ${reading.title}`}>{reading===selected&&playing?'Pause':'Play'}</button></td>
+      <td>{animations.has(reading.filename)?<button onClick={()=>{watch(reading);jump(reading);}} aria-label={`Watch animation for ${reading.title}`}>Watch</button>:<span aria-label="Animation not available">—</span>}</td>
+      {(['MP3','PDF'] as const).map(format=>{const file=readingDownloads(reading.filename).find(item=>item.format===format);return <td key={format}>{file&&<a href={file.url} download={file.name} onClick={()=>jump(reading)} aria-label={`Download ${format} for ${reading.title}`}>{format}</a>}</td>;})}
+     </tr>)}</tbody>
+    </table>
+   </div>
+   {filtered.length?filtered.map(reading=><div key={reading.filename} className="library-reading-target" tabIndex={-1} ref={element=>{if(element)cards.current.set(reading.filename,element);else cards.current.delete(reading.filename);}}><PublishedReading key={reading.filename} title={reading.title} author={reading.author}
+    onRemove={()=>remove(reading)}
     downloads={readingDownloads(reading.filename)}
     cues={reading.cues}
     followAnimation={watching&&reading===selected&&animations.has(reading.filename)}
@@ -124,13 +153,11 @@ export default function ListeningLibrary({speed,onSpeed,hiddenReadings,onRemove}
      <button className="document-upload prayer-animation-control" type="button"
       aria-expanded={watching&&reading===selected} onClick={()=>{
        if(watching&&reading===selected){setWatching(false);return;}
-       setWatching(true);
-       if(reading!==selected||audio.current?.ended)play(reading,0);
-       else if(!playing)play(reading);
+       watch(reading);
       }}>{watching&&reading===selected?'Hide animation':'Watch with animation'}</button>
      {watching&&reading===selected&&(()=>{const Animation=animations.get(reading.filename);return Animation?<Animation audio={audio} time={time} playing={playing}/>:null;})()}
     </>}
-   </PublishedReading>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
+   </PublishedReading></div>):<p>{readings.every(reading=>hiddenReadings.includes(reading.filename))?'Your library is empty. Restore a reading in Recovery centre.':'No readings match your search.'}</p>}
   </section>
   <footer>© {new Date().getFullYear()} Bible Songs · Version {APP_VERSION} · <a href="https://github.com/hexgrad/kokoro">Kokoro speech profiles</a></footer>
   <audio ref={audio} preload="metadata" src={initialSource.current}

@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.131 |
+| Release | 1.0.132 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation |
-| Latest change | New sermon: C. H. Spurgeon, The Way of Salvation (audio on `audio-1.0.131`) |
+| Latest change | Sortable Listening Library quick-action table |
 | Previous archive | `GitHub History/2026-11-21_23-53-52-892056_SGT_f58c65c3` (1.0.130) |
+
+## 1.0.132 Listening Library table (Codex, 22 November)
+
+- Added the requested seven-column table below search. Default Title A–Z; Author A–Z uses title tie-breaking. Existing search filters table and cards together.
+- Title focuses and scrolls to the matching sermon. Audio, animation and MP3/PDF actions jump there and use existing media and controls. Unavailable animations show a dash. Delete uses confirmed, recoverable library removal, without deleting media.
+- Horizontal scrolling keeps the table within mobile screens. All ten sermons remain intact.
+- Clean npm ci, strict checks and production build passed. Full Chrome browser suite passed twice, including new sorting/filtering, card focus, animation launch, PDF download, removal/recovery and mobile overflow checks, plus existing sermon seeking/download and continuous Bible playback. BIBLE_TEST_URL can select a local preview port.
+- Mike authorized publication. Preserve the pre-push archive hook and confirm remote commit/archive. Skip routine Pages/live checks.
 
 ## 1.0.131 The Way of Salvation (Claude, 22 November)
 
