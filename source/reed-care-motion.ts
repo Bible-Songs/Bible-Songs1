@@ -31,10 +31,12 @@ function leaf(c:C,x:number,y:number,length:number,angle:number,tone:string,unfur
  shape(c,p=>{p.moveTo(0,0);p.bezierCurveTo(length*.19,-length*.24,length*.71,-length*.32,length,0);p.bezierCurveTo(length*.66,length*.15,length*.22,length*.20,0,0);},linear(c,0,-length*.2,0,length*.2,[tone,'#577d51']));
  stroke(c,p=>{p.moveTo(0,0);p.quadraticCurveTo(length*.55,-2,length*.95,0);},'rgba(215,222,160,.54)',1.1);c.restore();
 }
-function hand(c:C,x:number,y:number,scale:number,angle:number,curl:number,sleeve='#b4b29a',frail=false){
+// long: the sleeve runs on past the frame edge, so a hand entering the picture is never a floating stub.
+function hand(c:C,x:number,y:number,scale:number,angle:number,curl:number,sleeve='#b4b29a',frail=false,long=false){
  c.save();c.translate(x,y);c.rotate(angle);c.scale(scale,scale);
  const skin=linear(c,-30,-45,30,25,frail?['#c5a98c','#e1c4a2','#ac886a']:['#9f7658','#d2ae84','#b48965']);
- shape(c,p=>{p.moveTo(-122,26);p.lineTo(-27,11);p.lineTo(-16,-19);p.lineTo(-119,-29);p.closePath();},linear(c,-120,-30,-20,25,[sleeve,'#696e61']));
+ const back=long?-900:-122;
+ shape(c,p=>{p.moveTo(back,26+(long?28:0));p.lineTo(-27,11);p.lineTo(-16,-19);p.lineTo(back+3,-29-(long?22:0));p.closePath();},linear(c,-120,-30,-20,25,[sleeve,'#696e61']));
  shape(c,p=>{p.moveTo(-35,9);p.bezierCurveTo(-23,16,-6,22,10,18);p.bezierCurveTo(29,15,34,1,22,-13);p.bezierCurveTo(12,-24,-5,-29,-23,-20);p.lineTo(-37,-12);p.closePath();},skin);
  // Four fingers curve independently over the palm, rather than forming a flat mitten.
  for(let i=3;i>=0;i--){
@@ -67,8 +69,9 @@ function reed(c:C,t:number,elapsed:number){
  leaf(c,450,365,99,-2.5+Math.sin(t*.7)*.045,'#afbf82');leaf(c,514,280-support*4,95,-.30+Math.sin(t*.8+1)*.055,'#9baf73');
  c.save();c.translate(tipX,tipY);c.rotate(-.55-support*.006);ellipse(c,0,9,9,34,'#9a7950');stroke(c,p=>{p.moveTo(-3,-19);p.lineTo(2,38);},'#c9ab76',2);c.restore();
  // A hand approaches and a light band progressively supports the bruised joint.
+ // The hand comes in from the right edge, fingers toward the bruised joint, arm reaching off-frame.
  const hx=mix(787,530,care),hy=mix(364,283,care)+Math.sin(t*.5)*1.3;
- hand(c,hx,hy,1.18,-.40,care*.36,'#c0b79a');
+ c.save();c.translate(hx,hy);c.scale(-1,1);hand(c,0,0,1.18,-.40,care*.36,'#c0b79a',false,true);c.restore();
  if(care>.28){c.globalAlpha=ease((care-.28)/.45);for(let i=0;i<4;i++)stroke(c,p=>{p.moveTo(jointX-12,jointY+8+i*4);p.quadraticCurveTo(jointX+8,jointY+18+i*4,jointX+24,jointY+10+i*4);},'#ded0ac',4.5);c.globalAlpha=1;}
  for(let i=0;i<15;i++){
   const y=355+i*8,shift=Math.sin(t*.57+i)*11;
@@ -96,7 +99,7 @@ function lamp(c:C,t:number,elapsed:number){
   const rise=(t*.19+j*.25)%1,yy=266-rise*147,xx=612+Math.sin(rise*5+t*.4)*21+wind*rise*18;
   stroke(c,p=>{p.moveTo(xx,yy);p.bezierCurveTo(xx-17,yy-14,xx+22,yy-30,xx+7,yy-43);},`rgba(190,197,183,${.19*(1-rise)})`,5+rise*10);
  }
- hand(c,mix(848,704,shield),mix(328,250,shield)+Math.sin(t*.8)*1.6,1.55,-1.32,.12+Math.sin(t*.7)*.025,'#c8b98f');
+ hand(c,mix(848,704,shield),mix(328,250,shield)+Math.sin(t*.8)*1.6,1.55,-1.32,.12+Math.sin(t*.7)*.025,'#c8b98f',false,true);
  for(let i=0;i<3;i++)stroke(c,p=>{const xx=375+i*61+Math.sin(t*.6+i)*4;p.moveTo(xx,307);p.quadraticCurveTo(xx+13,304,xx+29,308);},`rgba(246,214,131,${.10+.06*Math.sin(t+i)})`,1.5);
 }
 function growth(c:C,t:number,elapsed:number){
@@ -179,8 +182,8 @@ function receive(c:C,t:number,elapsed:number){
  background(c,true,t);const take=ease(elapsed/7),lower=mix(199,304,take),curl=.02+take*.33;
  ellipse(c,479,389,220,24,'rgba(13,29,29,.33)');
  // Weakness is in the receiving hand, not in the worth of the gift.
- hand(c,485,333+Math.sin(t*.9)*1.3,2.05,-.08,curl,'#788e86',true);
- if(take<.98)hand(c,565+ease((take-.72)/.28)*97,lower-23,1.20,2.73,mix(.67,.04,take),'#c4b69b');
+ hand(c,485,333+Math.sin(t*.9)*1.3,2.05,-.08,curl,'#788e86',true,true);
+ if(take<.98)hand(c,565+ease((take-.72)/.28)*97,lower-23,1.20,2.73,mix(.67,.04,take),'#c4b69b',false,true);
  jewel(c,519,lower,t);glow(c,519,lower,130,'rgba(229,231,172,.12)');
 }
 export function paintCare(c:CanvasRenderingContext2D,theme:string,time:number,elapsed:number,variant:number):void{

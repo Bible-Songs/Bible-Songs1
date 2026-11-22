@@ -4,11 +4,20 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.136 |
+| Release | 1.0.137 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue |
-| Latest change | Bruised Reed animation editorial revision (255 captions, moving-subject art, 1-second caption gap) and corrected Scripture references in its audio |
-| Previous archive | `GitHub History/2026-11-22_17-52-57-441785_SGT_e43dd3d3` (1.0.135) |
+| Latest change | Bruised Reed artwork fixes (sceptre of power, glass, edge-entering arms, horse) |
+| Previous archive | `GitHub History/2026-11-22_19-38-30-115494_SGT_cfbfe214` (1.0.136) |
+
+## 1.0.137 Bruised Reed artwork fixes (Claude, 22 November)
+
+- Four weaknesses from the 1.0.136 review, at Mike's request. Artwork only; captions, timings and audio are unchanged.
+- Sceptre of power (cue 659, "crushed in pieces by his sceptre of power"): the upright rod on a plinth read as a street lamp. It is now an iron rod, held from off-frame, that comes down on an earthen pot (the Psalm 2:9 picture), and the pot breaks into pieces as the man turns from the open door.
+- Fragile glass: the fingertips now hold the bowl, then open once it is set down.
+- Arms entering from the frame edge (reed, lamp, jewel, blacksmith) now run off-frame instead of ending as floating forearms. The reed and blacksmith hands enter from the right.
+- Bridled horse: removed a stray track stroke that read as a log behind the horse.
+- Checks: npm run check/build, test:browser and the focused Bruised Reed animation check (desktop; mobile with reduced motion) passed. The three-moment contact sheets are in `video-previews/bruised-reed-revision/art-review/focus-*.png`.
 
 ## 1.0.136 The Bruised Reed: animation revision and reference corrections (Claude, continuing Codex's work, 22 November)
 

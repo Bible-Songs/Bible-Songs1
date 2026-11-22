@@ -5,6 +5,7 @@ type Pose='walk'|'guide'|'pray'|'helper'|'guard'|'weigh'|'welcome'|'blind'|'blin
 const W=960,H=480,TAU=Math.PI*2;
 const cream='#f1dfb7',gold='#cfaa60',skin='#c99971';
 function clamp(v:number,a=0,b=1){return Math.max(a,Math.min(b,v));}
+function ease(v:number){const x=clamp(v);return x*x*(3-2*x);}
 function oval(c:CanvasRenderingContext2D,x:number,y:number,rx:number,ry:number,color:string,angle=0){c.fillStyle=color;c.beginPath();c.ellipse(x,y,rx,ry,angle,0,TAU);c.fill();}
 function stroke(c:CanvasRenderingContext2D,points:readonly Point[],color:string,width=3){c.beginPath();for(const [i,p]of points.entries()){if(i)c.lineTo(...p);else c.moveTo(...p);}c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.lineJoin='round';c.stroke();}
 function poly(c:CanvasRenderingContext2D,points:readonly Point[],color:string){c.beginPath();for(const [i,p]of points.entries()){if(i)c.lineTo(...p);else c.moveTo(...p);}c.closePath();c.fillStyle=color;c.fill();}
@@ -165,7 +166,6 @@ function horseLeg(c:CanvasRenderingContext2D,hip:Point,phase:number,near:boolean
 }
 function whiteHorse(c:CanvasRenderingContext2D,t:number,bridled=false){
  landscape(c,t*.8);
- if(bridled){curve(c,[470,454],[424,420],[286,387],[238,370],'rgba(199,181,132,.52)',25);}
  const gait=t*2.55,bob=Math.sin(gait*2)*3.2,x=bridled?450+Math.sin(t*.2)*10:469+Math.sin(t*.2)*24,scale=bridled?.93:1.24;
  c.save();c.translate(x,425+bob);c.scale(scale,scale);
  oval(c,12,4-bob,145,14,'rgba(20,52,45,.25)');
@@ -317,10 +317,34 @@ function mercySceptreWelcome(c:CanvasRenderingContext2D,t:number){
  person(c,315+approach,443,.93,t*.7,'walk',1,'#738c84');
  glow(c,497,336,143,'#ecdcb0',.09+.03*Math.sin(t*.4));
 }
+// Psalm 2:9 picture behind "crushed in pieces by his sceptre of power": a rod of iron and an earthen pot.
+// (Claude review 22 Nov: the earlier upright rod on a plinth read as a street lamp.)
+function ironRod(c:CanvasRenderingContext2D,pivotX:number,pivotY:number,angle:number){
+ c.save();c.translate(pivotX,pivotY);c.rotate(angle);
+ stroke(c,[[0,40],[0,-168]],'#2f3a37',13);stroke(c,[[-3,38],[-3,-166]],'#76847e',4);
+ for(const y of [-20,-120,-160])oval(c,0,y,10,5,'#5d6a65');
+ for(let i=0;i<6;i++){const a=i*Math.PI/3;poly(c,[[0,-186],[Math.cos(a)*30,-186+Math.sin(a)*30],[Math.cos(a+.35)*24,-186+Math.sin(a+.35)*24]],i%2?'#52605b':'#6f7d77');}
+ oval(c,0,-186,17,17,'#46534e');oval(c,-5,-191,6,6,'#a9b4ac');
+ c.restore();
+}
+function earthenPot(c:CanvasRenderingContext2D,x:number,y:number,broken:number){
+ const apart=ease(clamp((broken-.35)/.65))*26,drop=ease(clamp((broken-.35)/.65))*10;
+ oval(c,x,y+4,62,10,'rgba(16,34,31,.3)');
+ for(const side of [-1,1]){
+  c.save();c.beginPath();c.rect(side<0?x-80:x,y-120,80,130);c.clip();c.translate(side*apart,drop*(side<0?1:.6));c.rotate(side*apart*.006);
+  c.fillStyle=gradient(c,x-50,y-100,x+50,y,'#c08a5c','#7a5236');c.beginPath();c.moveTo(x-22,y-98);c.bezierCurveTo(x-30,y-80,x-62,y-62,x-56,y-30);c.bezierCurveTo(x-50,y-4,x-24,y,x,y);c.bezierCurveTo(x+24,y,x+50,y-4,x+56,y-30);c.bezierCurveTo(x+62,y-62,x+30,y-80,x+22,y-98);c.closePath();c.fill();
+  oval(c,x,y-98,24,6,'#8d6141');stroke(c,[[x-40,y-52],[x+40,y-52]],'rgba(232,196,146,.35)',3);
+  c.restore();
+ }
+ if(broken>0){c.globalAlpha=clamp(broken*3);stroke(c,[[x,y-99],[x-6,y-78],[x+5,y-60],[x-4,y-38],[x+3,y-18],[x,y]],'#3b2519',2.4);stroke(c,[[x-6,y-78],[x-26,y-70]],'#3b2519',1.6);stroke(c,[[x+3,y-18],[x+24,y-26]],'#3b2519',1.6);c.globalAlpha=1;}
+ for(let i=0;i<5;i++){const f=clamp((broken-.4-i*.06)/.4);if(f>0)poly(c,[[x-10+i*5+f*(i-2)*22,y-30+f*28],[x-2+i*5+f*(i-2)*22,y-36+f*28],[x+2+i*5+f*(i-2)*22,y-26+f*30]],'#9a6a45');}
+}
 function mercyAndPower(c:CanvasRenderingContext2D,t:number){
  room(c,t);const phase=(t*.075)%1,refusal=clamp((phase-.26)/.43),open=1-clamp((phase-.35)/.28);
  portal(c,207,408,173,291,open);sceptre(c,149,332,-.08,false);
- c.fillStyle='#43584f';c.fillRect(765,304,65,107);oval(c,797,410,54,12,'#6b7963');sceptre(c,797,303,.04,true);
+ // The rod is raised while the man still faces the open door, and comes down on the pot as he turns away.
+ const strike=ease(clamp((phase-.45)/.22));
+ earthenPot(c,775,410,clamp((phase-.62)/.25));ironRod(c,930,478,-.42-.56*strike);
  const x=397+refusal*244,turn=clamp((phase-.2)/.18),facing=turn<.5?-Math.max(.15,Math.cos(turn*Math.PI)):Math.max(.15,-Math.cos(turn*Math.PI));
  person(c,x,440,1,t*1.2,'walk',facing,'#8b8a70');
  // The refusal moves toward the stern rod and away from the closing warm doorway.
