@@ -88,7 +88,7 @@ try{
  assert(await page.getByRole('searchbox',{name:'Title'}).evaluate(input=>input===document.activeElement));
  const table=page.getByRole('table',{name:'Published readings — quick actions'});
  const titles=await table.locator('tbody th').allTextContents();
- assert.equal(titles.length,11);
+ assert.equal(titles.length,12);
  assert.deepEqual(titles,[...titles].sort((a,b)=>a.localeCompare(b)));
  await page.getByLabel('Sort by').selectOption('Author');
  const authors=await table.locator('tbody tr td:nth-child(3)').allTextContents();
@@ -130,7 +130,7 @@ try{
  await card.getByRole('button',{name:'Pause '+name,exact:true}).waitFor();
  page.once('dialog',dialog=>void dialog.accept());
  await table.getByRole('button',{name:'Remove '+name+' from table',exact:true}).click();
- assert.equal(await table.locator('tbody tr').count(),10);
+ assert.equal(await table.locator('tbody tr').count(),11);
  await card.waitFor({state:'detached'});
  await page.getByRole('button',{name:'Recovery centre'}).click();
  await page.getByRole('button',{name:'Restore '+name,exact:true}).click();

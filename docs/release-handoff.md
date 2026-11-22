@@ -4,11 +4,21 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.134 |
+| Release | 1.0.135 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed |
-| Latest change | Full-book Watch with animation for The Bruised Reed |
-| Previous archive | `GitHub History/2026-11-22_12-07-39-816389_SGT_8ca62a7a` (1.0.132) |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue |
+| Latest change | New Listening Library item: Jonathan Edwards, The Nature of True Virtue |
+| Previous archive | `GitHub History/2026-11-22_15-23-11-772856_SGT_167ebc3a` (1.0.134) |
+
+## 1.0.135 The Nature of True Virtue (Claude, 22 November)
+
+- New Listening Library item: Jonathan Edwards, The Nature of True Virtue (written about 1755, published 1765), all eight chapters with Edwards's four footnotes read as "Footnote." after the citing paragraph. The transcript uses Edwards's own "Chapter N." headings.
+- Mike's Word file was a modernised printing with a repeated block in Chapter 4, a lost Corollary at the end of Chapter 2, a skipped passage on pity in Chapter 6 and about 40 OCR errors, so Mike chose the public-domain text: Hickman's 1834 *Works*, vol. 1, via CCEL. It was word-diffed against Mike's file, and every non-modernising difference was decided by the 1765 Boston first edition (archive.org `twodissertations00edwa`). 29 CCEL errors were corrected; the 1834 editor's notes [227]/[231] and the contents list are removed. Details: `improved/nature-of-true-virtue-edwards/corrections.md`.
+- `plan.mjs`: `speakEdwardsVirtue` for this slug only (&c., viz., i.e., Chap./sect., (1.)/(2.), cæteris, Mr. → Mister, Wollaston → Wooleston; quotation marks not spoken). General fixes: `fixNumbers` moves `(1.)` like `1.`, and `(Chap.` is an abbreviation. All ten other sermons re-plan to byte-identical plan.json, so no published audio changes.
+- Audio: 2:48:01.8, 806 chunks, 791 transcript passages, narrator warm throughout. Audit: peak 0.747, no clipping, no pause of 0.9 s or more, speech-rate range 12–19 chars/s (titles and comma lists). Release `audio-1.0.135`: MP3 120,981,629 bytes and M4A 120,563,646 bytes, archived in `GitHub History/Release Assets/2026-11-22_audio-1.0.135`.
+- `tests/account-library.mts` expects 12 table rows (11 after a removal). `improved/check.mjs` and `excellency/check.mjs` expect 48 downloads.
+- Checks: `npm ci`, `npm run check`, `npm run build`, `npm run test:browser`, `improved/check.mjs` (True Virtue release audio and wording) and `excellency/check.mjs`.
+- No animation yet; one can be added in a later release.
 
 ## 1.0.134 The Bruised Reed animation (Codex, 22 November)
 
