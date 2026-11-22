@@ -28,17 +28,21 @@ export default function SermonCaptions({captions,audio,time,playing,minimumHold=
   const container=box.current,ruler=measure.current;if(!container||!ruler)return;
   function resize(){
    if(!container||!ruler)return;
-   let height=0;
-   for(const caption of captions){ruler.textContent=caption.line;height=Math.max(height,ruler.getBoundingClientRect().height);}
+   const heights:number[]=[];
+   for(const caption of captions){ruler.textContent=caption.line;heights.push(ruler.getBoundingClientRect().height);}
+   heights.sort((a,b)=>a-b);
+   // Two stacked rows need the tallest caption. With fadeAfterHold only one caption shows at a time, so one row
+   // sized for a typical caption (75th percentile) sits directly under the picture; a longer caption grows it.
+   const height=fadeAfterHold?heights[Math.floor(.75*(heights.length-1))]??0:heights.at(-1)??0;
    ruler.textContent='';container.style.setProperty('--caption-row-height',`${height}px`);
   }
   resize();const observer=new ResizeObserver(resize);observer.observe(container);
   return ()=>observer.disconnect();
- },[captions]);
+ },[captions,fadeAfterHold]);
  const duration=audio.current?.duration??Infinity;
  const current=captions.findLastIndex(c=>c.start<=position);
  const visible=captions.filter((caption,index)=>index<=current&&captionOpacity(caption,captions[index+1],position,duration,minimumHold,fadeAfterHold)>0);
- return <figcaption ref={box} className="prayer-animation-caption sermon-captions" aria-label="Spoken captions">
+ return <figcaption ref={box} className={`prayer-animation-caption sermon-captions${fadeAfterHold?' sermon-captions-single':''}`} aria-label="Spoken captions">
   <span ref={measure} className="sermon-caption-measure" aria-hidden="true"/>
   {visible.map(caption=>{
    const outgoing=caption!==captions[current];

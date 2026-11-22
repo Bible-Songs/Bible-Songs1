@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.137 |
+| Release | 1.0.138 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue |
-| Latest change | Bruised Reed artwork fixes (sceptre of power, glass, edge-entering arms, horse) |
-| Previous archive | `GitHub History/2026-11-22_19-38-30-115494_SGT_cfbfe214` (1.0.136) |
+| Latest change | Bruised Reed: caption directly under the picture, continuous subject motion, gentle motion on reduced-motion phones |
+| Previous archive | `GitHub History/2026-11-22_19-52-07-371587_SGT_8470b8ff` (1.0.137) |
+
+## 1.0.138 Bruised Reed caption placement and motion (Claude, 22 November)
+
+- Mike, on Android and desktop: a big gap between the picture and the caption, and no visible moving parts on the phone.
+- Gap: the caption box reserved two rows (outgoing above incoming), each as tall as the longest caption in the book. With `captionGap` only one caption shows at a time, so `SermonCaptions` now uses one row (class `sermon-captions-single`), aligned to the top, sized for the 75th-percentile caption; longer captions grow it. Measured gap from picture to caption: 13 px on a phone, 14 px on desktop. Other animations keep the two-row layout.
+- Phone motion: Mike's Android evidently requests reduced motion (an accessibility or battery setting), which painted one still frame at time 0, with the soldier's arrows still off-screen. New opt-in `gentleReducedMotion` on `SermonAnimation` (Bruised Reed only): on such devices, motion continues at a third of the speed, about 12 fps, with one-off actions shown complete. Other animations keep the still frame.
+- Motion level: the care scenes (130 of 255) finished their single action in 6–12 s and then hardly moved for the rest of a roughly one-minute scene. Tending hands (reed, lamp, bandage) now ease back and return every 11 s; growth runs across the whole scene; setting down the burden and giving the jewel run more slowly (never reversed); wind, sway and breathing are stronger. The measured share of changing pixels 25 s into a scene is now 1–4% for every frequently used theme, up from 0.4–0.7%. Tool: `video-previews/bruised-reed-revision/motion-measure.mts`; phone and desktop screenshots: `phone-shots.mjs` and `art-review/phone-*.png`.
+- Checks: npm run check/build, test:browser, excellency/check.mjs, and the focused Bruised Reed check (desktop; mobile with reduced motion) passed.
 
 ## 1.0.137 Bruised Reed artwork fixes (Claude, 22 November)
 

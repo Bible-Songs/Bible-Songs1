@@ -63,6 +63,13 @@
 }
 .sermon-caption-outgoing { grid-area: 1 / 1; }
 .sermon-caption-current { grid-area: 2 / 1; }
+/* captionGap animations: one caption at a time, directly under the picture */
+.sermon-captions.sermon-captions-single {
+ grid-template-rows: minmax(var(--caption-row-height, 3.5em), auto);
+ align-items: start;
+}
+.sermon-captions-single .sermon-caption-outgoing,
+.sermon-captions-single .sermon-caption-current { grid-area: 1 / 1; }
 .sermon-caption-measure {
  position: absolute;
  inset-inline: 1rem;

@@ -17,10 +17,12 @@ export const width=960,height=480;
 
 // captionGap: keep each completed caption until 1.5 s before the next (at least captionHold after its last word),
 // then fade over 0.5 s, leaving 1 s caption-free before the next caption (Mike's 1-second target, 22 Nov 2026).
-export default function SermonAnimation({audio,time,playing,label,cues,scenes,timing,paint,captionHold=3,captionGap=false}:{
+// gentleReducedMotion: on devices asking for reduced motion (e.g. Android "Remove animations" or some battery
+// savers), keep slow, gentle subject motion at a third of the speed instead of a single still frame.
+export default function SermonAnimation({audio,time,playing,label,cues,scenes,timing,paint,captionHold=3,captionGap=false,gentleReducedMotion=false}:{
  audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean;label:string;
  cues:readonly Cue[];scenes:readonly Scene[];timing:readonly CaptionTiming[];paint:Painter;
- captionHold?:number;captionGap?:boolean;
+ captionHold?:number;captionGap?:boolean;gentleReducedMotion?:boolean;
 }){
  const figure=useRef<HTMLElement>(null);
  const canvas=useRef<HTMLCanvasElement>(null);
@@ -46,19 +48,20 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
   const context=canvas.current?.getContext('2d');
   if(!context)return;
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const gentle=reduced&&gentleReducedMotion,still=reduced&&!gentle;
   let frame=0,last=-1;
   function draw(){
    if(!context)return;
    const position=audio.current?.currentTime??time;
-   if(!playing||Math.abs(position-last)>=1/24){
+   if(!playing||Math.abs(position-last)>=(gentle?1/12:1/24)){
     const elapsed=reduced?14:Math.max(0,position-change);
-    paint(context,art,reduced?0:position,elapsed,index);last=position;
+    paint(context,art,still?0:gentle?position*.35:position,elapsed,index);last=position;
    }
-   if(playing&&!reduced)frame=requestAnimationFrame(draw);
+   if(playing&&!still)frame=requestAnimationFrame(draw);
   }
   draw();
   return ()=>cancelAnimationFrame(frame);
- },[art,audio,change,index,paint,playing,scene,time]);
+ },[art,audio,change,gentleReducedMotion,index,paint,playing,scene,time]);
  return <figure ref={figure} className="prayer-animation" aria-label={label}>
   <div className="prayer-animation-stage">
    <canvas ref={canvas} width={width} height={height} aria-hidden="true"/>

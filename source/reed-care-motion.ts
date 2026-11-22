@@ -20,7 +20,7 @@ function background(c:C,inside:boolean,t:number){
   shape(c,p=>{p.moveTo(0,267);p.bezierCurveTo(210,201,321,278,494,253);p.bezierCurveTo(680,221,825,225,W,255);p.lineTo(W,H);p.lineTo(0,H);p.closePath();},'#47665c');
   shape(c,p=>{p.moveTo(0,335);p.bezierCurveTo(220,307,350,369,550,330);p.bezierCurveTo(757,286,845,334,W,315);p.lineTo(W,H);p.lineTo(0,H);p.closePath();},'#2c5149');
   for(let i=0;i<8;i++){
-   const x=55+i*126,wind=Math.sin(t*.47+i*.8)*9;
+   const x=55+i*126,wind=Math.sin(t*.7+i*.8)*22;
    stroke(c,p=>{p.moveTo(x,H);p.quadraticCurveTo(x+wind,399,x-7+wind,360-i%3*10);},'rgba(153,178,126,.31)',2);
   }
  }
@@ -53,7 +53,7 @@ function hand(c:C,x:number,y:number,scale:number,angle:number,curl:number,sleeve
 }
 function reed(c:C,t:number,elapsed:number){
  background(c,false,t);c.fillStyle=linear(c,0,329,0,H,['#557b73','#173f49']);c.fillRect(0,329,W,151);
- const sway=Math.sin(t*.61)*7,care=ease(elapsed/7),support=care*(1+.06*Math.sin(t*.45));
+ const sway=Math.sin(t*.61)*15,care=ease(elapsed/7),support=care*(1+.06*Math.sin(t*.45));
  // Marsh reeds move at different depths; foreground central stem remains attached.
  for(let i=0;i<12;i++){
   const x=55+i*76,h=90+(i%4)*23,bend=Math.sin(t*.65+i)*9;
@@ -103,7 +103,7 @@ function lamp(c:C,t:number,elapsed:number){
  for(let i=0;i<3;i++)stroke(c,p=>{const xx=375+i*61+Math.sin(t*.6+i)*4;p.moveTo(xx,307);p.quadraticCurveTo(xx+13,304,xx+29,308);},`rgba(246,214,131,${.10+.06*Math.sin(t+i)})`,1.5);
 }
 function growth(c:C,t:number,elapsed:number){
- background(c,false,t);const grow=.40+.60*ease(elapsed/12),unfurl=.45+.55*ease(elapsed/8),sway=Math.sin(t*.72)*3;
+ background(c,false,t);const grow=.40+.60*ease(elapsed/12),unfurl=.45+.55*ease(elapsed/8),sway=Math.sin(t*.72)*10;
  shape(c,p=>{p.moveTo(149,341);p.bezierCurveTo(343,324,635,324,813,343);p.lineTo(813,477);p.lineTo(149,477);p.closePath();},linear(c,0,338,0,480,['#8a7752','#514a37']));
  for(let i=0;i<70;i++)ellipse(c,162+(i*73)%634,352+(i*43)%117,1.8+i%3,1.2,'rgba(201,173,120,.24)');
  const root=ease((elapsed+.7)/10);
@@ -125,7 +125,7 @@ function growth(c:C,t:number,elapsed:number){
  glow(c,492,231,143,'rgba(230,232,171,.09)');
 }
 function person(c:C,x:number,y:number,s:number,t:number,helper:boolean,bend=0){
- c.save();c.translate(x,y);c.scale(s,s);const breath=Math.sin(t*1.7)*1.3;c.rotate(bend);
+ c.save();c.translate(x,y);c.scale(s,s);const breath=Math.sin(t*1.7)*3;c.rotate(bend+Math.sin(t*.6)*.025);
  ellipse(c,0,3,60,12,'rgba(9,22,23,.28)');
  shape(c,p=>{p.moveTo(-27,-133+breath);p.bezierCurveTo(-45,-95,-38,-52,-62,0);p.quadraticCurveTo(0,13,60,-1);p.bezierCurveTo(31,-54,40,-96,24,-134+breath);p.closePath();},linear(c,-40,0,35,-130,helper?['#7d806d','#b6b299','#d0c4a3']:['#345b64','#547e83','#9aaf9b']));
  for(let i=0;i<4;i++)stroke(c,p=>{p.moveTo(-18+i*13,-104+breath);p.quadraticCurveTo(-27+i*17,-53,-32+i*20,-2);},helper?'rgba(91,97,80,.35)':'rgba(29,65,71,.35)',2);
@@ -135,7 +135,7 @@ function person(c:C,x:number,y:number,s:number,t:number,helper:boolean,bend=0){
  c.restore();
 }
 function healing(c:C,t:number,elapsed:number){
- background(c,true,t);const tend=ease(elapsed/7),breath=Math.sin(t*1.5)*1.2;
+ background(c,true,t);const tend=ease(elapsed/7),breath=Math.sin(t*1.5)*2.6;
  // A seated person receives a real bandage, with cloth following the moving arm.
  c.fillStyle='#625841';c.fillRect(334,342,121,14);c.fillRect(349,355,13,65);c.fillRect(428,355,13,65);
  person(c,397,376,1.18,t,false,.10);person(c,661,403,1.42,t,true,-.10);
@@ -182,20 +182,25 @@ function receive(c:C,t:number,elapsed:number){
  background(c,true,t);const take=ease(elapsed/7),lower=mix(199,304,take),curl=.02+take*.33;
  ellipse(c,479,389,220,24,'rgba(13,29,29,.33)');
  // Weakness is in the receiving hand, not in the worth of the gift.
- hand(c,485,333+Math.sin(t*.9)*1.3,2.05,-.08,curl,'#788e86',true,true);
+ hand(c,485,333+Math.sin(t*.9)*3.5,2.05,-.08,curl,'#788e86',true,true);
  if(take<.98)hand(c,565+ease((take-.72)/.28)*97,lower-23,1.20,2.73,mix(.67,.04,take),'#c4b69b',false,true);
  jewel(c,519,lower,t);glow(c,519,lower,130,'rgba(229,231,172,.12)');
 }
+// Scenes last about a minute, but each action used to finish in 6–12 s and then hold almost still (Mike, 22 Nov:
+// "no moving parts"). Tending actions now keep going: after arriving, the hand eases back part-way and returns
+// every 11 s. Actions that must not reverse (growing, setting a burden down, giving the jewel) run more slowly.
+function tending(e:number){return e<8.5?e:8.5-4*(1-Math.cos(2*Math.PI*(e-8.5)/11))/2;}
+function slowly(e:number){return e*.45;}
 export function paintCare(c:CanvasRenderingContext2D,theme:string,time:number,elapsed:number,variant:number):void{
  const t=time+variant*.37;
  c.save();
  switch(theme){
-  case 'reed-care':reed(c,t,elapsed);break;
-  case 'flame-care':lamp(c,t,elapsed);break;
-  case 'gradual-growth':growth(c,t,elapsed);break;
-  case 'healing-care':healing(c,t,elapsed);break;
-  case 'burden-rest':burden(c,t,elapsed);break;
-  case 'weak-hand-jewel':receive(c,t,elapsed);break;
+  case 'reed-care':reed(c,t,tending(elapsed));break;
+  case 'flame-care':lamp(c,t,tending(elapsed));break;
+  case 'gradual-growth':growth(c,t,elapsed*.2);break;  // grows across the whole minute-long scene
+  case 'healing-care':healing(c,t,tending(elapsed));break;
+  case 'burden-rest':burden(c,t,slowly(elapsed));break;
+  case 'weak-hand-jewel':receive(c,t,slowly(elapsed));break;
   default:throw new Error('Unknown care illustration '+theme);
  }
  c.restore();

@@ -29,5 +29,5 @@ const paint:Painter=(context,art,t,elapsed,variant)=>{
 };
 export default function BruisedReedAnimation({audio,time,playing}:{audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean}){
  return <SermonAnimation audio={audio} time={time} playing={playing} label="The Bruised Reed animation"
-  cues={cues} scenes={scenes} timing={timing} paint={paint} captionHold={4} captionGap/>;
+  cues={cues} scenes={scenes} timing={timing} paint={paint} captionHold={4} captionGap gentleReducedMotion/>;
 }
