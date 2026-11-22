@@ -4,11 +4,22 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.132 |
+| Release | 1.0.133 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation |
-| Latest change | Sortable Listening Library quick-action table |
-| Previous archive | `GitHub History/2026-11-21_23-53-52-892056_SGT_f58c65c3` (1.0.130) |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed |
+| Latest change | New book: Richard Sibbes, The Bruised Reed (audio on `audio-1.0.133`) |
+| Previous archive | `GitHub History/2026-11-22_12-07-39-816389_SGT_8ca62a7a` (1.0.132) |
+
+## 1.0.133 The Bruised Reed (Claude, 22 November)
+
+- New Listening Library item: Richard Sibbes, The Bruised Reed (1630). It's a whole book: the Epistle Dedicatory, To the General Reader and 28 chapters, about 41,500 words. Its transcript uses the book's own chapter headings.
+- Mike's supplied PDF was Monergism Books' copyrighted 2018 edition, so Mike chose the public-domain text: Grosart, Complete Works of Richard Sibbes, vol. 1 (1862), which reprints the 1635 fifth edition. It was rebuilt by a word vote across three archive.org scans, then checked with an independent macOS Vision OCR and the page images. Grosart's footnotes and endnote letters are removed, and his reference misprints are corrected. Details are in `improved/bruised-reed-sibbes/corrections.md`, and the tools are in its `source/`.
+- Scripture references are written in modern form. Audio-only forms for this book: Ans./Obs./Quest./Doct./Object., "&c." and "breeches". Quotation marks are not spoken, so transcript quote fixes never force a re-render.
+- `tests/account-library.mts` now expects 11 table rows (10 after a removal). `improved/check.mjs` and `excellency/check.mjs` expect 44 downloads.
+- Audio: 4:01:39.4, 1,171 chunks, 1,165 transcript passages, narrator warm throughout, rendered with 6 workers. Audit: peak 0.713, no clipping, longest pause 0.82 s. Release `audio-1.0.133`: MP3 173,993,691 bytes and M4A 173,246,078 bytes. Sizes and checksums are verified, and the files are archived in `GitHub History/Release Assets/2026-11-22_audio-1.0.133`.
+- `improved/check.mjs` and `excellency/check.mjs` now count only the card downloads. The 1.0.132 table's 22 MP3/PDF links had raised their count to 66.
+- Checks: `npm ci`, `npm run check`, `npm run build`, `npm run test:browser`, `improved/check.mjs` (Bruised Reed release audio, wording, seek to 8726 s) and `excellency/check.mjs` all passed.
+- No animation yet. ChatGPT will add one in a later release (see `Shared Notes/2026-11-22 Claude to ChatGPT - Bruised Reed animation start.md`).
 
 ## 1.0.132 Listening Library table (Codex, 22 November)
 

@@ -5,6 +5,7 @@ import prayerCureCues from './prayer-the-cure-for-care-cues.json';
 import paydayCues from './payday-cues.json';
 import freeGraceCues from './free-grace-cues.json';
 import wayOfSalvationCues from './way-of-salvation-cues.json';
+import bruisedReedCues from './bruised-reed-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
@@ -31,6 +32,7 @@ const readings=[
  {title:'Prayer, the Cure for Care',author:'C. H. Spurgeon',filename:'prayer-the-cure-for-care-spurgeon.m4a',cues:prayerCureCues},
  {title:'Free Grace',author:'John Wesley',filename:'free-grace-wesley.m4a',cues:freeGraceCues},
  {title:'The Way of Salvation',author:'C. H. Spurgeon',filename:'way-of-salvation-spurgeon.m4a',cues:wayOfSalvationCues},
+ {title:'The Bruised Reed',author:'Richard Sibbes',filename:'bruised-reed-sibbes.m4a',cues:bruisedReedCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean};
