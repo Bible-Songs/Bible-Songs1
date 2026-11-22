@@ -4,11 +4,20 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.133 |
+| Release | 1.0.134 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed |
-| Latest change | New book: Richard Sibbes, The Bruised Reed (audio on `audio-1.0.133`) |
+| Latest change | Full-book Watch with animation for The Bruised Reed |
 | Previous archive | `GitHub History/2026-11-22_12-07-39-816389_SGT_8ca62a7a` (1.0.132) |
+
+## 1.0.134 The Bruised Reed animation (Codex, 22 November)
+
+- Adds Watch with animation on the card and quick-action table for the complete 4:01:39 recording, including both introductory sections and all 28 chapters. 296 scenes use exact contiguous spoken excerpts. Original recording, transcript and downloads are retained.
+- Reuses appropriate Excellency painter primitives and adds a title-specific painter: bent reed with intact fibres, smouldering wick, seed/growth imagery, lock, anchor, clock and other subjects from Sibbes. Representative artwork contact sheets were inspected and refined, including distinct mustard seed/acorn and fire/water subjects.
+- New per-word timing support in SermonAnimation is optional; existing animations keep their previous phrase timings and holds. This book explicitly uses captionHold=4 and a 12-intervening-word planning target. Final audit: all 296 caption starts aligned to the active recording; 1,776 caption words, with six internal word positions interpolated between measured neighbours. Every complete caption holds at least four seconds; actual minimum spacing is 23 spoken words and no overlap exception is needed. Audit: video-previews/bruised-reed/timing-audit.json in the parent workspace.
+- Work/checkpoints: /Users/mike/Documents/ChatGPT/Bible Song/video-previews/bruised-reed/. Two local Whisper small.en workers, four CPU threads each; separate checkpoints and selective stronger-decoding retries. 296-scene plan, raw recognized word times, source choices, audit and artwork review sheets are retained locally. No MP4 export requested.
+- Verification: clean npm ci, strict checks, production build, strict local tooling check, representative artwork/contact-sheet inspection, focused Chrome checks of all 296 caption holds, partial reveal, pause, 1.5x, deep seeking/transcript following, mobile/reduced motion and all three preceding animations passed. Full account/library browser suite passed, including actual sermon playback/download and continuous Bible transitions. The final tests reject provisional timing markers. The final check caught a 29 ms pre-cue repaired-word boundary; assembly now clamps that measured-word repair to the authoritative cue start.
+- Mike explicitly authorized publishing when done. Keep pre-push archive hook enabled, verify remote commit and confirm its archive. Skip Pages deployment/live checks.
 
 ## 1.0.133 The Bruised Reed (Claude, 22 November)
 

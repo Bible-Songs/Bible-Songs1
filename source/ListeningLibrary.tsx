@@ -15,6 +15,7 @@ import PublishedReading from './PublishedReading';
 import PrayerAnimation from './PrayerAnimation';
 import JewelsAnimation from './JewelsAnimation';
 import ExcellencyAnimation from './ExcellencyAnimation';
+import BruisedReedAnimation from './BruisedReedAnimation';
 import type {ComponentType,RefObject} from 'react';
 import sermonCues from './gods-jewels-cues.json';
 import PlaybackSpeed from './PlaybackSpeed';
@@ -39,6 +40,7 @@ type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:
 // Sermons with an optional Canvas animation (drawn by the browser from the audio clock and cue timings).
 const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
  ['gods-jewels-spurgeon.m4a',JewelsAnimation],
+ ['bruised-reed-sibbes.m4a',BruisedReedAnimation],
  ['prayer-the-cure-for-care-spurgeon.m4a',PrayerAnimation],
  ['excellency-of-christ-edwards.m4a',ExcellencyAnimation],
 ]);

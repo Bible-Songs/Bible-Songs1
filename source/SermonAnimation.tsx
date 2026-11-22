@@ -5,10 +5,11 @@ import type {RefObject} from 'react';
 import './prayer-animation.css';
 import SermonCaptions from './SermonCaptions';
 import {timedCaption} from './caption-timeline';
+import type {CaptionWord} from './caption-timeline';
 
 export type Scene={readonly cue:number;readonly art:string;readonly line:string;readonly start?:number};
 // One timing entry per scene, in scene order: the start of each three-word phrase of its caption.
-export type CaptionTiming={readonly cue:number;readonly at:readonly number[]};
+export type CaptionTiming={readonly cue:number;readonly at:readonly number[];readonly words?:readonly CaptionWord[]};
 export type Painter=(context:CanvasRenderingContext2D,art:string,t:number,elapsed:number,variant:number)=>void;
 type Cue={readonly start:number;readonly text:string};
 
@@ -21,7 +22,11 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
 }){
  const figure=useRef<HTMLElement>(null);
  const canvas=useRef<HTMLCanvasElement>(null);
- const captions=useMemo(()=>scenes.map((scene,index)=>timedCaption(index,scene.line,timing[index]?.at??[],cues[scene.cue]?.start??0)),[scenes,timing,cues]);
+ const captions=useMemo(()=>scenes.map((scene,index)=>{
+  const words=timing[index]?.words;
+  if(words?.length)return {id:index,line:scene.line,start:words[0]?.start??0,end:words.at(-1)?.end??0,words};
+  return timedCaption(index,scene.line,timing[index]?.at??[],cues[scene.cue]?.start??0);
+ }),[scenes,timing,cues]);
  useEffect(()=>{figure.current?.scrollIntoView({block:'start'});},[]);
  // A scene begins with its transcript passage; a second scene in the same passage begins just before its words.
  const sceneStart=(i:number)=>{
