@@ -15,10 +15,12 @@ type Cue={readonly start:number;readonly text:string};
 
 export const width=960,height=480;
 
-export default function SermonAnimation({audio,time,playing,label,cues,scenes,timing,paint,captionHold=3}:{
+// captionGap: keep each completed caption until 1.5 s before the next (at least captionHold after its last word),
+// then fade over 0.5 s, leaving 1 s caption-free before the next caption (Mike's 1-second target, 22 Nov 2026).
+export default function SermonAnimation({audio,time,playing,label,cues,scenes,timing,paint,captionHold=3,captionGap=false}:{
  audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean;label:string;
  cues:readonly Cue[];scenes:readonly Scene[];timing:readonly CaptionTiming[];paint:Painter;
- captionHold?:number;
+ captionHold?:number;captionGap?:boolean;
 }){
  const figure=useRef<HTMLElement>(null);
  const canvas=useRef<HTMLCanvasElement>(null);
@@ -61,6 +63,6 @@ export default function SermonAnimation({audio,time,playing,label,cues,scenes,ti
   <div className="prayer-animation-stage">
    <canvas ref={canvas} width={width} height={height} aria-hidden="true"/>
   </div>
-  <SermonCaptions captions={captions} audio={audio} time={time} playing={playing} minimumHold={captionHold}/>
+  <SermonCaptions captions={captions} audio={audio} time={time} playing={playing} minimumHold={captionHold} fadeAfterHold={captionGap}/>
  </figure>;
 }

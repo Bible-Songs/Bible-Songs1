@@ -1,1778 +1,1532 @@
 [
  {
-  "cue": 0,
-  "art": "reed",
-  "line": "The Bruised Reed.",
+  "cue": 4,
+  "art": "reed-and-flax",
+  "line": "“A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory.”",
   "start": 0
  },
  {
-  "cue": 4,
-  "art": "reed",
-  "line": "A bruised reed shall he not break",
-  "start": 14.20938775510204
- },
- {
   "cue": 8,
-  "art": "soldier",
-  "line": "Soldiers that carry their lives in their hands",
+  "art": "resisting-evil",
+  "line": "Soldiers that carry their lives in their hands had need, above all others, to carry grace in their hearts, that so having made peace with God, they may be fit to encounter with men",
   "start": 44.63541950113378
  },
  {
-  "cue": 17,
-  "art": "camp",
-  "line": "piety can enter into tents",
-  "start": 152.995
+  "cue": 20,
+  "art": "wind-tossed-plants",
+  "line": "the strongest plants in God’s house are exposed sometimes to strong winds of temptation, and thereupon meet with bruisings, that they may the better know by whose strength they stand",
+  "start": 179.69680272108843
  },
  {
-  "cue": 19,
-  "art": "cedar",
-  "line": "such a strong and flourishing cedar",
-  "start": 175.74
+  "cue": 27,
+  "art": "resisting-evil",
+  "line": "the cause shall stand impregnable against all created power of devils and men.",
+  "start": 256.41412698412694
  },
  {
-  "cue": 21,
-  "art": "fountain",
-  "line": "the same common rock and fountain of strength",
-  "start": 193.339
+  "cue": 42,
+  "art": "healing-care",
+  "line": "God hath laid up all grace and comfort in Christ for us, and planted a wonderful sweetness of pity and love in his heart towards us.",
+  "start": 405.2848299319728
  },
  {
-  "cue": 25,
-  "art": "banner",
-  "line": "victory attendeth Christ’s side in the end",
-  "start": 239.58700000000002
+  "cue": 52,
+  "art": "healing-care",
+  "line": "These are abused by false representations of Christ; all whose ways to such being ways of mercy, and all his thoughts, thoughts of love.",
+  "start": 540.4882993197278
  },
  {
-  "cue": 29,
-  "art": "throne",
-  "line": "King of his church and Judge of the world",
-  "start": 283.21799999999996
- },
- {
-  "cue": 36,
-  "art": "victory",
-  "line": "brought forth judgment unto victory",
-  "start": 363.92499999999995
- },
- {
-  "cue": 40,
-  "art": "book",
-  "line": "let these notes pass with some review",
-  "start": 376.447
- },
- {
-  "cue": 44,
-  "art": "care",
-  "line": "to comfort the feeble-minded",
-  "start": 432.448
- },
- {
-  "cue": 48,
-  "art": "traveler",
-  "line": "he will speak to her heart",
-  "start": 488.308
- },
- {
-  "cue": 51,
-  "art": "bound",
-  "line": "bound hand and foot",
-  "start": 529.3919999999999
- },
- {
-  "cue": 53,
-  "art": "burden",
-  "line": "weary and heavy laden",
-  "start": 569.285
- },
- {
-  "cue": 57,
-  "art": "wick",
-  "line": "he will not quench the smoking wick",
-  "start": 619.7479999999999
- },
- {
-  "cue": 60,
-  "art": "fountain",
-  "line": "heights, and depths, and breadths of mercy",
-  "start": 654.438
- },
- {
-  "cue": 64,
-  "art": "prayer",
-  "line": "can raise the conscience with comfort above guilt",
-  "start": 700.776
- },
- {
-  "cue": 68,
-  "art": "care",
-  "line": "friendly intercourse, as entreaty and persuasion",
-  "start": 744.742
+  "cue": 61,
+  "art": "healing-care",
+  "line": "considering our sins be the sins of men, his mercy the mercy of an infinite God.",
+  "start": 666.4037868480726
  },
  {
   "cue": 71,
-  "art": "throne",
-  "line": "going boldly in all necessities to the throne of grace",
-  "start": 776.372
+  "art": "wise-guidance",
+  "line": "But we must know this comfort is only the portion of those that give up themselves to Christ’s government, that are willing in all things to be disposed of by him.",
+  "start": 779.9506848072562
  },
  {
-  "cue": 75,
-  "art": "medicine",
-  "line": "an apothecary’s shop",
-  "start": 837.137
- },
- {
-  "cue": 78,
-  "art": "banner",
-  "line": "Christ that rideth on the white horse",
-  "start": 871.706
- },
- {
-  "cue": 82,
-  "art": "foundation",
-  "line": "a building upon the sand",
-  "start": 921.759
+  "cue": 79,
+  "art": "wise-guidance",
+  "line": "There is no more comfort to be expected from Christ, than there is care to please him.",
+  "start": 883.9286167800453
  },
  {
   "cue": 85,
-  "art": "fire",
-  "line": "love might be kindled",
-  "start": 947.506
+  "art": "burden-rest",
+  "line": "It is love in duties that God regards, more than duties themselves.",
+  "start": 957.7446848072561
  },
  {
   "cue": 89,
-  "art": "victory",
-  "line": "until he bring forth judgment to victory",
-  "start": 1009.597
- },
- {
-  "cue": 93,
-  "art": "wick",
-  "line": "those weak sparks",
-  "start": 1059.584
- },
- {
-  "cue": 95,
-  "art": "book",
-  "line": "our hearts, tongues, and pens",
-  "start": 1084.931
- },
- {
-  "cue": 98,
-  "art": "reed",
-  "line": "What the Reed is",
-  "start": 1096.285
+  "art": "victorious-rule",
+  "line": "his powerful care and love is never interrupted, until he bring forth judgment to victory.",
+  "start": 1005.8156848072563
  },
  {
   "cue": 103,
-  "art": "care",
-  "line": "the sweet love of God to us",
-  "start": 1153.104
+  "art": "wise-guidance",
+  "line": "Christ was God’s servant in the greatest piece of service that ever was; a chosen, and a choice servant: he did and suffered all by commission from the Father",
+  "start": 1141.152925170068
  },
  {
-  "cue": 106,
-  "art": "lamb",
-  "line": "the true Lamb of God",
-  "start": 1185.9660000000001
+  "cue": 105,
+  "art": "burden-rest",
+  "line": "they need be roused up to behold him in whom they may find rest for their distressed souls.",
+  "start": 1174.2809750566892
  },
  {
-  "cue": 112,
-  "art": "book",
-  "line": "the Father giveth a commission to Christ",
-  "start": 1251.91
+  "cue": 111,
+  "art": "wise-guidance",
+  "line": "Let us, therefore, embrace Christ, and in him God’s love, and build our faith safely on such a Saviour, that is furnished with so high a commission.",
+  "start": 1236.923673469388
  },
  {
-  "cue": 115,
-  "art": "burden",
-  "line": "all ye that are weary and heavy laden",
-  "start": 1282.63
+  "cue": 113,
+  "art": "triune-agreement-metaphor",
+  "line": "Our redemption is founded upon the joint agreement of all three persons of the Trinity.",
+  "start": 1259.8403628117915
  },
  {
   "cue": 117,
-  "art": "reed",
-  "line": "he will cherish them",
-  "start": 1324.161
+  "art": "reed-and-flax",
+  "line": "He brake not the bruised reed, nor quenched the smoking flax",
+  "start": 1313.6196848072561
  },
  {
-  "cue": 120,
-  "art": "dove",
-  "line": "a dove amongst the fowls",
-  "start": 1353.948
+  "cue": 118,
+  "art": "gradual-growth",
+  "line": "Thirdly, The constancy and progress of this his tender care, “until judgment come to victory” — that is, until the sanctified frame of grace begun in their hearts be brought to that perfection, that it prevaileth over all opposite corruption.",
+  "start": 1324.7784126984127
+ },
+ {
+  "cue": 122,
+  "art": "reed-care",
+  "line": "They are bruised reeds before their conversion, and oftentimes after",
+  "start": 1371.2557823129252
  },
  {
   "cue": 124,
-  "art": "reed",
-  "line": "This bruised reed is a man",
-  "start": 1404.8500000000001
+  "art": "reed-care",
+  "line": "This bruised reed is a man that for the most part is in some misery, as those were that came to Christ for help, and (2) by misery is brought to see sin the cause of it",
+  "start": 1404.208684807256
  },
  {
-  "cue": 128,
-  "art": "fountain",
-  "line": "hunger and thirst after it",
-  "start": 1473.5590000000002
+  "cue": 125,
+  "art": "reed-care",
+  "line": "seeing no help in himself, is carried with restless desire to have supply from another, with some hope, which a little raiseth him out of himself to Christ",
+  "start": 1425.3771655328796
+ },
+ {
+  "cue": 130,
+  "art": "reed-care",
+  "line": "This bruising is required before conversion (1), that so the Spirit may make way for itself into the heart by levelling all proud, high thoughts, and that we may understand ourselves to be what indeed we are by nature.",
+  "start": 1478.7218594104309
  },
  {
   "cue": 131,
-  "art": "home",
-  "line": "come home to ourselves with the prodigal",
-  "start": 1502.1750000000002
+  "art": "reed-care",
+  "line": "this bruising maketh us set a high price upon Christ.",
+  "start": 1519.7736848072561
+ },
+ {
+  "cue": 133,
+  "art": "reed-care",
+  "line": "for what maketh many so cold and barren, but that bruising for sin never endeared God’s grace unto them?",
+  "start": 1535.3241496598637
  },
  {
   "cue": 136,
-  "art": "cedar",
-  "line": "reeds may know themselves to be reeds",
-  "start": 1581.672
+  "art": "reed-care",
+  "line": "even reeds need bruising, by reason of the remainder of pride in our nature, and to let us see that we live by mercy.",
+  "start": 1584.7906848072562
  },
  {
-  "cue": 140,
-  "art": "prayer",
-  "line": "Thus David was bruised",
-  "start": 1624.4950000000001
+  "cue": 139,
+  "art": "wise-guidance",
+  "line": "The heroical deeds of those great worthies do not comfort the church so much as their falls and bruises do.",
+  "start": 1617.06820861678
  },
  {
-  "cue": 145,
-  "art": "reed",
-  "line": "Christ will not Break the Bruised Reed",
-  "start": 1694.102
+  "cue": 142,
+  "art": "reed-care",
+  "line": "we must not pass too harsh judgment upon ourselves or others when God doth exercise us with bruising upon bruising",
+  "start": 1656.5962585034013
+ },
+ {
+  "cue": 144,
+  "art": "gradual-growth",
+  "line": "It is no easy matter to bring a man from nature to grace, and from grace to glory, so unyielding and untractable are our hearts.",
+  "start": 1684.1909297052155
  },
  {
   "cue": 147,
-  "art": "mother",
-  "line": "A mother that hath a sick",
-  "start": 1712.929
- },
- {
-  "cue": 150,
-  "art": "lamb",
-  "line": "borrowed names from the mildest creatures",
-  "start": 1755.616
+  "art": "healing-care",
+  "line": "Shall we think there is more mercy in ourselves than in God, who planteth the affection of mercy in us?",
+  "start": 1721.3176848072562
  },
  {
   "cue": 153,
-  "art": "shepherd",
-  "line": "sheep without a shepherd",
-  "start": 1807.469
+  "art": "burden-rest",
+  "line": "He never turned any back again that came unto him, though some went away of themselves.",
+  "start": 1810.527684807256
  },
  {
   "cue": 157,
-  "art": "medicine",
-  "line": "the binding up of a broken heart",
-  "start": 1870.352
+  "art": "healing-care",
+  "line": "He is a physician good at all diseases, especially at the binding up of a broken heart",
+  "start": 1866.3004988662133
  },
  {
-  "cue": 160,
-  "art": "throne",
-  "line": "come boldly to the throne of grace",
-  "start": 1916.053
+  "cue": 161,
+  "art": "reed-care",
+  "line": "Art thou bruised? Be of good comfort, he calleth thee; conceal not thy wounds, open all before him, keep not Satan’s counsel.",
+  "start": 1925.2118820861679
  },
  {
-  "cue": 162,
-  "art": "care",
-  "line": "touch the hem of his garment",
-  "start": 1937.651
+  "cue": 165,
+  "art": "burden-rest",
+  "line": "Let the world be as it will, if we cannot rejoice in the world, yet we may rejoice in the Lord.",
+  "start": 1977.5185487528345
  },
  {
-  "cue": 166,
-  "art": "boat",
-  "line": "Be not afraid",
-  "start": 1987.336
+  "cue": 168,
+  "art": "reed-care",
+  "line": "If Christ be so merciful as not to break me, I will not break myself by despair",
+  "start": 2016.1439455782313
  },
  {
-  "cue": 170,
-  "art": "care",
-  "line": "binds up the broken-hearted",
-  "start": 2046.7830000000001
+  "cue": 171,
+  "art": "reed-care",
+  "line": "so doth Christ most mercifully incline to the weakest, and likewise putteth an instinct into the weakest things to rely upon something stronger than themselves for support.",
+  "start": 2054.2086394557823
  },
  {
-  "cue": 172,
-  "art": "vine",
-  "line": "The vine stayeth itself upon the elm",
-  "start": 2065.098
+  "cue": 175,
+  "art": "reed-care",
+  "line": "By bruising here is not meant those that are brought low only by crosses, but such as by them are brought to see their sin, which bruiseth most of all.",
+  "start": 2090.429909297052
  },
  {
-  "cue": 178,
-  "art": "prayer",
-  "line": "bind up my heart again",
-  "start": 2141.353
+  "cue": 179,
+  "art": "burden-rest",
+  "line": "a man truly bruised judgeth sin the greatest evil, and the favour of God the greatest good.",
+  "start": 2144.319342403628
  },
  {
-  "cue": 181,
-  "art": "book",
-  "line": "He trembleth at the word of God",
-  "start": 2176.609
+  "cue": 180,
+  "art": "healing-care",
+  "line": "Towards others he is not censorious, as being taken up at home, but is full of sympathy and compassion to those that are under God’s hand.",
+  "start": 2160.7860090702948
  },
  {
   "cue": 185,
-  "art": "prayer",
-  "line": "When he humbles us, let us humble ourselves",
-  "start": 2213.943401360544
+  "art": "reed-care",
+  "line": "When he humbles us, let us humble ourselves, and not stand out against him",
+  "start": 2213.3020861678006
  },
  {
-  "cue": 188,
-  "art": "lamp",
-  "line": "a clear and a strong light",
-  "start": 2269.611
+  "cue": 191,
+  "art": "reed-care",
+  "line": "such must know that every sudden terror and short grief is not that which makes us bruised reeds",
+  "start": 2304.8934013605444
  },
  {
-  "cue": 192,
-  "art": "reed",
-  "line": "hanging down our heads like a bulrush",
-  "start": 2311.9900000000002
+  "cue": 194,
+  "art": "reed-care",
+  "line": "It is dangerous, I confess, in some cases with some spirits, to press too much and too long this bruising",
+  "start": 2330.422857142857
  },
  {
   "cue": 195,
-  "art": "care",
+  "art": "healing-care",
   "line": "there is more mercy in Christ than sin in us",
-  "start": 2350.945
- },
- {
-  "cue": 199,
-  "art": "wick",
-  "line": "a little spark of faith",
-  "start": 2405.377
- },
- {
-  "cue": 202,
-  "art": "prayer",
-  "line": "offer up the sick person to God",
-  "start": 2442.799
+  "start": 2350.3036848072566
  },
  {
   "cue": 206,
-  "art": "shepherd",
-  "line": "Hath God care",
-  "start": 2499.137
+  "art": "healing-care",
+  "line": "we ought to judge charitably of the complaints of God’s people which are wrung from them in such cases.",
+  "start": 2503.145684807256
  },
  {
-  "cue": 207,
-  "art": "fountain",
-  "line": "a running stream fed with a spring",
-  "start": 2526.608
+  "cue": 208,
+  "art": "reed-care",
+  "line": "let all know that none are fitter for comfort than those that think themselves furthest off.",
+  "start": 2538.542925170068
  },
  {
-  "cue": 211,
-  "art": "shepherd",
-  "line": "Christ’s sheep are weak sheep",
-  "start": 2569.311
- },
- {
-  "cue": 213,
-  "art": "lamb",
-  "line": "The lambs he carrieth in his bosom",
-  "start": 2590.1223129251703
+  "cue": 212,
+  "art": "reed-care",
+  "line": "his tenderest care is over the weakest.",
+  "start": 2587.1249659863943
  },
  {
   "cue": 217,
-  "art": "wick",
-  "line": "God will not quench the smoking flax",
-  "start": 2631.632
+  "art": "flame-care",
+  "line": "God will not quench the smoking flax, or wick, but will blow it up till it flameth.",
+  "start": 2630.9906848072565
  },
  {
-  "cue": 219,
-  "art": "seed",
-  "line": "a grain of mustard seed",
-  "start": 2669.587
+  "cue": 220,
+  "art": "gradual-growth",
+  "line": "Nothing so little as grace at first, and nothing more glorious afterward: things of greatest perfection are longest in coming to their growth.",
+  "start": 2672.907709750567
  },
  {
   "cue": 222,
-  "art": "oak",
-  "line": "a mighty oak riseth of an acorn",
-  "start": 2700.574
+  "art": "gradual-growth",
+  "line": "A new creature is the most excellent frame in all the world, therefore it groweth up by degrees",
+  "start": 2692.402403628118
  },
  {
-  "cue": 225,
-  "art": "seed",
-  "line": "in the small seeds of plants",
-  "start": 2733.928
+  "cue": 227,
+  "art": "gradual-growth",
+  "line": "Let us not therefore be discouraged at the small beginnings of grace",
+  "start": 2750.0016780045353
  },
  {
   "cue": 228,
-  "art": "sapling",
-  "line": "We call a little plant a tree",
-  "start": 2782.404
+  "art": "gradual-growth",
+  "line": "Christ valueth us by what we shall be, and by that we are elected unto.",
+  "start": 2777.0026848072557
  },
  {
   "cue": 231,
-  "art": "seed",
-  "line": "Grace, though little in quantity",
-  "start": 2801.4010430839003
+  "art": "weak-hand-jewel",
+  "line": "Grace, though little in quantity, yet is much in vigour and worth.",
+  "start": 2800.7597278911567
  },
  {
   "cue": 234,
-  "art": "pearl",
-  "line": "A pearl, though little",
-  "start": 2838.154376417234
+  "art": "weak-hand-jewel",
+  "line": "nothing in the world of so good use, as the least dram of grace.",
+  "start": 2840.642684807256
  },
  {
   "cue": 236,
-  "art": "wick",
-  "line": "a Christian is said to be smoking flax",
-  "start": 2854.589
+  "art": "flame-care",
+  "line": "grace doth not waste corruption all at once, but some is left to conflict withal.",
+  "start": 2857.807684807256
+ },
+ {
+  "cue": 237,
+  "art": "burden-rest",
+  "line": "When we pray, we need to pray again for Christ to pardon the defects of them.",
+  "start": 2868.8557142857144
  },
  {
   "cue": 239,
-  "art": "prayer",
-  "line": "Broken hearts can yield but broken prayers",
-  "start": 2896.038
+  "art": "prayer-help",
+  "line": "Broken hearts can yield but broken prayers.",
+  "start": 2895.396684807256
  },
  {
   "cue": 242,
-  "art": "boat",
-  "line": "cry the disciples",
-  "start": 2934.7560000000003
+  "art": "flame-care",
+  "line": "here is smoke of infidelity, yet so much light of faith as stirred them up to pray to Christ.",
+  "start": 2935.534684807256
  },
  {
-  "cue": 245,
-  "art": "candles",
-  "line": "seven golden candlesticks",
-  "start": 2977.4880000000003
- },
- {
-  "cue": 248,
-  "art": "fire",
-  "line": "Our spiritual fire is like our ordinary fire",
-  "start": 3005.9603628117916
+  "cue": 247,
+  "art": "burden-rest",
+  "line": "The end of it is especially to preserve us from those two dangerous rocks which our natures are prone to dash upon, security and pride; and to force us to pitch our rest on justification, not sanctification, which, besides imperfection, hath some soil.",
+  "start": 2988.541133786848
  },
  {
   "cue": 251,
-  "art": "wick",
-  "line": "a candle in the socket",
-  "start": 3042.333
+  "art": "flame-care",
+  "line": "Even as a candle in the socket sometimes sheweth its light, and sometimes the show of light is lost; so sometimes well persuaded they are of themselves, sometimes at a loss.",
+  "start": 3040.657823129252
  },
  {
-  "cue": 254,
-  "art": "wick",
-  "line": "a spark in the midst",
-  "start": 3076.505
+  "cue": 253,
+  "art": "flame-care",
+  "line": "Christ will not quench the smoking flax. First, because this spark is from heaven, it is his own, it is kindled by his own spirit.",
+  "start": 3058.979886621315
  },
  {
-  "cue": 256,
-  "art": "traveler",
-  "line": "the two disciples that went to Emmaus",
-  "start": 3097.101
+  "cue": 257,
+  "art": "healing-care",
+  "line": "Peter denied him, but he denied not Peter",
+  "start": 3107.2626303854877
  },
  {
-  "cue": 259,
-  "art": "rest",
-  "line": "The spirit is willing",
-  "start": 3160.198
+  "cue": 264,
+  "art": "flame-care",
+  "line": "Man for a little smoke will quench the light; Christ ever we see cherisheth even the least beginnings.",
+  "start": 3209.0719047619045
  },
  {
-  "cue": 262,
-  "art": "bread",
-  "line": "when he saw them without meat",
-  "start": 3194.002
- },
- {
-  "cue": 266,
-  "art": "teacher",
-  "line": "that faithful fisher of men",
-  "start": 3249.944
- },
- {
-  "cue": 268,
-  "art": "wine",
-  "line": "new wine into old vessels",
-  "start": 3283.274
+  "cue": 265,
+  "art": "reed-care",
+  "line": "We that are strong ought to bear with the infirmities of them that are weak",
+  "start": 3228.6325396825396
  },
  {
   "cue": 271,
-  "art": "road",
-  "line": "remove all rubs out of their way",
-  "start": 3321.36
+  "art": "wise-guidance",
+  "line": "shew them a more excellent way, and breed them up in positive grounds",
+  "start": 3305.38231675485
  },
  {
-  "cue": 274,
-  "art": "sapling",
-  "line": "as we breed up young plants",
-  "start": 3347.2762358276646
- },
- {
-  "cue": 278,
-  "art": "gift",
-  "line": "the gifts of God in others",
-  "start": 3400.251
+  "cue": 277,
+  "art": "reed-care",
+  "line": "The best men are severe to themselves, tender over others.",
+  "start": 3376.245963718821
  },
  {
   "cue": 283,
-  "art": "teacher",
-  "line": "when Christ taketh upon him to be the teacher",
-  "start": 3476.17
+  "art": "reed-care",
+  "line": "Christ refuseth none for weakness of parts, that none should be discouraged; accepteth of none for greatness, that none should be lifted up with that which is of so little reckoning with God.",
+  "start": 3460.4280725623585
  },
  {
-  "cue": 288,
-  "art": "pearl",
-  "line": "A sharp reproof sometimes is a precious pearl",
-  "start": 3531.957
+  "cue": 286,
+  "art": "healing-care",
+  "line": "The scope of true love is to make the party better, which by concealment oftentimes is hindered",
+  "start": 3492.798775510204
  },
  {
-  "cue": 291,
-  "art": "shepherd",
-  "line": "bring on gently, and drive softly",
-  "start": 3578.838
+  "cue": 289,
+  "art": "healing-care",
+  "line": "The wounds of secure sinners will not be healed with sweet words.",
+  "start": 3538.315809523809
  },
  {
-  "cue": 295,
-  "art": "furnace",
-  "line": "he will fine them as silver is fined",
-  "start": 3616.8740000000003
+  "cue": 294,
+  "art": "fragile-vessel",
+  "line": "Weak Christians are like glasses which are hurt with the least violent usage, otherwise if gently handled will continue a long time.",
+  "start": 3588.32485260771
  },
  {
-  "cue": 300,
-  "art": "throne",
-  "line": "where Christ alone should sit",
-  "start": 3678.672
+  "cue": 298,
+  "art": "refining-completion",
+  "line": "Perfect refining is for another world, for the world of the souls of perfect men.",
+  "start": 3630.50947845805
  },
  {
-  "cue": 304,
-  "art": "mother",
-  "line": "as a nurse to the weaker sort",
-  "start": 3730.158
+  "cue": 302,
+  "art": "wise-guidance",
+  "line": "The ambassadors of so gentle a Saviour should not be over-masterly, setting up themselves in the hearts of people where Christ alone should sit as in his own temple.",
+  "start": 3670.7716099773243
  },
  {
-  "cue": 308,
-  "art": "care",
-  "line": "do any poor soul good",
-  "start": 3781.721
+  "cue": 305,
+  "art": "wise-guidance",
+  "line": "Truth feareth nothing so much as concealment, and desireth nothing so much as clearly to be laid open to the view of all: when it is most naked, it is most lovely and powerful.",
+  "start": 3705.5502947845807
  },
  {
-  "cue": 313,
-  "art": "knot",
-  "line": "tying and untying of knots",
-  "start": 3846.529
+  "cue": 310,
+  "art": "reed-care",
+  "line": "shall we not come down from our high conceits to do any poor soul good? shall man be proud after God hath been humble?",
+  "start": 3778.370841269841
  },
  {
-  "cue": 316,
-  "art": "road",
-  "line": "take away the stones",
-  "start": 3886.713
+  "cue": 314,
+  "art": "wise-guidance",
+  "line": "We should not, thirdly, rack their wits with curious or “doubtful disputes,”",
+  "start": 3822.7137868480727
  },
  {
   "cue": 319,
-  "art": "door",
-  "line": "nor open where God shutteth",
-  "start": 3925.065
+  "art": "wise-guidance",
+  "line": "we must take heed that, under pretence of avoidance of disputes, we do not suffer an adverse party to get ground upon the truth",
+  "start": 3889.245192743764
  },
  {
-  "cue": 323,
-  "art": "trumpet",
-  "line": "lift up thy voice as a trumpet",
-  "start": 3977.579
+  "cue": 321,
+  "art": "victorious-rule",
+  "line": "We must neither bind where God looseth, nor loose where God bindeth, nor open where God shutteth, nor shut where God openeth",
+  "start": 3918.9011791383223
  },
  {
   "cue": 327,
-  "art": "sword",
-  "line": "sheathing the sword",
-  "start": 4035.203
+  "art": "wise-guidance",
+  "line": "This example doth not countenance lukewarmness, nor too much indulgence to those that need quickening.",
+  "start": 3994.452426303855
  },
  {
-  "cue": 330,
-  "art": "book",
-  "line": "wisdom which dwelleth with prudence",
-  "start": 4054.33
+  "cue": 331,
+  "art": "healing-care",
+  "line": "It is hard to preserve just bounds of mercy and severity, without a spirit above our own; which we ought to desire to be led withal in all things.",
+  "start": 4043.3551927437643
  },
  {
-  "cue": 333,
-  "art": "care",
-  "line": "some forbearance and moderation",
-  "start": 4097.833
+  "cue": 340,
+  "art": "healing-care",
+  "line": "That power that is given to the church is given for edification, not destruction.",
+  "start": 4153.707439909297
  },
  {
-  "cue": 338,
-  "art": "candles",
-  "line": "the light of the church is kept bright",
-  "start": 4152.641
+  "cue": 342,
+  "art": "healing-care",
+  "line": "As for civil magistrates, they, for civil exigences and reasons of state, must let the law have its course; yet thus far they should imitate this mild king, as not to mingle bitterness and passion with authority derived from God.",
+  "start": 4167.786575963719
  },
  {
-  "cue": 341,
-  "art": "harp",
-  "line": "This string must not be too much strained",
-  "start": 4195.4169999999995
+  "cue": 345,
+  "art": "healing-care",
+  "line": "Justice in rigour is oft extreme injustice, where some considerable circumstances should incline to moderation",
+  "start": 4209.141904761905
  },
  {
-  "cue": 346,
-  "art": "towel",
-  "line": "love should have a mantle",
-  "start": 4265.3769999999995
+  "cue": 349,
+  "art": "wise-guidance",
+  "line": "We should labour to give the best interpretation to the actions of governors that the nature of the actions will possibly bear.",
+  "start": 4272.637362811792
  },
  {
   "cue": 351,
-  "art": "sapling",
-  "line": "nip all gracious offers in the bud",
-  "start": 4348.0779999999995
+  "art": "wise-guidance",
+  "line": "Let us be watchful in the use of our liberty, and labour to be inoffensive in our carriage, that our example compel them not.",
+  "start": 4290.892448979592
  },
  {
-  "cue": 354,
-  "art": "mother",
-  "line": "the mother will not disclaim the child",
-  "start": 4386.105
+  "cue": 353,
+  "art": "grace-discernment",
+  "line": "Let men take heed of taking up Satan’s office, in depraving the good actions of others",
+  "start": 4320.5511337868475
  },
  {
-  "cue": 359,
-  "art": "care",
-  "line": "bear with the infirmities of the weak",
-  "start": 4445.616
- },
- {
-  "cue": 363,
-  "art": "herbs",
-  "line": "wormwood, and other distasteful plants",
-  "start": 4485.825
- },
- {
-  "cue": 367,
-  "art": "scales",
-  "line": "gold that is a little too light",
-  "start": 4530.964
- },
- {
-  "cue": 368,
-  "art": "medicine",
-  "line": "a common hospital",
-  "start": 4544.218
+  "cue": 362,
+  "art": "reed-care",
+  "line": "Some think it strength of grace to endure nothing in the weaker, whereas the strongest are readiest to bear with the infirmities of the weak.",
+  "start": 4438.734603174603
  },
  {
   "cue": 371,
-  "art": "care",
-  "line": "a gentle hand, and a tender heart",
-  "start": 4595.679
+  "art": "healing-care",
+  "line": "The church of Christ is a common hospital, wherein all are in some measure sick of some spiritual disease or other; that we should all have ground of exercising mutually the spirit of wisdom and meekness.",
+  "start": 4541.757324263038
  },
  {
-  "cue": 373,
-  "art": "lock",
-  "line": "It is like a lock",
-  "start": 4628.016
+  "cue": 374,
+  "art": "reed-care",
+  "line": "And we should think what affection Christ would carry to the party in this case.",
+  "start": 4585.938004535147
  },
  {
-  "cue": 378,
-  "art": "roots",
-  "line": "life in the winter is hid in the root",
-  "start": 4686.406
+  "cue": 376,
+  "art": "reed-care",
+  "line": "And therefore let us take upon ourselves a tender care of them every way; and especially in cherishing the peace of their consciences.",
+  "start": 4614.614693877551
  },
  {
-  "cue": 380,
-  "art": "home",
-  "line": "The prodigal would not say he was no son",
-  "start": 4703.0019999999995
+  "cue": 379,
+  "art": "grace-discernment",
+  "line": "We must have two eyes, one to see imperfections in ourselves and others; the other to see what is good.",
+  "start": 4646.4714058956915
+ },
+ {
+  "cue": 381,
+  "art": "burden-rest",
+  "line": "We must not judge of ourselves always according to present feeling",
+  "start": 4673.375024943311
  },
  {
   "cue": 384,
-  "art": "pearl",
-  "line": "A weak hand may receive a rich jewel",
-  "start": 4760.49
+  "art": "grace-discernment",
+  "line": "We must neither trust to false evidence, nor deny true",
+  "start": 4709.050068027211
  },
  {
   "cue": 386,
-  "art": "dove",
-  "line": "a pair of turtle doves",
-  "start": 4784.302
+  "art": "weak-hand-jewel",
+  "line": "in the covenant of grace, God requires the truth of grace, not any certain measure",
+  "start": 4736.0174376417235
  },
  {
-  "cue": 391,
-  "art": "medicine",
-  "line": "healing balm for those wounds",
-  "start": 4847.085
+  "cue": 388,
+  "art": "weak-hand-jewel",
+  "line": "It is one thing to be wanting in grace, and another thing to want grace altogether.",
+  "start": 4765.85746031746
  },
  {
-  "cue": 395,
-  "art": "book",
-  "line": "The law is sweetened by the gospel",
-  "start": 4879.697188208616
+  "cue": 394,
+  "art": "healing-care",
+  "line": "Christ cometh with blessing after blessing even upon those whom Moses had cursed, and with healing balm for those wounds which Moses had made.",
+  "start": 4840.464172335601
  },
  {
-  "cue": 397,
-  "art": "door",
-  "line": "Christ hath set open the doors before them",
-  "start": 4910.45
+  "cue": 398,
+  "art": "weak-hand-jewel",
+  "line": "Under this gracious covenant sincerity is perfection.",
+  "start": 4885.67602494331
  },
  {
-  "cue": 399,
-  "art": "water",
-  "line": "a troubled soul is like troubled water",
-  "start": 4932.021
+  "cue": 401,
+  "art": "grace-discernment",
+  "line": "the Spirit sometimes hath secret operations in us, which we know not for the present; but Christ knoweth.",
+  "start": 4916.605510204081
  },
  {
-  "cue": 404,
-  "art": "wick",
-  "line": "if there be any holy fire in us",
-  "start": 4977.847
+  "cue": 405,
+  "art": "flame-care",
+  "line": "There is no mere darkness in the state of grace, but some beam of light, whereby the kingdom of darkness wholly prevaileth not.",
+  "start": 4960.486848072562
  },
  {
   "cue": 407,
-  "art": "lamp",
-  "line": "light in the understanding breedeth heat of love",
-  "start": 5029.625
+  "art": "flame-care",
+  "line": "if there be any holy fire in us, it is kindled from heaven",
+  "start": 4976.73602494331
  },
  {
-  "cue": 411,
-  "art": "lamp",
-  "line": "light little for quantity",
-  "start": 5077.839
- },
- {
-  "cue": 414,
-  "art": "road",
-  "line": "to guide in the particular passages of life",
-  "start": 5128.938999999999
+  "cue": 410,
+  "art": "flame-care",
+  "line": "the least divine light hath heat with it in some measure; light in the understanding breedeth heat of love in the affections.",
+  "start": 5025.23402494331
  },
  {
   "cue": 417,
-  "art": "wick",
-  "line": "God must light our candle",
-  "start": 5169.369387755101
+  "art": "wise-guidance",
+  "line": "where this heavenly light is kindled, it directeth in the right way.",
+  "start": 5120.42802494331
  },
  {
-  "cue": 422,
-  "art": "furnace",
-  "line": "a difference between things, as gold and dross",
-  "start": 5226.047
+  "cue": 425,
+  "art": "grace-discernment",
+  "line": "It will sever between flesh and spirit, and shew that this is of nature, this of grace.",
+  "start": 5228.186637188208
  },
  {
-  "cue": 427,
-  "art": "care",
-  "line": "he is soon counselable",
-  "start": 5285.130999999999
+  "cue": 428,
+  "art": "wise-guidance",
+  "line": "so far as a man is spiritual, so far is light delightful unto him, as willing to see anything amiss, that he may reform",
+  "start": 5260.606371882086
  },
  {
-  "cue": 433,
-  "art": "wick",
-  "line": "put out the candle",
-  "start": 5364.288
- },
- {
-  "cue": 435,
-  "art": "firewater",
-  "line": "no more than fire with water",
-  "start": 5393.789
- },
- {
-  "cue": 439,
-  "art": "wick",
-  "line": "smoke discovers some fire",
-  "start": 5435.974999999999
- },
- {
-  "cue": 444,
-  "art": "furnace",
-  "line": "fire maketh metals pliable and malleable",
-  "start": 5500.231
+  "cue": 445,
+  "art": "gradual-growth",
+  "line": "so the least measure of grace is working, as springing from the Spirit of God",
+  "start": 5475.443696145125
  },
  {
   "cue": 447,
-  "art": "fire",
-  "line": "sparks by nature fly upwards",
-  "start": 5547.870999999999
+  "art": "heated-pliable-metal",
+  "line": "fire maketh metals pliable and malleable, so doth grace, where it is begun; it worketh the heart to be pliable and ready for all good impressions.",
+  "start": 5498.8906371882085
  },
  {
-  "cue": 450,
-  "art": "prayer",
-  "line": "desires are counted a part",
-  "start": 5582.9349999999995
+  "cue": 448,
+  "art": "grace-shared",
+  "line": "so grace laboureth to breed the like impression in others, and make as many good as it can.",
+  "start": 5517.393038548753
  },
  {
-  "cue": 454,
-  "art": "fire",
-  "line": "Smoking flax will grow to a flame",
-  "start": 5655.083
+  "cue": 451,
+  "art": "wise-guidance",
+  "line": "Where the aim and bent of the soul is God-wards, there is grace, though opposed.",
+  "start": 5564.711768707483
  },
  {
-  "cue": 457,
-  "art": "care",
-  "line": "he will never take his hand from his work",
-  "start": 5701.554999999999
+  "cue": 456,
+  "art": "gradual-growth",
+  "line": "so where true grace is, it groweth in measure and purity.",
+  "start": 5649.912494331065
  },
  {
-  "cue": 463,
-  "art": "wick",
-  "line": "the fairest fire that can be will have some smoke",
-  "start": 5755.192
+  "cue": 460,
+  "art": "wise-guidance",
+  "line": "though he favours his work in us, yet favours he not sin in us",
+  "start": 5695.874637188208
  },
  {
-  "cue": 469,
-  "art": "cup",
-  "line": "Joseph’s cup put into his sack",
-  "start": 5826.79
+  "cue": 466,
+  "art": "flame-care",
+  "line": "Some think they have no faith at all, because they have no full assurance; whenas the fairest fire that can be will have some smoke.",
+  "start": 5749.051637188209
  },
  {
-  "cue": 473,
-  "art": "firewater",
-  "line": "as sparks falling into the sea",
-  "start": 5873.951999999999
+  "cue": 468,
+  "art": "burden-rest",
+  "line": "God regards those hidden sighs of those that want abilities to express them outwardly.",
+  "start": 5779.193083900226
  },
  {
-  "cue": 479,
-  "art": "door",
-  "line": "little thieves",
-  "start": 5958.226
+  "cue": 477,
+  "art": "grace-discernment",
+  "line": "To apprehend ill suggested by another, is not ill. It was Christ’s grievance, but Satan’s sin.",
+  "start": 5884.603922902495
  },
  {
-  "cue": 482,
-  "art": "furnace",
-  "line": "a furnace of such sparks",
-  "start": 5999.253
- },
- {
-  "cue": 486,
-  "art": "water",
-  "line": "As in the water face answers face",
-  "start": 6042.137
+  "cue": 481,
+  "art": "grace-discernment",
+  "line": "if the soul dwell on them so long as to suck or draw from and by them any sinful delight, then they leave a more heavy guilt upon the soul",
+  "start": 5935.384013605442
  },
  {
   "cue": 490,
-  "art": "fountain",
-  "line": "a living spring of better thoughts",
-  "start": 6106.596
+  "art": "prayer-help",
+  "line": "the best way is to lay open our complaints to Christ",
+  "start": 6055.28410430839
  },
  {
-  "cue": 494,
-  "art": "prayer",
-  "line": "bring the best often upon their knees",
-  "start": 6159.312999999999
+  "cue": 501,
+  "art": "grace-discernment",
+  "line": "sin, the more it is seen the more it is hated, and thereupon is the less.",
+  "start": 6200.78929478458
  },
  {
-  "cue": 498,
-  "art": "dust",
-  "line": "Motes are in a room before the sun shines",
-  "start": 6207.379
+  "cue": 504,
+  "art": "grace-discernment",
+  "line": "the more grace, the more spiritual life, and the more spiritual life, the more antipathy to the contrary",
+  "start": 6237.498934240362
  },
  {
-  "cue": 503,
-  "art": "torch",
-  "line": "the torch begins to burn",
-  "start": 6274.878
+  "cue": 507,
+  "art": "flame-care",
+  "line": "It is better to enjoy the benefit of light, though with smoke, than to be altogether in the dark.",
+  "start": 6281.20566893424
  },
  {
-  "cue": 508,
-  "art": "wick",
-  "line": "not quench the smoking flax",
-  "start": 6324.706999999999
+  "cue": 509,
+  "art": "resisting-evil",
+  "line": "Let such therefore as are at variance and odds with their corruptions, look upon this text as their portion of comfort.",
+  "start": 6308.318299319728
  },
  {
-  "cue": 510,
-  "art": "bread",
-  "line": "A sick man",
-  "start": 6345.6849999999995
+  "cue": 512,
+  "art": "wise-guidance",
+  "line": "We should not avoid good actions for the infirmities cleaving unto them.",
+  "start": 6333.451655328798
  },
  {
-  "cue": 514,
-  "art": "mother",
-  "line": "as a child crieth, O Father",
-  "start": 6411.191
+  "cue": 515,
+  "art": "prayer-help",
+  "line": "But hath he put into thine heart a desire to pray? He will hear the desires of his own Spirit in thee.",
+  "start": 6375.590997732426
  },
  {
   "cue": 517,
-  "art": "whale",
-  "line": "Jonah prayed in the whale’s belly",
-  "start": 6440.299999999999
+  "art": "prayer-help",
+  "line": "God can pick sense out of a confused prayer. These desires cry louder in his ears than thy sins.",
+  "start": 6398.131655328798
  },
  {
-  "cue": 521,
-  "art": "prayer",
-  "line": "By prayer we learn to pray",
-  "start": 6509.9529999999995
+  "cue": 520,
+  "art": "burden-rest",
+  "line": "Yes, he will accept that which is his own, and pardon that which is ours.",
+  "start": 6434.090294784581
+ },
+ {
+  "cue": 523,
+  "art": "burden-rest",
+  "line": "There is never a holy sigh, never a tear we shed, lost.",
+  "start": 6497.875124716553
+ },
+ {
+  "cue": 524,
+  "art": "prayer-help",
+  "line": "By prayer we learn to pray.",
+  "start": 6507.59866893424
  },
  {
   "cue": 525,
-  "art": "sapling",
-  "line": "with endeavour of growth",
-  "start": 6573.673
+  "art": "wise-guidance",
+  "line": "Pray as we are able, hear as we are able, strive as we are able, do as we are able, according to the measure of grace received.",
+  "start": 6517.25052154195
  },
  {
-  "cue": 527,
-  "art": "wick",
-  "line": "A little fire is fire",
-  "start": 6596.1849999999995
+  "cue": 528,
+  "art": "gradual-growth",
+  "line": "sincerity and truth, as before was said, with endeavour of growth, is our perfection.",
+  "start": 6568.5386689342395
  },
  {
-  "cue": 532,
-  "art": "rowing",
-  "line": "as in rowing against the tide",
-  "start": 6645.83
+  "cue": 535,
+  "art": "wise-guidance",
+  "line": "it is good to keep our hearts close to duty, and not to hearken unto the excuses they are ready to frame.",
+  "start": 6649.77566893424
  },
  {
-  "cue": 539,
-  "art": "boat",
-  "line": "the hand must be to the stern",
-  "start": 6733.844
+  "cue": 536,
+  "art": "gradual-growth",
+  "line": "We find a warmness of heart, and increase of strength, the Spirit going along with us, and raising us up by degrees, until it leaveth us as it were in heaven.",
+  "start": 6661.588684807256
  },
  {
-  "cue": 541,
-  "art": "harp",
-  "line": "a minstrel to bring his soul into frame",
-  "start": 6764.7339999999995
+  "cue": 538,
+  "art": "burden-rest",
+  "line": "Although the sacrifice be imperfect, yet the obedience with which it is offered hath acceptance.",
+  "start": 6687.586666666666
+ },
+ {
+  "cue": 543,
+  "art": "burden-rest",
+  "line": "in these duties, that require as well the body as the soul, there may be a cessation till strength be repaired.",
+  "start": 6745.966780045352
  },
  {
   "cue": 546,
-  "art": "medicine",
-  "line": "a throne of mercy at our bed’s side",
-  "start": 6826.719999999999
+  "art": "healing-care",
+  "line": "if God bring us into the cross, he will be with us in the cross, and at length bring us out more refined",
+  "start": 6777.366689342403
  },
  {
-  "cue": 548,
-  "art": "seals",
-  "line": "he giveth us seals to strengthen us",
-  "start": 6855.947999999999
- },
- {
-  "cue": 554,
-  "art": "mother",
-  "line": "as a father pitieth his children",
-  "start": 6935.263999999999
+  "cue": 557,
+  "art": "reed-care",
+  "line": "Not from the Father, for he hath bound himself in covenant “to pity us as a father pitieth his children,” Psalm 103:13, and to accept as a father our weak endeavours",
+  "start": 6929.08966893424
  },
  {
   "cue": 559,
-  "art": "book",
-  "line": "among that cloud of witnesses",
-  "start": 6993.795999999999
+  "art": "flame-care",
+  "line": "Not from Christ, for he by office will not quench the smoking flax.",
+  "start": 6955.766825396825
  },
  {
-  "cue": 564,
-  "art": "care",
-  "line": "he helps our infirmities",
-  "start": 7065.491
+  "cue": 567,
+  "art": "reed-care",
+  "line": "he helps our infirmities, and by office is a comforter",
+  "start": 7063.136668934239
  },
  {
-  "cue": 570,
-  "art": "herbs",
-  "line": "some weeds are of a good soil",
-  "start": 7134.445
+  "cue": 568,
+  "art": "prayer-help",
+  "line": "Discouragements, then, must come from ourselves and Satan, who laboureth to fasten on us a loathing of duty.",
+  "start": 7075.656281179138
  },
  {
-  "cue": 574,
-  "art": "rings",
-  "line": "Christ marries her in mercy",
-  "start": 7184.3589999999995
+  "cue": 575,
+  "art": "burden-rest",
+  "line": "weaknesses do not break covenant with God.",
+  "start": 7160.251678004535
  },
  {
   "cue": 579,
-  "art": "prayer",
-  "line": "We grieve for it",
-  "start": 7251.159
+  "art": "reed-care",
+  "line": "Put case therefore we be very weak, yet so long as we are not found amongst malicious opposers and underminers of God’s truth, let us not give way to despairing thoughts",
+  "start": 7202.526439909297
  },
  {
-  "cue": 583,
-  "art": "care",
-  "line": "Peter was recovered with a gracious look",
-  "start": 7304.955
+  "cue": 584,
+  "art": "grace-discernment",
+  "line": "But to plead for an infirmity is more than an infirmity; to allow ourselves in weaknesses is more than a weakness.",
+  "start": 7275.868480725623
  },
  {
   "cue": 588,
-  "art": "fountain",
-  "line": "infected at the spring-head",
-  "start": 7363.067999999999
+  "art": "gradual-growth",
+  "line": "wheresoever sins of infirmity are, there in that person must be the life of grace begun. There can be no weakness, where there is no life.",
+  "start": 7321.08387755102
  },
  {
-  "cue": 594,
-  "art": "cedar",
-  "line": "not only bruise a reed, but shake a cedar",
-  "start": 7446.227
+  "cue": 593,
+  "art": "wise-guidance",
+  "line": "he will not resolve upon any way wherein he knows he must break with Christ.",
+  "start": 7392.902607709751
  },
  {
-  "cue": 597,
-  "art": "wick",
-  "line": "a thief in the candle",
-  "start": 7484.744
+  "cue": 600,
+  "art": "burden-rest",
+  "line": "So much as we give way to our will in sinning, in such a measure of distance we set ourselves from comfort.",
+  "start": 7473.502040816326
  },
  {
-  "cue": 601,
-  "art": "wick",
-  "line": "will not quench the smoking flax",
-  "start": 7518.79
+  "cue": 603,
+  "art": "healing-care",
+  "line": "Such must give a sharp sentence against themselves, and yet cast themselves upon God’s mercy in Christ, as at their first conversion.",
+  "start": 7498.957437641723
  },
  {
-  "cue": 605,
-  "art": "wick",
-  "line": "a spark of true faith",
-  "start": 7570.866999999999
+  "cue": 608,
+  "art": "flame-care",
+  "line": "Christ was not anointed to this great work of the mediator for lesser sins only, but for the greatest, if we have but a spark of true faith to lay hold on him.",
+  "start": 7560.814664399093
  },
  {
-  "cue": 610,
-  "art": "welcome",
-  "line": "spreading his arms to receive us",
-  "start": 7632.264999999999
- },
- {
-  "cue": 612,
-  "art": "flowers",
-  "line": "the sweetness of all flowers",
-  "start": 7649.133
+  "cue": 613,
+  "art": "mercy-sceptre-welcome",
+  "line": "let us present him to our souls, as thus offered to our view by God himself, as holding out a sceptre of mercy, and spreading his arms to receive us.",
+  "start": 7622.317092339045
  },
  {
   "cue": 615,
-  "art": "care",
-  "line": "Who ever neglected his own members",
-  "start": 7689.434512471655
+  "art": "healing-care",
+  "line": "In Christ all perfections of mercy and love meet; how great then must that mercy be that lodgeth in so gracious a heart?",
+  "start": 7651.080664399093
  },
  {
   "cue": 619,
-  "art": "serpent",
-  "line": "with our first father Adam",
-  "start": 7750.181
+  "art": "healing-care",
+  "line": "He was love itself clothed with man’s nature, which he united so near to himself, that he might communicate his goodness the more freely unto us",
+  "start": 7698.653469387755
  },
  {
-  "cue": 622,
-  "art": "care",
-  "line": "Faith pulls off the vizard",
-  "start": 7788.507
+  "cue": 627,
+  "art": "reed-care",
+  "line": "Christ is never nearer us in power to uphold us, than when he seemeth most to hide his presence from us.",
+  "start": 7818.739433106576
  },
  {
-  "cue": 625,
-  "art": "wick",
-  "line": "quench the smoking flax",
-  "start": 7848.503
+  "cue": 632,
+  "art": "grace-discernment",
+  "line": "Satan, as he slandereth Christ to us, so he slandereth us to ourselves.",
+  "start": 7880.842176870748
  },
  {
-  "cue": 631,
-  "art": "welcome",
-  "line": "Cast thyself into the arms of Christ",
-  "start": 7918.803
- },
- {
-  "cue": 635,
-  "art": "home",
-  "line": "his father stays not for him",
-  "start": 7965.451
+  "cue": 634,
+  "art": "burden-rest",
+  "line": "Cast thyself into the arms of Christ, and if thou perishest, perish there; if thou dost not, thou art sure to perish.",
+  "start": 7915.865267573697
  },
  {
   "cue": 638,
-  "art": "anchor",
-  "line": "cast anchor in the dark",
-  "start": 8005.907999999999
+  "art": "burden-rest",
+  "line": "When the prodigal set himself to return to his father, his father stays not for him, but meets him in the way.",
+  "start": 7959.653267573696
  },
  {
-  "cue": 643,
-  "art": "cross",
-  "line": "in the garden, and upon the cross",
-  "start": 8050.629
+  "cue": 641,
+  "art": "anchor-trust",
+  "line": "We can never be in such a condition, wherein there will be just cause of utter despair; therefore let us do as mariners do, cast anchor in the dark.",
+  "start": 7995.710267573696
  },
  {
-  "cue": 645,
-  "art": "cup",
-  "line": "Christ drank the dregs of the cup for us",
-  "start": 8075.513
+  "cue": 649,
+  "art": "healing-care",
+  "line": "He was broken, that we should not be broken; he was troubled, that we should not be desperately troubled; he became a curse, that we should not be accursed.",
+  "start": 8085.924943310657
  },
  {
-  "cue": 647,
-  "art": "shield",
-  "line": "Strength in himself",
-  "start": 8110.24
+  "cue": 654,
+  "art": "wise-guidance",
+  "line": "Christ is ready to welcome us, and lead us further.",
+  "start": 8155.216349206349
  },
  {
-  "cue": 653,
-  "art": "gold",
-  "line": "not improving that talent",
-  "start": 8184.879
+  "cue": 657,
+  "art": "wise-guidance",
+  "line": "all comfort should draw us nearer to Christ, else it is a lying comfort, either in itself or in our application of it.",
+  "start": 8192.467687074832
  },
  {
-  "cue": 655,
-  "art": "firewater",
-  "line": "cast water themselves upon those sparks",
-  "start": 8204.826
+  "cue": 659,
+  "art": "mercy-and-power-sceptres",
+  "line": "they that will not come under his sceptre of mercy, shall be crushed in pieces by his sceptre of power",
+  "start": 8212.241655328799
  },
  {
-  "cue": 660,
-  "art": "care",
-  "line": "gathered under the wing of Christ",
-  "start": 8248.914999999999
+  "cue": 661,
+  "art": "burden-rest",
+  "line": "There is no juster provocation than when kindness is churlishly refused.",
+  "start": 8232.173650793651
  },
  {
-  "cue": 666,
-  "art": "door",
-  "line": "knocked at their hearts",
-  "start": 8324.983
+  "cue": 675,
+  "art": "flame-care",
+  "line": "Christ performeth his office in not quenching, by stirring up suitable endeavours in us",
+  "start": 8382.06380952381
  },
  {
-  "cue": 671,
-  "art": "wick",
-  "line": "Quench not the Spirit",
-  "start": 8378.59
+  "cue": 686,
+  "art": "gradual-growth",
+  "line": "grace is strengthened by the exercise of it",
+  "start": 8541.37716553288
  },
  {
-  "cue": 674,
-  "art": "plough",
-  "line": "hang up his plough and neglect tillage",
-  "start": 8414.109
+  "cue": 689,
+  "art": "gradual-growth",
+  "line": "grace is increased in the exercise of it, not by virtue of the exercise itself, but as Christ by his Spirit floweth into the soul",
+  "start": 8563.683877551022
  },
  {
-  "cue": 679,
-  "art": "care",
-  "line": "one Christian heateth another",
-  "start": 8486.196
+  "cue": 695,
+  "art": "wise-guidance",
+  "line": "Infirmities are a ground of humility, not a plea for negligence, not an encouragement to presumption.",
+  "start": 8643.731292517006
  },
  {
-  "cue": 682,
-  "art": "fire",
-  "line": "as a coal that hath fire in it",
-  "start": 8537.171
+  "cue": 700,
+  "art": "grace-discernment",
+  "line": "true peace is in conquering, not in yielding.",
+  "start": 8707.613990929705
  },
  {
-  "cue": 687,
-  "art": "flowers",
-  "line": "The heart of a Christian is Christ’s garden",
-  "start": 8583.725999999999
+  "cue": 704,
+  "art": "prayer-help",
+  "line": "Let all at all times repair to this meek Saviour, and put up all our suits in his prevailing name.",
+  "start": 8748.14335600907
  },
  {
-  "cue": 690,
-  "art": "oil",
-  "line": "dress our lamps daily, and put in fresh oil",
-  "start": 8631.09
+  "cue": 708,
+  "art": "reed-care",
+  "line": "when he is so kind unto us, shall we be cruel against him in his name, in his truth, in his children?",
+  "start": 8795.728004535149
  },
  {
-  "cue": 696,
-  "art": "boat",
-  "line": "carried with full sail",
-  "start": 8697.359
+  "cue": 716,
+  "art": "wise-guidance",
+  "line": "labour to maintain the unity of the Spirit in the bond of peace.",
+  "start": 8893.565272108843
  },
  {
-  "cue": 701,
-  "art": "door",
-  "line": "What need we knock at any other door",
-  "start": 8757.793
- },
- {
-  "cue": 707,
-  "art": "cross",
-  "line": "weep over Christ",
-  "start": 8830.883
- },
- {
-  "cue": 713,
-  "art": "care",
-  "line": "the unity of the Spirit in the bond of peace",
-  "start": 8897.685
- },
- {
-  "cue": 717,
-  "art": "gold",
-  "line": "apples of gold with pictures of silver",
-  "start": 8943.715
- },
- {
-  "cue": 723,
-  "art": "prayer",
-  "line": "in his last prayer",
-  "start": 9017.848
- },
- {
-  "cue": 727,
-  "art": "medicine",
-  "line": "like cruel surgeons",
-  "start": 9081.475999999999
+  "cue": 720,
+  "art": "wise-guidance",
+  "line": "we must be faithful in the least truth, when season calleth for it.",
+  "start": 8934.735272108845
  },
  {
   "cue": 730,
-  "art": "bread",
-  "line": "the bread of life",
-  "start": 9114.696
- },
- {
-  "cue": 735,
-  "art": "medicine",
-  "line": "as a physician to heal their souls",
-  "start": 9179.306999999999
- },
- {
-  "cue": 738,
-  "art": "care",
-  "line": "The lower Christ comes down to us",
-  "start": 9213.360999999999
+  "art": "victorious-rule",
+  "line": "Spiritual tyranny is the greatest tyranny, and then especially when it is where most mercy should be shewed",
+  "start": 9070.066303854876
  },
  {
   "cue": 741,
-  "art": "throne",
-  "line": "a throne in our hearts",
-  "start": 9251.037
+  "art": "reed-care",
+  "line": "The lower Christ comes down to us, the higher let us lift him up in our hearts",
+  "start": 9209.9410430839
  },
  {
-  "cue": 745,
-  "art": "book",
-  "line": "his law in our hearts",
-  "start": 9302.975999999999
+  "cue": 744,
+  "art": "victorious-rule",
+  "line": "By judgment here, is meant the kingdom of grace in us, that government whereby Christ sets up a throne in our hearts.",
+  "start": 9242.017272108844
  },
  {
-  "cue": 749,
-  "art": "foundation",
-  "line": "build stubble upon a good foundation",
-  "start": 9334.766
+  "cue": 746,
+  "art": "grace-discernment",
+  "line": "By this judgment set up in us, good is discerned, allowed, and performed; sin is judged, condemned, and executed.",
+  "start": 9272.514353741497
  },
  {
-  "cue": 754,
-  "art": "banner",
-  "line": "truth, whereby he ruleth as by a sceptre",
-  "start": 9409.869999999999
+  "cue": 748,
+  "art": "wise-guidance",
+  "line": "Christ and we are of one judgment, and of one will.",
+  "start": 9288.8610430839
+ },
+ {
+  "cue": 750,
+  "art": "gradual-growth",
+  "line": "the gracious frame of holiness set up in our hearts by the Spirit of Christ, shall go forward until all contrary power be brought under.",
+  "start": 9311.531768707484
+ },
+ {
+  "cue": 755,
+  "art": "wise-guidance",
+  "line": "it is most necessary that the Spirit should alter the taste of the soul",
+  "start": 9384.56247165533
+ },
+ {
+  "cue": 756,
+  "art": "victorious-rule",
+  "line": "And as it is true of every particular Christian, that Christ’s judgment in him shall be victorious, so likewise of the whole body of Christians — the church.",
+  "start": 9394.837142857143
  },
  {
   "cue": 758,
-  "art": "home",
-  "line": "home into his own place",
-  "start": 9461.394
+  "art": "white-horse",
+  "line": "Christ “riding on his white horse,” Revelation 6:2, hath a bow, and goeth forth conquering, Revelation 19:11, in the ministry, that he may over come either to conversion or to confusion.",
+  "start": 9414.413832199547
  },
  {
-  "cue": 762,
-  "art": "rings",
-  "line": "he will be obeyed as a husband",
-  "start": 9500.409
+  "cue": 760,
+  "art": "prayer-help",
+  "line": "it is the first thing that we desire when we pray, “Thy kingdom come,” that Christ would come and rule in our hearts.",
+  "start": 9447.177210884354
+ },
+ {
+  "cue": 765,
+  "art": "wise-guidance",
+  "line": "He so pardons as he will be obeyed as a king; he so taketh us to be his spouse, as he will be obeyed as a husband.",
+  "start": 9491.239229024943
  },
  {
   "cue": 767,
-  "art": "yoke",
-  "line": "those that will take his yoke",
-  "start": 9567.632
+  "art": "resisting-evil",
+  "line": "he maketh us subordinate governors, yea, kings under himself, giving us grace not only to set against, but to subdue in some measure our base affections.",
+  "start": 9520.80925170068
  },
  {
-  "cue": 773,
-  "art": "cross",
-  "line": "The guilty soul flieth first to Christ crucified",
-  "start": 9638.984
+  "cue": 771,
+  "art": "healing-care",
+  "line": "none ever did truly desire mercy pardoning, but desired mercy healing.",
+  "start": 9582.273990929705
+ },
+ {
+  "cue": 776,
+  "art": "burden-rest",
+  "line": "The guilty soul flieth first to Christ crucified, made a curse for us.",
+  "start": 9635.564272108842
  },
  {
   "cue": 778,
-  "art": "knot",
-  "line": "the cords of love",
-  "start": 9695.145
+  "art": "burden-rest",
+  "line": "we must remember to have recourse first unto Christ’s mercy to pardon us, and then to the promise of his Spirit to govern us.",
+  "start": 9653.804693877551
  },
  {
-  "cue": 781,
-  "art": "mother",
-  "line": "When a child obeys his father",
-  "start": 9727.766
+  "cue": 780,
+  "art": "wise-guidance",
+  "line": "He leadeth us by his free Spirit, a Spirit of liberty: his subjects are voluntaries.",
+  "start": 9681.506099773243
  },
  {
-  "cue": 787,
-  "art": "teacher",
-  "line": "children of wisdom",
-  "start": 9803.997
+  "cue": 783,
+  "art": "gradual-growth",
+  "line": "Our disposition must be changed, we must be new creatures; they seek for heaven in hell that seek for spiritual love in an unchanged heart.",
+  "start": 9715.828095238096
  },
  {
-  "cue": 794,
-  "art": "temple",
-  "line": "one day in the courts of God",
-  "start": 9897.761
+  "cue": 788,
+  "art": "wise-guidance",
+  "line": "Christ’s government in his church and in his children is a wise and well-ordered government, because it is called judgment, and judgment is the life and soul of wisdom.",
+  "start": 9764.116848072563
+ },
+ {
+  "cue": 793,
+  "art": "grace-discernment",
+  "line": "But the judgment of a spiritual man, so far forth as he is spiritual, shall stand, because it is agreeable to the nature of things: as things are in themselves, so they are in his judgment.",
+  "start": 9841.494149659864
  },
  {
   "cue": 799,
-  "art": "home",
-  "line": "A Joshua and his house will serve God",
-  "start": 9961.363
- },
- {
-  "cue": 804,
-  "art": "lamp",
-  "line": "translated out of his kingdom into Christ’s",
-  "start": 10037.286
+  "art": "grace-discernment",
+  "line": "Truth is truth, and error, error, and that which is unlawful is unlawful, whether men think so or no.",
+  "start": 9914.838231292517
  },
  {
   "cue": 808,
-  "art": "road",
-  "line": "a rule suitable directing to that end",
-  "start": 10089.465
+  "art": "grace-discernment",
+  "line": "Where prevailing is by lies, there discovery is victory",
+  "start": 10038.08498866213
  },
  {
-  "cue": 811,
-  "art": "foundation",
-  "line": "an error in the foundation",
-  "start": 10132.734
- },
- {
-  "cue": 815,
-  "art": "care",
-  "line": "Christ bringeth all that is good in the soul",
-  "start": 10173.574999999999
+  "cue": 813,
+  "art": "wise-guidance",
+  "line": "The whole conversation of a Christian is nothing else but knowledge digested into will, affection, and practice.",
+  "start": 10112.227029478458
  },
  {
   "cue": 821,
-  "art": "teacher",
-  "line": "made choice of it with Mary",
-  "start": 10262.394
+  "art": "wise-guidance",
+  "line": "Now when he shall clearly discover what is good in particular, we are carried to it; and when convincingly he shall discover that which is ill, we abhor it as freely as we embraced it before.",
+  "start": 10214.329206349206
  },
  {
-  "cue": 825,
-  "art": "throne",
-  "line": "as a king by his Spirit subdueth the heart",
-  "start": 10308.241
+  "cue": 824,
+  "art": "wise-guidance",
+  "line": "A sound Christian, as he enjoyeth the better part, so hath first made choice of it with Mary, Luke 10:42; he established all his thoughts by counsel, Proverbs 20:18.",
+  "start": 10255.124580498867
+ },
+ {
+  "cue": 827,
+  "art": "wise-guidance",
+  "line": "wheresoever true wisdom and judgment is, there Christ hath set up his government",
+  "start": 10290.258526077097
  },
  {
   "cue": 828,
-  "art": "book",
-  "line": "write them in their people’s hearts",
-  "start": 10343.778
+  "art": "wise-guidance",
+  "line": "Where Christ by his Spirit as a prophet teaches, he likewise as a king by his Spirit subdueth the heart to obedience of what is taught.",
+  "start": 10301.291201814058
  },
  {
-  "cue": 832,
-  "art": "city",
-  "line": "a city compact within itself",
-  "start": 10397.225
+  "cue": 830,
+  "art": "wise-guidance",
+  "line": "Christ sets up his chair in the very heart, and alters the frame of that, and makes his subjects good, together with teaching of them to be good.",
+  "start": 10329.383242630387
+ },
+ {
+  "cue": 833,
+  "art": "wise-guidance",
+  "line": "The same Spirit that enlighteneth the mind, inspireth gracious inclinations into the will and affections, and infuseth strength into the whole man.",
+  "start": 10366.504603174604
  },
  {
   "cue": 836,
-  "art": "medicine",
-  "line": "the sick man",
-  "start": 10451.859999999999
+  "art": "gradual-growth",
+  "line": "Not that judgment alone will work a change, there must be grace to alter the bent and sway of the will, before it will yield to be wrought upon by the understanding.",
+  "start": 10406.603265306123
  },
  {
-  "cue": 842,
-  "art": "prayer",
-  "line": "to beg of God",
-  "start": 10518.72
+  "cue": 843,
+  "art": "wise-guidance",
+  "line": "but that which is good in itself shall be good unto us, although it cross our particular worldly interests.",
+  "start": 10497.42798185941
  },
  {
-  "cue": 848,
-  "art": "bound",
-  "line": "holding it captive to base affections",
-  "start": 10602.615
+  "cue": 853,
+  "art": "victorious-rule",
+  "line": "Christ as a new conqueror changeth the fundamental laws of old Adam, and establisheth a government of his own.",
+  "start": 10618.037505668934
  },
  {
-  "cue": 852,
-  "art": "victory",
-  "line": "Christ hath conquered all in his own person",
-  "start": 10638.997
- },
- {
-  "cue": 856,
-  "art": "cross",
-  "line": "the blood of Christ",
-  "start": 10701.768
- },
- {
-  "cue": 860,
-  "art": "seed",
-  "line": "the immortal seed of the Spirit",
-  "start": 10734.705
- },
- {
-  "cue": 864,
-  "art": "shield",
-  "line": "A little faith strengthened by Christ",
-  "start": 10783.4431292517
+  "cue": 855,
+  "art": "victorious-rule",
+  "line": "Because Christ hath conquered all in his own person first, and he is God over all, blessed for evermore",
+  "start": 10635.357272108844
  },
  {
   "cue": 868,
-  "art": "tomb",
-  "line": "the end of the resurrection",
-  "start": 10831.456
- },
- {
-  "cue": 872,
-  "art": "throne",
-  "line": "risen and sitting together with him",
-  "start": 10897.649
- },
- {
-  "cue": 876,
-  "art": "mountain",
-  "line": "that little stone cut out of the mountain",
-  "start": 10945.374
- },
- {
-  "cue": 880,
-  "art": "boat",
-  "line": "The winds may toss the ship",
-  "start": 10991.900090702948
- },
- {
-  "cue": 882,
-  "art": "lamb",
-  "line": "here lambs overcome lions",
-  "start": 11017.381
+  "art": "resisting-evil",
+  "line": "the victory over any corruption or temptation is a pledge of final victory.",
+  "start": 10788.440748299321
  },
  {
   "cue": 885,
-  "art": "sword",
-  "line": "they must fight it out",
-  "start": 11045.971
+  "art": "burden-rest",
+  "line": "God’s children usually in their troubles overcome by suffering",
+  "start": 11010.281272108843
+ },
+ {
+  "cue": 887,
+  "art": "gradual-growth",
+  "line": "This victory is by degrees, and therefore they are too hasty- spirited that would conquer so soon as they strike the first stroke, and be at the end of their race at the first setting forth",
+  "start": 11028.291768707484
  },
  {
   "cue": 890,
-  "art": "seed",
-  "line": "As seed rots in the ground",
-  "start": 11102.252
+  "art": "wise-guidance",
+  "line": "God often worketh by contraries: when he means to give victory, he will suffer us to be foiled at first",
+  "start": 11063.255124716554
  },
  {
-  "cue": 893,
-  "art": "care",
-  "line": "would not give over wrestling",
-  "start": 11143.671
+  "cue": 895,
+  "art": "burden-rest",
+  "line": "when we are foiled, let us believe we shall overcome; when we are fallen, let us believe we shall rise again.",
+  "start": 11129.973809523812
  },
  {
-  "cue": 898,
-  "art": "shield",
-  "line": "Weakness with watchfulness will stand out",
-  "start": 11193.47029478458
+  "cue": 900,
+  "art": "gradual-growth",
+  "line": "as the strongest faith may be shaken, so the weakest where truth is, is so far rooted, that it will prevail.",
+  "start": 11183.7079138322
  },
  {
-  "cue": 902,
-  "art": "knot",
-  "line": "the thread and tenor of our lives",
-  "start": 11243.591
- },
- {
-  "cue": 906,
-  "art": "fire",
-  "line": "a spark from heaven",
-  "start": 11287.867
- },
- {
-  "cue": 909,
-  "art": "cloud",
-  "line": "clouds gather about the sun",
-  "start": 11328.297999999999
+  "cue": 904,
+  "art": "burden-rest",
+  "line": "Failings, with conflict, in sanctification should not weaken the peace of our justification, and assurance of salvation.",
+  "start": 11221.503945578232
  },
  {
   "cue": 914,
-  "art": "throne",
-  "line": "such a judgment or government set up in us",
-  "start": 11395.776
+  "art": "resisting-evil",
+  "line": "Grace conquers us first, and we by it conquer all things else; whether it be corruptions within us, or temptations without us.",
+  "start": 11342.78476190476
  },
  {
-  "cue": 919,
-  "art": "road",
-  "line": "true to our ends and fast to our rule",
-  "start": 11449.389
+  "cue": 921,
+  "art": "wise-guidance",
+  "line": "When reasons of religion be the strongest reasons with us, and prevail more than reasons fetched from worldly policy.",
+  "start": 11437.84015873016
  },
  {
-  "cue": 924,
-  "art": "clock",
-  "line": "in a clock when the hammer strikes well",
-  "start": 11515.037
+  "cue": 926,
+  "art": "wise-guidance",
+  "line": "When we are so far in liking with the government of Christ’s Spirit, that we are willing to resign up ourselves to him in all things, for then his kingdom is come unto us, when our wills are brought to his will.",
+  "start": 11489.461541950113
  },
  {
-  "cue": 929,
-  "art": "shield",
-  "line": "there be three degrees of victory",
-  "start": 11581.355
+  "cue": 932,
+  "art": "resisting-evil",
+  "line": "there be three degrees of victory. 1. When we resist though we be foiled. 2. When grace gets the better though with conflict. 3. When all corruption is perfectly subdued.",
+  "start": 11577.935272108843
  },
  {
-  "cue": 934,
-  "art": "soldier",
-  "line": "training us up to fight his battles",
-  "start": 11634.268
+  "cue": 938,
+  "art": "wise-guidance",
+  "line": "in what degree we believe Christ will conquer, in that degree we will endeavour by his grace that we may conquer; for faith is an obedient and a wise grace.",
+  "start": 11639.362970521543
  },
  {
-  "cue": 936,
-  "art": "scales",
-  "line": "wise to ponder and weigh things",
-  "start": 11653.605
- },
- {
-  "cue": 943,
-  "art": "foundation",
-  "line": "the whole frame of the soul continueth strong",
-  "start": 11757.806999999999
+  "cue": 942,
+  "art": "grace-discernment",
+  "line": "Look back to former experience, see what is most agreeable unto it, what was best in our worst times. If grace is or was best then, it is best now.",
+  "start": 11700.147052154196
  },
  {
   "cue": 946,
-  "art": "dove",
-  "line": "In vain is the net spread",
-  "start": 11803.731
+  "art": "wise-guidance",
+  "line": "Where Christ establisheth his government, he inspireth care to keep the judgment clear and fresh, for whilst the judgment standeth straight and firm, the whole frame of the soul continueth strong and impregnable.",
+  "start": 11745.347272108844
  },
  {
-  "cue": 950,
-  "art": "book",
-  "line": "Love is the best entertainer of truth",
-  "start": 11839.273333333333
+  "cue": 951,
+  "art": "wise-guidance",
+  "line": "because knowledge and affection mutually help one another, it is good to keep up our affections of love and delight, by all sweet inducements and divine encouragements",
+  "start": 11815.298299319727
  },
  {
-  "cue": 954,
-  "art": "fire",
-  "line": "A fire in the heart overcometh all fires without",
-  "start": 11894.321
+  "cue": 958,
+  "art": "wise-guidance",
+  "line": "Wisdom likewise teacheth us wherein our weakness lieth, and our enemy’s strength, whereby a jealous fear is stirred up in us, whereby we are preserved",
+  "start": 11895.548367346939
  },
  {
-  "cue": 960,
-  "art": "teacher",
-  "line": "fresh thoughts and affections",
-  "start": 11948.658
+  "cue": 967,
+  "art": "gradual-growth",
+  "line": "Keep grace in exercise. It is not sleepy habits, but grace in exercise, that preserveth us.",
+  "start": 11991.647272108845
  },
  {
-  "cue": 964,
-  "art": "sapling",
-  "line": "Keep grace in exercise",
-  "start": 11995.067
+  "cue": 972,
+  "art": "prayer-help",
+  "line": "Our hearts are of themselves very loose and unsettled, “Lord, unite our hearts unto thee to fear thy name,” Psalm 86:11, or else, without him, our best purposes will fall to the ground.",
+  "start": 12045.799909297053
  },
  {
-  "cue": 969,
-  "art": "prayer",
-  "line": "Lord, unite our hearts unto thee",
-  "start": 12052.655999999999
+  "cue": 984,
+  "art": "gradual-growth",
+  "line": "Grace, as the seed in the parable, grows, we know not how, yet at length, when God seeth fittest, we shall see that all our endeavour hath not been in vain.",
+  "start": 12185.155272108845
  },
  {
-  "cue": 974,
-  "art": "shield",
-  "line": "keeping our watch, and being always ready armed",
-  "start": 12112.373
+  "cue": 988,
+  "art": "prayer-help",
+  "line": "The way in this case to prevail is, 1, To get the victory over the pride of our own nature, by taking shame to ourselves, in humble confession to God",
+  "start": 12231.732199546484
  },
  {
-  "cue": 978,
-  "art": "medicine",
-  "line": "God recovers our taste of good things",
-  "start": 12171.028
+  "cue": 991,
+  "art": "wise-guidance",
+  "line": "If Christ will have the victory, then it is the best way for nations and states to “kiss the Son,” Psalm 2:12, and to embrace Christ and his religion, to side with Christ, and to own his cause in the world.",
+  "start": 12267.545510204083
  },
  {
-  "cue": 981,
-  "art": "oak",
-  "line": "The tree falleth upon the last stroke",
-  "start": 12197.835
+  "cue": 993,
+  "art": "wise-guidance",
+  "line": "So for families, let Christ be the chief governor of the family; and 3, Let every one be as a house of Christ, to dwell familiarly in, and to rule.",
+  "start": 12298.67149659864
  },
  {
-  "cue": 985,
-  "art": "prayer",
-  "line": "in humble confession to God",
-  "start": 12242.681999999999
+  "cue": 996,
+  "art": "wise-guidance",
+  "line": "Of all persons, a man guided by Christ is the best",
+  "start": 12343.489523809523
  },
  {
-  "cue": 989,
-  "art": "camp",
-  "line": "the main pillar of a house",
-  "start": 12296.991
+  "cue": 997,
+  "art": "blind-and-sheep-guidance",
+  "line": "It is best for a blind man to be guided by him that hath sight, it is best for sheep, and such like shiftless creatures, to be guided by man, and it is happiest for man to be guided by Christ",
+  "start": 12358.165487528344
  },
  {
-  "cue": 994,
-  "art": "shepherd",
-  "line": "best for sheep",
-  "start": 12366.175
+  "cue": 1002,
+  "art": "flame-care",
+  "line": "Oh, but let us cherish the sparks of grace in them; for a natural spirit in great troubles will fail, but these sparks will make them conquerors over the greatest evils.",
+  "start": 12420.28752834467
  },
  {
-  "cue": 999,
-  "art": "wick",
-  "line": "let us cherish the sparks of grace",
-  "start": 12424.517
+  "cue": 1006,
+  "art": "victorious-rule",
+  "line": "It is not only said, judgment shall be victorious, but that Christ will bring it openly forth to victory.",
+  "start": 12464.786893424036
  },
  {
-  "cue": 1003,
-  "art": "victory",
-  "line": "Christ will bring it openly forth to victory",
-  "start": 12472.017
+  "cue": 1014,
+  "art": "flax-to-sunlight",
+  "line": "Those that are as smoking flax now shall then “shine as the sun in the firmament,” Matthew 13:43, and their “righteousness break forth as the noon-day,” Psalm 37:6.",
+  "start": 12569.461272108845
  },
  {
-  "cue": 1008,
-  "art": "book",
-  "line": "that truth which layeth them open",
-  "start": 12531.095
- },
- {
-  "cue": 1011,
-  "art": "lamp",
-  "line": "Those that are as smoking flax now",
-  "start": 12572.881
- },
- {
-  "cue": 1015,
-  "art": "crown",
-  "line": "he shall reign for ever",
-  "start": 12622.065
- },
- {
-  "cue": 1018,
-  "art": "wick",
-  "line": "Christ will not quench the least spark",
-  "start": 12658.447
+  "cue": 1019,
+  "art": "grace-discernment",
+  "line": "truth shall no longer be called heresy and schism, nor heresy catholic doctrine; wickedness shall no longer go masked and disguised; goodness shall appear in its own lustre, and shine in its own beams",
+  "start": 12625.50970521542
  },
  {
   "cue": 1022,
-  "art": "tomb",
-  "line": "rose again, and stood upon their feet",
-  "start": 12711.529999999999
+  "art": "grace-discernment",
+  "line": "If this were believed, men would make more account of sincerity, which will only give us boldness, and not seek for covershames",
+  "start": 12664.381020408166
  },
  {
-  "cue": 1024,
-  "art": "potter",
-  "line": "as a potter’s vessel",
-  "start": 12741.213
+  "cue": 1023,
+  "art": "grace-discernment",
+  "line": "God that hath joined grace and truth with honour, hath joined sin and shame together at last",
+  "start": 12688.947687074831
  },
  {
-  "cue": 1029,
-  "art": "serpent",
-  "line": "the serpent hath deceived me",
-  "start": 12802.793
- },
- {
-  "cue": 1032,
-  "art": "glass",
-  "line": "presenting them through false glasses",
-  "start": 12842.574999999999
+  "cue": 1033,
+  "art": "grace-discernment",
+  "line": "It is one of the highest points of wisdom to consider upon what grounds we venture our souls.",
+  "start": 12808.193061224489
  },
  {
   "cue": 1038,
-  "art": "lamb",
-  "line": "the blood of the Lamb",
-  "start": 12914.775
+  "art": "grace-discernment",
+  "line": "This is the difference betwixt a godly wise man and a deluded worldling; that which the one doth now judge to be vain, the other shall hereafter feel to be so when it is too late.",
+  "start": 12869.323083900226
  },
  {
   "cue": 1041,
-  "art": "burden",
-  "line": "In taking up a burden",
-  "start": 12955.464
+  "art": "victorious-rule",
+  "line": "this government is set up and advanced by Christ alone; he bringeth judgment to victory.",
+  "start": 12898.135272108842
  },
  {
-  "cue": 1044,
-  "art": "care",
-  "line": "go to Christ presently to bind us up again",
-  "start": 13001.6
+  "cue": 1043,
+  "art": "burden-rest",
+  "line": "the divine power of Christ is necessary to carry us above all our own strength",
+  "start": 12936.426507936509
  },
  {
-  "cue": 1049,
-  "art": "prayer",
-  "line": "Nothing is stronger than humility",
-  "start": 13046.769
+  "cue": 1046,
+  "art": "reed-care",
+  "line": "And being fallen, in our raisings up again it is Christ that must do the work",
+  "start": 12976.82126984127
+ },
+ {
+  "cue": 1048,
+  "art": "burden-rest",
+  "line": "Let us know, therefore, that it is dangerous to look for that from ourselves which we must have from Christ.",
+  "start": 13001.507278911566
  },
  {
   "cue": 1052,
-  "art": "reed",
-  "line": "reeds shaken with every wind",
-  "start": 13081.689
+  "art": "reed-care",
+  "line": "Nothing is stronger than humility, that goeth out of itself; or weaker than pride, that resteth upon its own bottom",
+  "start": 13043.349206349207
  },
  {
-  "cue": 1056,
-  "art": "prayer",
-  "line": "our eyes are towards thee",
-  "start": 13141.76
+  "cue": 1059,
+  "art": "prayer-help",
+  "line": "let us lift up our hearts to Christ, who hath Spirit enough for us all, in all our exigencies",
+  "start": 13128.820272108844
  },
  {
-  "cue": 1062,
-  "art": "rock",
-  "line": "the rock of our salvation",
-  "start": 13215.703
+  "cue": 1061,
+  "art": "grace-discernment",
+  "line": "we must carry this always in our minds, that that which is begun in self-confidence will end in shame.",
+  "start": 13161.142789115645
  },
  {
-  "cue": 1068,
-  "art": "care",
-  "line": "a secret strength upholding us",
-  "start": 13297.054
+  "cue": 1066,
+  "art": "reed-care",
+  "line": "Hence likewise it is, that we are stronger after foils, because hidden corruption, undiscerned before, is now discovered, and thence we are brought to make use of mercy pardoning, and power supporting.",
+  "start": 13217.64612244898
  },
  {
-  "cue": 1069,
-  "art": "firewater",
-  "line": "as to preserve fire in the sea",
-  "start": 13306.901
+  "cue": 1072,
+  "art": "gradual-growth",
+  "line": "To make so little grace so victorious over so great a mass of corruption, this requireth a spirit more than human",
+  "start": 13295.631519274377
  },
  {
-  "cue": 1074,
-  "art": "dove",
-  "line": "never leaving us till perfect conquest",
-  "start": 13376.761
+  "cue": 1079,
+  "art": "resisting-evil",
+  "line": "this prevailing government shall not be without fighting. There can be no victory where there is no combat.",
+  "start": 13381.368911564627
  },
  {
   "cue": 1080,
-  "art": "soldier",
-  "line": "an army of lusts in mutiny",
-  "start": 13450.981
+  "art": "resisting-evil",
+  "line": "where his government is in truth, it will be opposed, until he getteth the upper hand.",
+  "start": 13404.09888888889
  },
  {
   "cue": 1086,
-  "art": "book",
-  "line": "thoughts and desires",
-  "start": 13519.41
+  "art": "bridle-of-will",
+  "line": "Because it is government, and that limits the course of the will, and casteth a bridle upon its wanderings; everything natural resists what opposeth it",
+  "start": 13478.949637188209
  },
  {
-  "cue": 1091,
-  "art": "lock",
-  "line": "the keys were never given up to Christ",
-  "start": 13570.627999999999
+  "cue": 1089,
+  "art": "wise-guidance",
+  "line": "Christ’s government bringeth the very thoughts and desires, which are the most immediate and free issue of the soul, into obedience.",
+  "start": 13514.330272108844
  },
  {
-  "cue": 1095,
-  "art": "throne",
-  "line": "Christ will rule in the midst of his enemies",
-  "start": 13620.244999999999
+  "cue": 1094,
+  "art": "victorious-rule",
+  "line": "where there is allowance of ourselves in any sinful lust, it is a sign the keys were never given up to Christ to rule us.",
+  "start": 13563.068272108845
  },
  {
   "cue": 1099,
-  "art": "city",
-  "line": "all Jerusalem was troubled",
-  "start": 13666.216999999999
+  "art": "grace-discernment",
+  "line": "It is therefore no sign of a good condition to find all quiet, and nothing at odds",
+  "start": 13624.255759637188
  },
  {
-  "cue": 1104,
-  "art": "dove",
-  "line": "the burden of wings to a bird",
-  "start": 13732.443
+  "cue": 1107,
+  "art": "free-bird",
+  "line": "Christ’s service is the only true liberty. His yoke is an easy yoke, his burden but as the burden of wings to a bird, that maketh her fly the higher.",
+  "start": 13723.404678004536
  },
  {
-  "cue": 1108,
-  "art": "bound",
-  "line": "prisoners in their own souls",
-  "start": 13781.056999999999
+  "cue": 1109,
+  "art": "victorious-rule",
+  "line": "Those that take the most liberty to sin are the most perfect slaves, because most voluntary slaves.",
+  "start": 13755.668639455784
  },
  {
-  "cue": 1113,
-  "art": "shield",
-  "line": "be strong in the Lord",
-  "start": 13836.944
+  "cue": 1114,
+  "art": "victorious-rule",
+  "line": "The victory lieth not upon us, but upon Christ, who hath taken upon him, as to conquer for us, so to conquer in us.",
+  "start": 13809.570634920636
  },
  {
-  "cue": 1119,
-  "art": "reed",
-  "line": "not to break the bruised reed",
-  "start": 13905.798999999999
+  "cue": 1120,
+  "art": "healing-care",
+  "line": "O beloved, it is a comfortable thing to conceive of Christ aright, to know what love, mercy, strength we have laid up for us in the breast of Christ.",
+  "start": 13880.208707482992
  },
  {
   "cue": 1122,
-  "art": "shield",
-  "line": "a shield into our hands",
-  "start": 13948.912
+  "art": "reed-and-flax",
+  "line": "Lord Jesus, thou hast promised not to quench the smoking flax, not to break the bruised reed; cherish thine own grace in me, leave me not to myself, the glory shall be thine.",
+  "start": 13898.31074829932
+ },
+ {
+  "cue": 1123,
+  "art": "gradual-growth",
+  "line": "Christ will not leave us, till he hath made us like himself, “all glorious within and without, and presented us blameless before his Father,” Jude 24.",
+  "start": 13916.510113378685
  },
  {
   "cue": 1126,
-  "art": "seed",
-  "line": "a grain of mustard seed",
-  "start": 14011.116
+  "art": "healing-care",
+  "line": "thou art a great sinner; we may answer, Christ is a strong Saviour",
+  "start": 13954.478163265307
  },
  {
-  "cue": 1132,
-  "art": "oak",
-  "line": "See a flame in a spark, a tree in a seed",
-  "start": 14074.121
- },
- {
-  "cue": 1135,
-  "art": "wick",
-  "line": "he is a smoking wick",
-  "start": 14116.077
+  "cue": 1136,
+  "art": "gradual-growth",
+  "line": "Neither must we reason from a denial of a great measure of grace, to a denial of any at all in us",
+  "start": 14084.66358276644
  },
  {
   "cue": 1137,
-  "art": "crown",
-  "line": "we are sure to be crowned",
-  "start": 14139.744999999999
+  "art": "reed-care",
+  "line": "he that hath the least measure, is within the compass of God’s eternal favour",
+  "start": 14106.614943310658
  },
  {
   "cue": 1140,
-  "art": "boat",
-  "line": "a ship not only tossed",
-  "start": 14191.181
+  "art": "victorious-rule",
+  "line": "if we be guided by him, we shall overcome; if we overcome, we are sure to be crowned.",
+  "start": 14132.476281179139
  },
  {
-  "cue": 1143,
-  "art": "mountain",
-  "line": "standeth on Mount Sion",
-  "start": 14228.529
- },
- {
-  "cue": 1148,
-  "art": "shepherd",
-  "line": "one sheepfold and one shepherd",
-  "start": 14290.401
- },
- {
-  "cue": 1153,
-  "art": "throne",
-  "line": "he will deliver up the kingdom",
-  "start": 14338.971
- },
- {
-  "cue": 1157,
-  "art": "fire",
-  "line": "that fire which all the world shall never be able to quench",
-  "start": 14400.072
+  "cue": 1149,
+  "art": "victorious-rule",
+  "line": "Christ and his church, when they are at the lowest, are nearest rising: his enemies at the highest are nearest a downfall.",
+  "start": 14253.097097505668
  },
  {
   "cue": 1161,
-  "art": "care",
-  "line": "he will not cast us off",
-  "start": 14457.258
+  "art": "gradual-growth",
+  "line": "According to our faith, so is our encouragement to all duties, therefore let us strengthen faith, that it may strengthen all other graces.",
+  "start": 14400.155238095238
  },
  {
   "cue": 1164,
-  "art": "victory",
-  "line": "a pledge of final victory",
-  "start": 14490.496
+  "art": "healing-care",
+  "line": "since he hath taken us into the covenant of grace, he will not cast us off for those corruptions; which as they grieve his Spirit, so they make us vile in our own eyes.",
+  "start": 14451.28702494331
+ },
+ {
+  "cue": 1167,
+  "art": "victorious-rule",
+  "line": "And may he vouchsafe to let the prevailing power of his Spirit in us be an evidence of the truth of grace begun, and a pledge of final victory, at that time when he will be all in all, in all his, for all eternity. Amen.",
+  "start": 14480.715328798186
  }
 ]

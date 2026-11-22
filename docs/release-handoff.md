@@ -4,11 +4,20 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.135 |
+| Release | 1.0.136 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue |
-| Latest change | New Listening Library item: Jonathan Edwards, The Nature of True Virtue |
-| Previous archive | `GitHub History/2026-11-22_15-23-11-772856_SGT_167ebc3a` (1.0.134) |
+| Latest change | Bruised Reed animation editorial revision (255 captions, moving-subject art, 1-second caption gap) and corrected Scripture references in its audio |
+| Previous archive | `GitHub History/2026-11-22_17-52-57-441785_SGT_e43dd3d3` (1.0.135) |
+
+## 1.0.136 The Bruised Reed: animation revision and reference corrections (Claude, continuing Codex's work, 22 November)
+
+- Codex built the editorial revision (whole-book outline, 255 captions chosen from Sibbes's argument, independent caption review, scene map, three moving-subject art modules, Whisper alignment of all 255) and ran out of usage at 18:13. Claude finished it. Work folder: `video-previews/bruised-reed-revision/`.
+- Player: opt-in `captionGap` on `SermonAnimation` (`fadeAfterHold` in `SermonCaptions`/`captionOpacity`). By default the old caption only began fading when the next began, so a blank interval was impossible. With it a caption stays until 1.5 s before the next (at least 4 s after its last word), fades over 0.5 s and leaves exactly 1 s caption-free; all 254 gaps measure 1.0 s. Mike chose this over fading straight after the hold, which left the screen caption-free 80% of the time. Bruised Reed uses `captionHold={4} captionGap`; Prayer, Excellency and Jewels are unchanged.
+- Artwork: `reed-care-motion.ts`, `reed-meaning-motion.ts`, `reed-government-motion.ts` replace `bruised-reed-paint.ts` (removed). All 26 themes inspected at two moments for subject motion; the prayer scene was re-posed (kneeler faces the open book, companion's hand on his back) because the companion's arm across his face read as a scuffle.
+- Audio corrections (Mike heard "Revelation 2210"): the reference converter had left 17 references broken. Fixed in `improved/bruised-reed-sibbes/prepare.py`: Revelation 22:17; Revelation 2 and 3 (twice); Matthew 12 and 13; Matthew 26.; Galatians 2.; Matthew 18:6; Matthew 23:15; Matthew 23:37, 38; Isaiah 50:4 (twice), 50:11; Psalm 50:15, 50:21; Psalm 110:1, 110:3 (scan read l as 1 and cx as ex); Romans 14:1; Proverbs 27:19; Matthew 4:6. Also "commandmg" → commanding, two paragraphs the scan split were rejoined, and one paragraph's reversed quotation marks corrected. A search of all twelve transcripts found no other lost colon.
+- Re-rendered only the changed chunks (the rest reused by text); every new chunk was checked with Whisper. Release `audio-1.0.136` replaces `audio-1.0.133` for The Bruised Reed; the older release is left in place. Caption timings were remapped by passage text and start offset, and the two captions in changed passages were re-aligned.
+- Skills: shared `.agents/skills/sermon-animation/SKILL.md` gained the player-gap and caption-component rules; a Claude copy was prepared.
 
 ## 1.0.135 The Nature of True Virtue (Claude, 22 November)
 

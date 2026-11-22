@@ -3,9 +3,9 @@ import type {RefObject} from 'react';
 import {captionOpacity,CAPTION_HOLD} from './caption-timeline';
 import type {TimedCaption} from './caption-timeline';
 
-export default function SermonCaptions({captions,audio,time,playing,minimumHold=CAPTION_HOLD}:{
+export default function SermonCaptions({captions,audio,time,playing,minimumHold=CAPTION_HOLD,fadeAfterHold=false}:{
  captions:readonly TimedCaption[];audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean;
- minimumHold?:number;
+ minimumHold?:number;fadeAfterHold?:boolean;
 }){
  const box=useRef<HTMLElement>(null),measure=useRef<HTMLSpanElement>(null);
  const [position,setPosition]=useState(time);
@@ -37,12 +37,12 @@ export default function SermonCaptions({captions,audio,time,playing,minimumHold=
  },[captions]);
  const duration=audio.current?.duration??Infinity;
  const current=captions.findLastIndex(c=>c.start<=position);
- const visible=captions.filter((caption,index)=>index<=current&&captionOpacity(caption,captions[index+1],position,duration,minimumHold)>0);
+ const visible=captions.filter((caption,index)=>index<=current&&captionOpacity(caption,captions[index+1],position,duration,minimumHold,fadeAfterHold)>0);
  return <figcaption ref={box} className="prayer-animation-caption sermon-captions" aria-label="Spoken captions">
   <span ref={measure} className="sermon-caption-measure" aria-hidden="true"/>
   {visible.map(caption=>{
    const outgoing=caption!==captions[current];
-   const opacity=captionOpacity(caption,captions[caption.id+1],position,duration,minimumHold);
+   const opacity=captionOpacity(caption,captions[caption.id+1],position,duration,minimumHold,fadeAfterHold);
    const finish=Number.isFinite(duration)&&duration>0?duration-.05:Infinity;
    return <span key={caption.id} className={`prayer-animation-line ${outgoing?'sermon-caption-outgoing':'sermon-caption-current'}`}
     data-caption-id={caption.id} data-reveal-end={Math.min(caption.end,finish)} aria-label={caption.line} style={{opacity}}>

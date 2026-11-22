@@ -24,9 +24,15 @@ export function revealEnd(caption:TimedCaption,duration:number):number{
  return Math.min(caption.end,Number.isFinite(duration)&&duration>0?duration-.05:Infinity);
 }
 
-export function captionOpacity(caption:TimedCaption,next:TimedCaption|undefined,position:number,duration:number,minimumHold:number=CAPTION_HOLD):number{
+export const CAPTION_GAP=1;
+// By default a completed caption stays until the next one starts (approved Prayer/Excellency/Jewels behaviour).
+// With fadeAfterHold, it stays until CAPTION_FADE + CAPTION_GAP before the next caption (never less than its hold),
+// so the old caption has fully gone CAPTION_GAP seconds before the next one appears (Mike, 22 Nov 2026).
+export function captionOpacity(caption:TimedCaption,next:TimedCaption|undefined,position:number,duration:number,minimumHold:number=CAPTION_HOLD,fadeAfterHold=false):number{
  if(position<caption.start)return 0;
- if(!next||position<next.start)return 1;
- const fadeAt=Math.max(next.start,revealEnd(caption,duration)+minimumHold);
+ if(!next)return 1;
+ if(!fadeAfterHold&&position<next.start)return 1;
+ const held=revealEnd(caption,duration)+minimumHold;
+ const fadeAt=fadeAfterHold?Math.max(held,next.start-CAPTION_GAP-CAPTION_FADE):Math.max(next.start,held);
  return Math.max(0,1-Math.max(0,position-fadeAt)/CAPTION_FADE);
 }
