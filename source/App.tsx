@@ -43,7 +43,7 @@ type Tab='Bible'|'Listening Library'|'My favorites'|AccountPage;
 const accountPages=['Recovery centre','Sync & backups','About'] as const;
 export default function Home({user,onSignOut,signingOut=false}:{user:{id:string;email?:string};onSignOut?:()=>Promise<void>;signingOut?:boolean}){
  const key=`bible-songs:original-favorites:${user.id}`;
- const [tab,setTab]=useState<Tab>('Bible'),[query,setQuery]=useState(''),[liked,setLiked]=useState(()=>{try{return localStorage.getItem(key)==='true';}catch{return false;}}),[playing,setPlaying]=useState(false),[time,setTime]=useState(0),[duration,setDuration]=useState(song.duration),[volume,setVolume]=useState(.75),[repeat,setRepeat]=useState(false),[message,setMessage]=useState(''),[content,setContent]=useState<'bible'|'lyrics'>('bible'),[mode,setMode]=useState<'reading'|'singing'>('reading'),[recording,setRecording]=useState('classic');
+ const [tab,setTab]=useState<Tab>('Listening Library'),[query,setQuery]=useState(''),[liked,setLiked]=useState(()=>{try{return localStorage.getItem(key)==='true';}catch{return false;}}),[playing,setPlaying]=useState(false),[time,setTime]=useState(0),[duration,setDuration]=useState(song.duration),[volume,setVolume]=useState(.75),[repeat,setRepeat]=useState(false),[message,setMessage]=useState(''),[content,setContent]=useState<'bible'|'lyrics'>('bible'),[mode,setMode]=useState<'reading'|'singing'>('reading'),[recording,setRecording]=useState('classic');
  const [speed,setSpeed]=useState(()=>{
   try{return parsePreferences({favorite:false,speed:Number(localStorage.getItem(key+':speed'))})?.speed??1;}
   catch{return 1;}

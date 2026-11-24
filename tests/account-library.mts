@@ -26,6 +26,8 @@ try{
   await route.fulfill({json:user});
  });
  await page.goto(process.env['BIBLE_TEST_URL']??'http://127.0.0.1:5190/Bible-Songs1/');
+ await page.getByRole('heading',{name:'Listening Library',exact:true}).waitFor();
+ assert.match(await page.getByRole('button',{name:'Listening Library',exact:true}).getAttribute('class')??'',/active/);
  const header=page.locator('.app-header');
  await header.getByText(/Auto-synced at/).waitFor();
  await header.getByRole('button',{name:'Sync now'}).click();

@@ -4,11 +4,18 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.138 |
+| Release | 1.0.139 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue |
-| Latest change | Bruised Reed: caption directly under the picture, continuous subject motion, gentle motion on reduced-motion phones |
+| Latest change | Listening Library opens by default after sign-in and restored sessions |
 | Previous archive | `GitHub History/2026-11-22_19-52-07-371587_SGT_8470b8ff` (1.0.137) |
+
+## 1.0.139 Listening Library opening page (Codex, 24 November)
+
+- Mike requested Listening Library as the opening page after sign-in, with publication when done. Home now initializes its active tab to Listening Library, including restored sessions. Bible remains available in navigation.
+- Added a browser assertion that authenticated entry displays the Listening Library heading and active navigation button.
+- Validation: clean npm ci, strict checks and production build passed. Full local account/library browser suite passed, including the opening-page assertion, account recovery, sermon playback/downloads and continuous Bible chapter transitions.
+- Based on Claude's 1.0.138; existing animation, audio and downloads retained. Pre-push archive hook remains enabled; skip routine Pages/live checks.
 
 ## 1.0.138 Bruised Reed caption placement and motion (Claude, 22 November)
 
