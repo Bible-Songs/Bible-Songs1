@@ -12,7 +12,7 @@ const libraryReleases:readonly (readonly [string,readonly string[]])[]=[
  ['audio-1.0.131',['way-of-salvation-spurgeon']],
  ['audio-1.0.136',['bruised-reed-sibbes']],
  ['audio-1.0.135',['nature-of-true-virtue-edwards']],
- ['audio-1.0.140',['work-of-the-holy-spirit-spurgeon']],
+ ['audio-1.0.141',['work-of-the-holy-spirit-spurgeon']],
 ];
 const revisedLibraryAudio:ReadonlyMap<string,string>=new Map(libraryReleases.flatMap(([tag,stems])=>
  stems.flatMap(stem=>['m4a','mp3'].map(ext=>[`${stem}.${ext}`,releases+tag+'/'] as const))));

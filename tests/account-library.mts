@@ -105,7 +105,8 @@ try{
  const [holySpiritDownload]=await Promise.all([page.waitForEvent('download'),holySpiritPdf.click()]);
  assert.equal(holySpiritDownload.suggestedFilename(),'work-of-the-holy-spirit-spurgeon.pdf');
  assert.equal(await holySpiritDownload.failure(),null);
- assert.match(await table.getByRole('link',{name:'Download MP3 for The Work of the Holy Spirit',exact:true}).getAttribute('href')??'',/audio-1\.0\.140\/work-of-the-holy-spirit-spurgeon\.mp3/);
+ assert.match(await table.getByRole('link',{name:'Download MP3 for The Work of the Holy Spirit',exact:true}).getAttribute('href')??'',/audio-1\.0\.141\/work-of-the-holy-spirit-spurgeon\.mp3/);
+ await table.getByRole('button',{name:'Watch animation for The Work of the Holy Spirit',exact:true}).waitFor();
  await page.getByRole('searchbox',{name:'Title'}).fill('Jewels');
  assert.equal(await table.locator('tbody tr').count(),1);
  await table.getByRole('button',{name:'God’s Jewels',exact:true}).click();

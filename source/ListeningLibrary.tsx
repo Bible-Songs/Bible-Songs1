@@ -18,6 +18,7 @@ import PrayerAnimation from './PrayerAnimation';
 import JewelsAnimation from './JewelsAnimation';
 import ExcellencyAnimation from './ExcellencyAnimation';
 import BruisedReedAnimation from './BruisedReedAnimation';
+import HolySpiritAnimation from './HolySpiritAnimation';
 import type {ComponentType,RefObject} from 'react';
 import sermonCues from './gods-jewels-cues.json';
 import PlaybackSpeed from './PlaybackSpeed';
@@ -45,6 +46,7 @@ type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:
 const animations:ReadonlyMap<string,ComponentType<AnimationProps>>=new Map([
  ['gods-jewels-spurgeon.m4a',JewelsAnimation],
  ['bruised-reed-sibbes.m4a',BruisedReedAnimation],
+ ['work-of-the-holy-spirit-spurgeon.m4a',HolySpiritAnimation],
  ['prayer-the-cure-for-care-spurgeon.m4a',PrayerAnimation],
  ['excellency-of-christ-edwards.m4a',ExcellencyAnimation],
 ]);

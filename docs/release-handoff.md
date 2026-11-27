@@ -4,11 +4,19 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.140 |
+| Release | 1.0.141 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue, The Work of the Holy Spirit |
-| Latest change | Added The Work of the Holy Spirit to the Listening Library |
-| Previous archive | `GitHub History/2026-11-22_19-52-07-371587_SGT_8470b8ff` (1.0.137) |
+| Latest change | Watch animation for The Work of the Holy Spirit |
+| Previous archive | `GitHub History/2026-11-27_18-02-52-713530_SGT_cf3d9fbf` (1.0.140) |
+
+## 1.0.141 The Work of the Holy Spirit animation (Codex, 27 November)
+
+- Added the 33-minute Watch animation for C. H. Spurgeon’s sermon, using 68 scenes and 26 Canvas artwork setups from chapel to the closing appeal. The captions follow the sermon’s argument from dependence through regeneration, conviction, faith, adoption and pardon.
+- Windows GPU Whisper aligned the corrected recording. Twelve caption word timings were interpolated within neighboring speech. The final schedule allows at least four seconds fully visible, a half-second fade, a one-second blank gap and at least 12 intervening spoken words.
+- Re-rendered three chunks for transcription errors in the stars, potter and closing appeal passages. The updated recording and regenerated cues use audio-1.0.141. Updated the matching PDF and Word downloads. Prior audio release remains available at its original URL.
+
+- Windows verification covered the clean install, strict production build, full Chrome suite, all 26 artwork setups in motion on desktop, five phone reduced-motion scenes, pause, seeking, caption hold and the visible blank gap.
 
 ## 1.0.140 The Work of the Holy Spirit (Codex, 27 November)
 
