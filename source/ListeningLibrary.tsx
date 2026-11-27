@@ -7,6 +7,7 @@ import freeGraceCues from './free-grace-cues.json';
 import wayOfSalvationCues from './way-of-salvation-cues.json';
 import bruisedReedCues from './bruised-reed-cues.json';
 import trueVirtueCues from './nature-of-true-virtue-cues.json';
+import holySpiritCues from './work-of-the-holy-spirit-cues.json';
 import downloadSizes from './library-download-sizes.json';
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {Pause,Play,Volume2} from 'lucide-react';
@@ -36,6 +37,7 @@ const readings=[
  {title:'The Way of Salvation',author:'C. H. Spurgeon',filename:'way-of-salvation-spurgeon.m4a',cues:wayOfSalvationCues},
  {title:'The Bruised Reed',author:'Richard Sibbes',filename:'bruised-reed-sibbes.m4a',cues:bruisedReedCues},
  {title:'The Nature of True Virtue',author:'Jonathan Edwards',filename:'nature-of-true-virtue-edwards.m4a',cues:trueVirtueCues},
+ {title:'The Work of the Holy Spirit',author:'C. H. Spurgeon',filename:'work-of-the-holy-spirit-spurgeon.m4a',cues:holySpiritCues},
 ] as const;
 export const libraryTitles=readings.map(({title,filename})=>({title,filename}));
 type AnimationProps={audio:RefObject<HTMLAudioElement|null>;time:number;playing:boolean};

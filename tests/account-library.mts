@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {chromium} from 'playwright';
 
 const user={
@@ -6,7 +8,7 @@ const user={
  aud:'authenticated',role:'authenticated',email:'fixture@example.invalid',
  app_metadata:{},user_metadata:{bible_songs_preferences:{favorite:false,speed:1}},
 };
-const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,chromiumSandbox:true,args:['--autoplay-policy=no-user-gesture-required']});
+const browser=await chromium.launch({channel:'chrome',headless:true,chromiumSandbox:true,args:['--autoplay-policy=no-user-gesture-required']});
 try{
  const context=await browser.newContext();
  await context.addInitScript(account=>{
@@ -90,12 +92,20 @@ try{
  assert(await page.getByRole('searchbox',{name:'Title'}).evaluate(input=>input===document.activeElement));
  const table=page.getByRole('table',{name:'Published readings — quick actions'});
  const titles=await table.locator('tbody th').allTextContents();
- assert.equal(titles.length,12);
+ assert.equal(titles.length,13);
  assert.deepEqual(titles,[...titles].sort((a,b)=>a.localeCompare(b)));
  await page.getByLabel('Sort by').selectOption('Author');
  const authors=await table.locator('tbody tr td:nth-child(3)').allTextContents();
  assert.deepEqual(authors,[...authors].sort((a,b)=>a.localeCompare(b)));
  await page.getByLabel('Sort by').selectOption('Title');
+ await page.getByRole('searchbox',{name:'Title'}).fill('The Work of the Holy Spirit');
+ assert.equal(await table.locator('tbody tr').count(),1);
+ assert.match(await table.locator('tbody tr').innerText(),/The Work of the Holy Spirit/);
+ const holySpiritPdf=table.getByRole('link',{name:'Download PDF for The Work of the Holy Spirit',exact:true});
+ const [holySpiritDownload]=await Promise.all([page.waitForEvent('download'),holySpiritPdf.click()]);
+ assert.equal(holySpiritDownload.suggestedFilename(),'work-of-the-holy-spirit-spurgeon.pdf');
+ assert.equal(await holySpiritDownload.failure(),null);
+ assert.match(await table.getByRole('link',{name:'Download MP3 for The Work of the Holy Spirit',exact:true}).getAttribute('href')??'',/audio-1\.0\.140\/work-of-the-holy-spirit-spurgeon\.mp3/);
  await page.getByRole('searchbox',{name:'Title'}).fill('Jewels');
  assert.equal(await table.locator('tbody tr').count(),1);
  await table.getByRole('button',{name:'God’s Jewels',exact:true}).click();
@@ -103,10 +113,10 @@ try{
  await page.getByRole('searchbox',{name:'Title'}).fill('');
  await page.setViewportSize({width:390,height:844});
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
- await page.screenshot({path:'/tmp/bible-library-table-mobile.png',fullPage:false});
+ await page.screenshot({path:join(tmpdir(),'bible-library-table-mobile.png'),fullPage:false});
  await page.setViewportSize({width:1440,height:1000});
  await table.scrollIntoViewIfNeeded();
- await page.screenshot({path:'/tmp/bible-library-table-desktop.png'});
+ await page.screenshot({path:join(tmpdir(),'bible-library-table-desktop.png')});
  await table.getByRole('button',{name:'Watch animation for God’s Jewels',exact:true}).click();
  await page.getByRole('button',{name:'Hide animation',exact:true}).click();
  await table.getByRole('button',{name:'Pause audio for God’s Jewels',exact:true}).click();
@@ -132,7 +142,7 @@ try{
  await card.getByRole('button',{name:'Pause '+name,exact:true}).waitFor();
  page.once('dialog',dialog=>void dialog.accept());
  await table.getByRole('button',{name:'Remove '+name+' from table',exact:true}).click();
- assert.equal(await table.locator('tbody tr').count(),11);
+ assert.equal(await table.locator('tbody tr').count(),12);
  await card.waitFor({state:'detached'});
  await page.getByRole('button',{name:'Recovery centre'}).click();
  await page.getByRole('button',{name:'Restore '+name,exact:true}).click();

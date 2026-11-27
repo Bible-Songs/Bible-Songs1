@@ -4,11 +4,18 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.139 |
+| Release | 1.0.140 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
-| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue |
-| Latest change | Listening Library opens by default after sign-in and restored sessions |
+| Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue, The Work of the Holy Spirit |
+| Latest change | Added The Work of the Holy Spirit to the Listening Library |
 | Previous archive | `GitHub History/2026-11-22_19-52-07-371587_SGT_8470b8ff` (1.0.137) |
+
+## 1.0.140 The Work of the Holy Spirit (Codex, 27 November)
+
+- Added C. H. Spurgeon’s sermon No. 178, preached 5 November 1857 on Galatians 3:3. Compared the full sermon body across the Spurgeon Library, Spurgeon Archive and CCEL transcriptions, then checked the date and four text corrections against the printed edition.
+- The recording runs 33 minutes 2 seconds, with 160 timed cues from 164 Windows-rendered chunks. MP3 and M4A use the dedicated audio-1.0.140 release. Eight-page PDF and Word transcripts stay on Pages.
+- Windows verification passed clean npm ci, strict checks and production build, and the full local Chrome account/library suite, including the new sermon search and PDF download.
+- Keep the Windows exact-source archive guard in place. The previous opening-page behavior, catalog entries and animation routes are retained.
 
 ## 1.0.139 Listening Library opening page (Codex, 24 November)
 
