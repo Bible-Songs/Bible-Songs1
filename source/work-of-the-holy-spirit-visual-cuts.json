@@ -1,0 +1,322 @@
+[
+  {
+    "start": 0,
+    "art": "arrival"
+  },
+  {
+    "start": 14.5,
+    "art": "bookDetail"
+  },
+  {
+    "start": 33,
+    "art": "pew"
+  },
+  {
+    "start": 49,
+    "art": "assembly"
+  },
+  {
+    "start": 66,
+    "art": "windowLight"
+  },
+  {
+    "start": 89,
+    "art": "mirror"
+  },
+  {
+    "start": 105,
+    "art": "labor"
+  },
+  {
+    "start": 124,
+    "art": "address"
+  },
+  {
+    "start": 143,
+    "art": "brace"
+  },
+  {
+    "start": 164,
+    "art": "threshold"
+  },
+  {
+    "start": 185,
+    "art": "stillPrayer"
+  },
+  {
+    "start": 209,
+    "art": "handwork"
+  },
+  {
+    "start": 231,
+    "art": "road"
+  },
+  {
+    "start": 252,
+    "art": "porch"
+  },
+  {
+    "start": 275,
+    "art": "balcony"
+  },
+  {
+    "start": 296,
+    "art": "bookStudy"
+  },
+  {
+    "start": 318,
+    "art": "gift"
+  },
+  {
+    "start": 339,
+    "art": "preparation"
+  },
+  {
+    "start": 361,
+    "art": "writing"
+  },
+  {
+    "start": 384,
+    "art": "almanac"
+  },
+  {
+    "start": 404.98,
+    "art": "manna"
+  },
+  {
+    "start": 418.82,
+    "art": "address"
+  },
+  {
+    "start": 463.556,
+    "art": "bookStudy"
+  },
+  {
+    "start": 478.469,
+    "art": "prayerClose"
+  },
+  {
+    "start": 502.2,
+    "art": "windowLight"
+  },
+  {
+    "start": 521.72,
+    "art": "fountain"
+  },
+  {
+    "start": 532.62,
+    "art": "fountainDry"
+  },
+  {
+    "start": 551.378,
+    "art": "temple"
+  },
+  {
+    "start": 590.1,
+    "art": "templeExit"
+  },
+  {
+    "start": 638.78,
+    "art": "address"
+  },
+  {
+    "start": 662,
+    "art": "prayerClose"
+  },
+  {
+    "start": 696.444,
+    "art": "threshold"
+  },
+  {
+    "start": 722.711,
+    "art": "stone"
+  },
+  {
+    "start": 758.46,
+    "art": "handwork"
+  },
+  {
+    "start": 802.06,
+    "art": "seed"
+  },
+  {
+    "start": 829.63,
+    "art": "dawn"
+  },
+  {
+    "start": 863.5,
+    "art": "cradle"
+  },
+  {
+    "start": 875.362,
+    "art": "adoption"
+  },
+  {
+    "start": 908.36,
+    "art": "pew"
+  },
+  {
+    "start": 918.961,
+    "art": "seed"
+  },
+  {
+    "start": 946.86,
+    "art": "mirror"
+  },
+  {
+    "start": 987.6,
+    "art": "wind"
+  },
+  {
+    "start": 1014.377,
+    "art": "balcony"
+  },
+  {
+    "start": 1039.36,
+    "art": "wind"
+  },
+  {
+    "start": 1058.88,
+    "art": "street"
+  },
+  {
+    "start": 1087,
+    "art": "windowLight"
+  },
+  {
+    "start": 1117.055,
+    "art": "prayerClose"
+  },
+  {
+    "start": 1157.38,
+    "art": "burden"
+  },
+  {
+    "start": 1198.82,
+    "art": "bookDetail"
+  },
+  {
+    "start": 1212.5,
+    "art": "labor"
+  },
+  {
+    "start": 1242.56,
+    "art": "handwork"
+  },
+  {
+    "start": 1272.287,
+    "art": "stillPrayer"
+  },
+  {
+    "start": 1294.646,
+    "art": "potter"
+  },
+  {
+    "start": 1332.8,
+    "art": "road"
+  },
+  {
+    "start": 1366.4,
+    "art": "crossNear"
+  },
+  {
+    "start": 1380.229,
+    "art": "tableWelcome"
+  },
+  {
+    "start": 1394.46,
+    "art": "address"
+  },
+  {
+    "start": 1434.104,
+    "art": "bookStudy"
+  },
+  {
+    "start": 1465.82,
+    "art": "robe"
+  },
+  {
+    "start": 1475.44,
+    "art": "adoption"
+  },
+  {
+    "start": 1501.808,
+    "art": "brace"
+  },
+  {
+    "start": 1525.16,
+    "art": "chain"
+  },
+  {
+    "start": 1538.22,
+    "art": "dawn"
+  },
+  {
+    "start": 1574.28,
+    "art": "nicodemus"
+  },
+  {
+    "start": 1602.521,
+    "art": "flood"
+  },
+  {
+    "start": 1636.72,
+    "art": "pew"
+  },
+  {
+    "start": 1678.08,
+    "art": "mirror"
+  },
+  {
+    "start": 1715.26,
+    "art": "assembly"
+  },
+  {
+    "start": 1750.68,
+    "art": "statue"
+  },
+  {
+    "start": 1761.96,
+    "art": "prayerClose"
+  },
+  {
+    "start": 1773.44,
+    "art": "threshold"
+  },
+  {
+    "start": 1794.175,
+    "art": "gate"
+  },
+  {
+    "start": 1828.62,
+    "art": "creatures"
+  },
+  {
+    "start": 1856.977,
+    "art": "hope"
+  },
+  {
+    "start": 1890.14,
+    "art": "crossDusk"
+  },
+  {
+    "start": 1906.58,
+    "art": "crossNear"
+  },
+  {
+    "start": 1921.56,
+    "art": "stillPrayer"
+  },
+  {
+    "start": 1939.12,
+    "art": "cross"
+  },
+  {
+    "start": 1959.733,
+    "art": "crossDusk"
+  },
+  {
+    "start": 1978.2,
+    "art": "prayerClose"
+  }
+]

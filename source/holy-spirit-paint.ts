@@ -355,6 +355,141 @@ function interior(c:C,t:number,kind:string){
  }
 }
 
+function openingDetail(c:C,t:number,art:string){
+ if(art==='templeExit'){
+  base(c,'#9e7b65','#362937','#654c4b');
+  arch(c,201,33,300,325,'#bea887');pillars(c);
+  polygon(c,'#dab28350',[250,325,473,325,529,480,89,480]);
+  const step=40*swing(t,1.15);
+  person(c,375+step,252,1.32,t,'#835b4f','walk');
+  ellipse(c,382+step,175+2*swing(t,1.4,375*.021),8,11,'#eccdb2');
+  person(c,699,244,.89,t,'#a59681','rest');
+  line(c,'#b8a283',7,550,346,808,346);
+  return;
+ }
+ if(art==='arrival'){
+  base(c,'#82928f','#262d3d','#4b4c52');
+  polygon(c,'#555461',[143,181,492,59,818,180,818,376,143,376]);
+  polygon(c,'#756c71',[132,181,491,48,830,181,794,194,491,83,166,194]);
+  arch(c,424,158,129,222,'#bc9965');arch(c,229,184,76,134,'#bd955f');
+  arch(c,671,184,76,134,'#bd955f');
+  polygon(c,'#deb77d46',[457,370,524,369,676,480,285,480]);
+  for(const [x,y,scale,coat] of [[230,307,.91,'#705c5f'],[637,323,.9,'#5d6376'],[743,315,.74,'#8a675e']] as const)
+   person(c,x+swing(t,.85,x)*23,y,scale,t,coat,'walk');
+  return;
+ }
+ if(art==='assembly'||art==='pew'||art==='balcony'||art==='address'||art==='prayerClose'){
+  const high=art==='balcony',near=art==='pew'||art==='prayerClose',atPulpit=art==='address';
+  base(c,near?'#987360':high?'#7e7a83':'#a2785d','#302b3a','#574854');
+  for(const x of [48,305,565,825])arch(c,x,44,105,268,'#c49c7373');
+  if(atPulpit){
+   person(c,515,228,1.8,t,'#484052','reach');
+   polygon(c,'#6f4b42',[432,264,649,264,621,465,465,465]);
+   line(c,'#b78963',13,427,265,650,265);book(c,536,255,.88,t);
+   ellipse(c,766,396,57,13,'#352934');
+  }else if(near){
+   person(c,365,226,1.82,t,'#8d6253',art==='pew'?'reach':'rest');
+   person(c,675,267,1.24,t,'#56536c','rest');
+   polygon(c,'#593f43',[158,342,796,342,865,406,84,406]);
+   line(c,'#bb906c',9,157,342,795,342);book(c,539,333,.89,t);
+  }else{
+   const n=high?3:2;
+   for(let i=0;i<n;i++){
+    const y=192+i*82,x=128+i*37;
+    for(let j=0;j<4;j++)person(c,x+j*171,y,high?.65+i*.13:.86+i*.16,t+j*.47,
+     ['#b27d61','#4e596d','#8b665c','#635363'][j]??'#79605e',j===i?'reach':'rest');
+    polygon(c,'#543c44',[x-60,y+43,x+579,y+43,x+620,y+65,x-83,y+65]);
+    line(c,'#8d6262',4,x-60,y+43,x+579,y+43);
+   }
+  }
+  return;
+ }
+ if(art==='windowLight'||art==='stillPrayer'||art==='bookDetail'||art==='bookStudy'||art==='writing'||art==='preparation'||art==='almanac'){
+  const study=art==='bookStudy'||art==='preparation', writing=art==='writing'||art==='preparation'||art==='almanac';
+  base(c,writing?'#987366':'#a19682','#383549','#544753');
+  arch(c,study?82:626,42,225,289,art==='windowLight'?'#d8b681':'#a28378');
+  const sway=swing(t,1.4)*47,window=study?82:626;
+  polygon(c,'#7f6573',[window+213,46,window+147,49,window+136+sway,172,window+170+sway*.55,320,window+219,329]);
+  curve(c,'#d1a68a7a',4,window+181,63,window+168+sway,115,window+154+sway,216,window+184,314);
+  polygon(c,'#6a4c49',[89,318,825,318,902,454,29,454]);
+  line(c,'#c3936e',7,89,319,825,319);
+  if(study||art==='stillPrayer')person(c,study?673:224,233,1.32,t,'#756071',art==='stillPrayer'?'rest':'work');
+  const bx=art==='windowLight'?559:study?399:486;
+  book(c,bx,345,art==='bookDetail'?2.2:1.54,t);
+  if(writing){
+   const x=bx+43*swing(t,2.1),y=321+7*swing(t,3);
+   curve(c,'#d1ad84',9,x,y,x+12,y-29,x+28,y-44,x+46,y-72);
+   line(c,'#463642',3,x,y,x+45,y-70);
+   if(art==='almanac'){
+    rect(c,159,341,146,79,'#e0bf94');
+    for(let i=0;i<6;i++)line(c,'#8d675b',1,171,356+i*10,288,356+i*10);
+    for(let i=0;i<7;i++)line(c,'#8d675b',1,172+i*18,355,172+i*18,405);
+   }
+  }else if(art==='bookDetail'){
+   const rise=12*swing(t,1.4);
+   polygon(c,'#f2d4a4',[490,323,526,290+rise,656,291+rise,644,323,515,353]);
+   line(c,'#ac8262',3,527,313+rise,632,304+rise);
+  }
+  return;
+ }
+ const dusk=art==='crossDusk'||art==='crossNear';
+ const warm=art==='threshold'||art==='gift'||art==='tableWelcome'||art==='dawn';
+ base(c,warm?'#c39371':dusk?'#867181':'#928a82','#30354a','#584f57');
+ if(dusk){
+  polygon(c,'#655867',[0,336,138,257,280,312,445,240,577,319,756,196,960,298,960,480,0,480]);
+  const x=art==='crossNear'?635:276, y=art==='crossNear'?104:184, scale=art==='crossNear'?1.24:.73;
+  rect(c,x-13*scale,y,26*scale,204*scale,'#473a43');
+  rect(c,x-61*scale,y+42*scale,122*scale,24*scale,'#473a43');
+  line(c,'#b0876c',4,x-14*scale,y,x-14*scale,y+190*scale);
+  person(c,art==='crossNear'?272:630,296,.98,t,'#867166','walk');
+  return;
+ }
+ if(art==='threshold'||art==='porch'||art==='dawn'||art==='road'){
+  const side=art==='porch'?190:art==='road'?723:489;
+  if(art==='road'){
+   polygon(c,'#a59480',[123,480,470,310,536,310,747,480]);
+   polygon(c,'#706d79',[0,333,107,216,243,292,440,179,595,309,813,185,960,278,960,334]);
+  }else{
+   arch(c,side-109,56,218,282,art==='dawn'?'#e9c38e':'#b18d73');
+   polygon(c,'#f2c38355',[side-83,333,side+110,330,side+300,480,side-230,480]);
+   line(c,'#504550',7,side-100,334,side+104,334);
+  }
+  person(c,side-116+19*swing(t,1.03),280,1.03,t,'#6e6074','walk');
+  person(c,side+83,258,.8,t+.8,'#9b745e',warm?'reach':'rest');
+  return;
+ }
+ const stage=art==='gift'||art==='tableWelcome';
+ const work=art==='brace'||art==='labor'||art==='handwork';
+ const x=work?338:art==='mirror'?646:305;
+ arch(c,work?637:116,42,208,290,'#bd9c7975');
+ person(c,x,237,1.3,t,work?'#96715e':'#6b6179',work?'work':'reach');
+ if(art==='mirror'){
+  ellipse(c,429,194,100,119,'#d3a979');
+  ellipse(c,429,194,91,110,'#aca4aa');
+  ellipse(c,449,176+swing(t,1.7)*7,29,41,'#867981');
+  polygon(c,'#857483',[413,219,480,215,498,280,387,280]);
+  line(c,'#e5cfb8',3,393,118,466,103);
+ }else{
+  polygon(c,'#62464a',[404,331,773,331,823,396,368,396]);
+  if(stage){
+   person(c,773,213,1.18,t+.3,'#aa7f61','reach');
+   ellipse(c,587+swing(t,1.6)*13,335,53,10,'#c0a47b');
+   if(art==='gift')polygon(c,'#ae8867',[539,328,608,323,648,344,555,353]);
+  }else{
+   rect(c,513,287,98,31,'#a47c65');rect(c,531,265,111,23,'#76595d');
+   if(art==='brace'){
+    line(c,'#bd956e',15,489,331,611,232+swing(t,1.3)*6,696,330);
+    line(c,'#59444b',6,609,235,613,324);
+   }else{
+    const a=swing(t,2.3)*30;
+    line(c,'#d0a07a',10,484+a,258,624+a,315);
+    line(c,'#6d555c',16,513+a,254,490+a,296);
+   }
+  }
+ }
+}
+
+
 export const paintHolySpirit:Painter=(c,art,t,elapsed)=>{
  c.save();
  switch(art){
@@ -365,6 +500,11 @@ export const paintHolySpirit:Painter=(c,art,t,elapsed)=>{
   case 'wind':case 'scripture':case 'cradle':case 'adoption':case 'robe':windowScene(c,t,art);break;
   case 'cross':case 'hope':case 'manna':case 'street':case 'flood':case 'creatures':landscape(c,t,art);break;
   case 'gate':case 'chain':case 'nicodemus':case 'burden':interior(c,t,art);break;
+  case 'templeExit':case 'arrival':case 'assembly':case 'pew':case 'balcony':case 'address':case 'prayerClose':
+  case 'windowLight':case 'stillPrayer':case 'bookDetail':case 'bookStudy':case 'writing':case 'preparation':
+  case 'almanac':case 'crossNear':case 'crossDusk':case 'threshold':case 'porch':case 'dawn':case 'road':
+  case 'gift':case 'tableWelcome':case 'brace':case 'labor':case 'handwork':case 'mirror':
+   openingDetail(c,t,art);break;
   default:throw new Error('Unknown Holy Spirit artwork: '+art);
  }
  c.restore();
