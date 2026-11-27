@@ -19,7 +19,7 @@ const revisedLibraryAudio:ReadonlyMap<string,string>=new Map(libraryReleases.fla
 
 const libraryVideoReleases:ReadonlyMap<string,string>=new Map([
  ['library/prayer-the-cure-for-care-spurgeon.mp4','video-1.0.125'],
- ['library/work-of-the-holy-spirit-spurgeon.mp4','video-1.0.142'],
+ ['library/work-of-the-holy-spirit-spurgeon.mp4','video-1.0.144'],
 ]);
 
 export function mediaUrl(path:string){

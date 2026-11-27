@@ -108,8 +108,8 @@ try{
  assert.match(await table.getByRole('link',{name:'Download MP3 for The Work of the Holy Spirit',exact:true}).getAttribute('href')??'',/audio-1\.0\.141\/work-of-the-holy-spirit-spurgeon\.mp3/);
  await table.getByRole('button',{name:'Watch animation for The Work of the Holy Spirit',exact:true}).waitFor();
  const holySpiritVideo=page.getByRole('article').filter({hasText:'The Work of the Holy Spirit'}).getByRole('link',{name:/Download MP4/});
- assert.match(await holySpiritVideo.getAttribute('href')??'',/video-1\.0\.142\/work-of-the-holy-spirit-spurgeon\.mp4/);
- assert.match(await holySpiritVideo.innerText(),/236\.3 MB/);
+ assert.match(await holySpiritVideo.getAttribute('href')??'',/video-1\.0\.144\/work-of-the-holy-spirit-spurgeon\.mp4/);
+ assert.match(await holySpiritVideo.innerText(),/176\.7 MB/);
  await page.getByRole('searchbox',{name:'Title'}).fill('Jewels');
  assert.equal(await table.locator('tbody tr').count(),1);
  await table.getByRole('button',{name:'God’s Jewels',exact:true}).click();

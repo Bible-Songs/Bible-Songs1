@@ -4,11 +4,16 @@ Check GitHub main for the actual latest commit and version before acting.
 
 | Item | Baseline |
 | --- | --- |
-| Release | 1.0.143 |
+| Release | 1.0.144 |
 | Bible catalog | Genesis 1–15, Luke 1–24, Romans 1–16 |
 | Listening Library | God’s Jewels, The Immutability of God, Compel Them to Come In, Payday Someday, Sinners in the Hands of an Angry God, The Excellency of Christ, Christ Crucified, Prayer, the Cure for Care, Free Grace, The Way of Salvation, The Bruised Reed, The Nature of True Virtue, The Work of the Holy Spirit |
-| Latest change | Varied the visuals throughout The Work of the Holy Spirit |
-| Previous archive | `GitHub History/2026-11-27_18-02-52-713530_SGT_cf3d9fbf` (1.0.140) |
+| Latest change | Replaced The Work of the Holy Spirit MP4 with the revised visuals |
+| Previous archive | `GitHub History/2026-11-27_19-51-07-839662_SGT_093afe5a` (1.0.143) |
+
+## 1.0.144 The Work of the Holy Spirit revised MP4 (Codex, 27 November)
+
+- Replaced the Listening Library MP4 download with the verified 176,722,323-byte export from 1.0.143, using an immutable video-1.0.144 release URL. Earlier assets remain available at their original URLs.
+- The 33:02 MP4 contains all 80 visual cuts at 960 × 640 and 24 fps, with the unchanged published AAC stream and captions. FFmpeg NVENC output decoded end to end.
 
 ## 1.0.143 The Work of the Holy Spirit visual revision (Codex, 27 November)
 
